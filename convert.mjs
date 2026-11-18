@@ -20,6 +20,16 @@ function cleanText(str) {
   return str.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 }
 
+// 清理每行开头的缩进空格/Tab，防止 Markdown 将缩进的 HTML 误判为代码块
+function cleanHtmlIndent(html) {
+  return html.replace(/^[ \t]+/gm, '').trim();
+}
+
+if (!fs.existsSync(OLD_SITE_DIR)) {
+  console.error('❌ 未找到 old_html 文件夹，请确认旧网站的 html 文件已放入 old_html 目录！');
+  process.exit(1);
+}
+
 // 1. 先从 news_1.html ~ news_21.html 中提取每篇新闻的列表摘要 (summary)
 const newsSummaries = {};
 walkDir(path.join(OLD_SITE_DIR, 'news'), (filePath) => {
@@ -34,7 +44,7 @@ walkDir(path.join(OLD_SITE_DIR, 'news'), (filePath) => {
   }
 });
 
-let prodCount = 0, newsCount = 0, catCount = 0, galCount = 0;
+let prodCount = 0, newsCount = 0, catCount = 0, galCount = 0, rootProdCount = 0;
 
 // 2. 遍历所有 HTML 提取纯数据
 walkDir(OLD_SITE_DIR, (filePath) => {
@@ -66,7 +76,7 @@ date: ${JSON.stringify(date)}
 summary: ${JSON.stringify(summary)}
 ---
 
-${content.trim()}
+${cleanHtmlIndent(content)}
 `;
     fs.mkdirSync('./src/data/news', { recursive: true });
     fs.writeFileSync(`./src/data/news/${slug}.md`, md, 'utf-8');
@@ -86,7 +96,7 @@ bodyClass: ${JSON.stringify(bodyClass)}
 footerType: ${rawHtml.includes('class="postscript') ? '"postscript"' : '"simple"'}
 ---
 
-${mainBody.trim()}
+${cleanHtmlIndent(mainBody)}
 `;
       fs.mkdirSync('./src/data/categories', { recursive: true });
       fs.writeFileSync(`./src/data/categories/${slug}.md`, md, 'utf-8');
@@ -132,7 +142,7 @@ images: ${JSON.stringify(images)}
 attributes: ${JSON.stringify(attributes)}
 ---
 
-${descContent.trim()}
+${cleanHtmlIndent(descContent)}
 `;
       fs.mkdirSync('./src/data/products', { recursive: true });
       fs.writeFileSync(`./src/data/products/${slug}.md`, md, 'utf-8');
@@ -151,15 +161,14 @@ description: ${JSON.stringify(description)}
 bodyClass: ${JSON.stringify(bodyClass)}
 ---
 
-${mainBody.trim()}
+${cleanHtmlIndent(mainBody)}
 `;
     fs.mkdirSync('./src/data/gallery', { recursive: true });
     fs.writeFileSync(`./src/data/gallery/${slug}.md`, md, 'utf-8');
     galCount++;
   }
-});
 
-// D. 处理根目录下的 products.html -> src/pages/products.astro
+  // D. 处理根目录下的 products.html -> src/pages/products.astro
   else if (relPath === 'products.html') {
     const mainBody = matchOne(rawHtml, /<\/header>\s*(?:<!--\s*\/?#header\s*-->)?([\s\S]*?)<footer/i);
     const footerType = rawHtml.includes('class="postscript') ? 'postscript' : 'simple';
@@ -183,6 +192,8 @@ const mainHtml = ${JSON.stringify(mainBody.trim())};
 `;
     fs.mkdirSync('./src/pages', { recursive: true });
     fs.writeFileSync('./src/pages/products.astro', astroPage, 'utf-8');
+    rootProdCount++;
   }
-  
-console.log(`提取完成！已生成：${prodCount} 个产品数据、${catCount} 个分类页、${newsCount} 篇新闻数据、${galCount} 个图库数据（21个新闻分页已由模板自动接管，无需生成文件）。`);
+});
+
+console.log(`✅ 提取完成！已生成：${prodCount} 个产品数据、${catCount} 个分类页、${newsCount} 篇新闻数据、${galCount} 个图库数据、${rootProdCount} 个产品总览页。`);

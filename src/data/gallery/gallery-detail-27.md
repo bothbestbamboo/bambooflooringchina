@@ -1,0 +1,63 @@
+---
+slug: "gallery-detail-27"
+title: "Strand Woven Bamboo Flooring: Stained, Handscraped, Click Lock"
+keywords: "bamboo flooring, china, factory, wholesale"
+description: "Bothbest is a China factory manufacturing bamboo flooring and offers bamboo flooring price in wholesale, guaranteed quality, worldwide shipping."
+bodyClass: "html not-front not-logged-in one-sidebar sidebar-second page-contact"
+---
+
+<section class="container mainContent">
+<form action="/search.aspx" method="get" class="MobileSearch">
+<input type="text" name="MobileSearchKeywords" id="MobileSearchKeywords" />
+<input type="submit" id="MobileSearch" name="MobileSearch" value="Search" class="form-submit">
+</form>
+<div class="row-fluid">
+<div class="tabs">
+</div>
+</div>
+<div class="row-fluid">
+<div class="content span12 ">
+<a id="main-content"></a>
+<h1>Strand Woven Bamboo Flooring: Stained, Handscraped, Click Lock <span>Strand woven bamboo flooring has a very stable quality than any other bamboo floors because of its high density and unique bamboo strips process. This flooring can be stained to different colors, like red, black, grey etc. This flooring also can be hand-crafted to achieve very unique texture.</span></h1>
+<div id="rg-gallery" class="rg-gallery">
+<div class="rg-thumbs">
+<!-- Elastislide Carousel Thumbnail Viewer -->
+<div class="es-carousel-wrapper">
+<div class="es-nav">
+<span class="es-nav-prev">Previous</span>
+<span class="es-nav-next">Next</span>
+</div>
+<div class="es-carousel">
+<ul>
+<li><a href='#'><img src='/img/UploadFiles/null-p1epffiekj1i3f3ql9eokseti1.jpg' data-large='/img/UploadFiles/null-p1epffiekj1i3f3ql9eokseti1.jpg' alt='' /></a></li><li><a href='#'><img src='/img/UploadFiles/null-p1epffiucvdlv6931mg957819411.jpg' data-large='/img/UploadFiles/null-p1epffiucvdlv6931mg957819411.jpg' alt='' /></a></li><li><a href='#'><img src='/img/UploadFiles/null-p1epffjiipmlo187rnj51o90nkv1.jpg' data-large='/img/UploadFiles/null-p1epffjiipmlo187rnj51o90nkv1.jpg' alt='' /></a></li><li><a href='#'><img src='/img/UploadFiles/null-p1epffk0ic820vs619lc1jajist1.jpg' data-large='/img/UploadFiles/null-p1epffk0ic820vs619lc1jajist1.jpg' alt='' /></a></li><li><a href='#'><img src='/img/UploadFiles/null-p1epffkfe91fcvh0u1k4ltto1trh1.jpg' data-large='/img/UploadFiles/null-p1epffkfe91fcvh0u1k4ltto1trh1.jpg' alt='' /></a></li><li><a href='#'><img src='/img/UploadFiles/null-p1epffkusf1ihdis81264r28mg31.jpg' data-large='/img/UploadFiles/null-p1epffkusf1ihdis81264r28mg31.jpg' alt='' /></a></li><li><a href='#'><img src='/img/UploadFiles/null-p1epffldae1pb74mmhag8jgr041.jpg' data-large='/img/UploadFiles/null-p1epffldae1pb74mmhag8jgr041.jpg' alt='' /></a></li><li><a href='#'><img src='/img/UploadFiles/null-p1epfflqtofnlhos96010us12291.jpg' data-large='/img/UploadFiles/null-p1epfflqtofnlhos96010us12291.jpg' alt='' /></a></li><li><a href='#'><img src='/img/UploadFiles/null-p1epffm9jdu8s1ld3vaj130mncm1.jpg' data-large='/img/UploadFiles/null-p1epffm9jdu8s1ld3vaj130mncm1.jpg' alt='' /></a></li><li><a href='#'><img src='/img/UploadFiles/null-p1epffmosk18rr8q1gu81sjk11l1.jpg' data-large='/img/UploadFiles/null-p1epffmosk18rr8q1gu81sjk11l1.jpg' alt='' /></a></li><li><a href='#'><img src='/img/UploadFiles/null-p1epffn6r1dnl10ub3hf1hog19i61.jpg' data-large='/img/UploadFiles/null-p1epffn6r1dnl10ub3hf1hog19i61.jpg' alt='' /></a></li><li><a href='#'><img src='/img/UploadFiles/null-p1epffnog61sh91n5342k6kfcs21.jpg' data-large='/img/UploadFiles/null-p1epffnog61sh91n5342k6kfcs21.jpg' alt='' /></a></li><li><a href='#'><img src='/img/UploadFiles/null-p1epffoac21r291pkk1p817j7u8i1.jpg' data-large='/img/UploadFiles/null-p1epffoac21r291pkk1p817j7u8i1.jpg' alt='' /></a></li><li><a href='#'><img src='/img/UploadFiles/null-p1epffoohlrgo5if4hnuq53vd1.jpg' data-large='/img/UploadFiles/null-p1epffoohlrgo5if4hnuq53vd1.jpg' alt='' /></a></li>
+</ul>
+</div>
+</div>
+<!-- End Elastislide Carousel Thumbnail Viewer -->
+</div><!-- rg-thumbs -->
+</div><!-- rg-gallery -->
+
+<div id="block-views-b8b6a46dbc8cb685921ec6364b80bdef" class="block block-views">
+<h3 class="">Related Projects</h3>
+<div class="view view-mentor-portfolio view-id-mentor_portfolio view-display-id-related_projects view-dom-id-51a98b82d01ebce8d3713dc0672f9bb2">
+<div class="view-content">
+<div class="row-fluid relative related-work">
+<div class="carousel-nav">
+<div class="pull-right">
+<a href="#" id="carouselPrev" class="prev-btn pull-left label"><i class="icon-chevron-left icon-white"></i></a>
+<a href="#" id="carouselNext" class="next-btn pull-left label"><i class="icon-chevron-right icon-white"></i></a>
+</div>
+</div>
+</div>
+<div class="row-fluid carouselBox" data-height="0,0" data-slidewidth="250">
+<div data-delay='5'><div class='portfolioItem'><a href='/gallery/gallery-detail-40.html' class='peOver'><img typeof='foaf:Image' src='/img/UploadFiles/null-p1f0g34em7tk622d1glkf2uqru1.jpg' width='480' height='396' alt='' /><span></span></a><div class='title'><a href='/gallery/gallery-detail-40.html'>Click Lock Strand Wo...</a></div><p>Click lock strand woven bamboo flooring has natura...</p></div></div><div data-delay='5'><div class='portfolioItem'><a href='/gallery/gallery-detail-33.html' class='peOver'><img typeof='foaf:Image' src='/img/UploadFiles/null-p1eq4mstu0fkfq02suo16ufg241.jpg' width='480' height='396' alt='' /><span></span></a><div class='title'><a href='/gallery/gallery-detail-33.html'>Strand Woven Bamboo ...</a></div><p>Caramel color of strand woven bamboo flooring is w...</p></div></div><div data-delay='5'><div class='portfolioItem'><a href='/gallery/gallery-detail-31.html' class='peOver'><img typeof='foaf:Image' src='/img/UploadFiles/null-p1eq410sqh1hg21i55171id6ubnl1.jpg' width='480' height='396' alt='' /><span></span></a><div class='title'><a href='/gallery/gallery-detail-31.html'>Strand Woven Bamboo ...</a></div><p>Natural strand woven bamboo flooring is very light...</p></div></div><div data-delay='5'><div class='portfolioItem'><a href='/gallery/gallery-detail-29.html' class='peOver'><img typeof='foaf:Image' src='/img/UploadFiles/null-p1eq23j3751mtlsv9hha1kp4ocf1.jpg' width='480' height='396' alt='' /><span></span></a><div class='title'><a href='/gallery/gallery-detail-29.html'>Solid Bamboo Floorin...</a></div><p>The first and most pouplar bamboo flooring series ...</p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<!-- /.row-fluid -->
+</section>
+<!--/#main-->

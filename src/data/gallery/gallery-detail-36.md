@@ -1,0 +1,63 @@
+---
+slug: "gallery-detail-36"
+title: "Bamboo Decking: 15 Years Warranty Bamboo Decks"
+keywords: "bamboo flooring, china, factory, wholesale"
+description: "Bothbest is a China factory manufacturing bamboo flooring and offers bamboo flooring price in wholesale, guaranteed quality, worldwide shipping."
+bodyClass: "html not-front not-logged-in one-sidebar sidebar-second page-contact"
+---
+
+<section class="container mainContent">
+<form action="/search.aspx" method="get" class="MobileSearch">
+<input type="text" name="MobileSearchKeywords" id="MobileSearchKeywords" />
+<input type="submit" id="MobileSearch" name="MobileSearch" value="Search" class="form-submit">
+</form>
+<div class="row-fluid">
+<div class="tabs">
+</div>
+</div>
+<div class="row-fluid">
+<div class="content span12 ">
+<a id="main-content"></a>
+<h1>Bamboo Decking: 15 Years Warranty Bamboo Decks <span>Bamboo decking is pressed from well-selected bamboo strips with very high pressure and temperature. Bamboo decking is an ideal decking for outside for long time usage, high durability, anti-moldy. We offer 15 years warranty.</span></h1>
+<div id="rg-gallery" class="rg-gallery">
+<div class="rg-thumbs">
+<!-- Elastislide Carousel Thumbnail Viewer -->
+<div class="es-carousel-wrapper">
+<div class="es-nav">
+<span class="es-nav-prev">Previous</span>
+<span class="es-nav-next">Next</span>
+</div>
+<div class="es-carousel">
+<ul>
+<li><a href='#'><img src='/img/UploadFiles/null-p1eq6h9gc41tfobkoq0mqda8l21.jpg' data-large='/img/UploadFiles/null-p1eq6h9gc41tfobkoq0mqda8l21.jpg' alt='' /></a></li><li><a href='#'><img src='/img/UploadFiles/null-p1eq6h9tsak273ahm421cpjtp21.jpg' data-large='/img/UploadFiles/null-p1eq6h9tsak273ahm421cpjtp21.jpg' alt='' /></a></li><li><a href='#'><img src='/img/UploadFiles/null-p1eq6hb2vv1aavlob1dp7pk717vt1.jpg' data-large='/img/UploadFiles/null-p1eq6hb2vv1aavlob1dp7pk717vt1.jpg' alt='' /></a></li><li><a href='#'><img src='/img/UploadFiles/null-p1eq6hbj6teg1regkoq1l0a1cge1.jpg' data-large='/img/UploadFiles/null-p1eq6hbj6teg1regkoq1l0a1cge1.jpg' alt='' /></a></li><li><a href='#'><img src='/img/UploadFiles/null-p1eq6hc2v21a6elmrpcu1h8290v1.jpg' data-large='/img/UploadFiles/null-p1eq6hc2v21a6elmrpcu1h8290v1.jpg' alt='' /></a></li><li><a href='#'><img src='/img/UploadFiles/null-p1eq6hch7hemn1583q1d7s7t311.jpg' data-large='/img/UploadFiles/null-p1eq6hch7hemn1583q1d7s7t311.jpg' alt='' /></a></li><li><a href='#'><img src='/img/UploadFiles/null-p1eq6hcvup1g7sfdu19kfhdjun11.jpg' data-large='/img/UploadFiles/null-p1eq6hcvup1g7sfdu19kfhdjun11.jpg' alt='' /></a></li><li><a href='#'><img src='/img/UploadFiles/null-p1eq6hdg7ai8e1ue61p2k1thc1een1.jpg' data-large='/img/UploadFiles/null-p1eq6hdg7ai8e1ue61p2k1thc1een1.jpg' alt='' /></a></li><li><a href='#'><img src='/img/UploadFiles/null-p1eq6hdu3hp2bigihvjd2913pt1.jpg' data-large='/img/UploadFiles/null-p1eq6hdu3hp2bigihvjd2913pt1.jpg' alt='' /></a></li><li><a href='#'><img src='/img/UploadFiles/null-p1eq6hedljrv6i2of6j16kh12iq1.jpg' data-large='/img/UploadFiles/null-p1eq6hedljrv6i2of6j16kh12iq1.jpg' alt='' /></a></li>
+</ul>
+</div>
+</div>
+<!-- End Elastislide Carousel Thumbnail Viewer -->
+</div><!-- rg-thumbs -->
+</div><!-- rg-gallery -->
+
+<div id="block-views-b8b6a46dbc8cb685921ec6364b80bdef" class="block block-views">
+<h3 class="">Related Projects</h3>
+<div class="view view-mentor-portfolio view-id-mentor_portfolio view-display-id-related_projects view-dom-id-51a98b82d01ebce8d3713dc0672f9bb2">
+<div class="view-content">
+<div class="row-fluid relative related-work">
+<div class="carousel-nav">
+<div class="pull-right">
+<a href="#" id="carouselPrev" class="prev-btn pull-left label"><i class="icon-chevron-left icon-white"></i></a>
+<a href="#" id="carouselNext" class="next-btn pull-left label"><i class="icon-chevron-right icon-white"></i></a>
+</div>
+</div>
+</div>
+<div class="row-fluid carouselBox" data-height="0,0" data-slidewidth="250">
+<div data-delay='5'><div class='portfolioItem'><a href='/gallery/gallery-detail-41.html' class='peOver'><img typeof='foaf:Image' src='/img/UploadFiles/null-p1f0iiv5k5c3n1csj1gi71mti65t1.jpg' width='480' height='396' alt='' /><span></span></a><div class='title'><a href='/gallery/gallery-detail-41.html'>Quality Outdoor Bamb...</a></div><p>Outdoor bamboo decking can be installed in the are...</p></div></div><div data-delay='5'><div class='portfolioItem'><a href='/gallery/gallery-detail-38.html' class='peOver'><img typeof='foaf:Image' src='/img/UploadFiles/null-p1eqjc7uv53h41m2jf01fpssl41.jpg' width='480' height='396' alt='' /><span></span></a><div class='title'><a href='/gallery/gallery-detail-38.html'>Bamboo Decking XTR: ...</a></div><p>Bamboo decking XTR is extreme dark color, almost b...</p></div></div><div data-delay='5'><div class='portfolioItem'><a href='/gallery/gallery-detail-37.html' class='peOver'><img typeof='foaf:Image' src='/img/UploadFiles/null-p1eq6hm0881g1is52sgvk0abfi1.JPG' width='480' height='396' alt='' /><span></span></a><div class='title'><a href='/gallery/gallery-detail-37.html'>Bamboo Decking Board...</a></div><p>Bamboo decking board has better weather resistance...</p></div></div><div data-delay='5'><div class='portfolioItem'><a href='/gallery/gallery-detail-25.html' class='peOver'><img typeof='foaf:Image' src='/img/UploadFiles/null-p1eq6gmv9b1tqr1vok1ejo1r8t1tvr1.jpg' width='480' height='396' alt='' /><span></span></a><div class='title'><a href='/gallery/gallery-detail-25.html'>Bamboo Decking Appli...</a></div><p>Bamboo decking is pretty suitable for outdoor appl...</p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<!-- /.row-fluid -->
+</section>
+<!--/#main-->

@@ -1,0 +1,163 @@
+---
+id: 427
+slug: "news-detail-427"
+title: "MOSO Bamboo Decking 2900 3050 137 139 140 20 mm Factory Wholesale"
+keywords: "Bamboo Decking"
+description: "We are the outdoor moso bamboo decking factory, the only one supplier who can manufacture the length of 2.9m, 3.05m and 3.8m, especially for European and USA market."
+date: "2026-4-16 16:21:05"
+summary: "We are the outdoor moso bamboo decking factory, the only one supplier who can manufacture the length of 2.9m, 3.05m and 3.8m, especially for European and USA market."
+---
+
+<p><div><span style="font-family: Verdana;"><span style="font-size: 10.5pt;"><img src="https://www.bambooindustry.com/img/moso-3050-1.jpg" border="0"><br>
+</span></span></div>
+<span style="font-family: Verdana;"><span style="font-size: 10.5pt;">
+<div><span style="font-family: Verdana;"><span style="font-size: 10.5pt;"><br>
+</span></span></div>
+<div><span style="font-family: Verdana;"><span style="font-size: 10.5pt;"><img src="https://www.bambooindustry.com/img/moso-3050-2.jpg" border="0"><br>
+</span></span></div>
+<div><span style="font-family: Verdana;"><span style="font-size: 10.5pt;"><br>
+</span></span></div>
+The global demand for high-performance outdoor surfacing has shifted dramatically toward sustainable, engineered materials. Among these, MOSO bamboo decking has carved out a significant share of the luxury and commercial markets. However, a common point of confusion for architects and importers lies in the differing standard lengths requested across various geographical regions. Specifically, the preference for 2900mm planks in the European market, particularly in France, versus the 3050mm standard favored in the United States.</span></span>
+<div><span style="font-family: Verdana;"><span style="font-size: 14px;"><br>
+</span></span></div>
+<div><span style="font-family: Verdana;"><span style="font-size: 14px;"><img src="https://www.bambooindustry.com/img/moso-3050-3.jpg" border="0"><br>
+</span>
+<br>
+<span style="font-size: 10.5pt;">
+This distinction is not merely a matter of arbitrary numbers; it is rooted in logistics, architectural standards, and the physical constraints of global shipping. Understanding these nuances is essential for any professional involved in the sourcing or installation of strand-woven bamboo decking.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+The Technical Foundation of MOSO Bamboo Decking</span><br>
+<span style="font-size: 10.5pt;">
+Before diving into regional dimensions, it is important to understand what makes MOSO bamboo suitable for the "wet zone" of an outdoor landscape. MOSO bamboo (Phyllostachys edulis) is a giant timber bamboo known for its rapid growth and high fiber density. To create decking, the bamboo is crushed into long strands, carbonized at high temperatures to remove sugars and starches (the food source for rot and insects), and then compressed with resin under immense pressure.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+The result is a "strand-woven" board that is significantly harder than Ipe or Teak. In its final form, it is a bio-composite that offers a Janka hardness of over 15,000 N, making it nearly indestructible under standard foot traffic. Because the material is engineered, it can be milled to precise lengths and profiles, allowing for the specific regional standards we see in France and the USA.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+The European Preference: 2900mm for France and the Continental Market</span><br>
+<span style="font-size: 10.5pt;">
+In the European market, particularly in France, the 2900mm length has become a standard benchmark for high-end bamboo decking. This preference is driven by a combination of architectural scale and logistical practicality.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+Metric Standardization and Project Scale</span><br>
+<span style="font-size: 10.5pt;">
+French architecture often prioritizes efficiency in space and material usage. Residential terraces in Paris, Lyon, or Bordeaux, as well as coastal boardwalks in the South of France, frequently utilize metric-based joist spacing. A 2900mm plank aligns well with the standard 40cm or 50cm center-to-center joist spacing commonly used by French contractors.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+By using a 2900mm length, installers can achieve a significant span while keeping the weight of the boards manageable for European construction sites, which are often in densely populated urban areas with limited access for heavy machinery.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+Shipping and Container Optimization</span><br>
+<span style="font-size: 10.5pt;">
+From a manufacturing perspective, 2900mm is an optimized length for standard 20-foot and 40-foot shipping containers. A 40-foot container has an internal length of approximately 12,032mm. When packing 2900mm pallets, there is minimal "dead space" at the ends of the container. This optimization is crucial for maintaining competitive pricing in the European market, where shipping costs and import duties are significant factors in the final retail price. For a French importer, the 2900mm length represents the "sweet spot" where material volume is maximized per shipping unit.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+Aesthetic Symmetry</span><br>
+<span style="font-size: 10.5pt;">
+In France, there is a strong design preference for "joint-matched" symmetry. A 2900mm board allows for a balanced layout on medium-sized terraces. It provides enough length to cover most residential balconies with a single board, eliminating butt-joints and creating the seamless, clean lines favored by French designers and landscapers.</span></span></div>
+<div><span style="font-family: Verdana;"><span style="font-size: 14px;"><br>
+</span></span></div>
+<div><span style="font-family: Verdana;"><span style="font-size: 14px;"><img src="https://www.bambooindustry.com/img/moso-2900-1.jpg" border="0"><br>
+</span>
+<br>
+<span style="font-size: 10.5pt;">
+The USA Market: The Drive for 3050mm (10-Foot) Standards</span><br>
+<span style="font-size: 10.5pt;">
+Across the Atlantic, the American market operates on a different scale. The preference for 3050mm (roughly 10 feet) is a direct reflection of US building standards and the sheer scale of North American outdoor living spaces.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+The 10-Foot Benchmark</span><br>
+<span style="font-size: 10.5pt;">
+In the United States, building materials are still largely dominated by the imperial system. A 3050mm board is essentially a 10-foot plank. Most American decks are built using pressure-treated lumber for the substructure, with joists spaced at 12 inches or 16 inches on center. A 10-foot (3050mm) board is perfectly divisible by these increments, ensuring that the ends of the boards always land directly in the center of a joist.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+For a contractor in California or Texas, a 3050mm board eliminates the need for excessive trimming on-site. This reduces labor costs and material waste, which are primary concerns in the fast-paced US construction industry.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+Scaling for Grandeur</span><br>
+<span style="font-size: 10.5pt;">
+American outdoor spaces—often referred to as "outdoor rooms"—tend to be much larger than their European counterparts. Whether it is a sprawling backyard deck in the suburbs or a large commercial pier in a coastal city, the scale demands longer boards. The 3050mm length provides a sense of proportion that matches the larger footprint of American homes. Using shorter boards on a massive US deck creates too many butt-joints, which can make the surface look cluttered and increase the number of potential failure points where moisture can enter the end-grain.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+Market Expectations and Perceived Value</span><br>
+<span style="font-size: 10.5pt;">
+In the US luxury market, "longer is better" is a common perception. Homeowners paying for premium MOSO bamboo decking expect a product that looks and feels substantial. A 10-foot board is seen as a premium specification that distinguishes the product from the shorter, 6-foot or 8-foot boards often found in big-box home improvement stores.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+Shared Technical Specifications: 20mm Thickness and Width Variations</span><br>
+<span style="font-size: 10.5pt;">
+Regardless of whether the length is 2900mm or 3050mm, both markets generally agree on the ideal thickness: 20mm.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+A 20mm thickness provides the structural rigidity necessary to prevent "bouncing" when walking across the deck. It also allows for the side-groove milling required for hidden fastener systems. These clips allow for the natural expansion and contraction of the bamboo without the need for visible screws, which is a global aesthetic standard for high-end projects.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+The width of the boards typically ranges between 137mm and 140mm. This width provides a balanced look that mimics traditional hardwood planks while ensuring that the boards remain stable. Wider boards are more prone to cupping, so keeping the width around 140mm is a technical safeguard used by manufacturers to guarantee the longevity of the product in both the French and American climates.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+Maintenance and Aging: A Global Reality</span><br>
+<span style="font-size: 10.5pt;">
+While the dimensions differ, the way MOSO bamboo reacts to the environment is universal. Both the 2900mm boards in France and the 3050mm boards in the USA are natural products.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+The Silver-Grey Patina</span><br>
+<span style="font-size: 10.5pt;">
+When first installed, MOSO bamboo decking has a rich, dark brown color. Over time, UV exposure will cause the surface fibers to weather. In the sunny regions of Southern France or the high-UV environments of the American Sun Belt, the boards will eventually transition to a sophisticated silver-grey.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+For many architects, this patina is a desired feature, as it blends the structure into the natural landscape. However, for those who wish to maintain the original "nutmeg" brown, a simple application of a penetrating oil is required. In France, many contractors recommend a yearly oiling to protect against the damp winters. In the USA, the frequency might be higher in states like Florida or lower in more temperate zones.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+Hardness and Safety</span><br>
+<span style="font-size: 10.5pt;">
+The safety benefits are consistent across both lengths. MOSO bamboo is naturally slip-resistant, especially when milled with a "reeded" or grooved surface. It also carries a high fire-resistance rating, which is a critical building code requirement for rooftop terraces in Paris and for Wildland-Urban Interface (WUI) zones in California.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+Sustainability: The Core Value Proposition</span><br>
+<span style="font-size: 10.5pt;">
+Perhaps the most important similarity between the 2900mm and 3050mm markets is the motivation for choosing bamboo in the first place. Sustainability has become a non-negotiable factor for European and American consumers alike.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+MOSO bamboo is one of the fastest-growing plants on Earth. It reaches maturity for harvest in just 5 to 7 years, compared to 50 to 100 years for tropical hardwoods like Ipe. Because the root system remains intact after harvest, the plant continues to grow and sequester carbon, making it a "carbon-negative" building material.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+For a developer in France aiming for high HQE (Haute Qualité Environnementale) scores, or a US builder looking for LEED points, MOSO bamboo provides a documented, certified path to meeting environmental goals without sacrificing the luxury feel of a hardwood deck.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+Installation Nuances: Metric vs. Imperial</span><br>
+<span style="font-size: 10.5pt;">
+The physical installation process highlights why the length distinction is so vital.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+In France, the 2900mm board is often installed using the "metric" mindset. Sub-frames are typically constructed from aluminum or exotic wood joists. Because 2900mm isn‘t a "round" number, French installers often use end-matching (tongue and groove on the ends of the boards) to join planks between joists. This allows for a staggered, random-joint pattern that is very efficient and minimizes off-cut waste.</span></span></div>
+<div><span style="font-family: Verdana;"><span style="font-size: 14px;"><br>
+</span></span></div>
+<div><span style="font-family: Verdana;"><span style="font-size: 14px;"><img src="https://www.bambooindustry.com/img/moso-2900-2.jpg" border="0"><br>
+</span>
+<br>
+<span style="font-size: 10.5pt;">
+In the USA, the 3050mm (10-foot) installation is often more rigid. Contractors prefer to have the ends of the boards land on a joist to avoid the "springy" feel of a mid-span joint. The 10-foot length makes this mathematically simple for a 16-inch or 12-inch joist layout.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+Choosing the Right Specification</span><br>
+<span style="font-size: 10.5pt;">
+For importers and distributors, the choice between 2900mm and 3050mm is a matter of knowing your audience.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+For the France/Europe Market: 2900mm is the standard for logistics and container optimization. It fits the metric architectural style and handles the transit from factory to the European port with the highest efficiency.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+For the USA Market: 3050mm is the benchmark for reliability and compatibility with imperial building standards. It satisfies the American desire for scale and minimizes the labor costs associated with on-site trimming.</span><br>
+<br>
+<span style="font-size: 10.5pt;">
+A Professional Outlook</span><br>
+<span style="font-size: 10.5pt;">
+Outdoor MOSO bamboo decking is a testament to how traditional natural materials can be re-engineered for the modern world. By offering specific lengths like 2900mm for France and 3050mm for the USA, manufacturers demonstrate a deep understanding of the practical, day-to-day realities of the global construction industry.</span></span></div>
+<div><span style="font-family: Verdana;"><span style="font-size: 14px;"><br>
+</span></span></div>
+<div><span style="font-family: Verdana;"><span style="font-size: 14px;"><img src="https://www.bambooindustry.com/img/moso-2900-3.jpg" border="0"><br>
+</span>
+<br>
+<span style="font-size: 10.5pt;">
+Whether it is a chic rooftop terrace overlooking the Seine or a sprawling coastal deck in the Hamptons, the material remains the same: a dense, durable, and beautiful surface that respects the planet. The difference in length is simply the finishing touch that ensures the material performs as well in the hands of the installer as it does under the feet of the homeowner. By selecting the correct regional length, professionals ensure that their projects are not only beautiful but also structurally sound, economically efficient, and built to last for decades.</span></span></div></p>
