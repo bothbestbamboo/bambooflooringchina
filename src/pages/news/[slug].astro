@@ -4,7 +4,7 @@ import NewsSidebar from '../../components/NewsSidebar.astro';
 
 export async function getStaticPaths() {
   const newsFiles = import.meta.glob('../../data/news/*.md', { eager: true });
-  // 按新闻编号从大到小排序 (如 452, 451, 450...)
+  // 按新闻编号从大到小排序 (如 453, 452, 451...)
   const sortedNews = Object.values(newsFiles).sort(
     (a: any, b: any) => (b.frontmatter.id || 0) - (a.frontmatter.id || 0)
   );
@@ -34,8 +34,129 @@ const { frontmatter, Content } = post;
   footerType="postscript"
   rssUrl="/rss/news.xml"
 >
+    <style is:global>
+        /* 新闻详情页大标题与发布日期间距优化 */
+        .post-title h3.NewsTitle {
+            line-height: 1.35;
+            margin-bottom: 12px;
+            color: #222222;
+        }
+        .post-meta > p.text-right {
+            margin-bottom: 22px;
+            padding-bottom: 10px;
+            border-bottom: 1px dotted #dcdcdc;
+            color: #888888;
+        }
+
+        /* Markdown 正文区域统一排版样式 */
+        .contentWrap {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 14.5px;
+            line-height: 1.8;
+            color: #333333;
+        }
+        /* 段落间距与行高 */
+        .contentWrap p {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 14.5px !important;
+            line-height: 1.8 !important;
+            color: #333333;
+            margin: 0 0 18px 0 !important;
+            padding: 0;
+        }
+        /* 兼容旧文章：隐藏旧编辑器在段落开头多敲的冗余换行，避免双倍空行 */
+        .contentWrap p:empty {
+            display: none;
+        }
+        .contentWrap p > br:first-child,
+        .contentWrap p > span > br:first-child {
+            display: none;
+        }
+
+        /* Markdown 小标题 (## H2, ### H3, #### H4) 样式 */
+        .contentWrap h1,
+        .contentWrap h2,
+        .contentWrap h3,
+        .contentWrap h4 {
+            font-family: Verdana, Arial, Helvetica, sans-serif !important;
+            font-weight: bold !important;
+            color: #222222 !important;
+            line-height: 1.4 !important;
+            text-transform: none;
+        }
+        .contentWrap h2 {
+            font-size: 19px !important;
+            margin: 30px 0 14px 0 !important;
+        }
+        .contentWrap h3 {
+            font-size: 16.5px !important;
+            margin: 24px 0 12px 0 !important;
+        }
+        .contentWrap h4 {
+            font-size: 15px !important;
+            margin: 20px 0 10px 0 !important;
+        }
+
+        /* Markdown 列表 (- 无序列表 / 1. 有序列表) 样式 */
+        .contentWrap ul,
+        .contentWrap ol {
+            margin: 0 0 18px 24px !important;
+            padding: 0;
+            font-size: 14.5px;
+            line-height: 1.8;
+            color: #333333;
+        }
+        .contentWrap ul {
+            list-style-type: disc;
+        }
+        .contentWrap ol {
+            list-style-type: decimal;
+        }
+        .contentWrap li {
+            margin-bottom: 8px;
+            line-height: 1.8;
+        }
+
+        /* 正文内链、加粗、图片与表格美化 */
+        .contentWrap strong,
+        .contentWrap b {
+            color: #111111;
+            font-weight: bold;
+        }
+        .contentWrap a {
+            color: #517329;
+            text-decoration: underline;
+        }
+        .contentWrap a:hover {
+            color: #f89406;
+        }
+        .contentWrap img {
+            max-width: 100%;
+            height: auto;
+            margin: 12px 0;
+        }
+        .contentWrap table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        .contentWrap table th,
+        .contentWrap table td {
+            border: 1px solid #dddddd;
+            padding: 10px 12px;
+            text-align: left;
+            line-height: 1.6;
+        }
+        .contentWrap table th {
+            background-color: #f7f7f7;
+            font-weight: bold;
+            color: #222222;
+        }
+    </style>
+
     <section class="container mainContent">
-        <form action="/search.aspx" method="get" class="MobileSearch">
+        <form action="/search.html" method="get" class="MobileSearch">
             <input type="text" name="MobileSearchKeywords" id="MobileSearchKeywords" />
             <input type="submit" id="MobileSearch" name="MobileSearch" value="Search" class="form-submit" />
         </form>

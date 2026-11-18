@@ -73,6 +73,124 @@ if (isCategory) {
   bodyClass={frontmatter.bodyClass || "html front not-logged-in no-sidebars page-node"}
   footerType={frontmatter.footerType || "simple"}
 >
+  <style is:global>
+    /* 产品详情 Description 区域 (#home) Markdown 与 HTML 统一美化样式 */
+    #home.tab-pane {
+      font-family: Verdana, Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #333333;
+      padding-top: 10px;
+    }
+
+    /* 段落间距与行高 */
+    #home.tab-pane p {
+      font-family: Verdana, Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #333333;
+      margin: 0 0 16px 0 !important;
+      padding: 0;
+    }
+
+    /* 兼容老产品数据：自动隐藏旧编辑器留下的 <p><br /></p> 空白占位段，防止双倍空行 */
+    #home.tab-pane p:empty,
+    #home.tab-pane p:has(> br:only-child) {
+      display: none;
+    }
+    #home.tab-pane p > br:first-child {
+      display: none;
+    }
+
+    /* Markdown 小标题 (## H2, ### H3, #### H4) 样式 */
+    #home.tab-pane h1,
+    #home.tab-pane h2,
+    #home.tab-pane h3,
+    #home.tab-pane h4 {
+      font-family: Verdana, Arial, Helvetica, sans-serif !important;
+      font-weight: bold !important;
+      color: #222222 !important;
+      line-height: 1.4 !important;
+      text-transform: none;
+    }
+    #home.tab-pane h2 {
+      font-size: 18px !important;
+      margin: 26px 0 12px 0 !important;
+    }
+    #home.tab-pane h3 {
+      font-size: 16px !important;
+      margin: 22px 0 10px 0 !important;
+    }
+    #home.tab-pane h4 {
+      font-size: 14.5px !important;
+      margin: 18px 0 8px 0 !important;
+    }
+
+    /* Markdown 列表 (- 无序列表 / 1. 有序列表) 样式 */
+    #home.tab-pane ul,
+    #home.tab-pane ol {
+      margin: 0 0 16px 24px !important;
+      padding: 0;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #333333;
+    }
+    #home.tab-pane ul {
+      list-style-type: disc;
+    }
+    #home.tab-pane ol {
+      list-style-type: decimal;
+    }
+    #home.tab-pane li {
+      margin-bottom: 6px;
+      line-height: 1.8;
+    }
+
+    /* 详情区内链、加粗与图片间距 */
+    #home.tab-pane strong,
+    #home.tab-pane b {
+      color: #111111;
+      font-weight: bold;
+    }
+    #home.tab-pane a {
+      color: #517329;
+      text-decoration: underline;
+    }
+    #home.tab-pane a:hover {
+      color: #f89406;
+    }
+    #home.tab-pane img {
+      max-width: 100%;
+      height: auto;
+      margin: 8px 0;
+    }
+
+    /* 表格样式：既兼容老产品居中图片表格，也美化新产品的 Markdown 规格表 */
+    #home.tab-pane table {
+      border-collapse: collapse;
+      margin: 18px auto;
+      font-size: 14px;
+    }
+    #home.tab-pane table:not([align="center"]) {
+      width: 100%;
+    }
+    #home.tab-pane table th,
+    #home.tab-pane table td {
+      border: 1px solid #dddddd;
+      padding: 8px 12px;
+      line-height: 1.6;
+    }
+    #home.tab-pane table th {
+      background-color: #f7f7f7;
+      font-weight: bold;
+      color: #222222;
+      text-align: left;
+    }
+    #home.tab-pane table td p {
+      margin: 0 !important;
+    }
+  </style>
+
   {isCategory ? (
     <Fragment set:html={categoryHtml} />
   ) : (
