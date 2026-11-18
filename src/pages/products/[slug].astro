@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import RelatedProducts from '../../components/RelatedProducts.astro';
+
+export async function getStaticPaths() {
+  // 读取所有产品数据文件与分类页文件
+  const productFiles = import.meta.glob('../../data/products/*.md', { eager: true });
+  const categoryFiles = import.meta.glob('../../data/categories/*.md', { eager: true });
+
+  const productPaths = Object.values(productFiles).map((post: any) => ({
+    params: { slug: post.frontmatter.slug },
+    props: { post, isCategory: false }
+  }));
+
+  const categoryPaths = Object.values(categoryFiles).map((post: any) => ({
+    params: { slug: post.frontmatter.slug },
+    props: { post, isCategory: true }
+  }));
+
+  return [...productPaths, ...categoryPaths];
+}
+
+const { post, isCategory } = Astro.props;
+const { frontmatter, Content } = post;
+---
+<BaseLayout
+  title={frontmatter.title}
+  keywords={frontmatter.keywords}
+  description={frontmatter.description}
+  bodyClass={frontmatter.bodyClass || "html front not-logged-in no-sidebars page-node"}
+  footerType={frontmatter.footerType || "simple"}
+>
+  {isCategory ? (
+    <!-- 如果是 5 个产品大类列表页 (product-type-xxx.html)，直接渲染列表内容 -->
+    <Content />
+  ) : (
+    <!-- 如果是 170+ 个标准产品详情页，套用统一产品模板 -->
+    <section class="container mainContent">
+        <form action="/search.aspx" method="get" class="MobileSearch">
+            <input type="text" name="MobileSearchKeywords" id="MobileSearchKeywords" />
+            <input type="submit" id="MobileSearch" name="MobileSearch" value="Search" class="form-submit" />
+        </form>
+        <div class="row-fluid">
+            <div class="tabs">
+                <ul class="breadcrumb">
+                    <li><a href="/index.html">Home</a> <span class="divider">/</span></li>
+                    <li><a href={frontmatter.categoryUrl || "/products/product-type-BambooFlooring.html"}>{frontmatter.categoryName || "Bamboo Flooring"}</a> <span class="divider">/</span></li>
+                    <li class="active">{frontmatter.pageTitle}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="content span12 ">
+                <a id="main-content"></a>
+                <h1 class="title" id="page-title">{frontmatter.pageTitle}</h1>
+                <div id="block-system-main" class="block block-system">
+                    <div id="node-6" class="node node-portfolio clearfix" about="#" typeof="sioc:Item foaf:Document">
+                        <div class="row-fluid project">
+                            <div class="span9">
+                                <div class="innerSpacer">
+                                    <div class="peVolo slideWrap" data-autopause="enabled">
+                                        {frontmatter.images?.map((img: any) => (
+                                            <div data-delay="3" class="visible">
+                                                <img src={img.src} alt={img.alt || frontmatter.pageTitle} title={img.title || frontmatter.pageTitle} />
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span3">
+                                <div class="item-description">
+                                    <h3>Product Information</h3>
+                                    <div class="subtitle"><a href="#">{frontmatter.date}</a></div>
+                                    <p>{frontmatter.summary}</p>
+                                    <ul class="unstyled AttributeList">
+                                        {frontmatter.attributes?.map((attr: string) => (
+                                            <li><i class="icon-ok"></i>{attr}</li>
+                                        ))}
+                                    </ul>
+                                    <br />
+                                    <a href="/about.html#RequestAQuote" class="btn btn-success btn-large">Request A Quote</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#home" data-toggle="tab"><h3>Description</h3></a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="home">
+                            <Content />
+                        </div>
+                    </div>
+                </div>
+                <RelatedProducts />
+            </div>
+        </div>
+    </section>
+  )}
+</BaseLayout>

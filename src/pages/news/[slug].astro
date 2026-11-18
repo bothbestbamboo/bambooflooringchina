@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NewsSidebar from '../../components/NewsSidebar.astro';
+
+export async function getStaticPaths() {
+  const newsFiles = import.meta.glob('../../data/news/*.md', { eager: true });
+  // 按新闻编号从大到小排序 (如 452, 451, 450...)
+  const sortedNews = Object.values(newsFiles).sort(
+    (a: any, b: any) => (b.frontmatter.id || 0) - (a.frontmatter.id || 0)
+  );
+
+  return sortedNews.map((post: any, index: number) => {
+    const prevPost = sortedNews[index + 1] as any; // 编号小一号的是 Previous Post
+    const nextPost = sortedNews[index - 1] as any; // 编号大一号的是 Next Post
+    return {
+      params: { slug: post.frontmatter.slug },
+      props: {
+        post,
+        prevUrl: prevPost ? `${prevPost.frontmatter.slug}.html` : '#',
+        nextUrl: nextPost ? `${nextPost.frontmatter.slug}.html` : '#'
+      }
+    };
+  });
+}
+
+const { post, prevUrl, nextUrl } = Astro.props;
+const { frontmatter, Content } = post;
+---
+<BaseLayout
+  title={frontmatter.title}
+  keywords={frontmatter.keywords}
+  description={frontmatter.description}
+  bodyClass="html not-front not-logged-in one-sidebar sidebar-second page-contact"
+  footerType="postscript"
+  rssUrl="/rss/news.xml"
+>
+    <section class="container mainContent">
+        <form action="/search.aspx" method="get" class="MobileSearch">
+            <input type="text" name="MobileSearchKeywords" id="MobileSearchKeywords" />
+            <input type="submit" id="MobileSearch" name="MobileSearch" value="Search" class="form-submit" />
+        </form>
+        <div class="row-fluid">
+            <div class="tabs">
+                <ul class="breadcrumb">
+                    <li><a href="/index.html">Home</a> <span class="divider">/</span></li>
+                    <li><a href="/news/news_1.html">News</a> <span class="divider">/</span></li>
+                    <li class="active">{frontmatter.title}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="content span9 ">
+                <div class="innerSpacer">
+                    <a id="main-content"></a>
+                    <div id="block-system-main" class="block block-system" style="border:none">
+                        <div id="node-3" class="node node-blog-post node-promoted row-fluid clearfix">
+                            <div class="span12 post full">
+                                <div class="row-fluid">
+                                    <div class="span12 post-title">
+                                        <h3 class="NewsTitle">{frontmatter.title}</h3>
+                                        <div class="post-meta">
+                                            <p class="text-right">Posted on {frontmatter.date}</p>
+                                            <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+                                                <div class="field-items">
+                                                    <div class="field-item even">
+                                                        <div class="row-fluid">
+                                                            <div class="span12 post full">
+                                                                <div class="contentWrap">
+                                                                    <div class="row-fluid">
+                                                                        <div class="span12">
+                                                                            <Content />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row-fluid post-pager">
+                                                <div class="span12">
+                                                    <ul class="pager">
+                                                        <li class="prev"><a href={prevUrl}>&larr; <span>Previous Post</span></a></li>
+                                                        <li class="next"><a href={nextUrl}><span>Next Post</span> &rarr;</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <NewsSidebar />
+        </div>
+    </section>
+</BaseLayout>

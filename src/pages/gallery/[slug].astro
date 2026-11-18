@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const galleryFiles = import.meta.glob('../../data/gallery/*.md', { eager: true });
+  return Object.values(galleryFiles).map((post: any) => ({
+    params: { slug: post.frontmatter.slug },
+    props: { post }
+  }));
+}
+
+const { post } = Astro.props;
+const { frontmatter, Content } = post;
+---
+<BaseLayout
+  title={frontmatter.title}
+  keywords={frontmatter.keywords}
+  description={frontmatter.description}
+  bodyClass={frontmatter.bodyClass || "html front not-logged-in no-sidebars page-node"}
+  footerType={frontmatter.footerType || "postscript"}
+>
+  <Content />
+</BaseLayout>

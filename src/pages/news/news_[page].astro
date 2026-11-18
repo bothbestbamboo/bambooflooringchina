@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NewsSidebar from '../../components/NewsSidebar.astro';
+
+export async function getStaticPaths({ paginate }: any) {
+  const newsFiles = import.meta.glob('../../data/news/*.md', { eager: true });
+  const sortedNews = Object.values(newsFiles).sort(
+    (a: any, b: any) => (b.frontmatter.id || 0) - (a.frontmatter.id || 0)
+  );
+  // 每页 20 篇，自动分页
+  return paginate(sortedNews, { pageSize: 20 });
+}
+
+const { page } = Astro.props as any;
+const currentPage = page.currentPage;
+const totalPages = page.lastPage;
+
+// 生成页码数字列表 (最多显示9个页码按钮，与原网站完全一致)
+const startPage = Math.max(1, Math.min(currentPage - 4, totalPages - 8));
+const endPage = Math.min(totalPages, Math.max(9, currentPage + 4));
+const pageNumbers = Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
+---
+<BaseLayout
+  title="News | Bamboo Flooring: China Factory Wholesale"
+  keywords="bamboo flooring, china, factory, wholesale"
+  description="Bothbest is a China factory manufacturing bamboo flooring and offers bamboo flooring price in wholesale, guaranteed quality, worldwide shipping."
+  bodyClass="html not-front not-logged-in one-sidebar sidebar-second page-contact"
+  footerType="postscript"
+  rssUrl="/rss/news.xml"
+>
+    <section class="container mainContent">
+        <form action="/search.aspx" method="get" class="MobileSearch">
+            <input type="text" name="MobileSearchKeywords" id="MobileSearchKeywords" />
+            <input type="submit" id="MobileSearch" name="MobileSearch" value="Search" class="form-submit" />
+        </form>
+        <div class="row-fluid">
+            <div class="tabs"></div>
+        </div>
+        <div class="row-fluid">
+            <div class="content span9 ">
+                <div class="innerSpacer">
+                    <a id="main-content"></a>
+                    <h1 class="title" id="page-title">Bothbest Blog - You find than you expect.</h1>
+                    <div id="block-system-main" class="block block-system" style="padding-top: 15px">
+                        <div class="view view-blog view-id-blog view-display-id-page innerSpacer">
+                            <div class="view-content">
+                                {page.data.map((post: any) => (
+                                    <div class="row-fluid post">
+                                        <div class="row-fluid post-content">
+                                            <div class="row-fluid">
+                                                <div class="span2">
+                                                    <span class="btn btn-inverse postTypeIcon"><i class="icon-pencil icon-white"></i></span>
+                                                </div>
+                                                <div class="span10 post-title">
+                                                    <h3><a href={`/news/${post.frontmatter.slug}.html`}>{post.frontmatter.title}</a></h3>
+                                                </div>
+                                            </div>
+                                            <div class="row-fluid">
+                                                <div class="span2 post-meta">
+                                                    <p class="post-date">{post.frontmatter.date}</p>
+                                                </div>
+                                                <div class="span10">
+                                                    <p>{post.frontmatter.summary}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+
+                                <div class="pagination">
+                                    <div class="pager-index"><a href="news_1.html">First</a></div>
+                                    <div class="pre2"><a href={currentPage > 1 ? `news_${currentPage - 1}.html` : '#'}>Prev</a></div>
+                                    {pageNumbers.map((num) => (
+                                        <div class="num">
+                                            <a href={`news_${num}.html`} class={num === currentPage ? "pager-current active" : ""}>{num}</a>
+                                        </div>
+                                    ))}
+                                    <div class="pager-next"><a href={currentPage < totalPages ? `news_${currentPage + 1}.html` : `news_${totalPages}.html`}>Next</a></div>
+                                    <div class="pager-last last"><a href={`news_${totalPages}.html`}>Last</a></div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <NewsSidebar />
+        </div>
+    </section>
+</BaseLayout>
