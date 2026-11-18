@@ -20,9 +20,31 @@ function cleanText(str) {
   return str.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 }
 
-// 清理每行开头的缩进空格/Tab，防止 Markdown 将缩进的 HTML 误判为代码块
 function cleanHtmlIndent(html) {
   return html.replace(/^[ \t]+/gm, '').trim();
+}
+
+// 提取页面 <head> 中除公共文件外的专属 CSS、JS、style 和 jQuery 相册模板
+function extractHeadExtra(rawHtml) {
+  const headContent = matchOne(rawHtml, /<head[^>]*>([\s\S]*?)<\/head>/i, '');
+  return headContent
+    .replace(/<meta\b[^>]*>/gi, '')
+    .replace(/<title\b[^>]*>[\s\S]*?<\/title>/gi, '')
+    .replace(/<!--\[if[\s\S]*?<!\[endif\]-->/gi, '')
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/<link\b[^>]*href=['"][^'"]*(?:peVolo\.css|skin_orange\.css|favicon\.ico)['"][^>]*>/gi, '')
+    .replace(/<script\b[^>]*src=['"][^'"]*\/(?:jquery\.js|OncePlugin\.js|parentWindow\.js)['"][^>]*>\s*<\/script>/gi, '')
+    .replace(/<script\b[^>]*>\s*window\.onerror[\s\S]*?<\/script>/gi, '')
+    .trim();
+}
+
+// 提取 </footer> 之后、</body> 之前的附加脚本
+function extractFootExtra(rawHtml) {
+  const afterFooter = matchOne(rawHtml, /<\/footer>([\s\S]*?)<\/body>/i, '');
+  return afterFooter
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/<a\b[^>]*id=['"]peBackToTop['"][^>]*>[\s\S]*?<\/a>/gi, '')
+    .trim();
 }
 
 if (!fs.existsSync(OLD_SITE_DIR)) {
@@ -51,7 +73,11 @@ walkDir(OLD_SITE_DIR, (filePath) => {
   if (!filePath.endsWith('.html')) return;
   const relPath = path.relative(OLD_SITE_DIR, filePath).replace(/\\/g, '/');
   const slug = path.basename(filePath, '.html');
-  const rawHtml = fs.readFileSync(filePath, 'utf-8').replace(/\/kindeditor\/asp\.net\/\.\.\//g, '/kindeditor/');
+
+  // 自动修复相对路径（如 ../../css/、../js/、../img/）为根路径
+  const rawHtml = fs.readFileSync(filePath, 'utf-8')
+    .replace(/\/kindeditor\/asp\.net\/\.\.\//g, '/kindeditor/')
+    .replace(/(href|src)=(['"])(?:\.\.\/)+(css|js|img|kindeditor|rss)\//gi, '$1=$2/$3/');
 
   const title = matchOne(rawHtml, /<title>([\s\S]*?)<\/title>/i, 'Bamboo Flooring: China Factory Wholesale');
   const keywords = matchOne(rawHtml, /<meta\s+name=['"]Keywords['"]\s+content=['"]([\s\S]*?)['"]/i, '');
@@ -150,18 +176,24 @@ ${cleanHtmlIndent(descContent)}
     }
   }
 
-  // C. 处理图库详情页 -> src/data/gallery/*.md
+  // C. 处理图库详情页 -> src/data/gallery/*.md (完整保留相册专属 CSS/JS/模板与原始 HTML)
   else if (relPath.startsWith('gallery/')) {
-    const mainBody = matchOne(rawHtml, /<\/header>\s*(?:<!--\s*\/?#header\s*-->)?([\s\S]*?)<footer/i);
+    const headHtml = extractHeadExtra(rawHtml);
+    const mainHtml = matchOne(rawHtml, /<\/header>\s*(?:<!--\s*\/?#header\s*-->)?([\s\S]*?)<footer/i).trim();
+    const footHtml = extractFootExtra(rawHtml);
+    const footerType = rawHtml.includes('class="postscript') ? 'postscript' : 'simple';
+
     const md = `---
 slug: ${JSON.stringify(slug)}
 title: ${JSON.stringify(title)}
 keywords: ${JSON.stringify(keywords)}
 description: ${JSON.stringify(description)}
 bodyClass: ${JSON.stringify(bodyClass)}
+footerType: ${JSON.stringify(footerType)}
+headHtml: ${JSON.stringify(headHtml)}
+mainHtml: ${JSON.stringify(mainHtml)}
+footHtml: ${JSON.stringify(footHtml)}
 ---
-
-${cleanHtmlIndent(mainBody)}
 `;
     fs.mkdirSync('./src/data/gallery', { recursive: true });
     fs.writeFileSync(`./src/data/gallery/${slug}.md`, md, 'utf-8');
@@ -170,13 +202,13 @@ ${cleanHtmlIndent(mainBody)}
 
   // D. 处理根目录下的 products.html -> src/pages/products.astro
   else if (relPath === 'products.html') {
+    const headHtml = extractHeadExtra(rawHtml);
     const mainBody = matchOne(rawHtml, /<\/header>\s*(?:<!--\s*\/?#header\s*-->)?([\s\S]*?)<footer/i);
     const footerType = rawHtml.includes('class="postscript') ? 'postscript' : 'simple';
-    const extraCss = rawHtml.includes('ctools.css') ? ['/css/ctools.css'] : [];
-    const extraJs = rawHtml.includes('Isotope.js') ? ['/js/Isotope.js'] : [];
     const astroPage = `---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const mainHtml = ${JSON.stringify(mainBody.trim())};
+const headHtml = ${JSON.stringify(headHtml)};
 ---
 <BaseLayout
   title=${JSON.stringify(title)}
@@ -184,8 +216,7 @@ const mainHtml = ${JSON.stringify(mainBody.trim())};
   description=${JSON.stringify(description)}
   bodyClass=${JSON.stringify(bodyClass)}
   footerType="${footerType}"
-  extraCss={${JSON.stringify(extraCss)}}
-  extraJs={${JSON.stringify(extraJs)}}
+  headHtml={headHtml}
 >
   <Fragment set:html={mainHtml} />
 </BaseLayout>

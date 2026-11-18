@@ -8,6 +8,7 @@ export interface Props {
   rssUrl?: string;
   extraCss?: string[];
   extraJs?: string[];
+  headHtml?: string;
 }
 
 const {
@@ -18,7 +19,8 @@ const {
   footerType = "postscript",
   rssUrl = "/rss/products.xml",
   extraCss = [],
-  extraJs = []
+  extraJs = [],
+  headHtml = ""
 } = Astro.props;
 ---
 <!DOCTYPE html>
@@ -41,6 +43,7 @@ const {
         <script is:inline type="text/javascript" src={jsPath}></script>
     ))}
     <script is:inline type="text/javascript" src="/js/parentWindow.js"></script>
+    {headHtml && <Fragment set:html={headHtml} />}
     <!--[if lt IE 9]>
         <script src="/js/html5shim.js"></script>
     <![endif]-->
@@ -64,7 +67,6 @@ const {
                         <div id="block-block-9" class="block block-block smedia">
                             <div>
                                 <a rel="external nofollow" href="mailto:info@bambooflooringchina.com" data-rel="tooltip" data-position="bottom" class="sm-icon sm-icon-Email" data-original-title="Email" target="_blank"></a>
-                                <!-- 已修改为静态搜索页 /search.html -->
                                 <form action="/search.html" method="get">
                                     <select name="type" id="type">
                                         <option value="products">Products</option>
@@ -115,7 +117,6 @@ const {
                         <div class="block span4 last">
                             <h3>Newsletter</h3>
                             <p>To stay in touch with us for receiving the latest bamboo products, bamboo news and special promotion pricing, please sign up to our newsletter freely and securely.</p>
-                            <!-- 已修改为 Web3Forms 免费邮件订阅接口，直接发送至 info@bambooflooringchina.com -->
                             <form class="letter_form" id="newsletter-form" action="https://api.web3forms.com/submit" method="POST">
                                 <input type="hidden" name="access_key" value="81ff5088-e596-4b27-851b-cbaf5ab4a4f9" />
                                 <input type="hidden" name="subject" value="New Newsletter Subscription - Bothbest" />
@@ -204,16 +205,13 @@ const {
     <!-- /#footer -->
     <a href="#top" id="peBackToTop" class="label btt disabled"><span class="icon-chevron-up icon-white"></span></a>
 
-    <!-- 全局脚本：1. 自动将全站残留的 /search.aspx 搜索框指向 /search.html；2. 处理底部邮件无刷新订阅 -->
     <script is:inline type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
-            // 1. 将所有旧的 /search.aspx 表单（如手机端搜索框）自动改为 /search.html
             var searchForms = document.querySelectorAll('form[action*="search.aspx"]');
             for (var i = 0; i < searchForms.length; i++) {
                 searchForms[i].setAttribute('action', '/search.html');
             }
 
-            // 2. 处理首页底部 Newsletter 邮件订阅无刷新提交
             var newsletterForm = document.getElementById('newsletter-form');
             var newsletterMsg = document.getElementById('newsletter-msg');
             if (newsletterForm) {

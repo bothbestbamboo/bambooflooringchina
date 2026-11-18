@@ -18,6 +18,12 @@ const { frontmatter, Content } = post;
   description={frontmatter.description}
   bodyClass={frontmatter.bodyClass || "html front not-logged-in no-sidebars page-node"}
   footerType={frontmatter.footerType || "postscript"}
+  headHtml={frontmatter.headHtml || ""}
 >
-  <Content />
+  {frontmatter.mainHtml ? (
+    <Fragment set:html={frontmatter.mainHtml} />
+  ) : (
+    <Content />
+  )}
+  {frontmatter.footHtml && <Fragment set:html={frontmatter.footHtml} />}
 </BaseLayout>
