@@ -1,3 +1,13 @@
+---
+const newsFiles = import.meta.glob('../data/news/*.md', { eager: true });
+const sortedNews = Object.values(newsFiles).sort(
+  (a: any, b: any) => (b.frontmatter.id || 0) - (a.frontmatter.id || 0)
+);
+
+// 自动取最新 10 篇作为 Hot，第 11~20 篇作为 Latest
+const hotList = sortedNews.slice(0, 10).reverse();
+const latestList = sortedNews.slice(10, 20);
+---
 <div class="sidebar-second span3 ">
     <div id="block-block-4" class="block block-block">
         <ul class="nav nav-tabs">
@@ -11,30 +21,22 @@
         <div class="tab-content NewsSidebar">
             <div class="tab-pane" id="tab2">
                 <ul>
-                    <li><a href="/news/news-detail-442.html">How Long Before Bamboo Floor...</a></li>
-                    <li><a href="/news/news-detail-441.html">CNC Machining Bamboo Plywood...</a></li>
-                    <li><a href="/news/news-detail-440.html">Toxic Glue or Safe Resin? Wh...</a></li>
-                    <li><a href="/news/news-detail-439.html">Cupping on Bamboo Decking Bo...</a></li>
-                    <li><a href="/news/news-detail-438.html">An Engineering and Aesthetic...</a></li>
-                    <li><a href="/news/news-detail-437.html">Re-Sanding Strand Woven Bamb...</a></li>
-                    <li><a href="/news/news-detail-436.html">Can You Safely Mop a Bamboo ...</a></li>
-                    <li><a href="/news/news-detail-435.html">Sunlight Fading: How to Stop...</a></li>
-                    <li><a href="/news/news-detail-434.html">Does Radiant Underfloor Heat...</a></li>
-                    <li><a href="/news/news-detail-433.html">Joist Spacing for Bamboo Dec...</a></li>
+                    {latestList.map((n: any) => {
+                        const title = n.frontmatter.title || '';
+                        return (
+                            <li><a href={`/news/${n.frontmatter.slug}.html`}>{title.length > 28 ? title.slice(0, 28) + '...' : title}</a></li>
+                        );
+                    })}
                 </ul>
             </div>
             <div class="tab-pane active" id="tab1">
                 <ul>
-                    <li><a href="/news/news-detail-443.html">The Smudging Problem: Why Da...</a></li>
-                    <li><a href="/news/news-detail-444.html">Slippery When Wet? Evaluatin...</a></li>
-                    <li><a href="/news/news-detail-445.html">Finding Void-Free Bamboo Ply...</a></li>
-                    <li><a href="/news/news-detail-446.html">Can Bamboo Decking Handle Gr...</a></li>
-                    <li><a href="/news/news-detail-447.html">Bamboo Veneer Application: P...</a></li>
-                    <li><a href="/news/news-detail-448.html">Applying Bamboo Veneer to MD...</a></li>
-                    <li><a href="/news/news-detail-449.html">Outdoor Bamboo Decking Turni...</a></li>
-                    <li><a href="/news/news-detail-450.html">Bamboo Plywood Weight: Is It...</a></li>
-                    <li><a href="/news/news-detail-451.html">Bamboo Deck Winter Shrinkage...</a></li>
-                    <li><a href="/news/news-detail-452.html">Bamboo Decking vs. Composite...</a></li>
+                    {hotList.map((n: any) => {
+                        const title = n.frontmatter.title || '';
+                        return (
+                            <li><a href={`/news/${n.frontmatter.slug}.html`}>{title.length > 28 ? title.slice(0, 28) + '...' : title}</a></li>
+                        );
+                    })}
                 </ul>
             </div>
         </div>
