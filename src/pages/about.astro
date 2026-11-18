@@ -9,7 +9,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   footerType="postscript"
 >
     <section class="container mainContent">
-        <form action="/search.aspx" method="get" class="MobileSearch">
+        <form action="/search.html" method="get" class="MobileSearch">
             <input type="text" name="MobileSearchKeywords" id="MobileSearchKeywords" />
             <input type="submit" id="MobileSearch" name="MobileSearch" value="Search" class="form-submit" />
         </form>
@@ -47,7 +47,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
                     <h1 id="RequestAQuote">Request A Quote</h1>
                     <div id="block-system-main" class="block block-system">
+                        <!-- 已接入 Web3Forms 免费邮件接口 -->
                         <form class="user-info-from-cookie contact-form" action="https://api.web3forms.com/submit" method="POST" id="contact-site-form" accept-charset="UTF-8">
+                            <input type="hidden" name="access_key" value="81ff5088-e596-4b27-851b-cbaf5ab4a4f9" />
+                            <input type="hidden" name="subject" value="New Product Quote Inquiry - Bothbest" />
+                            <input type="hidden" name="from_name" value="Bothbest Quote Form" />
                             <div>
                                 <div class="form-item form-type-textfield form-item-name">
                                     <label for="edit-name">Name <span class="form-required" title="This field is required.">*</span></label>
@@ -55,15 +59,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                 </div>
                                 <div class="form-item form-type-textfield form-item-product">
                                     <label for="edit-product">Product <span class="form-required" title="This field is required.">*</span></label>
-                                    <input type="text" id="edit-product" name="product" value="" size="60" maxlength="255" class="form-text required" />
+                                    <input type="text" id="edit-product" name="product" value="" size="60" maxlength="255" class="form-text required" required />
                                 </div>
                                 <div class="form-item form-type-textfield form-item-mail">
                                     <label for="edit-mail">E-mail <span class="form-required" title="This field is required.">*</span></label>
-                                    <input type="email" id="edit-mail" name="mail" value="" size="60" maxlength="255" class="form-text required" required />
+                                    <input type="email" id="edit-mail" name="email" value="" size="60" maxlength="255" class="form-text required" required />
                                 </div>
                                 <div class="form-item form-type-textfield form-item-mail">
                                     <label for="edit-tel">Tel <span class="form-required" title="This field is required.">*</span></label>
-                                    <input type="text" id="edit-tel" name="tel" value="" size="60" maxlength="255" class="form-text required" />
+                                    <input type="text" id="edit-tel" name="tel" value="" size="60" maxlength="255" class="form-text required" required />
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="form-item form-type-textarea form-item-message">
@@ -73,8 +77,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                     </div>
                                 </div>
                                 <div class="form-actions form-wrapper" id="edit-actions">
-                                    <input class="btn btn-success form-submit" type="submit" id="edit-submit" name="op" value="Send" />
+                                    <input class="btn btn-success form-submit" type="submit" id="edit-submit" value="Send" />
                                 </div>
+                                <p id="quote-form-msg" style="display:none; font-weight:bold; margin-top:10px;"></p>
                             </div>
                         </form>
                     </div>
@@ -132,8 +137,38 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
     </section>
     <script is:inline type="text/javascript">
-        if (document.getElementById("edit-product")) {
+        if (document.getElementById("edit-product") && document.referrer) {
             document.getElementById("edit-product").value = document.referrer;
+        }
+        var quoteForm = document.getElementById("contact-site-form");
+        var quoteMsg = document.getElementById("quote-form-msg");
+        if (quoteForm) {
+            quoteForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+                var submitBtn = document.getElementById("edit-submit");
+                if (submitBtn) submitBtn.value = "Sending...";
+                var formData = new FormData(quoteForm);
+                fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    body: formData
+                })
+                .then(function (res) { return res.json(); })
+                .then(function (data) {
+                    if (submitBtn) submitBtn.value = "Send";
+                    if (data.success) {
+                        quoteMsg.style.display = "block";
+                        quoteMsg.style.color = "#468847";
+                        quoteMsg.textContent = "Thank you! Your inquiry has been sent successfully. We will contact you soon.";
+                        quoteForm.reset();
+                    } else {
+                        alert("Failed to send inquiry: " + (data.message || "Please check your access_key."));
+                    }
+                })
+                .catch(function () {
+                    if (submitBtn) submitBtn.value = "Send";
+                    alert("Network error, please try again later.");
+                });
+            });
         }
     </script>
 </BaseLayout>
