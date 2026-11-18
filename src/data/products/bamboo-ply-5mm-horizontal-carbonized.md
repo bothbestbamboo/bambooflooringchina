@@ -4,8 +4,8 @@ title: "Bamboo Ply Sheet Single Layer Horizontal Flat Press Carbonized  2440x122
 keywords: "bamboo panel, bamboo ply, bamboo plywood, bamboo panels"
 description: "Single layer bamboo panel, 5mm thickness, horizontal, flat press, carbonized, 1 layer. size is 2440x1220x5mm."
 pageTitle: "Bamboo Ply : 5MM : Horizontal Carbonized"
-categoryName: "Home"
-categoryUrl: "/index.html"
+categoryName: "Bamboo Panels"
+categoryUrl: "/products/product-type-BambooPanels.html"
 date: "2021-1-22 14:17:14"
 summary: "single layer bamboo panel, 5mm thickness, horizontal, carbonized, 1 layer."
 images: [{"src":"/img/ThumbPic/2021012214164492570.jpg","alt":"Bamboo Plywood 5mm","title":"Bamboo Plywood 5mm"}]

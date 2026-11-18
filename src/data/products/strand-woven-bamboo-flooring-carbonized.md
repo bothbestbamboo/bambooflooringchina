@@ -4,8 +4,8 @@ title: "Solid Strand Woven Bamboo Flooring, Carbonizedl Color, High Durability, 
 keywords: "strand woven bamboo flooring, bamboo flooring, bamboo floor"
 description: "Solid strand woven bamboo flooring in carbonized color has attractive apprearance, and is very durable and stable, the size is 1850x130x14mm."
 pageTitle: "Solid Strand Woven Bamboo Flooring: Carbonized Color"
-categoryName: "Home"
-categoryUrl: "/index.html"
+categoryName: "Bamboo Flooring"
+categoryUrl: "/products/product-type-BambooFlooring.html"
 date: "2021-1-22 7:52:25"
 summary: "solid strand woven bamboo flooring, carbonized color, 130mm width, t+g."
 images: [{"src":"/img/ThumbPic/2021012207522690217.jpg","alt":"Solid Strand Woven Bamboo Flooring","title":"Solid Strand Woven Bamboo Flooring"}]

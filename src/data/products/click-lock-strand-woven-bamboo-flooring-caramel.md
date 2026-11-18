@@ -4,8 +4,8 @@ title: "Click Lock Strand Woven Bamboo Flooring, Caramel Color, High Durability,
 keywords: "strand woven bamboo flooring, bamboo flooring, bamboo floor"
 description: "Click lock strand woven bamboo flooring in caramel color has attractive apprearance, and is very durable and stable, the size is 1850x125x14mm."
 pageTitle: "Click Lock Strand Woven Bamboo Flooring: Caramel Color"
-categoryName: "Home"
-categoryUrl: "/index.html"
+categoryName: "Bamboo Flooring"
+categoryUrl: "/products/product-type-BambooFlooring.html"
 date: "2021-1-22 8:04:05"
 summary: "click lock strand woven bamboo flooring, caramel color, unilin system, 125mm width."
 images: [{"src":"/img/ThumbPic/2021012208040783656.jpg","alt":"Click Lock Strand Woven Bamboo Flooring","title":"Click Lock Strand Woven Bamboo Flooring"}]

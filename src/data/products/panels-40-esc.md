@@ -4,8 +4,8 @@ title: "End Grain Strand Caramel Bamboo Panels | Sustainable Paneling : 2440x122
 keywords: "bamboo paneling, bamboo panels, bamboo panel"
 description: "End grain strand woven caramel bamboo panel is 2440x1220x40mm, 5 layers, fantastic strength, exotic beauty, amazing versatility, custom size."
 pageTitle: "Bamboo Panel : 40MM : ESC"
-categoryName: "Home"
-categoryUrl: "/index.html"
+categoryName: "Bamboo Panels"
+categoryUrl: "/products/product-type-BambooPanels.html"
 date: "2016-11-14 19:37:47"
 summary: "bamboo panels, 40mm thickness, end grain strand woven, caramel, 5 layers."
 images: [{"src":"/img/ThumbPic/2014120209180574481.JPG","alt":"end grand bamboo panel","title":"end grand bamboo panel"},{"src":"/img/ThumbPic/2014120209180524647.JPG","alt":"end grand bamboo panel","title":"end grand bamboo panel"},{"src":"/img/ThumbPic/2014120209180569248.JPG","alt":"end grand bamboo panel","title":"end grand bamboo panel"}]

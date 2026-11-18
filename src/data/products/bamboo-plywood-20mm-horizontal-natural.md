@@ -4,8 +4,8 @@ title: "Bamboo Plywood Laminated Sheet 3 Layers Horizontal Flat Press Natural 24
 keywords: "bamboo panel, bamboo ply, bamboo plywood, bamboo panels"
 description: "Laminated bamboo plywood sheet, 20mm thickness, horizontal flat press, natural, 3 layers. size is 2440x1220x20mm, 4x8x3/4."
 pageTitle: "Bamboo Plywood : 20MM : Horizontal Natural"
-categoryName: "Home"
-categoryUrl: "/index.html"
+categoryName: "Bamboo Panels"
+categoryUrl: "/products/product-type-BambooPanels.html"
 date: "2021-1-22 15:40:06"
 summary: "laminated bamboo plywood sheet, 15mm thickness, horizontal or flat press, natural, 3 layers cross structure, 4x8x3/4."
 images: [{"src":"/img/ThumbPic/2021012215400976772.jpg","alt":"Bamboo Plywood 20mm","title":"Bamboo Plywood 20mm"}]

@@ -4,8 +4,8 @@ title: "Solid Horizontal Natural Bamboo Flooring 960X96X15MM Premium Light Color
 keywords: "bamboo flooring, horizontal bamboo flooring, natural bamboo flooring"
 description: "premium solid bamboo flooring, horizontal grain, flat pressed structure, natural color, 960x96x15mm."
 pageTitle: "Horizontal Natural Bamboo Flooring"
-categoryName: "Home"
-categoryUrl: "/index.html"
+categoryName: "Bamboo Flooring"
+categoryUrl: "/products/product-type-BambooFlooring.html"
 date: "2021-1-22 8:13:48"
 summary: "solid bamboo flooring, horizontal, natural color, 960x96x15mm."
 images: [{"src":"/img/ThumbPic/2020121009043983977.jpg","alt":"Solid Horizontal Natural Bamboo Flooring","title":"Solid Horizontal Natural Bamboo Flooring"}]

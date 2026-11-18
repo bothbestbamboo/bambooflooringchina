@@ -4,8 +4,8 @@ title: "Flat Press Carbonized Solid Bamboo Flooring High Gloss 1020X130X15MM Che
 keywords: "solid bamboo flooring, bamboo flooring, bamboo floor"
 description: "cheap price of solid bamboo flooring, horizontal or flat press, carbonized color, high gloss, 1020x130x17mm."
 pageTitle: "Solid Bamboo Flooring High Gloss Carbonzied"
-categoryName: "Home"
-categoryUrl: "/index.html"
+categoryName: "Bamboo Flooring"
+categoryUrl: "/products/product-type-BambooFlooring.html"
 date: "2021-1-23 7:40:38"
 summary: "high gloss of solid bamboo flooring, horizontal or flat press, carbonized color, 1020x130x17mm."
 images: [{"src":"/img/ThumbPic/2021012208281913633.jpg","alt":"Flat Press Carbonized Solid Bamboo Flooring","title":"Flat Press Carbonized Solid Bamboo Flooring"}]

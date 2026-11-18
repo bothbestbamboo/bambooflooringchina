@@ -4,8 +4,8 @@ title: "Strand Woven Caramel Bamboo Panels | Sustainable Paneling : 2440x1220x12
 keywords: "bamboo paneling, bamboo panels, bamboo panel"
 description: "Strand woven caramel bamboo panel is 2440x1220x12.7mm, 3 layers, fantastic strength, exotic beauty, amazing versatility, custom size."
 pageTitle: "Bamboo Panel : 12.7MM : SC"
-categoryName: "Home"
-categoryUrl: "/index.html"
+categoryName: "Bamboo Panels"
+categoryUrl: "/products/product-type-BambooPanels.html"
 date: "2014-12-5 9:00:54"
 summary: "bamboo panels, 12.7mm thickness, strand woven, caramel color, 3 layers."
 images: [{"src":"/img/ThumbPic/201411240826221989.jpg","alt":"strand bamboo panel","title":"strand bamboo panel"},{"src":"/img/ThumbPic/2014112408262262951.JPG","alt":"strand bamboo panel","title":"strand bamboo panel"}]

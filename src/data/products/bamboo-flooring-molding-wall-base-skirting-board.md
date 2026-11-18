@@ -4,8 +4,8 @@ title: "Bamboo Flooring Molding & Accessories: Wall Base, Skirting Board, Basebo
 keywords: "bamboo flooring molding, bamboo flooring accessories, wall base, skirting board, baseboard"
 description: "Bamboo flooring molding, wall base in natural and carbonized color, skirting board in natural and carbonized color."
 pageTitle: "Bamboo Flooring Molding: Wall Base, Skirting Board, Baseboard"
-categoryName: "Home"
-categoryUrl: "/index.html"
+categoryName: "Bamboo Collection"
+categoryUrl: "/products/product-type-BambooCollection.html"
 date: "2020-12-25 14:56:40"
 summary: "Bamboo flooring molding, wall base in natural and carbonized color, skirting board in natural and carbonized color."
 images: [{"src":"/img/ThumbPic/202012251451498871.jpg","alt":"Bamboo Flooring Molding Wall Base","title":"Bamboo Flooring Molding Wall Base"}]

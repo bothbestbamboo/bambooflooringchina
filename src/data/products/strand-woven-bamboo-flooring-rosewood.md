@@ -4,8 +4,8 @@ title: "Strand Woven Bamboo Flooring, Rosewood Color, High Durability, High Dens
 keywords: "strand woven bamboo flooring, bamboo flooring, bamboo floor"
 description: "Strand woven bamboo flooring in stained rosewood color has attractive apprearance, and is very durable and stable, the size is 1850x96x14mm."
 pageTitle: "Solid Strand Woven Bamboo Flooring: Rosewood Color"
-categoryName: "Home"
-categoryUrl: "/index.html"
+categoryName: "Bamboo Flooring"
+categoryUrl: "/products/product-type-BambooFlooring.html"
 date: "2021-1-22 8:08:58"
 summary: "strand woven bamboo flooring, rosewood color, 130mm width, t+g."
 images: [{"src":"/img/ThumbPic/2021012208084463079.jpg","alt":"Strand Woven Bamboo Flooring","title":"Strand Woven Bamboo Flooring"}]

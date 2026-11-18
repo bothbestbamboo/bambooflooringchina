@@ -3,25 +3,68 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedProducts from '../../components/RelatedProducts.astro';
 
 export async function getStaticPaths() {
-  // 读取所有产品数据文件与分类页文件
   const productFiles = import.meta.glob('../../data/products/*.md', { eager: true });
   const categoryFiles = import.meta.glob('../../data/categories/*.md', { eager: true });
 
-  const productPaths = Object.values(productFiles).map((post: any) => ({
+  const allProducts = Object.values(productFiles) as any[];
+
+  const productPaths = allProducts.map((post: any) => ({
     params: { slug: post.frontmatter.slug },
-    props: { post, isCategory: false }
+    props: { post, isCategory: false, newCategoryProducts: [] }
   }));
 
-  const categoryPaths = Object.values(categoryFiles).map((post: any) => ({
-    params: { slug: post.frontmatter.slug },
-    props: { post, isCategory: true }
-  }));
+  const categoryPaths = Object.values(categoryFiles).map((catPost: any) => {
+    const targetUrl = `/products/${catPost.frontmatter.slug}.html`;
+    const rawCatHtml = catPost.rawContent ? catPost.rawContent() : '';
+
+    // 找出属于当前分类、且尚未包含在旧静态 HTML 中的新增产品
+    const newCategoryProducts = allProducts
+      .filter((p: any) => {
+        const matchCat = p.frontmatter.categoryUrl === targetUrl;
+        const alreadyInHtml = rawCatHtml.includes(`/products/${p.frontmatter.slug}.html`);
+        return matchCat && !alreadyInHtml;
+      })
+      .sort((a: any, b: any) => new Date(b.frontmatter.date || 0).getTime() - new Date(a.frontmatter.date || 0).getTime());
+
+    return {
+      params: { slug: catPost.frontmatter.slug },
+      props: { post: catPost, isCategory: true, newCategoryProducts }
+    };
+  });
 
   return [...productPaths, ...categoryPaths];
 }
 
-const { post, isCategory } = Astro.props;
+const { post, isCategory, newCategoryProducts = [] } = Astro.props;
 const { frontmatter, Content } = post;
+
+// 如果是分类页且有新增产品，自动将新产品卡片插入到分类列表最前面
+let categoryHtml = '';
+if (isCategory) {
+  categoryHtml = post.compiledContent ? await post.compiledContent() : '';
+
+  if (newCategoryProducts.length > 0) {
+    if (categoryHtml.includes('peIsotopeContainer')) {
+      const cardsHtml = newCategoryProducts.map((p: any) => {
+        const img = p.frontmatter.images?.[0]?.src || '/img/skin/logo_sml.png';
+        const title = p.frontmatter.pageTitle || p.frontmatter.title || '';
+        const summary = p.frontmatter.summary || '';
+        const url = `/products/${p.frontmatter.slug}.html`;
+        return `<div class='span3 peIsotopeItem isotope-element isotope-element-0'><div class='portfolioItem'><a href='${url}' class='peOver'><img typeof='foaf:Image' src='${img}' width='480' height='396' alt='${title}' title='${title}'/><span></span></a><div class='title'><a href='${url}'>${title}</a></div><p>${summary}</p></div></div>`;
+      }).join('');
+      categoryHtml = categoryHtml.replace(/(<div[^>]*id=['"]isotope-container['"][^>]*>)/i, `$1${cardsHtml}`);
+    } else if (categoryHtml.includes('featuredContent')) {
+      const itemsHtml = newCategoryProducts.map((p: any) => {
+        const img = p.frontmatter.images?.[0]?.src || '/img/skin/logo_sml.png';
+        const title = p.frontmatter.pageTitle || p.frontmatter.title || '';
+        const summary = p.frontmatter.summary || '';
+        const url = `/products/${p.frontmatter.slug}.html`;
+        return `<div class='span3'><img src='${img}' alt='${title}' title='${title}'/></div><div class='span3'><h4>${title}</h4><p>${summary}<a href='${url}'><span class='label'>More</span></a></p></div>`;
+      }).join('');
+      categoryHtml = categoryHtml.replace(/(<div[^>]*class=['"][^'"]*featuredContent[^'"]*['"][^>]*>)/i, `$1${itemsHtml}`);
+    }
+  }
+}
 ---
 <BaseLayout
   title={frontmatter.title}
@@ -31,12 +74,10 @@ const { frontmatter, Content } = post;
   footerType={frontmatter.footerType || "simple"}
 >
   {isCategory ? (
-    <!-- 如果是 5 个产品大类列表页 (product-type-xxx.html)，直接渲染列表内容 -->
-    <Content />
+    <Fragment set:html={categoryHtml} />
   ) : (
-    <!-- 如果是 170+ 个标准产品详情页，套用统一产品模板 -->
     <section class="container mainContent">
-        <form action="/search.aspx" method="get" class="MobileSearch">
+        <form action="/search.html" method="get" class="MobileSearch">
             <input type="text" name="MobileSearchKeywords" id="MobileSearchKeywords" />
             <input type="submit" id="MobileSearch" name="MobileSearch" value="Search" class="form-submit" />
         </form>

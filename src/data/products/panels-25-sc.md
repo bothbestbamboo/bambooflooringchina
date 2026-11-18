@@ -4,8 +4,8 @@ title: "Strand Woven Caramel Bamboo Panels | Sustainable Paneling : 2440x1220x25
 keywords: "bamboo paneling, bamboo panels, bamboo panel"
 description: "Strad woven caramel bamboo plywood is 2440x1220x25mm, 3 layers, fantastic strength, exotic beauty, amazing versatility, custom size."
 pageTitle: "Bamboo Panel : 25MM : SC"
-categoryName: "Home"
-categoryUrl: "/index.html"
+categoryName: "Bamboo Panels"
+categoryUrl: "/products/product-type-BambooPanels.html"
 date: "2016-11-16 8:48:48"
 summary: "bamboo panels, 25mm thickness, strand woven, caramel, 3 layers."
 images: [{"src":"/img/ThumbPic/2014112509140320715.jpg","alt":"strand bamboo panel","title":"strand bamboo panel"},{"src":"/img/ThumbPic/2014112509140531835.jpg","alt":"strand bamboo panel","title":"strand bamboo panel"}]

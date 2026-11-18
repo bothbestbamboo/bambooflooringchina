@@ -4,8 +4,8 @@ title: "Vertical Chocolate Bamboo Panels | Sustainable Paneling : 2440x1220x15mm
 keywords: "bamboo paneling, bamboo panels, bamboo panel"
 description: "Vertical chocolate bamboo panel is 2440x1220x15mm, 3 layers, fantastic strength, exotic beauty, amazing versatility, custom size."
 pageTitle: "Bamboo Panel : 15MM : CHO"
-categoryName: "Home"
-categoryUrl: "/index.html"
+categoryName: "Bamboo Panels"
+categoryUrl: "/products/product-type-BambooPanels.html"
 date: "2014-12-5 8:57:35"
 summary: "bamboo panels, 15mm thickness, vertical, chocolate color, 3 layers."
 images: [{"src":"/img/ThumbPic/2014112709062296461.JPG","alt":"bamboo panel","title":"bamboo panel"},{"src":"/img/ThumbPic/2014112709062275196.JPG","alt":"bamboo panel","title":"bamboo panel"}]

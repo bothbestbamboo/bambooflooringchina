@@ -4,8 +4,8 @@ title: "Bamboo Panels Laminated 2 Layers Horizontal Flat Press Natural 2440x1220
 keywords: "bamboo panel, bamboo ply, bamboo plywood, bamboo panels"
 description: "Laminated bamboo panels, 10mm thickness, horizontal flat press, natural, 2 layers. size is 2440x1220x10mm, 4x8x1/2."
 pageTitle: "Bamboo Panel : 10MM : Horizontal Natural"
-categoryName: "Home"
-categoryUrl: "/index.html"
+categoryName: "Bamboo Panels"
+categoryUrl: "/products/product-type-BambooPanels.html"
 date: "2021-1-22 15:29:39"
 summary: "laminated bamboo panel, 10mm thickness, horizontal, natural, 2 layers, 4x8x1/2."
 images: [{"src":"/img/ThumbPic/2021012214295012269.jpg","alt":"Bamboo Panel 10mm","title":"Bamboo Panel 10mm"}]

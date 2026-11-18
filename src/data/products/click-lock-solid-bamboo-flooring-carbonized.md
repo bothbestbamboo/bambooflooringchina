@@ -4,8 +4,8 @@ title: "Click Lock Flat Press Carbonized Solid Bamboo Flooring 1030X128X15MM Che
 keywords: "solid bamboo flooring, bamboo flooring, bamboo floor"
 description: "click lock of solid bamboo flooring, horizontal or flat press, carbonized color, 1030x128x15mm."
 pageTitle: "Bamboo Flooring Click Lock Carbonized"
-categoryName: "Home"
-categoryUrl: "/index.html"
+categoryName: "Bamboo Flooring"
+categoryUrl: "/products/product-type-BambooFlooring.html"
 date: "2021-1-22 19:13:26"
 summary: "click lock solid bamboo flooring, horizontal or flat press, carbonized color, 1030x128x15mm."
 images: [{"src":"/img/ThumbPic/2021012208385568119.jpg","alt":"Bamboo Flooring Click Lock Carbonized","title":"Bamboo Flooring Click Lock Carbonized"}]

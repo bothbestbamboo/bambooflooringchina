@@ -4,8 +4,8 @@ title: "Horizontal Natural Bamboo Panels | Sustainable Paneling : 2440x1220x6.35
 keywords: "bamboo paneling, bamboo panels, bamboo panel"
 description: "Horizontal natural bamboo panel is 2440x1220x6.35mm, 3 layers, fantastic strength, exotic beauty, amazing versatility, custom size."
 pageTitle: "Bamboo Panel : 6.35MM : HN"
-categoryName: "Home"
-categoryUrl: "/index.html"
+categoryName: "Bamboo Panels"
+categoryUrl: "/products/product-type-BambooPanels.html"
 date: "2016-11-12 17:21:33"
 summary: "bamboo panels, 6.35mm thickness, horizontal, natural, 3 layers."
 images: [{"src":"/img/ThumbPic/2015061808423268396.jpg","alt":"bamboo panels","title":"bamboo panels"},{"src":"/img/ThumbPic/2015061808423223796.jpg","alt":"bamboo panels","title":"bamboo panels"}]

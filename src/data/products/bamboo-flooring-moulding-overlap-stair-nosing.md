@@ -4,8 +4,8 @@ title: "Bamboo Flooring Moulding & Accessories: Overlap Stair Nosing, Stair Nose
 keywords: "bamboo flooring moulding, bamboo flooring accessories, overlap stair nosing, stair nose"
 description: "Bamboo flooring moulding, overlap stair nosing in natural and carbonized color, stair nose in natural and carbonized color."
 pageTitle: "Bamboo Flooring Moulding: Overlap Stair Nosing, Stair Nose"
-categoryName: "Home"
-categoryUrl: "/index.html"
+categoryName: "Bamboo Collection"
+categoryUrl: "/products/product-type-BambooCollection.html"
 date: "2020-12-25 14:54:21"
 summary: "Bamboo flooring molding, overlap stair nosing in natural and carbonized color, stair nose in natural and carbonized color."
 images: [{"src":"/img/ThumbPic/2020122514380379314.jpg","alt":"Bamboo Flooring Stair Nose","title":"Bamboo Flooring Stair Nose"}]

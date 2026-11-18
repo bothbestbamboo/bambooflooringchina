@@ -4,8 +4,8 @@ title: "Horizontal Caramel Bamboo Panels | Sustainable Paneling : 2440x1220x12.7
 keywords: "bamboo paneling, bamboo panels, bamboo panel"
 description: "Horizontal caramel bamboo panel is 2440x1220x12.7mm, 3 layers, fantastic strength, exotic beauty, amazing versatility, custom size."
 pageTitle: "Bamboo Panel : 12.7MM : HC"
-categoryName: "Home"
-categoryUrl: "/index.html"
+categoryName: "Bamboo Panels"
+categoryUrl: "/products/product-type-BambooPanels.html"
 date: "2014-12-5 9:01:46"
 summary: "bamboo panels, 12.7mm thickness, horizontal, caramel color, 3 layers."
 images: [{"src":"/img/ThumbPic/201411240819245205.jpg","alt":"bamboo panel","title":"bamboo panel"},{"src":"/img/ThumbPic/2014112408192419489.JPG","alt":"bamboo panel","title":"bamboo panel"}]

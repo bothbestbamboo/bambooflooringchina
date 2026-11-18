@@ -4,8 +4,8 @@ title: "Horizontal Caramel Bamboo Panels | Sustainable Paneling : 2440x1220x20mm
 keywords: "bamboo paneling, bamboo panels, bamboo panel"
 description: "Horizontal caramel bamboo plywood is 2440x1220x20mm, 3 layers, fantastic strength, exotic beauty, amazing versatility, custom size."
 pageTitle: "Bamboo Panel : 20MM : HC"
-categoryName: "Home"
-categoryUrl: "/index.html"
+categoryName: "Bamboo Panels"
+categoryUrl: "/products/product-type-BambooPanels.html"
 date: "2020-12-28 14:40:54"
 summary: "bamboo panels, 20mm thickness, horizontal, caramel color, 3 layers."
 images: [{"src":"/img/ThumbPic/2020080410231559768.jpg","alt":"20mm bamboo panel","title":"20mm bamboo panel"}]

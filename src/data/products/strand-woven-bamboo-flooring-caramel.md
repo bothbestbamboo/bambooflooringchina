@@ -4,8 +4,8 @@ title: "Strand Woven Bamboo Flooring, Caramel Color, High Durability, High Densi
 keywords: "strand woven bamboo flooring, bamboo flooring, bamboo floor"
 description: "Strand woven bamboo flooring in caramel color has attractive apprearance, and is very durable and stable, the size is 1850x96x14mm."
 pageTitle: "Strand Woven Bamboo Flooring: Caramel Color"
-categoryName: "Home"
-categoryUrl: "/index.html"
+categoryName: "Bamboo Flooring"
+categoryUrl: "/products/product-type-BambooFlooring.html"
 date: "2021-1-22 7:42:09"
 summary: "strand woven bamboo flooring, caramel color, 96mm width, t+g."
 images: [{"src":"/img/ThumbPic/2021012207421374634.jpg","alt":"Strand Woven Bamboo Flooring","title":"Strand Woven Bamboo Flooring"}]

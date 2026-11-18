@@ -4,8 +4,8 @@ title: "Horizontal Natural Bamboo Panels | Sustainable Paneling : 2440x1220x10mm
 keywords: "bamboo paneling, bamboo panels, bamboo panel"
 description: "Horizontal natural bamboo panel is 2440x1220x10mm, 2 layers, fantastic strength, exotic beauty, amazing versatility, custom size."
 pageTitle: "Bamboo Panel : 10MM : HN"
-categoryName: "Home"
-categoryUrl: "/index.html"
+categoryName: "Bamboo Panels"
+categoryUrl: "/products/product-type-BambooPanels.html"
 date: "2020-12-28 14:41:53"
 summary: "bamboo panels, 10mm thickness, horizontal, natural color, 2 layers."
 images: [{"src":"/img/ThumbPic/2020090208453930394.jpg","alt":"10mm bamboo plywood","title":"10mm bamboo plywood"}]

@@ -129,7 +129,7 @@ ${cleanHtmlIndent(mainBody)}
       catCount++;
     } else {
       const pageTitle = cleanText(matchOne(rawHtml, /<h1[^>]*id=['"]page-title['"][^>]*>([\s\S]*?)<\/h1>/i, title));
-      const catMatch = rawHtml.match(/<ul class=["']breadcrumb["']>[\s\S]*?<li>\s*<a href=['"]([^'"]+)['"]>([\s\S]*?)<\/a>/i);
+      const catMatch = rawHtml.match(/<ul class=["']breadcrumb["']>[\s\S]*?<li>[\s\S]*?<\/li>\s*<li>\s*<a href=['"]([^'"]+)['"]>([\s\S]*?)<\/a>/i);
       const categoryUrl = catMatch ? catMatch[1] : '/products/product-type-BambooFlooring.html';
       const categoryName = catMatch ? cleanText(catMatch[2]) : 'Bamboo Flooring';
       const date = cleanText(matchOne(rawHtml, /<div class=['"]subtitle['"]>([\s\S]*?)<\/div>/i, ''));

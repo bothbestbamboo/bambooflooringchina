@@ -4,8 +4,8 @@ title: "Vertical Natural Bamboo Panels | Sustainable Paneling : 2440x1220x6.35mm
 keywords: "bamboo paneling, bamboo panels, bamboo panel"
 description: "Vertical natural bamboo panel is 2440x1220x6.35mm, 3 layers, fantastic strength, exotic beauty, amazing versatility, custom size."
 pageTitle: "Bamboo Panel : 6.35MM : VN"
-categoryName: "Home"
-categoryUrl: "/index.html"
+categoryName: "Bamboo Panels"
+categoryUrl: "/products/product-type-BambooPanels.html"
 date: "2016-11-12 17:24:26"
 summary: "bamboo panels, 6.35mm thickness, vertical, natural, 3 layers."
 images: [{"src":"/img/ThumbPic/2015061808363964943.jpg","alt":"bamboo panels","title":"bamboo panels"},{"src":"/img/ThumbPic/2015061808363920343.jpg","alt":"bamboo panels","title":"bamboo panels"}]
