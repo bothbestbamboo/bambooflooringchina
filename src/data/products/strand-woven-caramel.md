@@ -6,7 +6,7 @@ description: "Caramel strand woven bamboo flooring is natural color, attractive 
 pageTitle: "Strand Woven : Solid : Caramel"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-12-2 15:38:15"
+date: "2026-11-10 15:38:15"
 summary: "strand woven bamboo flooring, caramel color, 96mm width, t+g."
 images: [{"src":"/img/ThumbPic/2014103018541460313.jpg","alt":"strand woven bamboo flooring","title":"strand woven bamboo flooring"},{"src":"/img/ThumbPic/2014103018541451592.jpg","alt":"strand woven bamboo flooring","title":"strand woven bamboo flooring"},{"src":"/img/ThumbPic/2014103018541526510.jpg","alt":"strand woven bamboo flooring","title":"strand woven bamboo flooring"},{"src":"/img/ThumbPic/2014103018541565546.jpg","alt":"strand woven bamboo flooring","title":"strand woven bamboo flooring"},{"src":"/img/ThumbPic/2014103018541520946.jpg","alt":"strand woven bamboo flooring","title":"strand woven bamboo flooring"}]
 attributes: ["Item No: BB-ZZ-0502","Grain: Strand Woven","Color: Natural","T + G: Standard","Size: 1850 x 96 x 14mm"]

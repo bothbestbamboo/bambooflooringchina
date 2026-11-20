@@ -6,7 +6,7 @@ description: "Gold brown strand woven bamboo flooring is wide plank, stained col
 pageTitle: "Strand Woven : Solid : Brown"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-12-3 15:07:15"
+date: "2026-11-10 15:07:15"
 summary: "strand woven bamboo flooring, gold brown, 96mm width, t+g."
 images: [{"src":"/img/ThumbPic/2014110910400179953.jpg","alt":"stained strand bamoo flooring","title":"stained strand bamoo flooring"},{"src":"/img/ThumbPic/2014110910400165669.jpg","alt":"stained strand bamoo flooring","title":"stained strand bamoo flooring"},{"src":"/img/ThumbPic/2014110910400140587.jpg","alt":"stained strand bamoo flooring","title":"stained strand bamoo flooring"}]
 attributes: ["Item No: BB-ZZ-0515","Grain: Strand Woven","Color: Brown","T+G: Standard","Size: 1850 x 96 x 14mm"]

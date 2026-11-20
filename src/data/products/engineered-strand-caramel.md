@@ -6,7 +6,7 @@ description: "Caramel engineered strand woven bamboo flooring is strand woven cr
 pageTitle: "Engineered Strand Woven : Caramel"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-12-2 15:36:00"
+date: "2026-11-10 15:36:00"
 summary: "strand woven bamboo flooring, engineered, caramel, 142mm width, t+g."
 images: [{"src":"/img/ThumbPic/2014103019200619571.jpg","alt":"engineered strand woven bamboo flooring","title":"engineered strand woven bamboo flooring"},{"src":"/img/ThumbPic/2014103019200614007.jpg","alt":"engineered strand woven bamboo flooring","title":"engineered strand woven bamboo flooring"},{"src":"/img/ThumbPic/2014103019200669405.jpg","alt":"engineered strand woven bamboo flooring","title":"engineered strand woven bamboo flooring"},{"src":"/img/ThumbPic/201410301920068443.jpg","alt":"engineered strand woven bamboo flooring","title":"engineered strand woven bamboo flooring"}]
 attributes: ["Item No: BB-ZF-0320","Grain: Strand Woven","Color: Caramel","T+G: Standard","Size: 1850 x 142 x 14mm"]

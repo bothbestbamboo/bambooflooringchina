@@ -6,7 +6,7 @@ description: "classical solid bamboo flooring, horizontal or flat pressed, carbo
 pageTitle: "Horizontal Carbonized Bamboo Flooring"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2021-1-22 8:12:28"
+date: "2026-11-10 8:12:28"
 summary: "solid bamboo flooring, horizontal or flat pressed, carbonized color, 960x96x15mm."
 images: [{"src":"/img/ThumbPic/2020121009001533538.jpg","alt":"Solid Horizontal Carbonized Bamboo Flooring","title":"Solid Horizontal Carbonized Bamboo Flooring"}]
 attributes: ["Item No: E8802","Grain: Horizontal","Color: Carbonized","T + G: Standard","Size: 960 x 96 x 15mm"]

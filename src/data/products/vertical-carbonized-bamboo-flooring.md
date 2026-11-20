@@ -6,7 +6,7 @@ description: "High stability of solid bamboo flooring, vertical grain, side pres
 pageTitle: "Vertical Carbonized Bamboo Flooring"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2021-1-22 8:14:43"
+date: "2026-11-10 8:14:43"
 summary: "solid bamboo flooring, vertical grain, carbonized color, 960x96x15mm."
 images: [{"src":"/img/ThumbPic/2020121009164971591.jpg","alt":"Solid Vertical Carbonized Bamboo Flooring","title":"Solid Vertical Carbonized Bamboo Flooring"}]
 attributes: ["Item No: E8806","Grain: Vertical","Color: Carbonized","T + G: Standard","Size: 960 x 96 x 15mm"]

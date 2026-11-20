@@ -6,7 +6,7 @@ description: "Bamboo mats have wide varieties of styles and colors, green choice
 pageTitle: "Bamboo Mat : Caramel : 17mm Lamella"
 categoryName: "Bamboo Collection"
 categoryUrl: "/products/product-type-BambooCollection.html"
-date: "2016-12-3 14:51:09"
+date: "2026-11-10 14:51:09"
 summary: "bamboo mats, caramel color, 17mm bamboo lamella width, no thread, 10m per roll."
 images: [{"src":"/img/ThumbPic/201410311853284620.jpg","alt":"bamboo mats","title":"bamboo mats"}]
 attributes: ["Item No: BB-BM-17C","Color: Caramel","Lamella Width: 17mm","Thread: No"]

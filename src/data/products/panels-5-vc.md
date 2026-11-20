@@ -6,7 +6,7 @@ description: "Vertical caramel bamboo panel is 2440x1220x5mm, 1 layer, fantastic
 pageTitle: "Bamboo Panel : 5MM : VC"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2020-12-28 14:43:39"
+date: "2026-11-10 14:43:39"
 summary: "bamboo panels, 5mm thickness, vertical, caramel, 1 layer."
 images: [{"src":"/img/ThumbPic/2020080409455023412.jpg","alt":"5mm bamboo plywood sheet","title":"5mm bamboo plywood sheet"}]
 attributes: ["Item No: BB-BC-5VC","Grain: Vertical","Color: Caramel","Layers: 1 Ply","Size: 2440 x 1220 x 5mm"]

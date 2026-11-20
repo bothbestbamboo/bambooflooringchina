@@ -6,7 +6,7 @@ description: "premium solid bamboo flooring, horizontal grain, flat pressed stru
 pageTitle: "Horizontal Natural Bamboo Flooring"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2021-1-22 8:13:48"
+date: "2026-11-10 8:13:48"
 summary: "solid bamboo flooring, horizontal, natural color, 960x96x15mm."
 images: [{"src":"/img/ThumbPic/2020121009043983977.jpg","alt":"Solid Horizontal Natural Bamboo Flooring","title":"Solid Horizontal Natural Bamboo Flooring"}]
 attributes: ["Item No: E8803","Grain: Horizontal","Color: Natural","T + G: Standard","Size: 960 x 96 x 15mm"]

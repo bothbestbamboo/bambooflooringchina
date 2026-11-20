@@ -6,7 +6,7 @@ description: "Vertical natural bamboo panel is 2440x1220x20mm, 1 layer, fantasti
 pageTitle: "Bamboo Panel : 20MM : VNS"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2014-12-8 15:19:12"
+date: "2026-11-10 15:19:12"
 summary: "bamboo panels, 20mm thickness, vertical, natural, 1 layer."
 images: [{"src":"/img/ThumbPic/2014102918360511443.JPG","alt":"bamboo panels","title":"bamboo panels"},{"src":"/img/ThumbPic/2014120815185848600.JPG","alt":"bamboo panels","title":"bamboo panels"}]
 attributes: ["Item No: BB-BC-20VNS","Grain: Vertical","Color: Natural","Layers: 1 Ply","Size: 2440 x 1220 x 20mm"]

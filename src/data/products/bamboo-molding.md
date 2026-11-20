@@ -6,7 +6,7 @@ description: "Bamboo molding is available in all grains, colors, matching with b
 pageTitle: "Bamboo Molding : Trim : Skirting"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2014-10-31 19:17:24"
+date: "2026-11-10 19:17:24"
 summary: "bamboo molding includes skirting board, quarter round, t-molding, threshold."
 images: [{"src":"/img/ThumbPic/2014103119164910656.jpg","alt":"bamboo molding","title":"bamboo molding"}]
 attributes: []

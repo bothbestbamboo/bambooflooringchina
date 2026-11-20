@@ -6,7 +6,7 @@ description: "Vertical bamboo decking is vertically laminated bamboo deck board,
 pageTitle: "Bamboo Decking : Profile E : Carbonized"
 categoryName: "Bamboo Decking"
 categoryUrl: "/products/product-type-BambooDecking.html"
-date: "2020-12-17 8:20:41"
+date: "2026-11-10 8:20:41"
 summary: "bamboo decking, vertical, small ribbon, grooves on both edges, carbonized."
 images: [{"src":"/img/ThumbPic/2014110110115682223.jpg","alt":"bamboo decking","title":"bamboo decking"},{"src":"/img/ThumbPic/2014110110115657141.jpg","alt":"bamboo decking","title":"bamboo decking"},{"src":"/img/ThumbPic/2014110110115612541.jpg","alt":"bamboo decking","title":"bamboo decking"}]
 attributes: ["Item No: BB-D1408","Material: Vertical Bamboo","Color: Carbonized","Size: 2480 x 140 x 20 mm"]

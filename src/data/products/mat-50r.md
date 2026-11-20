@@ -6,7 +6,7 @@ description: "Bamboo mats have wide varieties of styles and colors, green choice
 pageTitle: "Bamboo Mat : Red : 50mm Techwood"
 categoryName: "Bamboo Collection"
 categoryUrl: "/products/product-type-BambooCollection.html"
-date: "2016-12-3 14:47:24"
+date: "2026-11-10 14:47:24"
 summary: "bamboo mats, red color, 50mm techwood lamella width, no thread, 5m per roll."
 images: [{"src":"/img/ThumbPic/2014103118445938356.jpg","alt":"bamboo mats","title":"bamboo mats"}]
 attributes: ["Item No: BB-BM-50R","Color: Red","Lamella Width: 50mm","Material: Techwood","Thread: No"]

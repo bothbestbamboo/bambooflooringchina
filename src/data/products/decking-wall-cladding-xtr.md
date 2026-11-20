@@ -6,7 +6,7 @@ description: "Bamboo wall cladding is suitable for exterior decoration and appli
 pageTitle: "Bamboo Wall Cladding : Xtr"
 categoryName: "Bamboo Decking"
 categoryUrl: "/products/product-type-BambooDecking.html"
-date: "2016-11-30 8:32:32"
+date: "2026-11-10 8:32:32"
 summary: "bamboo wall cladding, xtr color, wall sliding."
 images: [{"src":"/img/ThumbPic/2014110109593924023.JPG","alt":"Bamboo Wall Cladding","title":"Bamboo Wall Cladding"}]
 attributes: ["Item No: BB-D1412","Color: Xtr","Size: 1860 x 100 x 8mm","Size: 1860 x 100 x 10mm","Size: 1860 x 100 x 12mm"]

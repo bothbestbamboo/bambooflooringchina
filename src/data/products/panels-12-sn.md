@@ -6,7 +6,7 @@ description: "Strand woven natural bamboo panel is 2440x1220x12.7mm, 3 layers, f
 pageTitle: "Bamboo Panel : 12.7MM : SN"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2014-12-5 9:01:07"
+date: "2026-11-10 9:01:07"
 summary: "bamboo panels, 12.7mm thickness, strand woven, natural color, 3 layers."
 images: [{"src":"/img/ThumbPic/2014112408252278625.jpg","alt":"strand bamboo panel","title":"strand bamboo panel"},{"src":"/img/ThumbPic/2014112408252239589.JPG","alt":"strand bamboo panel","title":"strand bamboo panel"}]
 attributes: ["Item No: BB-BC-12SN","Grain: Strand Woven","Color: Natural","Layers: 3 Layers, Vertical Core","Size: 2440 x 1220 x 12.7mm"]

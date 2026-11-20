@@ -6,7 +6,7 @@ description: "Vertical natural bamboo flooring is in plain pressed, light color,
 pageTitle: "Solid : Vertical : Natural"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2020-12-17 8:19:20"
+date: "2026-11-10 8:19:20"
 summary: "solid bamboo flooring, vertical or side pressed, natural color, 960x96x15mm."
 images: [{"src":"/img/ThumbPic/2014103011181436894.jpg","alt":"solid bamboo flooring","title":"solid bamboo flooring"},{"src":"/img/ThumbPic/2014103011181411812.jpg","alt":"solid bamboo flooring","title":"solid bamboo flooring"},{"src":"/img/ThumbPic/2014103011181467210.jpg","alt":"solid bamboo flooring","title":"solid bamboo flooring"},{"src":"/img/ThumbPic/2014103011181422610.jpg","alt":"solid bamboo flooring","title":"solid bamboo flooring"},{"src":"/img/ThumbPic/2014103011181542128.jpg","alt":"solid bamboo flooring","title":"solid bamboo flooring"}]
 attributes: ["Item No: BB-SZ-0504","Grain: Vertical","Color: Natural","T + G: Standard","Size: 960 x 96 x 15mm"]

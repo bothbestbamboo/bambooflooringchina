@@ -6,7 +6,7 @@ description: "Laminated bamboo panels, 10mm thickness, horizontal flat press, na
 pageTitle: "Bamboo Panel : 10MM : Horizontal Natural"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2021-1-22 15:29:39"
+date: "2026-11-10 15:29:39"
 summary: "laminated bamboo panel, 10mm thickness, horizontal, natural, 2 layers, 4x8x1/2."
 images: [{"src":"/img/ThumbPic/2021012214295012269.jpg","alt":"Bamboo Panel 10mm","title":"Bamboo Panel 10mm"}]
 attributes: ["Item No: E7712","Grain: Horizontal","Color: Natural","Layers: 2 Ply","Size: 2440 x 1220 x 10mm"]

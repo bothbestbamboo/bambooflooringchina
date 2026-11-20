@@ -6,7 +6,7 @@ description: "Bamboo lumber is laminated by bamboo strips laid-up lengthwise, su
 pageTitle: "Bamboo Lumber : Vertical : Multi Layers"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2014-11-19 10:45:07"
+date: "2026-11-10 10:45:07"
 summary: "bamboo lumber, vertical, multiple layers laminated, natural+caramel color"
 images: [{"src":"/img/ThumbPic/2014103114240375511.jpg","alt":"bamboo lumber","title":"bamboo lumber"},{"src":"/img/ThumbPic/2014103114240330911.jpg","alt":"bamboo lumber","title":"bamboo lumber"},{"src":"/img/ThumbPic/2014103114240369947.jpg","alt":"bamboo lumber","title":"bamboo lumber"},{"src":"/img/ThumbPic/2014103114240325347.jpg","alt":"bamboo lumber","title":"bamboo lumber"},{"src":"/img/ThumbPic/2014103114240380745.jpg","alt":"bamboo lumber","title":"bamboo lumber"}]
 attributes: ["Item No: BB-BL-0201","Grain: Vertical","Color: Caramel","Size: Customized"]

@@ -6,7 +6,7 @@ description: "Horizontal caramel bamboo panel is 2440x1220x30mm, 3 layers, fanta
 pageTitle: "Bamboo Panel : 30MM : HC"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2016-11-14 19:40:17"
+date: "2026-11-10 19:40:17"
 summary: "bamboo panels, 30mm thickness, horizontal, caramel, 3 layers."
 images: [{"src":"/img/ThumbPic/2014102918404447062.JPG","alt":"bamboo panels","title":"bamboo panels"},{"src":"/img/ThumbPic/2014112416301021557.JPG","alt":"bamboo panels","title":"bamboo panels"}]
 attributes: ["Item No: BB-BC-30HC","Grain: Horizontal","Color: Caramel","Layers: 3-ply, vertical core","Size: 2440 x 1220 x 30mm"]

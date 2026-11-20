@@ -6,7 +6,7 @@ description: "Bamboo mats have wide varieties of styles and colors, green choice
 pageTitle: "Bamboo Mat : Tiger : 50mm Lamella"
 categoryName: "Bamboo Collection"
 categoryUrl: "/products/product-type-BambooCollection.html"
-date: "2016-12-3 14:48:08"
+date: "2026-11-10 14:48:08"
 summary: "bamboo mats, tiger color, 50mm lamella width, no thread, 5m per roll."
 images: [{"src":"/img/ThumbPic/201410311845274154.jpg","alt":"bamboo mats","title":"bamboo mats"}]
 attributes: ["Item No: BB-BM-50T","Color: Tiger","Lamella Width: 50mm","Thread: No"]

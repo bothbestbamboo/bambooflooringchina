@@ -6,7 +6,7 @@ description: "Bamboo mats have wide varieties of styles and colors, green choice
 pageTitle: "Bamboo Mat : Walnut : 11mm Lamella"
 categoryName: "Bamboo Collection"
 categoryUrl: "/products/product-type-BambooCollection.html"
-date: "2016-12-3 14:48:27"
+date: "2026-11-10 14:48:27"
 summary: "bamboo mats, walnut color, 11mm bamboo lamella width, no thread, 15m per roll."
 images: [{"src":"/img/ThumbPic/2014103118491590848.jpg","alt":"bamboo mats","title":"bamboo mats"}]
 attributes: ["Item No: BB-BM-11W","Color: Walnut","Lamella Width: 11mm","Thread: No"]

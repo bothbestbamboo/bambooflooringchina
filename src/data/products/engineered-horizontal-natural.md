@@ -6,7 +6,7 @@ description: "Horizontal natural engineered bamboo flooring is 3 layers, cross l
 pageTitle: "Engineered : Horizontal : Natural"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-11-16 8:52:51"
+date: "2026-11-10 8:52:51"
 summary: "floating engineered bamboo flooring, horizontal, natural, 1900x190x14mm."
 images: [{"src":"/img/ThumbPic/201410311449216143.jpg","alt":"engineered bamboo flooring","title":"engineered bamboo flooring"},{"src":"/img/ThumbPic/2014103114492181059.jpg","alt":"engineered bamboo flooring","title":"engineered bamboo flooring"},{"src":"/img/ThumbPic/2014103114492136459.jpg","alt":"engineered bamboo flooring","title":"engineered bamboo flooring"}]
 attributes: ["Item No: BB-FH-0301","Grain: Horizonal","Color: Natural","T + G: Standard","Size: 1900 x 190 x 14mm"]

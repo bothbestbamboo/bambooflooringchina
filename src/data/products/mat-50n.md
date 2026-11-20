@@ -6,7 +6,7 @@ description: "Bamboo mats have wide varieties of styles and colors, green choice
 pageTitle: "Bamboo Mat : Natual : 50mm Techwood"
 categoryName: "Bamboo Collection"
 categoryUrl: "/products/product-type-BambooCollection.html"
-date: "2016-12-3 14:46:51"
+date: "2026-11-10 14:46:51"
 summary: "bamboo mats, natural color, 50mm techwood lamella width, 5m per roll."
 images: [{"src":"/img/ThumbPic/2014103118472859175.jpg","alt":"bamboo mats","title":"bamboo mats"}]
 attributes: ["Item No: BB-BM-50N","Color: Natural","Lamella Width: 50mm","Material: Techwood","Thread: No"]

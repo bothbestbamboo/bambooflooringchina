@@ -6,7 +6,7 @@ description: "Caramel click strand woven bamboo flooring is caramel color, fast,
 pageTitle: "Strand Woven : Click : Caramel"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-12-3 14:59:42"
+date: "2026-11-10 14:59:42"
 summary: "strand woven bamboo flooring, caramel color, 125mm width, unilin click."
 images: [{"src":"/img/ThumbPic/2014110114263961000.jpg","alt":"click strand bamboo flooring","title":"click strand bamboo flooring"},{"src":"/img/ThumbPic/2014110114263935917.jpg","alt":"click strand bamboo flooring","title":"click strand bamboo flooring"},{"src":"/img/ThumbPic/2014110114263910835.jpg","alt":"click strand bamboo flooring","title":"click strand bamboo flooring"},{"src":"/img/ThumbPic/2014110114263946715.jpg","alt":"click strand bamboo flooring","title":"click strand bamboo flooring"}]
 attributes: ["Item No: BB-ZZ-0505","Grain: Strand Woven","Color: Caramel","T+G: Unilin Click","Size: 1850 x 125 x 14mm"]

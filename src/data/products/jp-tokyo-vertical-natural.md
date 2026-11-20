@@ -6,7 +6,7 @@ description: "縦目ナチュラル竹フローリングは、高圧成形で仕
 pageTitle: "縦目ナチュラル竹フローリング"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2025-12-5 15:52:02"
+date: "2026-11-10 15:52:02"
 summary: "縦目ナチュラル竹フローリングは、高圧成形で仕上げた耐久性と自然な風合いが魅力の床材。豊富なサイズ展開で住宅から商業空間まで対応。環境に優しく、安定性と美しさを兼ね備えた高品質フローリングです。"
 images: [{"src":"/img/ThumbPic/202512051535403899.jpg","alt":"竹フローリング","title":"竹フローリング"}]
 attributes: ["Item No: E8815","Grain: Vertical","Color: Natural","Size: 960 x 96 x 15mm"]

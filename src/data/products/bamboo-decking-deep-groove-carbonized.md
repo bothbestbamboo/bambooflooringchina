@@ -6,7 +6,7 @@ description: "Bamboo decking, standard carbonized dark, deep groove,  exterior a
 pageTitle: "Bamboo Decking : Deep Groove : Standard Carbonized"
 categoryName: "Bamboo Decking"
 categoryUrl: "/products/product-type-BambooDecking.html"
-date: "2021-1-22 9:34:14"
+date: "2026-11-10 9:34:14"
 summary: "bamboo decking, deep groove, pre-oiled on both sides, standard carbonized, grooves on both edges."
 images: [{"src":"/img/ThumbPic/2021012209341626602.jpg","alt":"Outdoor Bamboo Decking","title":"Outdoor Bamboo Decking"}]
 attributes: ["Item No: E9905","Profile: Deep Groove","Color: Standard Carbonized","Surface: Pre-oiled","Size: 1860 x 140 x 20mm"]

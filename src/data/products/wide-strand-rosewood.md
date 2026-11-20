@@ -6,7 +6,7 @@ description: "Rosewood strand woven bamboo flooring is wide plank, stained color
 pageTitle: "Strand Woven : Wide : Rosewood"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-12-3 15:00:57"
+date: "2026-11-10 15:00:57"
 summary: "strand woven bamboo flooring, rosewood, 130mm width, t+g."
 images: [{"src":"/img/ThumbPic/2014110315233178839.jpg","alt":"strand woven bamboo flooring","title":"strand woven bamboo flooring"},{"src":"/img/ThumbPic/2014110315233145036.jpg","alt":"strand woven bamboo flooring","title":"strand woven bamboo flooring"},{"src":"/img/ThumbPic/2014110315233119954.jpg","alt":"strand woven bamboo flooring","title":"strand woven bamboo flooring"}]
 attributes: ["Item No: BB-ZZ-0514","Grain: Strand Woven","Color: Rosewood","T+G: Standard","Size: 1850 x 130 x 14mm"]

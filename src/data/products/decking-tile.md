@@ -6,7 +6,7 @@ description: "Bamboo tile is cut and milled from outdoor strand woven bamboo blo
 pageTitle: "Bamboo Tile : Strand Woven : Caramel"
 categoryName: "Bamboo Decking"
 categoryUrl: "/products/product-type-BambooDecking.html"
-date: "2014-12-23 17:14:07"
+date: "2026-11-10 17:14:07"
 summary: "bamboo tile, strand woven, carbonized color, diy installation, excellent bathroom flooring"
 images: [{"src":"/img/ThumbPic/201411011000237951.jpg","alt":"bamboo tile","title":"bamboo tile"},{"src":"/img/ThumbPic/2014110110002382867.jpg","alt":"bamboo tile","title":"bamboo tile"}]
 attributes: ["Item No: BB-D1409","Color: Carbonized","Size: 302 x 302 x 18mm+13mm"]

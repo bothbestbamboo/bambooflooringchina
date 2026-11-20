@@ -6,7 +6,7 @@ description: "Strad woven caramel bamboo panel is 2440x1220x20mm, 3 layers, fant
 pageTitle: "Bamboo Panel : 20MM : SC"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2014-12-5 8:52:54"
+date: "2026-11-10 8:52:54"
 summary: "bamboo panels, 20mm thickness, strand woven, caramel, 3 layers."
 images: [{"src":"/img/ThumbPic/2014112614315029141.JPG","alt":"strand bamboo panel","title":"strand bamboo panel"},{"src":"/img/ThumbPic/2014112614315054223.JPG","alt":"strand bamboo panel","title":"strand bamboo panel"}]
 attributes: ["Item No: BB-BC-20SC","Grain: Strand Woven","Color: Caramel","Layers: 3 Ply, Vertical Core","Size: 2440 x 1220 x 20mm"]

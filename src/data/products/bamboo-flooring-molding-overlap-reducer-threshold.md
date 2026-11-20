@@ -6,7 +6,7 @@ description: "Bamboo flooring molding, overlap reducer in natural and carbonized
 pageTitle: "Bamboo Flooring Molding: Overlap Reducer, Threshold"
 categoryName: "Bamboo Collection"
 categoryUrl: "/products/product-type-BambooCollection.html"
-date: "2020-12-25 14:53:05"
+date: "2026-11-10 14:53:05"
 summary: "Bamboo flooring molding, overlap reducer in natural and carbonized color, threshold in natural and carbonized color."
 images: [{"src":"/img/ThumbPic/2020122320231326766.jpg","alt":"Bamboo Flooring Molding","title":"Bamboo Flooring Molding"}]
 attributes: ["Overlap Reducer: 1850x50x14mm","Threshold: 1850x60x14mm","Color: Natural, Carbonized","Grain: Strand Woven"]

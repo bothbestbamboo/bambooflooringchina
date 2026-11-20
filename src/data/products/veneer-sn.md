@@ -6,7 +6,7 @@ description: "Strand woven natural bamboo veneer is 1860x410x0.6mm, compressed, 
 pageTitle: "Bamboo Veneer : 0.6MM : SN"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2016-11-8 14:28:43"
+date: "2026-11-10 14:28:43"
 summary: "strand woven, natural, 0.6mm thickness, 410mm width."
 images: [{"src":"/img/ThumbPic/2014110415260418590.jpg","alt":"bamboo veneer","title":"bamboo veneer"},{"src":"/img/ThumbPic/2014110415260457626.jpg","alt":"bamboo veneer","title":"bamboo veneer"}]
 attributes: ["Item No: BB-V26","Color: Natural","Size: 1860 x 410 x 0.6mm","Backing: Cellouse Fleece Paper"]

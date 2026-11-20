@@ -6,7 +6,7 @@ description: "Solid bamboo flooring has 2 grains: horizontal, vertical; 2 colors
 pageTitle: "Solid Bamboo Flooring"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2014-11-3 15:48:17"
+date: "2026-11-10 15:48:17"
 summary: "Solid bamboo flooring comes in 4 basic varieties, is made strictly from 100% renewable resource - bamboo, tongue and groove, largest sales on bamboo. Stained colors available to achieve demands."
 images: [{"src":"/img/ThumbPic/2014103119144871334.jpg","alt":"solid bamboo flooring","title":"solid bamboo flooring"},{"src":"/img/ThumbPic/2014103119144846252.jpg","alt":"solid bamboo flooring","title":"solid bamboo flooring"},{"src":"/img/ThumbPic/2014103119144857050.jpg","alt":"solid bamboo flooring","title":"solid bamboo flooring"},{"src":"/img/ThumbPic/2014110314075996132.jpg","alt":"solid bamboo flooring","title":"solid bamboo flooring"}]
 attributes: ["Type A: Horizontal Natural","Type B: Horizontal Caramel","Type C: Vertical Natural","Type D: Vertical Caramel"]

@@ -6,7 +6,7 @@ description: "Bamboo decking profile h is xtr decks flooring for exterior, dark 
 pageTitle: "Bamboo Decking : Profile H : Xtr"
 categoryName: "Bamboo Decking"
 categoryUrl: "/products/product-type-BambooDecking.html"
-date: "2016-11-13 10:31:39"
+date: "2026-11-10 10:31:39"
 summary: "bamboo decking, darker caramel, deep ribbon, grooves on both edges."
 images: [{"src":"/img/ThumbPic/2016102709574366956.JPG","alt":"Bamboo Decking Profile H","title":"Bamboo Decking Profile H"}]
 attributes: ["Item No: BB-D1402","Profile: H","Color: Darker Caramel","Size: 1860 x 140 x 20 mm"]

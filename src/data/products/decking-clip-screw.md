@@ -6,7 +6,7 @@ description: "Stainless steel clips and screws are basic accessories for bamboo 
 pageTitle: "Bamboo Decking : Clip : Screw"
 categoryName: "Bamboo Decking"
 categoryUrl: "/products/product-type-BambooDecking.html"
-date: "2014-12-23 17:12:57"
+date: "2026-11-10 17:12:57"
 summary: "stainless steel clip and screw, decking installation accessories"
 images: [{"src":"/img/ThumbPic/2014110109574126912.jpg","alt":"decking clip","title":"decking clip"},{"src":"/img/ThumbPic/2014110109574115784.jpg","alt":"decking clip","title":"decking clip"},{"src":"/img/ThumbPic/2014110109574190700.jpg","alt":"decking clip","title":"decking clip"}]
 attributes: ["Item No: BB-D1404","Material: Stainless Steel"]

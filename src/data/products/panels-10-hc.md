@@ -6,7 +6,7 @@ description: "Horizontal carbonized bamboo panel is 2440x1220x10mm, 2 layers, fa
 pageTitle: "Bamboo Panel : 10MM : HC"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2020-12-28 14:41:35"
+date: "2026-11-10 14:41:35"
 summary: "bamboo panels, 10mm thickness, horizontal, carbonized color, 2 layers."
 images: [{"src":"/img/ThumbPic/2020090208485840142.jpg","alt":"10mm bamboo plywood","title":"10mm bamboo plywood"}]
 attributes: ["Item No: BB-BC-10HC","Grain: Horizontal","Color: Carbonized","Layers: 2 Layers, Same direction","Size: 2440 x 1220 x 10mm"]

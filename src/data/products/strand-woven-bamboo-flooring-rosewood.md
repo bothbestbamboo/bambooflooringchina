@@ -6,7 +6,7 @@ description: "Strand woven bamboo flooring in stained rosewood color has attract
 pageTitle: "Solid Strand Woven Bamboo Flooring: Rosewood Color"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2021-1-22 8:08:58"
+date: "2026-11-10 8:08:58"
 summary: "strand woven bamboo flooring, rosewood color, 130mm width, t+g."
 images: [{"src":"/img/ThumbPic/2021012208084463079.jpg","alt":"Strand Woven Bamboo Flooring","title":"Strand Woven Bamboo Flooring"}]
 attributes: ["Item No: E8823","Grain: Strand Woven","Color: Stained Rosewood","T + G: Standard","Size A: 1850 x 130 x 14mm"]

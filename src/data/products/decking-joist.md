@@ -6,7 +6,7 @@ description: "Bamboo decking joist is same material of decking board - strand wo
 pageTitle: "Bamboo Decking : Joist : Caramel"
 categoryName: "Bamboo Decking"
 categoryUrl: "/products/product-type-BambooDecking.html"
-date: "2014-12-23 17:13:14"
+date: "2026-11-10 17:13:14"
 summary: "bamboo decking joist, caramel color, strand woven."
 images: [{"src":"/img/ThumbPic/201411010958278110.jpg","alt":"bamboo joist","title":"bamboo joist"},{"src":"/img/ThumbPic/2014110109582718908.jpg","alt":"bamboo joist","title":"bamboo joist"},{"src":"/img/ThumbPic/2014110109582774305.jpg","alt":"bamboo joist","title":"bamboo joist"}]
 attributes: ["Item No: BB-D1403","Material: Strand Woven","Color: Blonde","Size: 1870 x 50 x 35mm"]

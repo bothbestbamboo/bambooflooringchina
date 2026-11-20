@@ -6,7 +6,7 @@ description: "Horizontal natural bamboo panel is 2440x1220x5mm, 1 layer, fantast
 pageTitle: "Bamboo Panel : 5MM : HN"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2020-12-28 14:44:17"
+date: "2026-11-10 14:44:17"
 summary: "bamboo panels, 5mm thickness, horizontal, natural, 1 layer."
 images: [{"src":"/img/ThumbPic/2020080409434756497.jpg","alt":"5mm bamboo panel","title":"5mm bamboo panel"}]
 attributes: ["Item No: BB-BC-5HN","Grain: Horizontal","Color: Natural","Layers: 1 Ply","Size: 2440 x 1220 x 5mm"]

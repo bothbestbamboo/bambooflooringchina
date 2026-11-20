@@ -6,7 +6,7 @@ description: "Single layer bamboo panel, 5mm thickness, horizontal, natural, 1 l
 pageTitle: "Bamboo Ply : 5MM : Horizontal Natural"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2020-12-28 14:44:48"
+date: "2026-11-10 14:44:48"
 summary: "single layer bamboo panel, 5mm thickness, horizontal, natural, 1 layer."
 images: [{"src":"/img/ThumbPic/202012280943155666.jpg","alt":"5mm Bamboo Ply Horizontal Natural","title":"5mm Bamboo Ply Horizontal Natural"}]
 attributes: ["Item No: E7752","Grain: Horizontal","Color: Natural","Layers: 1 Ply","Size: 2440 x 1220 x 5mm"]

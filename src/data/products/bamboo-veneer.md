@@ -6,7 +6,7 @@ description: "Bamboo veneer is sliced from rapidly renewable resources bamboo bl
 pageTitle: "Bamboo Veneer"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2014-11-3 15:49:04"
+date: "2026-11-10 15:49:04"
 summary: "Bamboo veneer is sliced from rapidly renewable resources bamboo blocks, exotic and green material for replacement of wood veneer, longer and wider sheet, greater hardness, easier processing."
 images: [{"src":"/img/ThumbPic/2014103119190363525.jpg","alt":"bamboo veneer","title":"bamboo veneer"},{"src":"/img/ThumbPic/2014103119190322081.jpg","alt":"bamboo veneer","title":"bamboo veneer"},{"src":"/img/ThumbPic/2014103119190413361.jpg","alt":"bamboo veneer","title":"bamboo veneer"}]
 attributes: []

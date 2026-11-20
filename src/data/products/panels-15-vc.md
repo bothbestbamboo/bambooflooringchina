@@ -6,7 +6,7 @@ description: "Vertical caramel bamboo panel is 2440x1220x15mm, 3 layers, fantast
 pageTitle: "Bamboo Panel : 15MM : VC"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2020-12-28 14:42:56"
+date: "2026-11-10 14:42:56"
 summary: "bamboo panels, 15mm thickness, vertical, caramel color, 3 layers."
 images: [{"src":"/img/ThumbPic/2020080410173768117.jpg","alt":"15mm bamboo panel","title":"15mm bamboo panel"}]
 attributes: ["Item No: BB-BC-15VC","Grain: Vertical","Color: Caramel","Layers: 3 Ply, Vertical Core","Size: 2440 x 1220 x 15mm"]

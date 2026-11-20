@@ -6,7 +6,7 @@ description: "White brushed strand woven bamboo flooring has been aged by crafts
 pageTitle: "Strand Woven : Brushed : White"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-12-3 15:01:29"
+date: "2026-11-10 15:01:29"
 summary: "strand woven bamboo flooring, brushed, white color, 1850x130x14mm."
 images: [{"src":"/img/ThumbPic/2014111708171777258.jpg","alt":"strand bamboo flooring","title":"strand bamboo flooring"},{"src":"/img/ThumbPic/2014111708171775181.jpg","alt":"strand bamboo flooring","title":"strand bamboo flooring"}]
 attributes: ["Item No: BB-ZZ-0518","Grain: Strand Woven","Color: White","T+G: Standard","Size: 1850 x 130 x 14mm"]

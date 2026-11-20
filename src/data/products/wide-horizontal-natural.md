@@ -6,7 +6,7 @@ description: "Horizontal natural bamboo flooring is wide board, 3 layers, plain 
 pageTitle: "Wide Plank : Horizontal : Natural"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-11-30 8:34:36"
+date: "2026-11-10 8:34:36"
 summary: "wide board bamboo flooring, horizontal or fat pressed, natural color, 1920x154x15mm."
 images: [{"src":"/img/ThumbPic/2014103114320515024.jpg","alt":"wide plank bamboo flooring","title":"wide plank bamboo flooring"},{"src":"/img/ThumbPic/2014103114320554060.jpg","alt":"wide plank bamboo flooring","title":"wide plank bamboo flooring"},{"src":"/img/ThumbPic/2014103114320528978.jpg","alt":"wide plank bamboo flooring","title":"wide plank bamboo flooring"},{"src":"/img/ThumbPic/2014103114320520257.jpg","alt":"wide plank bamboo flooring","title":"wide plank bamboo flooring"},{"src":"/img/ThumbPic/2014103114320539775.jpg","alt":"wide plank bamboo flooring","title":"wide plank bamboo flooring"}]
 attributes: ["Item No: BB-KB-0301","Grain: Horizontal","Color: Natural","T + G: Standard","Size: 1920 x 154 x 15mm"]

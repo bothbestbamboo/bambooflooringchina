@@ -6,7 +6,7 @@ description: "Vertical natural bamboo panel is 2440x1220x5mm, 1 layer, fantastic
 pageTitle: "Bamboo Panel : 5MM : VN"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2020-12-28 14:44:36"
+date: "2026-11-10 14:44:36"
 summary: "bamboo panels, 5mm thickness, vertical, natural, 1 layer."
 images: [{"src":"/img/ThumbPic/2020080108354559765.jpg","alt":"5mm bamboo panel","title":"5mm bamboo panel"}]
 attributes: ["Item No: BB-BC-5VN","Grain: Vertical","Color: Natural","Layers: 1 Ply","Size: 2440 x 1220 x 5mm"]

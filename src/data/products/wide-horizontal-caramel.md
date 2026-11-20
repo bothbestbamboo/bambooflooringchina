@@ -6,7 +6,7 @@ description: "Horizontal caramel bamboo flooring is wide board, 3 layers, plain 
 pageTitle: "Wide Plank : Horizontal : Caramel"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-11-30 8:34:20"
+date: "2026-11-10 8:34:20"
 summary: "wide board bamboo flooring, horizontal or fat pressed, caramel color, 1920x154x15mm."
 images: [{"src":"/img/ThumbPic/2014103114325959807.jpg","alt":"wide plank bamboo flooring","title":"wide plank bamboo flooring"},{"src":"/img/ThumbPic/2014103114325970605.jpg","alt":"wide plank bamboo flooring","title":"wide plank bamboo flooring"},{"src":"/img/ThumbPic/2014103114325945523.jpg","alt":"wide plank bamboo flooring","title":"wide plank bamboo flooring"},{"src":"/img/ThumbPic/20141031143259923.jpg","alt":"wide plank bamboo flooring","title":"wide plank bamboo flooring"},{"src":"/img/ThumbPic/2014103114325975839.jpg","alt":"wide plank bamboo flooring","title":"wide plank bamboo flooring"}]
 attributes: ["Item No: BB-KB-0302","Grain: Horizontal","Color: Caramel","T + G: Standard","Size: 1920 x 154 x 15mm"]

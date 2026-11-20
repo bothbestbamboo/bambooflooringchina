@@ -6,7 +6,7 @@ description: "Single layer bamboo panel, 5mm thickness, horizontal, flat press, 
 pageTitle: "Bamboo Ply : 5MM : Horizontal Carbonized"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2021-1-22 14:17:14"
+date: "2026-11-10 14:17:14"
 summary: "single layer bamboo panel, 5mm thickness, horizontal, carbonized, 1 layer."
 images: [{"src":"/img/ThumbPic/2021012214164492570.jpg","alt":"Bamboo Plywood 5mm","title":"Bamboo Plywood 5mm"}]
 attributes: ["Item No: E7751","Grain: Horizontal","Color: Carbonized","Layers: 1 Ply","Size: 2440 x 1220 x 5mm"]

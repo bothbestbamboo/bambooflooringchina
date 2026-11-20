@@ -6,7 +6,7 @@ description: "Strand woven natural bamboo panel is 2440x1220x5mm, 1 layer, fanta
 pageTitle: "Bamboo Panel : 5MM : SN"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2014-12-5 9:03:00"
+date: "2026-11-10 9:03:00"
 summary: "bamboo panels, 5mm thickness, strand woven, natural, 1 layer."
 images: [{"src":"/img/ThumbPic/201411191642335014.JPG","alt":"bamboo panels","title":"bamboo panels"},{"src":"/img/ThumbPic/2014111916423377853.JPG","alt":"bamboo panels","title":"bamboo panels"},{"src":"/img/ThumbPic/2014111916423319298.JPG","alt":"bamboo panels","title":"bamboo panels"}]
 attributes: ["Item No: BB-BC-5SN","Grain: Strand Woven","Color: Natural","Layers: 1 Ply","Size: 2440 x 1220 x 5mm"]

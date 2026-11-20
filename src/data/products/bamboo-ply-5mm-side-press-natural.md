@@ -6,7 +6,7 @@ description: "Single layer bamboo panel, 5mm thickness, vertical side press, nat
 pageTitle: "Bamboo Ply : 5MM : Vertical Natural"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2021-1-22 15:29:11"
+date: "2026-11-10 15:29:11"
 summary: "single layer bamboo panel, 5mm thickness, vertical, natural, 1 layer."
 images: [{"src":"/img/ThumbPic/2021012214243214255.jpg","alt":"Bamboo Plywood 5mm","title":"Bamboo Plywood 5mm"}]
 attributes: ["Item No: E7754","Grain: Vertical","Color: Natural","Layers: 1 Ply","Size: 2440 x 1220 x 5mm"]

@@ -6,7 +6,7 @@ description: "Vertical caramel bamboo panel is 2440x1220x20mm, 3 layers, renewab
 pageTitle: "Bamboo Panel : 20MM : VC"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2020-12-28 14:41:14"
+date: "2026-11-10 14:41:14"
 summary: "bamboo panels, 20mm thickness, vertical, caramel color, 3 layers."
 images: [{"src":"/img/ThumbPic/2020080410281263031.jpg","alt":"20mm bamboo plywood sheet","title":"20mm bamboo plywood sheet"}]
 attributes: ["Item No: BB-BC-20VC","Grain: Vertical","Color: Caramel","Layers: 3 Ply, Vertical Core","Size: 2440 x 1220 x 20mm"]

@@ -6,7 +6,7 @@ description: "Horizontal natural bamboo panel is 2440x1220x20mm, 5 layers, fanta
 pageTitle: "Bamboo Panel : 20MM : HN5"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2014-12-8 17:16:47"
+date: "2026-11-10 17:16:47"
 summary: "bamboo panels, 20mm thickness, horizontal, natural, 5 layers."
 images: [{"src":"/img/ThumbPic/2014120815245286951.JPG","alt":"bamboo panel","title":"bamboo panel"},{"src":"/img/ThumbPic/2014120815245220425.JPG","alt":"bamboo panel","title":"bamboo panel"}]
 attributes: ["Item No: BB-BC-20HN5","Grain: Horizontal","Color: Natural","Layers: 5 Ply","Size: 2440 x 1220 x 20mm"]

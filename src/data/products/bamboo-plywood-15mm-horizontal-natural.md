@@ -6,7 +6,7 @@ description: "Laminated bamboo plywood sheet, 15mm thickness, horizontal flat pr
 pageTitle: "Bamboo Plywood : 15MM : Horizontal Natural"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2021-1-22 15:30:08"
+date: "2026-11-10 15:30:08"
 summary: "laminated bamboo plywood sheet, 15mm thickness, horizontal or flat press, natural, 3 layers cross structure, 4x8x3/5."
 images: [{"src":"/img/ThumbPic/2021012214474683577.jpg","alt":"Bamboo Plywood 15mm","title":"Bamboo Plywood 15mm"}]
 attributes: ["Item No: E7714","Grain: Horizontal","Color: Natural","Layers: 3 Ply","Size: 2440 x 1220 x 15mm"]

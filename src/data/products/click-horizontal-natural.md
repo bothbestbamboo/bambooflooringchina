@@ -6,7 +6,7 @@ description: "Horizontal natural bamboo flooring is Unilin click lock, 3 layers,
 pageTitle: "Click Lock : Horizontal : Natural"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-11-13 10:26:58"
+date: "2026-11-10 10:26:58"
 summary: "click lock engineered bamboo flooring, horizontal, natural, 1900x190x14mm."
 images: [{"src":"/img/ThumbPic/2014103115473647887.jpg","alt":"click lock bamboo flooring","title":"click lock bamboo flooring"},{"src":"/img/ThumbPic/2014103115473622805.jpg","alt":"click lock bamboo flooring","title":"click lock bamboo flooring"},{"src":"/img/ThumbPic/2014103115473678203.jpg","alt":"click lock bamboo flooring","title":"click lock bamboo flooring"},{"src":"/img/ThumbPic/2014103115473669483.jpg","alt":"click lock bamboo flooring","title":"click lock bamboo flooring"}]
 attributes: ["Item No: BB-FH-0306","Grain: Horizontal","Color: Natural","T + G: Unilin Click","Size: 1900 x 190 x 14mm"]

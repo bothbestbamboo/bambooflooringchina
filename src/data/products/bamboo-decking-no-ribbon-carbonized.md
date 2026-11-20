@@ -6,7 +6,7 @@ description: "Bamboo decking, standard carbonized medium, no ribbon, flat on bot
 pageTitle: "Bamboo Decking : No Ribbon : Standard Carbonized"
 categoryName: "Bamboo Decking"
 categoryUrl: "/products/product-type-BambooDecking.html"
-date: "2021-1-22 9:03:12"
+date: "2026-11-10 9:03:12"
 summary: "bamboo decking, no ribbon, flat on both sides, pre-oiled on both sides, standard carbonized, grooves on both edges."
 images: [{"src":"/img/ThumbPic/2020121808505680229.jpg","alt":"Outdoor Bamboo Decking","title":"Outdoor Bamboo Decking"}]
 attributes: ["Item No: E9916","Profile: No Ribbon","Color: Standard Carbonized","Surface: Pre-oiled","Size: 1860 x 140 x 20mm"]

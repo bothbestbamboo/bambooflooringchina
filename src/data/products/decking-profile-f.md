@@ -6,7 +6,7 @@ description: "Bamboo decking profile f is standard decks flooring for exterior, 
 pageTitle: "Bamboo Decking : Profile F : Caramel"
 categoryName: "Bamboo Decking"
 categoryUrl: "/products/product-type-BambooDecking.html"
-date: "2016-11-13 10:32:04"
+date: "2026-11-10 10:32:04"
 summary: "bamboo decking, caramel, small ribbon, grooves on both edges."
 images: [{"src":"/img/ThumbPic/2016102709513772492.JPG","alt":"Bamboo Decking Profile F","title":"Bamboo Decking Profile F"}]
 attributes: ["Item No: BB-D1406","Profile: C","Color: Blonde","Size: 1860 x 140 x 20mm"]

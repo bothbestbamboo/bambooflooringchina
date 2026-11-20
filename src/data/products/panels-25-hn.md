@@ -6,7 +6,7 @@ description: "Horizontal natural bamboo plywood is 2440x1220x25mm, 3 layers, fan
 pageTitle: "Bamboo Panel : 25MM : HN"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2016-11-16 8:50:54"
+date: "2026-11-10 8:50:54"
 summary: "bamboo panels, 25mm thickness, horizontal, natural, 3 layers."
 images: [{"src":"/img/ThumbPic/2014120414214699617.JPG","alt":"bamboo panels","title":"bamboo panels"},{"src":"/img/ThumbPic/2014120414214624701.JPG","alt":"bamboo panels","title":"bamboo panels"}]
 attributes: ["Item No: BB-BC-25HN","Grain: Horizontal","Color: Natural","Layers: 3 Ply, Vertical Core","Size: 2440 x 1220 x 25mm"]

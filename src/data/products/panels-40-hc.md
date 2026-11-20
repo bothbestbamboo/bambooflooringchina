@@ -6,7 +6,7 @@ description: "Horizontal caramel bamboo panel is 2440x1220x40mm, 5 layers, fanta
 pageTitle: "Bamboo Panel : 40MM : HC"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2016-11-13 10:28:27"
+date: "2026-11-10 10:28:27"
 summary: "bamboo panels, 40mm thickness, horizontal, caramel, 5 layers."
 images: [{"src":"/img/ThumbPic/2014102918473367494.JPG","alt":"bamboo panels","title":"bamboo panels"},{"src":"/img/ThumbPic/2014102918473342412.jpg","alt":"bamboo panels","title":"bamboo panels"},{"src":"/img/ThumbPic/2014102918473333692.jpg","alt":"bamboo panels","title":"bamboo panels"}]
 attributes: ["Item No: BB-BC-40HC","Grain: Horizontal","Color: Caramel","Layers: 5 Layers","Size: 2440 x 1220 x 40mm"]

@@ -6,7 +6,7 @@ description: "Vertical caramel bamboo flooring is in plain pressed, light color,
 pageTitle: "Solid : Vertical : Caramel"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2020-12-17 8:19:06"
+date: "2026-11-10 8:19:06"
 summary: "solid bamboo flooring, vertical or side pressed, caramel color, 960x96x15mm."
 images: [{"src":"/img/ThumbPic/2014103011152212770.jpg","alt":"solid bamboo flooring","title":"solid bamboo flooring"},{"src":"/img/ThumbPic/2014103011152251807.jpg","alt":"solid bamboo flooring","title":"solid bamboo flooring"},{"src":"/img/ThumbPic/2014103011152362604.jpg","alt":"solid bamboo flooring","title":"solid bamboo flooring"},{"src":"/img/ThumbPic/2014103011152318004.jpg","alt":"solid bamboo flooring","title":"solid bamboo flooring"},{"src":"/img/ThumbPic/2014103011152373402.jpg","alt":"solid bamboo flooring","title":"solid bamboo flooring"}]
 attributes: ["Item No: BB-SZ-0504","Grain: Vertical","Color: Caramel","T + G: Standard","Size: 960 x 96 x 15mm"]

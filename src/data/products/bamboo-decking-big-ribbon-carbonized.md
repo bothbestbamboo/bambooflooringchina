@@ -6,7 +6,7 @@ description: "Bamboo decking, standard carbonized dark, big ribbon,  exterior ap
 pageTitle: "Bamboo Decking : Big Ribbon : Standard Carbonized"
 categoryName: "Bamboo Decking"
 categoryUrl: "/products/product-type-BambooDecking.html"
-date: "2021-1-22 9:26:18"
+date: "2026-11-10 9:26:18"
 summary: "bamboo decking, big ribbon, pre-oiled on both sides, standard carbonized, grooves on both edges."
 images: [{"src":"/img/ThumbPic/2021012209223646038.jpg","alt":"Outdoor Bamboo Decking","title":"Outdoor Bamboo Decking"}]
 attributes: ["Item No: E9903","Profile: Big Ribbon","Color: Standard Carbonized","Surface: Pre-oiled","Size: 1860 x 140 x 20mm"]

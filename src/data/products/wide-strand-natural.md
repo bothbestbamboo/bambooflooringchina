@@ -6,7 +6,7 @@ description: "Natural solid strand woven bamboo flooring is long plank, wide boa
 pageTitle: "Strand Woven : Wide : Natural"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-12-3 14:58:42"
+date: "2026-11-10 14:58:42"
 summary: "strand woven bamboo flooring, natural color, 130mm width, t+g."
 images: [{"src":"/img/ThumbPic/2014103116033190474.jpg","alt":"strand bamboo flooring","title":"strand bamboo flooring"},{"src":"/img/ThumbPic/2014103116033181754.jpg","alt":"strand bamboo flooring","title":"strand bamboo flooring"},{"src":"/img/ThumbPic/2014103116033137153.jpg","alt":"strand bamboo flooring","title":"strand bamboo flooring"},{"src":"/img/ThumbPic/2014103116033156672.jpg","alt":"strand bamboo flooring","title":"strand bamboo flooring"},{"src":"/img/ThumbPic/2014103116033195708.jpg","alt":"strand bamboo flooring","title":"strand bamboo flooring"}]
 attributes: ["Item: BB-SZ-0511","Grain: Strand Woven","Color: Natural","T+G: Standard","Size: 1850 x 130 x 14mm"]

@@ -6,7 +6,7 @@ description: "Bamboo mats have wide varieties of styles and colors, green choice
 pageTitle: "Bamboo Mat : Green : 17mm Lamella"
 categoryName: "Bamboo Collection"
 categoryUrl: "/products/product-type-BambooCollection.html"
-date: "2020-12-17 8:22:57"
+date: "2026-11-10 8:22:57"
 summary: "bamboo mats, green color, 17mm bamboo lamella width, non-printed, 10m per roll."
 images: [{"src":"/img/ThumbPic/2014103118530855738.jpg","alt":"bamboo mats","title":"bamboo mats"}]
 attributes: ["Item No: BB-BM-17GN","Color: Green","Lamella Width: 17mm","Printed: No"]

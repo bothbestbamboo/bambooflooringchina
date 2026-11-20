@@ -6,7 +6,7 @@ description: "Bamboo decking, standard carbonized dark, deep groove,  exterior a
 pageTitle: "Bamboo Decking : 25MM 30MM 40MM : Standard Carbonized"
 categoryName: "Bamboo Decking"
 categoryUrl: "/products/product-type-BambooDecking.html"
-date: "2021-1-22 9:45:01"
+date: "2026-11-10 9:45:01"
 summary: "bamboo decking, deep groove, pre-oiled on both sides, standard carbonized dark, grooves on both edges, with thickness of 25mm, 30mm, 40mm."
 images: [{"src":"/img/ThumbPic/2021012209450556097.jpg","alt":"Outdoor Bamboo Decking","title":"Outdoor Bamboo Decking"}]
 attributes: ["Item No: E9923","Profile: Deep Groove","Color: Standard Carbonized","Surface: Pre-oiled","Size: 1860 x 140 x 30mm"]

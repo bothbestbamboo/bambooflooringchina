@@ -6,7 +6,7 @@ description: "Natural engineered strand woven bamboo flooring is strand woven cr
 pageTitle: "Engineered Strand Woven : Natural"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-12-2 15:36:17"
+date: "2026-11-10 15:36:17"
 summary: "strand woven bamboo flooring, engineered, natural, 142mm width, t+g."
 images: [{"src":"/img/ThumbPic/2014103019204328783.jpg","alt":"engineered strand woven bamboo flooring","title":"engineered strand woven bamboo flooring"},{"src":"/img/ThumbPic/201410301920433701.jpg","alt":"engineered strand woven bamboo flooring","title":"engineered strand woven bamboo flooring"},{"src":"/img/ThumbPic/2014103019204359099.jpg","alt":"engineered strand woven bamboo flooring","title":"engineered strand woven bamboo flooring"},{"src":"/img/ThumbPic/2014103019204334017.jpg","alt":"engineered strand woven bamboo flooring","title":"engineered strand woven bamboo flooring"}]
 attributes: ["Item No: BB-ZF-0310","Grain: Strand Woven","Color: Natural","T+G: Standard","Size: 1850 x 142 x 14mm"]

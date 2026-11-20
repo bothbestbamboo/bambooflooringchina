@@ -6,7 +6,7 @@ description: "Strand woven natural bamboo panel is 2440x1220x20mm, 3 layers, fan
 pageTitle: "Bamboo Panel : 20MM : SN"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2014-12-5 8:53:16"
+date: "2026-11-10 8:53:16"
 summary: "bamboo panels, 20mm thickness, strand woven, natural, 3 layers."
 images: [{"src":"/img/ThumbPic/2014112614291317042.JPG","alt":"strand bamboo panel","title":"strand bamboo panel"},{"src":"/img/ThumbPic/2014112614291397852.JPG","alt":"strand bamboo panel","title":"strand bamboo panel"}]
 attributes: ["Item No: BB-BC-20SN","Grain: Strand Woven","Color: Natural","Layers: 3 Ply, Vertical Core","Size: 2440 x 1220 x 20mm"]

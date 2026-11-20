@@ -6,7 +6,7 @@ description: "Wide plank bamboo flooring has 2 grains: horizontal, vertical; 2 c
 pageTitle: "Wide Plank Bamboo Flooring"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2014-11-3 15:48:26"
+date: "2026-11-10 15:48:26"
 summary: "Wide plank bamboo flooring is long and wide plank, 3-layer cross laminated, providing highest stability, requiring fewer planks compared than classic bamboo, having fast installation."
 images: [{"src":"/img/ThumbPic/2014103119152256770.jpg","alt":"wide plank bamboo flooring","title":"wide plank bamboo flooring"},{"src":"/img/ThumbPic/2014103119152212170.jpg","alt":"wide plank bamboo flooring","title":"wide plank bamboo flooring"},{"src":"/img/ThumbPic/201410311915223450.jpg","alt":"wide plank bamboo flooring","title":"wide plank bamboo flooring"},{"src":"/img/ThumbPic/2014103119152258848.jpg","alt":"wide plank bamboo flooring","title":"wide plank bamboo flooring"}]
 attributes: ["Type A: Horizontal Natural","Type B: Horizontal Caramel","Type C: Vertical Natural","Type D: Vertical Caramel"]

@@ -6,7 +6,7 @@ description: "Solid strand woven bamboo flooring in natural color has attractive
 pageTitle: "Solid Strand Woven Bamboo Flooring: Natural Color"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2021-1-22 7:55:14"
+date: "2026-11-10 7:55:14"
 summary: "solid strand woven bamboo flooring, natural color, 130mm width, t+g."
 images: [{"src":"/img/ThumbPic/2021012207551572091.jpg","alt":"Solid Strand Woven Bamboo Flooring","title":"Solid Strand Woven Bamboo Flooring"}]
 attributes: ["Item No: E8820","Grain: Strand Woven","Color: Natural","T + G: Standard","Size A: 1850 x 130 x 14mm","Size B: 920 x 130 x 14mm"]

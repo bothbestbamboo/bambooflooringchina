@@ -6,7 +6,7 @@ description: "Bamboo mats have wide varieties of styles and colors, green choice
 pageTitle: "Bamboo Mat : Natural : 50mm Coconut"
 categoryName: "Bamboo Collection"
 categoryUrl: "/products/product-type-BambooCollection.html"
-date: "2016-12-3 14:47:45"
+date: "2026-11-10 14:47:45"
 summary: "bamboo mats, natural color, 50mm coconut lamella width, no thread, 5m per roll."
 images: [{"src":"/img/ThumbPic/2014103118461638358.jpg","alt":"bamboo mats","title":"bamboo mats"}]
 attributes: ["Item No: BB-BM-50C","Color: Natural","Lamella Width: 50mm","Material: Coconut","Thread: No"]

@@ -6,7 +6,7 @@ description: "Horizontal caramel bamboo flooring is Unilin click lock, 3 layers,
 pageTitle: "Click Lock : Horizontal : Caramel"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-11-13 10:26:33"
+date: "2026-11-10 10:26:33"
 summary: "click lock engineered bamboo flooring, horizontal, caramel, 1900x190x14mm."
 images: [{"src":"/img/ThumbPic/2014103115490179089.jpg","alt":"click lock bamboo flooring","title":"click lock bamboo flooring"},{"src":"/img/ThumbPic/2014103115490154007.jpg","alt":"click lock bamboo flooring","title":"click lock bamboo flooring"},{"src":"/img/ThumbPic/2014103115490125769.jpg","alt":"click lock bamboo flooring","title":"click lock bamboo flooring"},{"src":"/img/ThumbPic/2014103115490164805.jpg","alt":"click lock bamboo flooring","title":"click lock bamboo flooring"}]
 attributes: ["Item No: BB-FH-0305","Grain: Horizontal","Color: Caramel","T + G: Unilin Click","Size: 1900 x 190 x 14mm"]

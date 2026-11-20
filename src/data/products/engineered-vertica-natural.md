@@ -6,7 +6,7 @@ description: "Vertical natural engineered bamboo flooring is 3 layers, cross lam
 pageTitle: "Engineered : Vertical : Natural"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-11-16 8:52:10"
+date: "2026-11-10 8:52:10"
 summary: "floating engineered bamboo flooring, vertical, natural, 1900x190x14mm."
 images: [{"src":"/img/ThumbPic/201410311449586635.jpg","alt":"engineered bamboo flooring","title":"engineered bamboo flooring"},{"src":"/img/ThumbPic/2014103114495881551.jpg","alt":"engineered bamboo flooring","title":"engineered bamboo flooring"},{"src":"/img/ThumbPic/2014103114495836951.jpg","alt":"engineered bamboo flooring","title":"engineered bamboo flooring"}]
 attributes: ["Item No: BB-FH-0303","Grain: Vertical","Color: Natural","T + G: Standard","Size: 1900 x 190 x 14mm"]

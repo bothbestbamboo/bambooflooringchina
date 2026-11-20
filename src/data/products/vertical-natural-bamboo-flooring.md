@@ -6,7 +6,7 @@ description: "Great quality and amazing color of solid bamboo flooring, vertical
 pageTitle: "Vertical Natural Bamboo Flooring"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2021-1-22 8:15:55"
+date: "2026-11-10 8:15:55"
 summary: "solid bamboo flooring, vertical grain, natural color, 960x96x15mm."
 images: [{"src":"/img/ThumbPic/2020121009131480296.jpg","alt":"Solid Vertical Natural Bamboo Flooring","title":"Solid Vertical Natural Bamboo Flooring"}]
 attributes: ["Item No: E8815","Grain: Vertical","Color: Natural","T + G: Standard","Size: 960 x 96 x 15mm"]

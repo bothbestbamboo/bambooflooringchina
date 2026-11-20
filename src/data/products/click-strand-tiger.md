@@ -6,7 +6,7 @@ description: "Tiger stripe click strand woven bamboo flooring is tiger color, fa
 pageTitle: "Strand Woven : Click : Tiger"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-12-3 14:59:18"
+date: "2026-11-10 14:59:18"
 summary: "strand woven bamboo flooring, tiger color, 125mm width, unilin click."
 images: [{"src":"/img/ThumbPic/2014110114260180025.jpg","alt":"click strand bamboo flooring","title":"click strand bamboo flooring"},{"src":"/img/ThumbPic/201411011426017187.jpg","alt":"click strand bamboo flooring","title":"click strand bamboo flooring"},{"src":"/img/ThumbPic/2014110114260182103.jpg","alt":"click strand bamboo flooring","title":"click strand bamboo flooring"},{"src":"/img/ThumbPic/2014110114260221141.jpg","alt":"click strand bamboo flooring","title":"click strand bamboo flooring"},{"src":"/img/ThumbPic/2014110114260212421.jpg","alt":"click strand bamboo flooring","title":"click strand bamboo flooring"}]
 attributes: ["Item No: BB-ZZ-0506","Grain: Strand Woven","Color: Tiger","T+G: Unilin Click","Size: 1850 x 125 x 14mm"]

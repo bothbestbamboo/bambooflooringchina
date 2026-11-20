@@ -6,7 +6,7 @@ description: "Bamboo tile XTR is cut and milled from outdoor strand woven bamboo
 pageTitle: "Bamboo Tile : Strand Woven : Xtr"
 categoryName: "Bamboo Decking"
 categoryUrl: "/products/product-type-BambooDecking.html"
-date: "2016-10-22 16:28:35"
+date: "2026-11-10 16:28:35"
 summary: "bamboo tile, strand woven, xtr, diy installation, excellent bathroom flooring"
 images: [{"src":"/img/ThumbPic/2014110110004947571.jpg","alt":"bamboo tile","title":"bamboo tile"}]
 attributes: ["Item No: BB-D1410","Color: Darker Brown","Size: 302 x 302 x 18mm+13mm"]

@@ -6,7 +6,7 @@ description: "Bamboo decking profile g is xtreme decks flooring for exterior, da
 pageTitle: "Bamboo Decking : Profile G : 30MM"
 categoryName: "Bamboo Decking"
 categoryUrl: "/products/product-type-BambooDecking.html"
-date: "2016-11-14 19:42:54"
+date: "2026-11-10 19:42:54"
 summary: "bamboo decking, darker caramel, deep ribbon, grooves on both edges."
 images: [{"src":"/img/ThumbPic/2016102710260888506.jpg","alt":"Bamboo Decking 30MM","title":"Bamboo Decking 30MM"}]
 attributes: ["Item No: BB-D1405","Profile: G","Color: XTR","Size: 1860 x 140 x 30mm"]

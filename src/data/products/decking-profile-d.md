@@ -6,7 +6,7 @@ description: "Bamboo decking profile d is xtra decks flooring for exterior, extr
 pageTitle: "Bamboo Decking : Profile D : Thermo"
 categoryName: "Bamboo Decking"
 categoryUrl: "/products/product-type-BambooDecking.html"
-date: "2016-11-13 10:30:48"
+date: "2026-11-10 10:30:48"
 summary: "bamboo decking, thermo-treated, small ribbon, grooves on both edges."
 images: [{"src":"/img/ThumbPic/2014110110124021543.jpg","alt":"bamboo decking","title":"bamboo decking"},{"src":"/img/ThumbPic/2014110110124032341.jpg","alt":"bamboo decking","title":"bamboo decking"},{"src":"/img/ThumbPic/2014110110124071377.jpg","alt":"bamboo decking","title":"bamboo decking"}]
 attributes: ["Item No: BB-D1400","Profile: D","Color: Black","Size: 2200 x 140 x 20 mm"]

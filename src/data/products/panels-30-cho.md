@@ -6,7 +6,7 @@ description: "Vertical chocolate bamboo panel is 2440x1220x30mm, 3 layers, fanta
 pageTitle: "Bamboo Panel : 30MM : CHO"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2016-11-14 19:38:33"
+date: "2026-11-10 19:38:33"
 summary: "bamboo panels, 30mm thickness,vertical, chocolate, 3 layers."
 images: [{"src":"/img/ThumbPic/2014112808520668149.JPG","alt":"bamboo panel","title":"bamboo panel"},{"src":"/img/ThumbPic/2014112808520657351.JPG","alt":"bamboo panel","title":"bamboo panel"}]
 attributes: ["Item No: BB-BC-30CHO","Grain: Vertical","Color: Chocolate","Layers: 3 Ply, Vertical Core","Size: 2440 x 1220 x 30mm"]

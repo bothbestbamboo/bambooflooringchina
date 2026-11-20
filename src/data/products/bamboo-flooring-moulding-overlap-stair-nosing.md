@@ -6,7 +6,7 @@ description: "Bamboo flooring moulding, overlap stair nosing in natural and carb
 pageTitle: "Bamboo Flooring Moulding: Overlap Stair Nosing, Stair Nose"
 categoryName: "Bamboo Collection"
 categoryUrl: "/products/product-type-BambooCollection.html"
-date: "2020-12-25 14:54:21"
+date: "2026-11-10 14:54:21"
 summary: "Bamboo flooring molding, overlap stair nosing in natural and carbonized color, stair nose in natural and carbonized color."
 images: [{"src":"/img/ThumbPic/2020122514380379314.jpg","alt":"Bamboo Flooring Stair Nose","title":"Bamboo Flooring Stair Nose"}]
 attributes: ["Stair Nosing: 1850x70x14mm","Stair Nose: 1850x92x14mm","Color: Carbonized","Grain: Strand Woven"]

@@ -6,7 +6,7 @@ description: "Strand woven bamboo flooring has 3 colors: natural, carbonized, ti
 pageTitle: "Strand Woven Bamboo Flooring"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2014-11-3 15:48:36"
+date: "2026-11-10 15:48:36"
 summary: "Strand woven bamboo is the fastest growing segment of bamboo sales, the most expensive, most durable, highest density, hardest, commercial grade and excellent hardness of bamboo flooring."
 images: [{"src":"/img/ThumbPic/2014103119155711237.jpg","alt":"strand bamboo flooring","title":"strand bamboo flooring"},{"src":"/img/ThumbPic/2014103119155822035.jpg","alt":"strand bamboo flooring","title":"strand bamboo flooring"},{"src":"/img/ThumbPic/2014103119155813315.jpg","alt":"strand bamboo flooring","title":"strand bamboo flooring"},{"src":"/img/ThumbPic/2014103119155843631.jpg","alt":"strand bamboo flooring","title":"strand bamboo flooring"}]
 attributes: ["Type A: Natural Color","Type B: Caramel Color","Type C: Tiger Color"]

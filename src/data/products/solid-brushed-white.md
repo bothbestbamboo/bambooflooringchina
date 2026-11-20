@@ -6,7 +6,7 @@ description: "Pearl white brushed bamboo flooring has been aged by craftsmen, ap
 pageTitle: "Solid : Brushed : Pearl White"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-12-3 15:06:22"
+date: "2026-11-10 15:06:22"
 summary: "solid bamboo flooring, brushed, vertical, pearl white color, 960x96x15mm."
 images: [{"src":"/img/ThumbPic/201411031727012851.jpg","alt":"brushed bamboo flooring","title":"brushed bamboo flooring"},{"src":"/img/ThumbPic/2014110317270116806.jpg","alt":"brushed bamboo flooring","title":"brushed bamboo flooring"},{"src":"/img/ThumbPic/2014110317270163483.jpg","alt":"brushed bamboo flooring","title":"brushed bamboo flooring"}]
 attributes: ["Item No: BB-SZ-0511","Grain: Vertical","Color: Pearl White","Surface: Brushed","Size: 960 x 96 x 15mm"]

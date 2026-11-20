@@ -6,7 +6,7 @@ description: "Strand woven carbonized bamboo veneer is 1860x410x0.6mm, compresse
 pageTitle: "Bamboo Veneer : 0.6MM : SC"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2016-11-8 14:28:16"
+date: "2026-11-10 14:28:16"
 summary: "strand woven, caramel, 0.6mm thickness, 410mm width."
 images: [{"src":"/img/ThumbPic/2014110415222358182.jpg","alt":"bamboo veneer","title":"bamboo veneer"},{"src":"/img/ThumbPic/2014110415222450879.jpg","alt":"bamboo veneer","title":"bamboo veneer"}]
 attributes: ["Item No: BB-V25","Color: Caramel or Carbonized","Size: 1860 x 410 x 0.6mm","Backing: Cellouse Fleece Paper"]

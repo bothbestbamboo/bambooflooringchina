@@ -6,7 +6,7 @@ description: "Bamboo decking profile a is xtra decks flooring for exterior, dark
 pageTitle: "Bamboo Decking : Profile A : Xtr"
 categoryName: "Bamboo Decking"
 categoryUrl: "/products/product-type-BambooDecking.html"
-date: "2020-12-17 8:21:31"
+date: "2026-11-10 8:21:31"
 summary: "bamboo decking, darker caramel, small ribbon, grooves on both edges."
 images: [{"src":"/img/ThumbPic/201610251651523245.JPG","alt":"Bamboo Decking Profile A","title":"Bamboo Decking Profile A"}]
 attributes: ["Item No: BB-D1401","Profile: A","Color: Darker Caramel","Size: 1860 x 140 x 20 mm"]

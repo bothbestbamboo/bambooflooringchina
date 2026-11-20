@@ -6,7 +6,7 @@ description: "Horizontal natural bamboo panel is 2440x1220x6.35mm, 3 layers, fan
 pageTitle: "Bamboo Panel : 6.35MM : HN"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2016-11-12 17:21:33"
+date: "2026-11-10 17:21:33"
 summary: "bamboo panels, 6.35mm thickness, horizontal, natural, 3 layers."
 images: [{"src":"/img/ThumbPic/2015061808423268396.jpg","alt":"bamboo panels","title":"bamboo panels"},{"src":"/img/ThumbPic/2015061808423223796.jpg","alt":"bamboo panels","title":"bamboo panels"}]
 attributes: ["Item No: BB-BC-6HN","Grain: Horizontal","Color: Natural","Layers: 3 Ply","Size: 2440 x 1220 x 6.35mm"]

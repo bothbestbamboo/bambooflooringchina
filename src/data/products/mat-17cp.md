@@ -6,7 +6,7 @@ description: "Bamboo mats have wide varieties of styles and colors, green choice
 pageTitle: "Bamboo Mat : Carbon : 17mm Lamella"
 categoryName: "Bamboo Collection"
 categoryUrl: "/products/product-type-BambooCollection.html"
-date: "2016-12-3 14:50:28"
+date: "2026-11-10 14:50:28"
 summary: "bamboo mats, carbon color, 17mm bamboo lamella width, printed, 10m per roll."
 images: [{"src":"/img/ThumbPic/2014103118511297340.jpg","alt":"bamboo mats","title":"bamboo mats"}]
 attributes: ["Item No: BB-BM-17CP","Color: Carbon","Lamella Width: 17mm","Printed: Yes"]

@@ -6,7 +6,7 @@ description: "Vertical natural bamboo veneer is 2500x1250x0.6mm, plain pressed, 
 pageTitle: "Bamboo Veneer : 0.6MM : VN"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2016-11-8 14:29:02"
+date: "2026-11-10 14:29:02"
 summary: "vertical, natural, 0.6 and 0.3mm thickness, 430 and 1250mm width."
 images: [{"src":"/img/ThumbPic/2014110311101743915.jpg","alt":"bamboo veneer","title":"bamboo veneer"},{"src":"/img/ThumbPic/2014110311101774231.jpg","alt":"bamboo veneer","title":"bamboo veneer"}]
 attributes: ["Item No: BB-V07/V15","Grain: Vertical","Color: Natural","Size A: 2500 x 430 x 0.6/0.3 mm","Size B: 2500 x 1250 x 0.6/0.3 mm","Backing: Cellouse Fleece Paper"]

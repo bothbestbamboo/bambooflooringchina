@@ -6,7 +6,7 @@ description: "Bamboo flooring moulding, t molding in natural and carbonized colo
 pageTitle: "Bamboo Flooring Moulding: T Molding, Quarter Round"
 categoryName: "Bamboo Collection"
 categoryUrl: "/products/product-type-BambooCollection.html"
-date: "2020-12-25 14:56:28"
+date: "2026-11-10 14:56:28"
 summary: "Bamboo flooring moulding, t molding in natural and carbonized color, quarter round in natural and carbonized color."
 images: [{"src":"/img/ThumbPic/202012251445351034.jpg","alt":"bamboo flooring t molding","title":"bamboo flooring t molding"}]
 attributes: ["T Molding: 1850x50x14mm","Quarter Round: 1850x14x14mm","Color: Carbonized","Grain: Strand Woven"]

@@ -6,7 +6,7 @@ description: "Vertical caramel bamboo panel is 2440x1220x20mm, 1 layer, fantasti
 pageTitle: "Bamboo Panel : 20MM : VCS"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2014-12-8 15:08:27"
+date: "2026-11-10 15:08:27"
 summary: "bamboo panels, 20mm thickness, vertical, caramel, 1 layer."
 images: [{"src":"/img/ThumbPic/2014102918353677701.JPG","alt":"bamboo panels","title":"bamboo panels"},{"src":"/img/ThumbPic/2014120815081221400.JPG","alt":"bamboo panels","title":"bamboo panels"}]
 attributes: ["Item No: BB-BC-20VCS","Grain: Vertical","Color: Caramel","Layers: 1 Ply","Size: 2440 x 1220 x 20mm"]

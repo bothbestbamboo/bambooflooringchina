@@ -6,7 +6,7 @@ description: "Vertical natural bamboo panel is 2440x1220x40mm, 5 layers, fantast
 pageTitle: "Bamboo Panel : 40MM : VN"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2016-11-13 10:28:02"
+date: "2026-11-10 10:28:02"
 summary: "bamboo panels, 40mm thickness, vertical, natural, 5 layers."
 images: [{"src":"/img/ThumbPic/2014102918494469427.JPG","alt":"bamboo panels","title":"bamboo panels"},{"src":"/img/ThumbPic/2014102918494444345.jpg","alt":"bamboo panels","title":"bamboo panels"},{"src":"/img/ThumbPic/2014102918494435624.jpg","alt":"bamboo panels","title":"bamboo panels"}]
 attributes: ["Item No: BB-BC-40VN","Grain: Vertical","Color: Natural","Layers: 5 Layers","Size: 2440 x 1220 x 40mm"]

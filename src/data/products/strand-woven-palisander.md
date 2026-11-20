@@ -6,7 +6,7 @@ description: "Palisander strand woven bamboo flooring is wide plank, stained col
 pageTitle: "Strand Woven : Solid : Palisander"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-12-3 15:02:28"
+date: "2026-11-10 15:02:28"
 summary: "strand woven bamboo flooring, red, 96mm width, t+g."
 images: [{"src":"/img/ThumbPic/2014110915190718076.jpg","alt":"stained strand bamboo flooring","title":"stained strand bamboo flooring"},{"src":"/img/ThumbPic/2014110915190792992.jpg","alt":"stained strand bamboo flooring","title":"stained strand bamboo flooring"}]
 attributes: ["Item No: BB-ZZ-0516","Grain: Strand Woven","Color: Palisander","T+G: Standard","Size: 1850 x 96 x 14mm"]

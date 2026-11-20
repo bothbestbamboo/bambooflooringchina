@@ -6,7 +6,7 @@ description: "Click strand woven bamboo flooring has 3 colors: natural, carboniz
 pageTitle: "Click Strand Bamboo Flooring"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2014-11-3 15:48:45"
+date: "2026-11-10 15:48:45"
 summary: "Click strand woven bamboo flooring, our premium offering, combines beauty, strength, durability, replicates the grain of traditional hardwood. DIY flooring, glue-less and fast installation."
 images: [{"src":"/img/ThumbPic/2014103119163454583.jpg","alt":"click strand bamboo flooring","title":"click strand bamboo flooring"},{"src":"/img/ThumbPic/2014103119163465380.jpg","alt":"click strand bamboo flooring","title":"click strand bamboo flooring"},{"src":"/img/ThumbPic/2014103119163540298.jpg","alt":"click strand bamboo flooring","title":"click strand bamboo flooring"},{"src":"/img/ThumbPic/2014103119163515216.jpg","alt":"click strand bamboo flooring","title":"click strand bamboo flooring"}]
 attributes: ["Type A: Natural Color","Type B: Caramel Color","Type C: Tiger Color"]

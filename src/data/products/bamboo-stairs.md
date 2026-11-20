@@ -6,7 +6,7 @@ description: "Stair tread is milled from laminated bamboo lumber and bamboo plyw
 pageTitle: "Bamboo Stair : Tread : Riser : Step"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2014-10-31 19:11:46"
+date: "2026-11-10 19:11:46"
 summary: "bamboo stairs include stair tread, step, riser, made of horizontal, vertical or strand woven bamboo, available in color of natural, caramel and tiger, matching your flooring perfectly."
 images: [{"src":"/img/ThumbPic/2014103119111115518.jpg","alt":"bamboo stair","title":"bamboo stair"},{"src":"/img/ThumbPic/2014103119111190434.jpg","alt":"bamboo stair","title":"bamboo stair"},{"src":"/img/ThumbPic/2014103119111181714.jpg","alt":"bamboo stair","title":"bamboo stair"},{"src":"/img/ThumbPic/2014103119111120752.jpg","alt":"bamboo stair","title":"bamboo stair"},{"src":"/img/ThumbPic/2014103119111112032.jpg","alt":"bamboo stair","title":"bamboo stair"}]
 attributes: []

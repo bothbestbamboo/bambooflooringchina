@@ -6,7 +6,7 @@ description: "Vertical natural bamboo flooring is wide board, 3 layers, side pre
 pageTitle: "Wide Plank : Vertical : Natural"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-11-30 8:34:03"
+date: "2026-11-10 8:34:03"
 summary: "wide board bamboo flooring, vertical or side pressed, natural color, 1920x154x15mm."
 images: [{"src":"/img/ThumbPic/2014103114342799084.jpg","alt":"wide plank bamboo flooring","title":"wide plank bamboo flooring"},{"src":"/img/ThumbPic/2014103114342738123.jpg","alt":"wide plank bamboo flooring","title":"wide plank bamboo flooring"},{"src":"/img/ThumbPic/2014103114342729402.jpg","alt":"wide plank bamboo flooring","title":"wide plank bamboo flooring"},{"src":"/img/ThumbPic/201410311434274320.jpg","alt":"wide plank bamboo flooring","title":"wide plank bamboo flooring"},{"src":"/img/ThumbPic/2014103114342723838.jpg","alt":"wide plank bamboo flooring","title":"wide plank bamboo flooring"}]
 attributes: ["Item No: BB-KB-0303","Grain: Vertical","Color: Natural","T + G: Standard","Size: 1920 x 154 x 15mm"]

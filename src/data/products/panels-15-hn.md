@@ -6,7 +6,7 @@ description: "Horizontal natural bamboo panel is 2440x1220x15mm, 3 layers, fanta
 pageTitle: "Bamboo Panel : 15MM : HN"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2020-12-28 14:42:36"
+date: "2026-11-10 14:42:36"
 summary: "bamboo panels, 15mm thickness, horizontal, natural color, 3 layers."
 images: [{"src":"/img/ThumbPic/2020080614460365484.jpg","alt":"15mm bamboo plywood","title":"15mm bamboo plywood"}]
 attributes: ["Item No: BB-BC-15HN","Grain: Horizontal","Color: Natural","Layers: 3 Layers, Vertical Core","Size: 2440 x 1220 x 15mm"]

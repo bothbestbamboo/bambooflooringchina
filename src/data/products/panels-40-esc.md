@@ -6,7 +6,7 @@ description: "End grain strand woven caramel bamboo panel is 2440x1220x40mm, 5 l
 pageTitle: "Bamboo Panel : 40MM : ESC"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2016-11-14 19:37:47"
+date: "2026-11-10 19:37:47"
 summary: "bamboo panels, 40mm thickness, end grain strand woven, caramel, 5 layers."
 images: [{"src":"/img/ThumbPic/2014120209180574481.JPG","alt":"end grand bamboo panel","title":"end grand bamboo panel"},{"src":"/img/ThumbPic/2014120209180524647.JPG","alt":"end grand bamboo panel","title":"end grand bamboo panel"},{"src":"/img/ThumbPic/2014120209180569248.JPG","alt":"end grand bamboo panel","title":"end grand bamboo panel"}]
 attributes: ["Item No: BB-BC-40ESC","Grain: End Grain Strand","Color: Caramel","Layers: 5 Layers","Size: 2440 x 1220 x 40mm"]

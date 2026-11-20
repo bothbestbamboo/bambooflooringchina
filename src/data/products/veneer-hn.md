@@ -6,7 +6,7 @@ description: "Horizontal natural bamboo veneer is 2500x1250x0.6mm, plain pressed
 pageTitle: "Bamboo Veneer : 0.6MM : HN"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2016-11-8 14:29:50"
+date: "2026-11-10 14:29:50"
 summary: "horizontal, natural, 0.6 and 0.3mm thickness, 430 and 1250mm width."
 images: [{"src":"/img/ThumbPic/2014110311112244338.jpg","alt":"bamboo veneer","title":"bamboo veneer"},{"src":"/img/ThumbPic/2014110311112235618.jpg","alt":"bamboo veneer","title":"bamboo veneer"}]
 attributes: ["Item No: BB-V05/V13","Grain: Horizontal","Color: Natural","Size A: 2500 x 430 x 0.6/0.3 mm","Size B: 2500 x 1250 x 0.6/0.3 mm","Backing: Cellouse Fleece Paper"]

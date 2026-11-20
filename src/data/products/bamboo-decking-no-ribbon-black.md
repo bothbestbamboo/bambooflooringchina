@@ -6,7 +6,7 @@ description: "Bamboo decking, extreme carbonized dark, no ribbon,  flat both sid
 pageTitle: "Bamboo Decking : No Ribbon : Extreme Carbonized"
 categoryName: "Bamboo Decking"
 categoryUrl: "/products/product-type-BambooDecking.html"
-date: "2021-1-22 9:02:26"
+date: "2026-11-10 9:02:26"
 summary: "bamboo decking, no ribbon, flat on both sides, pre-oiled on both sides, extreme carbonized dark, grooves on both edges."
 images: [{"src":"/img/ThumbPic/2020121808444593761.jpg","alt":"Outdoor Bamboo Decking","title":"Outdoor Bamboo Decking"}]
 attributes: ["Item No: E9917","Profile: No Ribbon","Color: Extreme Dark","Surface: Pre-oiled","Size: 1860 x 140 x 20mm"]

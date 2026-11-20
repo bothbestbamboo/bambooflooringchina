@@ -6,7 +6,7 @@ description: "Solid strand woven bamboo flooring in carbonized color has attract
 pageTitle: "Solid Strand Woven Bamboo Flooring: Carbonized Color"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2021-1-22 7:52:25"
+date: "2026-11-10 7:52:25"
 summary: "solid strand woven bamboo flooring, carbonized color, 130mm width, t+g."
 images: [{"src":"/img/ThumbPic/2021012207522690217.jpg","alt":"Solid Strand Woven Bamboo Flooring","title":"Solid Strand Woven Bamboo Flooring"}]
 attributes: ["Item No: E8819","Grain: Strand Woven","Color: Carbonized","T + G: Standard","Size A: 1850 x 130 x 14mm","Size B: 920 x 130 x 14mm"]

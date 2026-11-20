@@ -6,7 +6,7 @@ description: "Tiger solid strand woven bamboo flooring is long plank, wide board
 pageTitle: "Strand Woven : Wide : Tiger"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-12-3 14:57:58"
+date: "2026-11-10 14:57:58"
 summary: "strand woven bamboo flooring, tiger color, 130mm width, t+g."
 images: [{"src":"/img/ThumbPic/2014103116011556037.jpg","alt":"tiger stripe bamboo flooring","title":"tiger stripe bamboo flooring"},{"src":"/img/ThumbPic/2014103116011583196.jpg","alt":"tiger stripe bamboo flooring","title":"tiger stripe bamboo flooring"},{"src":"/img/ThumbPic/2014103116011586352.jpg","alt":"tiger stripe bamboo flooring","title":"tiger stripe bamboo flooring"},{"src":"/img/ThumbPic/2014103116011513514.jpg","alt":"tiger stripe bamboo flooring","title":"tiger stripe bamboo flooring"},{"src":"/img/ThumbPic/2014103116011533032.jpg","alt":"tiger stripe bamboo flooring","title":"tiger stripe bamboo flooring"}]
 attributes: ["Item No: BB-ZZ-0513","Grain: Strand Woven","Color: Tiger","T+G: Standard","Size: 1850 x 130 x 14mm"]

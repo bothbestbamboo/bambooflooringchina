@@ -6,7 +6,7 @@ description: "Bamboo decking, extreme carbonized dark, deep grrove,  exterior ap
 pageTitle: "Bamboo Decking : Deep Groove : Extreme Carbonized"
 categoryName: "Bamboo Decking"
 categoryUrl: "/products/product-type-BambooDecking.html"
-date: "2021-1-22 9:29:55"
+date: "2026-11-10 9:29:55"
 summary: "bamboo decking, deep groove, pre-oiled on both sides, extreme carbonized dark, grooves on both edges."
 images: [{"src":"/img/ThumbPic/2021012209295764922.jpg","alt":"Outdoor Bamboo Decking","title":"Outdoor Bamboo Decking"}]
 attributes: ["Item No: E9906","Profile: Deep Groove","Color: Extreme Dark","Surface: Pre-oiled","Size: 1860 x 140 x 20mm"]

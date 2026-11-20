@@ -6,7 +6,7 @@ description: "Caramel solid strand woven bamboo flooring is long plank, wide boa
 pageTitle: "Strand Woven : Wide : Caramel"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-12-3 14:58:18"
+date: "2026-11-10 14:58:18"
 summary: "strand woven bamboo flooring, caramel color, 130mm width, t+g."
 images: [{"src":"/img/ThumbPic/2014103116021583169.jpg","alt":"strand woven bamboo flooring","title":"strand woven bamboo flooring"},{"src":"/img/ThumbPic/2014103116021558087.jpg","alt":"strand woven bamboo flooring","title":"strand woven bamboo flooring"},{"src":"/img/ThumbPic/2014103116021513487.jpg","alt":"strand woven bamboo flooring","title":"strand woven bamboo flooring"},{"src":"/img/ThumbPic/2014103116021533005.jpg","alt":"strand woven bamboo flooring","title":"strand woven bamboo flooring"},{"src":"/img/ThumbPic/2014103116021588403.jpg","alt":"strand woven bamboo flooring","title":"strand woven bamboo flooring"}]
 attributes: ["Item No: BB-SZ-0512","Grain: Strand Woven","Color: Caramel","T+G: Standard","Size: 1850 x 130 x 14mm"]

@@ -6,7 +6,7 @@ description: "Bamboo mats have wide varieties of styles and colors, green choice
 pageTitle: "Bamboo Mat : Red : 11mm Lamella"
 categoryName: "Bamboo Collection"
 categoryUrl: "/products/product-type-BambooCollection.html"
-date: "2016-12-3 14:48:49"
+date: "2026-11-10 14:48:49"
 summary: "bamboo mats, red color, 11mm bamboo lamella width, no thread, 15m per roll."
 images: [{"src":"/img/ThumbPic/2014103118493972235.jpg","alt":"bamboo mats","title":"bamboo mats"}]
 attributes: ["Item No: BB-BM-11R","Color: Red","Lamella Width: 11mm","Thread: No"]

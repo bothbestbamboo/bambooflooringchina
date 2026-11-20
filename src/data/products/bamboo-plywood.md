@@ -6,7 +6,7 @@ description: "Bamboo plywood with wholesale price from China factory is laminate
 pageTitle: "Bamboo Plywood"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2024-11-29 19:26:46"
+date: "2026-11-10 19:26:46"
 summary: "Bamboo plywood is an additional name of bamboo panels in USA, laminated by layers of finest bamboo strips with eco-friendly adhesive, flexible dimensions, multiple applications, custom sizes."
 images: [{"src":"/img/ThumbPic/2014103119183766759.jpg","alt":"bamboo plywood","title":"bamboo plywood"},{"src":"/img/ThumbPic/2014103119183741677.jpg","alt":"bamboo plywood","title":"bamboo plywood"},{"src":"/img/ThumbPic/2014103119183780713.jpg","alt":"bamboo plywood","title":"bamboo plywood"},{"src":"/img/ThumbPic/2014103119183736113.jpg","alt":"bamboo plywood","title":"bamboo plywood"},{"src":"/img/ThumbPic/2014103119183727392.jpg","alt":"bamboo plywood","title":"bamboo plywood"}]
 attributes: []

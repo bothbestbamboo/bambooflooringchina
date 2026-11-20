@@ -6,7 +6,7 @@ description: "Click lock strand woven bamboo flooring in natural color has attra
 pageTitle: "Click Lock Strand Woven Bamboo Flooring: Natural Color"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2021-1-22 8:03:46"
+date: "2026-11-10 8:03:46"
 summary: "click lock strand woven bamboo flooring, natural color, unilin system, 125mm width."
 images: [{"src":"/img/ThumbPic/2021012208034816177.jpg","alt":"Click Lock Strand Woven Bamboo Flooring","title":"Click Lock Strand Woven Bamboo Flooring"}]
 attributes: ["Item No: E8822","Grain: Strand Woven","Color: Natural","T + G: Click Lock","Size A: 1850 x 125 x 14mm","Size B: 920 x 125 x 14mm"]

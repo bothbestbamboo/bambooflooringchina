@@ -6,7 +6,7 @@ description: "Tiger strand woven bamboo flooring is tiger stripe color, attracti
 pageTitle: "Strand Woven : Solid : Tiger"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-12-2 15:37:57"
+date: "2026-11-10 15:37:57"
 summary: "strand woven bamboo flooring, tiger color, 96mm width, t+g."
 images: [{"src":"/img/ThumbPic/2014103018531072765.jpg","alt":"tiger bamboo flooring","title":"tiger bamboo flooring"},{"src":"/img/ThumbPic/201410301853103083.jpg","alt":"tiger bamboo flooring","title":"tiger bamboo flooring"},{"src":"/img/ThumbPic/2014103018531042119.jpg","alt":"tiger bamboo flooring","title":"tiger bamboo flooring"},{"src":"/img/ThumbPic/2014103018531017037.jpg","alt":"tiger bamboo flooring","title":"tiger bamboo flooring"},{"src":"/img/ThumbPic/2014103018531072435.jpg","alt":"tiger bamboo flooring","title":"tiger bamboo flooring"}]
 attributes: ["Item No: BB-ZZ-0503","Grain: Strand Woven","Color: Tiger","T+G: Standard","Size: 1850 x 96 x 14mm"]

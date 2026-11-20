@@ -6,7 +6,7 @@ description: "Vertical caramel bamboo flooring is wide board, 3 layers, side pre
 pageTitle: "Wide Plank : Vertical : Caramel"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-11-30 8:33:43"
+date: "2026-11-10 8:33:43"
 summary: "wide board bamboo flooring, vertical or side pressed, caramel color, 1920x154x15mm."
 images: [{"src":"/img/ThumbPic/201410311433465463.jpg","alt":"","title":""},{"src":"/img/ThumbPic/2014103114334680379.jpg","alt":"","title":""},{"src":"/img/ThumbPic/2014103114334655297.jpg","alt":"","title":""},{"src":"/img/ThumbPic/2014103114334610697.jpg","alt":"","title":""},{"src":"/img/ThumbPic/2014103114334649733.jpg","alt":"","title":""}]
 attributes: ["Item No: BB-KB-0304","Grain: Vertical","Color: Caramel","T + G: Standard","Size: 1920 x 154 x 15mm"]

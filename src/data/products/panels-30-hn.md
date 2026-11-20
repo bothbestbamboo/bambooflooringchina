@@ -6,7 +6,7 @@ description: "Horizontal natural bamboo panel is 2440x1220x30mm, 3 layers, fanta
 pageTitle: "Bamboo Panel : 30MM : HN"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2016-11-14 19:39:52"
+date: "2026-11-10 19:39:52"
 summary: "bamboo panels, 30mm thickness, horizontal, natural, 3 layers."
 images: [{"src":"/img/ThumbPic/201410291840206460.JPG","alt":"bamboo panels","title":"bamboo panels"},{"src":"/img/ThumbPic/2014112416283776978.JPG","alt":"bamboo panels","title":"bamboo panels"}]
 attributes: ["Item No: BB-BC-30HN","Grain: Horizontal","Color: Natural","Layers: 3 Ply, Vertical Core","Size: 2440 x 1220 x 30mm"]

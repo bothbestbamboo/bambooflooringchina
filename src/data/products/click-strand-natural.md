@@ -6,7 +6,7 @@ description: "Natural click strand woven bamboo flooring is natural color, fast,
 pageTitle: "Strand Woven : Click : Natural"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-12-3 15:00:04"
+date: "2026-11-10 15:00:04"
 summary: "strand woven bamboo flooring, natural color, 125mm width, unilin click."
 images: [{"src":"/img/ThumbPic/2014110114271613067.jpg","alt":"click strand bamboo flooring","title":"click strand bamboo flooring"},{"src":"/img/ThumbPic/2014110114271687983.jpg","alt":"click strand bamboo flooring","title":"click strand bamboo flooring"},{"src":"/img/ThumbPic/2014110114271643383.jpg","alt":"click strand bamboo flooring","title":"click strand bamboo flooring"},{"src":"/img/ThumbPic/2014110114271698781.jpg","alt":"click strand bamboo flooring","title":"click strand bamboo flooring"}]
 attributes: ["Item No: BB-ZZ-0504","Grain: Strand Woven","Color: Natural","T+G: Unilin Click","Size: 1850 x 125 x 14mm"]

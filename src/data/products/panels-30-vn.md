@@ -6,7 +6,7 @@ description: "Vertical natural bamboo panel is 2440x1220x30mm, 3 layers, fantast
 pageTitle: "Bamboo Panel : 30MM : VN"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2016-11-14 19:40:54"
+date: "2026-11-10 19:40:54"
 summary: "bamboo panels, 30mm thickness, vertical, natural, 3 layers."
 images: [{"src":"/img/ThumbPic/201411280848045024.JPG","alt":"bamboo panel","title":"bamboo panel"},{"src":"/img/ThumbPic/2014112808480494224.JPG","alt":"bamboo panel","title":"bamboo panel"}]
 attributes: ["Item No: BB-BC-30VN","Grain: Vertical","Color: Natural","Layers: 3 Ply, Vertical Core","Size: 2440 x 1220 x 30mm"]

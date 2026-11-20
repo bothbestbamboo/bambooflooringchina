@@ -6,7 +6,7 @@ description: "Strand woven bamboo flooring in natural color has attractive appre
 pageTitle: "Strand Woven Bamboo Flooring: Natural Color"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2021-1-22 7:47:53"
+date: "2026-11-10 7:47:53"
 summary: "strand woven bamboo flooring, natural color, 96mm width, t+g."
 images: [{"src":"/img/ThumbPic/2021012207475431612.jpg","alt":"Strand Woven Bamboo Flooring","title":"Strand Woven Bamboo Flooring"}]
 attributes: ["Item No: E8818","Grain: Strand Woven","Color: Natural","T + G: Standard","Size A: 1850 x 96 x 14mm","Size B: 920 x 96 x 14mm"]

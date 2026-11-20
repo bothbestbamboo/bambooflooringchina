@@ -6,7 +6,7 @@ description: "Horizontal caramel engineered bamboo flooring is 3 layers, cross l
 pageTitle: "Engineered : Horizontal : Caramel"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-11-16 8:52:27"
+date: "2026-11-10 8:52:27"
 summary: "floating engineered bamboo flooring, horizontal, caramel, 1900x190x14mm."
 images: [{"src":"/img/ThumbPic/2014103114484165518.jpg","alt":"engineered bamboo flooring","title":"engineered bamboo flooring"},{"src":"/img/ThumbPic/2014103114484176316.jpg","alt":"engineered bamboo flooring","title":"engineered bamboo flooring"},{"src":"/img/ThumbPic/2014103114484131716.jpg","alt":"engineered bamboo flooring","title":"engineered bamboo flooring"}]
 attributes: ["Item No: BB-FH-0302","Grain: Horizonal","Color: Caramel","T + G: Standard","Size: 1900 x 190 x 14mm"]

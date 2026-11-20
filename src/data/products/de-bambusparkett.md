@@ -6,7 +6,7 @@ description: "Unser Bambusboden überzeugt durch hervorragende H?rte, Formstabil
 pageTitle: "Bambusparkett – Natürlich, robust, modern"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2025-12-6 9:10:58"
+date: "2026-11-10 9:10:58"
 summary: "Unser Bambusboden überzeugt durch hervorragende H?rte, Formstabilit?t und ein elegantes, warmes Erscheinungsbild. Geeignet für Fu?bodenheizungen, vollfl?chige Verklebung oder schwimmende Verlegung mit Klicksystem. Perfekt für gesundes Wohnen, pflegeleicht und langlebig."
 images: [{"src":"/img/ThumbPic/2025120609075925177.jpg","alt":"Bambusparkett","title":"Bambusparkett"}]
 attributes: ["Item No.: E8810","Grain: Side Press","Color: Caramel","Size: 960 x 96 x 15mm"]

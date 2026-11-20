@@ -6,7 +6,7 @@ description: "Vertical caramel bamboo panel is 2440x1220x40mm, 5 layers, fantast
 pageTitle: "Bamboo Panel : 40MM : VC"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2016-11-13 10:27:41"
+date: "2026-11-10 10:27:41"
 summary: "bamboo panels, 40mm thickness, vertical, caramel, 5 layers."
 images: [{"src":"/img/ThumbPic/2014102918490859562.JPG","alt":"bamboo panels","title":"bamboo panels"},{"src":"/img/ThumbPic/2014102918490950841.jpg","alt":"bamboo panels","title":"bamboo panels"},{"src":"/img/ThumbPic/2014102918490925759.jpg","alt":"bamboo panels","title":"bamboo panels"}]
 attributes: ["Item No: BB-BC-40VC","Grain: Vertical","Color: Caramel","Layers: 5 Layers","Size: 2440 x 1220 x 40mm"]

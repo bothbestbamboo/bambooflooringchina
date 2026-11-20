@@ -6,7 +6,7 @@ description: "Vertical natural bamboo panel is 2440x1220x20mm, 3 layers, fantast
 pageTitle: "Bamboo Panel : 20MM : VN"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2020-12-28 14:40:36"
+date: "2026-11-10 14:40:36"
 summary: "bamboo panels, 20mm thickness, vertical, natural color, 3 layers."
 images: [{"src":"/img/ThumbPic/2020080410271373195.jpg","alt":"20mm bamboo plywood","title":"20mm bamboo plywood"}]
 attributes: ["Item No: BB-BC-20VN","Grain: Vertical","Color: Natural","Layers: 3 Ply, Vertical Core","Size: 2440 x 1220 x 20mm"]

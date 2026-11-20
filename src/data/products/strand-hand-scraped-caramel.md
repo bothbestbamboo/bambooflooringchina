@@ -6,7 +6,7 @@ description: "Caramel strand hand scraped woven bamboo flooring has been aged by
 pageTitle: "Strand Woven : Hand Scraped : Caramel"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-12-3 15:01:52"
+date: "2026-11-10 15:01:52"
 summary: "strand woven bamboo flooring, hand scraped, caramel, 130mm width, t+g."
 images: [{"src":"/img/ThumbPic/2014111409450219808.jpg","alt":"stranded bamboo flooring","title":"stranded bamboo flooring"},{"src":"/img/ThumbPic/2014111409450341403.jpg","alt":"stranded bamboo flooring","title":"stranded bamboo flooring"}]
 attributes: ["Item No: BB-ZZ-0517","Grain: Strand Woven","Color: Caramel","T+G: Standard","Size: 1850 x 130 x 14mm"]

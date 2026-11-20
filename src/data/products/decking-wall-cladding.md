@@ -6,7 +6,7 @@ description: "Bamboo wall cladding is suitable for exterior decoration and appli
 pageTitle: "Bamboo Wall Cladding : Carbonized"
 categoryName: "Bamboo Decking"
 categoryUrl: "/products/product-type-BambooDecking.html"
-date: "2016-11-30 8:27:45"
+date: "2026-11-10 8:27:45"
 summary: "bamboo wall cladding, carbonized color, wall sliding."
 images: [{"src":"/img/ThumbPic/201610251635037309.jpg","alt":"Bamboo Wall Cladding","title":"Bamboo Wall Cladding"}]
 attributes: ["Item No: BB-D1411","Color: Carbonized","Size: 1860 x 100 x 8mm","Size: 1860 x 100 x 10mm","Size: 1860 x 100 x 12mm"]

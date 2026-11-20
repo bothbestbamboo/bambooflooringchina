@@ -6,7 +6,7 @@ description: "Laminated bamboo plywood sheet, 15mm thickness, vertical side pres
 pageTitle: "Bamboo Plywood : 15MM : Vertical Natural"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2021-1-22 15:33:49"
+date: "2026-11-10 15:33:49"
 summary: "laminated bamboo plywood sheet, 15mm thickness, vertical or side press, natural, 3 layers cross structure, 4x8x3/5."
 images: [{"src":"/img/ThumbPic/2021012215335191276.jpg","alt":"Bamboo Plywood 15mm","title":"Bamboo Plywood 15mm"}]
 attributes: ["Item No: E7716","Grain: Vertical","Color: Natural","Layers: 3 Ply","Size: 2440 x 1220 x 15mm"]

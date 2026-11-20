@@ -6,7 +6,7 @@ description: "click lock of solid bamboo flooring, horizontal or flat press, car
 pageTitle: "Bamboo Flooring Click Lock Carbonized"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2021-1-22 19:13:26"
+date: "2026-11-10 19:13:26"
 summary: "click lock solid bamboo flooring, horizontal or flat press, carbonized color, 1030x128x15mm."
 images: [{"src":"/img/ThumbPic/2021012208385568119.jpg","alt":"Bamboo Flooring Click Lock Carbonized","title":"Bamboo Flooring Click Lock Carbonized"}]
 attributes: ["Item No: E8833","Grain: Flat Press","Color: Carbonized","T + G: Click Lock","Size: 1030 x 128 x 15mm"]

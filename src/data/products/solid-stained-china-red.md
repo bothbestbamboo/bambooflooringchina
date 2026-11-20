@@ -6,7 +6,7 @@ description: "China Red solid bamboo flooring is horizontal, stained color, eleg
 pageTitle: "Solid : Stained : China Red"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2016-12-3 15:06:46"
+date: "2026-11-10 15:06:46"
 summary: "solid bamboo flooring,stained, horizontal, china red color, 960x96x15mm."
 images: [{"src":"/img/ThumbPic/2014111708294183387.jpg","alt":"stained bamboo flooring","title":"stained bamboo flooring"},{"src":"/img/ThumbPic/2014111708294180231.jpg","alt":"stained bamboo flooring","title":"stained bamboo flooring"},{"src":"/img/ThumbPic/2014111708294124833.jpg","alt":"stained bamboo flooring","title":"stained bamboo flooring"}]
 attributes: ["Item No: BB-SZ-0512","Grain: Horizontal","Color: China Red","T+G: Standard","Size: 960 x 96 x 15mm"]

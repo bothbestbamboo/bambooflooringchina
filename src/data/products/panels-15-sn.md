@@ -6,7 +6,7 @@ description: "Natural strand bamboo panel is 2440x1220x15mm, 3 layers, fantastic
 pageTitle: "Bamboo Panel : 15MM : SN"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2014-12-5 8:58:11"
+date: "2026-11-10 8:58:11"
 summary: "bamboo panels, 15mm thickness, strand woven, natural color, 3 layers."
 images: [{"src":"/img/ThumbPic/2014112709161875975.JPG","alt":"strand bamboo panel","title":"strand bamboo panel"},{"src":"/img/ThumbPic/2014112709161881538.JPG","alt":"strand bamboo panel","title":"strand bamboo panel"}]
 attributes: ["Item No: BB-BC-15SN","Grain: Strand Woven","Color: Natural","Layers: 3 Layers, Vertical Core","Size: 2440 x 1220 x 15mm"]

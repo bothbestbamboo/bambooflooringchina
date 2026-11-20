@@ -6,7 +6,7 @@ description: "Vertical natural bamboo plywood is 2440x1220x25mm, 3 layers, fanta
 pageTitle: "Bamboo Panel : 25MM : VN"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2016-11-16 8:50:13"
+date: "2026-11-10 8:50:13"
 summary: "bamboo panels, 25mm thickness, vertical, natural, 3 layers."
 images: [{"src":"/img/ThumbPic/2014120508283318818.JPG","alt":"bamboo panels","title":"bamboo panels"},{"src":"/img/ThumbPic/2014120508283333102.JPG","alt":"bamboo panels","title":"bamboo panels"}]
 attributes: ["Item No: BB-BC-25VN","Grain: Vertical","Color: Natural","Layers: 3 Ply, Vertical Core","Size: 2440 x 1220 x 25mm"]

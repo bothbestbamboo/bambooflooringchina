@@ -6,7 +6,7 @@ description: "Horizontal caramel bamboo plywood is 2440x1220x20mm, 3 layers, fan
 pageTitle: "Bamboo Panel : 20MM : HC"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2020-12-28 14:40:54"
+date: "2026-11-10 14:40:54"
 summary: "bamboo panels, 20mm thickness, horizontal, caramel color, 3 layers."
 images: [{"src":"/img/ThumbPic/2020080410231559768.jpg","alt":"20mm bamboo panel","title":"20mm bamboo panel"}]
 attributes: ["Item No: BB-BC-20HC","Grain: Horizontal","Color: Caramel","Layers: 3 Ply, Vertical Core","Size: 2440 x 1220 x 20mm"]

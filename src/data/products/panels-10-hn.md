@@ -6,7 +6,7 @@ description: "Horizontal natural bamboo panel is 2440x1220x10mm, 2 layers, fanta
 pageTitle: "Bamboo Panel : 10MM : HN"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2020-12-28 14:41:53"
+date: "2026-11-10 14:41:53"
 summary: "bamboo panels, 10mm thickness, horizontal, natural color, 2 layers."
 images: [{"src":"/img/ThumbPic/2020090208453930394.jpg","alt":"10mm bamboo plywood","title":"10mm bamboo plywood"}]
 attributes: ["Item No: BB-BC-10HN","Grain: Horizontal","Color: Natural","Layers: 2 Layers, Same direction","Size: 2440 x 1220 x 10mm"]

@@ -6,7 +6,7 @@ description: "Laminated bamboo panels, 10mm thickness, horizontal flat press, ca
 pageTitle: "Bamboo Panel : 10MM : Horizontal Caramel"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2021-1-22 15:29:28"
+date: "2026-11-10 15:29:28"
 summary: "laminated bamboo panel, 10mm thickness, horizontal, caramel, 2 layers, 4x8x1/2."
 images: [{"src":"/img/ThumbPic/2021012214432591258.jpg","alt":"Bamboo Panel 10mm","title":"Bamboo Panel 10mm"}]
 attributes: ["Item No: E7711","Grain: Horizontal","Color: Caramel","Layers: 2 Ply","Size: 2440 x 1220 x 10mm"]

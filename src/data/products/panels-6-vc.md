@@ -6,7 +6,7 @@ description: "Vertical caramel bamboo panel is 2440x1220x6.35mm, 3 layers, fanta
 pageTitle: "Bamboo Panel : 6.35MM : VC"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2016-11-12 17:24:52"
+date: "2026-11-10 17:24:52"
 summary: "bamboo panels, 6.35mm thickness, vertical, caramel, 3 layers."
 images: [{"src":"/img/ThumbPic/2015061808314683719.jpg","alt":"bamboo panels","title":"bamboo panels"},{"src":"/img/ThumbPic/2015061808314749586.jpg","alt":"bamboo panels","title":"bamboo panels"}]
 attributes: ["Item No: BB-BC-6VC","Grain: Vertical","Color: Caamel","Layers: 3 Ply","Size: 2440 x 1220 x 6.35mm"]

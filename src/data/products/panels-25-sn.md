@@ -6,7 +6,7 @@ description: "Strad woven caramel bamboo plywood is 2440x1220x25mm, 3 layers, fa
 pageTitle: "Bamboo Panel : 25MM : SN"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2016-11-16 8:49:16"
+date: "2026-11-10 8:49:16"
 summary: "bamboo panels, 25mm thickness, strand woven, natural, 3 layers."
 images: [{"src":"/img/ThumbPic/2014120208530935618.JPG","alt":"strand bamboo plywood","title":"strand bamboo plywood"},{"src":"/img/ThumbPic/2014120208531071490.JPG","alt":"strand bamboo plywood","title":"strand bamboo plywood"}]
 attributes: ["Item No: BB-BC-25SN","Grain: Strand Woven","Color: Natural","Layers: 3 Ply, Vertical Core","Size: 2440 x 1220 x 25mm"]

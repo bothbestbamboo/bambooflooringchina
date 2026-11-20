@@ -6,7 +6,7 @@ description: "Laminated bamboo plywood sheet, 15mm thickness, horizontal flat pr
 pageTitle: "Bamboo Plywood : 15MM : Vertical Caramel"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2021-1-22 15:29:59"
+date: "2026-11-10 15:29:59"
 summary: "laminated bamboo plywood sheet, 15mm thickness, vertical or side press, caramel, 3 layers cross structure, 4x8x3/5."
 images: [{"src":"/img/ThumbPic/2021012215282969709.jpg","alt":"Bamboo Plywood 15mm","title":"Bamboo Plywood 15mm"}]
 attributes: ["Item No: E7715","Grain: Vertical","Color: Caramel","Layers: 3 Ply","Size: 2440 x 1220 x 15mm"]

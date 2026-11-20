@@ -6,7 +6,7 @@ description: "Bamboo flooring molding, wall base in natural and carbonized color
 pageTitle: "Bamboo Flooring Molding: Wall Base, Skirting Board, Baseboard"
 categoryName: "Bamboo Collection"
 categoryUrl: "/products/product-type-BambooCollection.html"
-date: "2020-12-25 14:56:40"
+date: "2026-11-10 14:56:40"
 summary: "Bamboo flooring molding, wall base in natural and carbonized color, skirting board in natural and carbonized color."
 images: [{"src":"/img/ThumbPic/202012251451498871.jpg","alt":"Bamboo Flooring Molding Wall Base","title":"Bamboo Flooring Molding Wall Base"}]
 attributes: ["Wall Base: 1850x90x14mm","Skirting Board: 1850x90x14mm","Color: Carbonized","Grain: Strand Woven"]

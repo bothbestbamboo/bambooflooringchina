@@ -6,7 +6,7 @@ description: "Vertical chocolate bamboo panel is 2440x1220x5mm, 1 layer, fantast
 pageTitle: "Bamboo Panel : 5MM : CHO"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2014-12-5 9:02:35"
+date: "2026-11-10 9:02:35"
 summary: "bamboo panels, 5mm thickness, vertical, chocolate, 1 layer."
 images: [{"src":"/img/ThumbPic/2014111916374947725.jpg","alt":"bamboo panels","title":"bamboo panels"},{"src":"/img/ThumbPic/2014111916375035511.JPG","alt":"bamboo panels","title":"bamboo panels"},{"src":"/img/ThumbPic/2014111916375076954.JPG","alt":"bamboo panels","title":"bamboo panels"}]
 attributes: ["Item No: BB-BC-5CHO","Grain: Vertical","Color: Chocolate","Layers: 1 Ply","Size: 2440 x 1220 x 5mm"]

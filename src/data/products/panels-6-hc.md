@@ -6,7 +6,7 @@ description: "Horizontal caramel bamboo panel is 2440x1220x6.35mm, 3 layers, fan
 pageTitle: "Bamboo Panel : 6.35MM : HC"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2016-11-12 17:23:13"
+date: "2026-11-10 17:23:13"
 summary: "bamboo panels, 6.35mm thickness, horizontal, caramel, 3 layers."
 images: [{"src":"/img/ThumbPic/2015061808394417555.jpg","alt":"bamboo panels","title":"bamboo panels"},{"src":"/img/ThumbPic/2015061808394492471.jpg","alt":"bamboo panels","title":"bamboo panels"}]
 attributes: ["Item No: BB-BC-6HC","Grain: Horizontal","Color: Caramel","Layers: 3 Ply","Size: 2440 x 1220 x 6.35mm"]

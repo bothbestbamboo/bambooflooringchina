@@ -6,7 +6,7 @@ description: "Horizontal natural bamboo flooring is in plain pressed, light colo
 pageTitle: "Solid : Horizontal : Natural"
 categoryName: "Bamboo Flooring"
 categoryUrl: "/products/product-type-BambooFlooring.html"
-date: "2020-12-17 8:19:54"
+date: "2026-11-10 8:19:54"
 summary: "solid bamboo flooring, vertical or side pressed, natural color, 960x96x15mm."
 images: [{"src":"/img/ThumbPic/2014103011075453460.jpg","alt":"solid bamboo flooring","title":"solid bamboo flooring"},{"src":"/img/ThumbPic/2014103011075467414.jpg","alt":"solid bamboo flooring","title":"solid bamboo flooring"},{"src":"/img/ThumbPic/2014103011075458694.jpg","alt":"solid bamboo flooring","title":"solid bamboo flooring"},{"src":"/img/ThumbPic/2014103011075497730.jpg","alt":"solid bamboo flooring","title":"solid bamboo flooring"},{"src":"/img/ThumbPic/2014103011075553130.jpg","alt":"solid bamboo flooring","title":"solid bamboo flooring"}]
 attributes: ["Item No: BB-SZ-0501","Grain: Horizontal","Color: Natural","T + G: Standard","Size: 960 x 96 x 15mm"]

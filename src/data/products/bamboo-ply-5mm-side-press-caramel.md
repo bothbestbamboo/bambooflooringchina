@@ -6,7 +6,7 @@ description: "Single layer bamboo panel, 5mm thickness, vertical side press, car
 pageTitle: "Bamboo Ply : 5MM : Vertical Caramel"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2021-1-22 14:24:51"
+date: "2026-11-10 14:24:51"
 summary: "single layer bamboo panel, 5mm thickness, vertical, caramel, 1 layer."
 images: [{"src":"/img/ThumbPic/2021012214245161556.jpg","alt":"Bamboo Plywood 5mm","title":"Bamboo Plywood 5mm"}]
 attributes: ["Item No: E7753","Grain: Vertical","Color: Caramel","Layers: 1 Ply","Size: 2440 x 1220 x 5mm"]

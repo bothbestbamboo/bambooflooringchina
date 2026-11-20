@@ -6,7 +6,7 @@ description: "Bamboo beam is compressed by strands of bamboo, superior hardness,
 pageTitle: "Bamboo Beam : Strand Woven : Caramel"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2014-11-19 10:44:58"
+date: "2026-11-10 10:44:58"
 summary: "bamboo beam, strand woven, carbonized color, solid, super density"
 images: [{"src":"/img/ThumbPic/201410311422591590.jpg","alt":"bamboo beam","title":"bamboo beam"},{"src":"/img/ThumbPic/2014103114225951424.jpg","alt":"bamboo beam","title":"bamboo beam"},{"src":"/img/ThumbPic/2014103114225923185.jpg","alt":"bamboo beam","title":"bamboo beam"},{"src":"/img/ThumbPic/2014103114225978583.jpg","alt":"bamboo beam","title":"bamboo beam"}]
 attributes: ["Item No: BB-BL-0203","Grain: Strand Woven","Color: Carbonized","Length: 1850mm","Length: 2440mm"]

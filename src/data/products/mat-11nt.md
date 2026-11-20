@@ -6,7 +6,7 @@ description: "Bamboo mats have wide varieties of styles and colors, green choice
 pageTitle: "Bamboo Mat : Natural : 11mm Lamella"
 categoryName: "Bamboo Collection"
 categoryUrl: "/products/product-type-BambooCollection.html"
-date: "2016-12-3 14:49:54"
+date: "2026-11-10 14:49:54"
 summary: "bamboo mats, natural color, 11mm bamboo lamella width, thread, 15m per roll."
 images: [{"src":"/img/ThumbPic/2014103118504753244.jpg","alt":"bamboo mats","title":"bamboo mats"}]
 attributes: ["Item No: BB-BM-11NT","Color: Natural","Lamella Width: 11mm","Thread: Yes"]

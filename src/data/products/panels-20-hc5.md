@@ -6,7 +6,7 @@ description: "Horizontal caramel bamboo panel is 2440x1220x20mm, 5 layers, fanta
 pageTitle: "Bamboo Panel : 20MM : HC5"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2014-12-8 15:31:57"
+date: "2026-11-10 15:31:57"
 summary: "bamboo panels, 20mm thickness, horizontal, caramel, 5 layers."
 images: [{"src":"/img/ThumbPic/2014120815314274337.JPG","alt":"5 layers bamboo panel","title":"5 layers bamboo panel"},{"src":"/img/ThumbPic/2014120815314340535.JPG","alt":"5 layers bamboo panel","title":"5 layers bamboo panel"}]
 attributes: ["Item No: BB-BC-20HC5","Grain: Horizontal","Color: Caramel","Layers: 5 Ply","Size: 2440 x 1220 x 20mm"]

@@ -6,7 +6,7 @@ description: "Outdoor bamboo wall cladding and panel, extreme carbonized dark, f
 pageTitle: "Outdoor Bamboo Wall Cladding : 8MM 10MM 12MM"
 categoryName: "Bamboo Decking"
 categoryUrl: "/products/product-type-BambooDecking.html"
-date: "2021-1-22 9:55:47"
+date: "2026-11-10 9:55:47"
 summary: "outdoor bamboo wall cladding, pre-oiled on both sides, extreme carbonized dark, thickness of 8mm, 10mm, 12mm."
 images: [{"src":"/img/ThumbPic/2021012209554836852.jpg","alt":"Outdoor Bamboo Wall Panel","title":"Outdoor Bamboo Wall Panel"}]
 attributes: ["Item No: E9910","Profile: Flat","Color: Extreme Dark","Surface: Pre-oiled","Size: 1860 x 100 x 10mm"]

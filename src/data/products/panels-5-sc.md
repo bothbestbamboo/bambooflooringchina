@@ -6,7 +6,7 @@ description: "Strand woven caramel bamboo panel is 2440x1220x5mm, 1 layer, fanta
 pageTitle: "Bamboo Panel : 5MM : SC"
 categoryName: "Bamboo Panels"
 categoryUrl: "/products/product-type-BambooPanels.html"
-date: "2014-12-5 9:02:49"
+date: "2026-11-10 9:02:49"
 summary: "bamboo panels, 5mm thickness, strand woven, caramel, 1 layer."
 images: [{"src":"/img/ThumbPic/2014111916470054028.JPG","alt":"bamboo panels","title":"bamboo panels"},{"src":"/img/ThumbPic/2014111916470059592.JPG","alt":"bamboo panels","title":"bamboo panels"},{"src":"/img/ThumbPic/2014111916470068312.JPG","alt":"bamboo panels","title":"bamboo panels"}]
 attributes: ["Item No: BB-BC-5SC","Grain: Strand Woven","Color: Caramel","Layers: 1 Ply","Size: 2440 x 1220 x 5mm"]

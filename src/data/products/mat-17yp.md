@@ -6,7 +6,7 @@ description: "Bamboo mats have wide varieties of styles and colors, green choice
 pageTitle: "Bamboo Mat : Yellow : 17mm Lamella"
 categoryName: "Bamboo Collection"
 categoryUrl: "/products/product-type-BambooCollection.html"
-date: "2016-12-3 14:54:16"
+date: "2026-11-10 14:54:16"
 summary: "bamboo mats, yellow color, 17mm bamboo lamella width, printed, 10m per roll."
 images: [{"src":"/img/ThumbPic/2014103118540519397.jpg","alt":"bamboo mats","title":"bamboo mats"}]
 attributes: ["Item No: BB-BM-17YP","Color: Yellow","Lamella Width: 17mm","Printed: Yes"]
