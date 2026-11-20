@@ -7,7 +7,6 @@ export async function getStaticPaths({ paginate }: any) {
   const sortedNews = Object.values(newsFiles).sort(
     (a: any, b: any) => (b.frontmatter.id || 0) - (a.frontmatter.id || 0)
   );
-  // 每页 20 篇，自动分页
   return paginate(sortedNews, { pageSize: 20 });
 }
 
@@ -15,44 +14,48 @@ const { page } = Astro.props as any;
 const currentPage = page.currentPage;
 const totalPages = page.lastPage;
 
-// 生成页码数字列表 (最多显示9个页码按钮，与原网站完全一致)
 const startPage = Math.max(1, Math.min(currentPage - 4, totalPages - 8));
 const endPage = Math.min(totalPages, Math.max(9, currentPage + 4));
 const pageNumbers = Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
+
+const pageTitle = currentPage > 1
+  ? `Bamboo Flooring News & Guides - Page ${currentPage} | Bothbest`
+  : `Bamboo Flooring News & Technical Guides | Bothbest`;
+const pageDesc = currentPage > 1
+  ? `Page ${currentPage} of Bothbest bamboo flooring, outdoor decking, and bamboo plywood industry news, installation guides, and factory insights.`
+  : `Technical guides, installation tips, and industry updates on bamboo flooring, outdoor bamboo decking, and bamboo plywood from Bothbest China factory.`;
 ---
 <BaseLayout
-  title="News | Bamboo Flooring: China Factory Wholesale"
-  keywords="bamboo flooring, china, factory, wholesale"
-  description="Bothbest is a China factory manufacturing bamboo flooring and offers bamboo flooring price in wholesale, guaranteed quality, worldwide shipping."
+  title={pageTitle}
+  keywords="bamboo flooring news, bamboo decking guide, bamboo plywood tips, Bothbest blog"
+  description={pageDesc}
   bodyClass="html not-front not-logged-in one-sidebar sidebar-second page-contact"
   footerType="postscript"
   rssUrl="/rss/news.xml"
+  loadLegacyJs={false}
 >
     <section class="container mainContent">
-        <form action="/search.aspx" method="get" class="MobileSearch">
-            <input type="text" name="MobileSearchKeywords" id="MobileSearchKeywords" />
-            <input type="submit" id="MobileSearch" name="MobileSearch" value="Search" class="form-submit" />
+        <form action="/search.html" method="get" class="MobileSearch" role="search">
+            <input type="text" name="SearchKeywords" id="MobileSearchKeywords" placeholder="Search news..." aria-label="Search keywords" />
+            <input type="submit" id="MobileSearch" name="search" value="Search" class="form-submit" />
         </form>
         <div class="row-fluid">
-            <div class="tabs"></div>
-        </div>
-        <div class="row-fluid">
-            <div class="content span9 ">
+            <div class="content span9">
                 <div class="innerSpacer">
                     <a id="main-content"></a>
-                    <h1 class="title" id="page-title">Bothbest Blog - You find than you expect.</h1>
+                    <h1 class="title" id="page-title">Bothbest Bamboo Blog &amp; Technical Guides</h1>
                     <div id="block-system-main" class="block block-system" style="padding-top: 15px">
                         <div class="view view-blog view-id-blog view-display-id-page innerSpacer">
                             <div class="view-content">
                                 {page.data.map((post: any) => (
-                                    <div class="row-fluid post">
+                                    <article class="row-fluid post">
                                         <div class="row-fluid post-content">
                                             <div class="row-fluid">
                                                 <div class="span2">
                                                     <span class="btn btn-inverse postTypeIcon"><i class="icon-pencil icon-white"></i></span>
                                                 </div>
                                                 <div class="span10 post-title">
-                                                    <h3><a href={`/news/${post.frontmatter.slug}.html`}>{post.frontmatter.title}</a></h3>
+                                                    <h2><a href={`/news/${post.frontmatter.slug}.html`}>{post.frontmatter.title}</a></h2>
                                                 </div>
                                             </div>
                                             <div class="row-fluid">
@@ -64,21 +67,35 @@ const pageNumbers = Array.from({ length: endPage - startPage + 1 }, (_, i) => st
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </article>
                                 ))}
 
-                                <div class="pagination">
-                                    <div class="pager-index"><a href="news_1.html">First</a></div>
-                                    <div class="pre2"><a href={currentPage > 1 ? `news_${currentPage - 1}.html` : '#'}>Prev</a></div>
+                                <nav class="pagination" aria-label="News pagination">
+                                    {currentPage > 1 && (
+                                        <>
+                                            <div class="pager-index"><a href="/news/news_1.html">First</a></div>
+                                            <div class="pre2"><a href={`/news/news_${currentPage - 1}.html`}>Prev</a></div>
+                                        </>
+                                    )}
                                     {pageNumbers.map((num) => (
                                         <div class="num">
-                                            <a href={`news_${num}.html`} class={num === currentPage ? "pager-current active" : ""}>{num}</a>
+                                            <a
+                                                href={`/news/news_${num}.html`}
+                                                class={num === currentPage ? "pager-current active" : ""}
+                                                aria-current={num === currentPage ? "page" : undefined}
+                                            >
+                                                {num}
+                                            </a>
                                         </div>
                                     ))}
-                                    <div class="pager-next"><a href={currentPage < totalPages ? `news_${currentPage + 1}.html` : `news_${totalPages}.html`}>Next</a></div>
-                                    <div class="pager-last last"><a href={`news_${totalPages}.html`}>Last</a></div>
+                                    {currentPage < totalPages && (
+                                        <>
+                                            <div class="pager-next"><a href={`/news/news_${currentPage + 1}.html`}>Next</a></div>
+                                            <div class="pager-last last"><a href={`/news/news_${totalPages}.html`}>Last</a></div>
+                                        </>
+                                    )}
                                     <div class="clear"></div>
-                                </div>
+                                </nav>
                             </div>
                         </div>
                     </div>

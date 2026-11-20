@@ -4,37 +4,48 @@ const sortedNews = Object.values(newsFiles).sort(
   (a: any, b: any) => (b.frontmatter.id || 0) - (a.frontmatter.id || 0)
 );
 
-// 自动取最新 10 篇作为 Hot，第 11~20 篇作为 Latest
-const hotList = sortedNews.slice(0, 10).reverse();
-const latestList = sortedNews.slice(10, 20);
+// 最新 10 篇放 Latest，第 11~20 篇放 Hot / More
+const latestList = sortedNews.slice(0, 10);
+const hotList = sortedNews.slice(10, 20);
+
+const sidebarSlides = [
+  { src: '/img/UploadFiles/null-p193mhvg7f22014iq19v2ms0q721.jpg', alt: 'Bothbest solid bamboo flooring showcase' },
+  { src: '/img/UploadFiles/null-p19309fvqg34qar51bf011p91oem1.jpg', alt: 'Strand woven bamboo flooring planks' },
+  { src: '/img/UploadFiles/null-p19309fhc31k4nktq13pslkq4dt1.jpg', alt: 'Carbonized bamboo flooring interior' },
+  { src: '/img/UploadFiles/null-p19309a3at1mv41p8op4onkkupe1.jpg', alt: 'Wholesale China bamboo flooring factory' },
+];
 ---
-<div class="sidebar-second span3 ">
+<aside class="sidebar-second span3" aria-label="News sidebar">
     <div id="block-block-4" class="block block-block">
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs" id="newsSidebarTabs" role="tablist">
             <li class="active">
-                <a href="#tab1" data-toggle="tab">Hot</a>
+                <a href="#tab-latest" data-tab-target="tab-latest" role="tab" aria-selected="true">Latest</a>
             </li>
             <li>
-                <a href="#tab2" data-toggle="tab">Latest</a>
+                <a href="#tab-hot" data-tab-target="tab-hot" role="tab" aria-selected="false">Hot</a>
             </li>
         </ul>
         <div class="tab-content NewsSidebar">
-            <div class="tab-pane" id="tab2">
+            <div class="tab-pane active" id="tab-latest" role="tabpanel">
                 <ul>
                     {latestList.map((n: any) => {
                         const title = n.frontmatter.title || '';
                         return (
-                            <li><a href={`/news/${n.frontmatter.slug}.html`}>{title.length > 28 ? title.slice(0, 28) + '...' : title}</a></li>
+                            <li>
+                                <a href={`/news/${n.frontmatter.slug}.html`} title={title}>{title}</a>
+                            </li>
                         );
                     })}
                 </ul>
             </div>
-            <div class="tab-pane active" id="tab1">
+            <div class="tab-pane" id="tab-hot" role="tabpanel">
                 <ul>
                     {hotList.map((n: any) => {
                         const title = n.frontmatter.title || '';
                         return (
-                            <li><a href={`/news/${n.frontmatter.slug}.html`}>{title.length > 28 ? title.slice(0, 28) + '...' : title}</a></li>
+                            <li>
+                                <a href={`/news/${n.frontmatter.slug}.html`} title={title}>{title}</a>
+                            </li>
                         );
                     })}
                 </ul>
@@ -43,18 +54,96 @@ const latestList = sortedNews.slice(10, 20);
     </div>
 
     <div id="block-views-mentor-slider-block-1" class="block block-views">
-        <h3>Slider Block</h3>
-        <div class="view view-mentor-slider view-id-mentor_slider view-display-id-block_1 slideWrap view-dom-id-2da00b99d51c37f5731cd96a81bc1428">
-            <div class="view-content">
-                <div>
-                    <div class="peVolo">
-                        <div data-delay="3"><img src="/img/UploadFiles/null-p193mhvg7f22014iq19v2ms0q721.jpg" alt="bamboo flooring" title="bamboo flooring" /></div>
-                        <div data-delay="3"><img src="/img/UploadFiles/null-p19309fvqg34qar51bf011p91oem1.jpg" alt="bamboo flooring" title="bamboo flooring" /></div>
-                        <div data-delay="3"><img src="/img/UploadFiles/null-p19309fhc31k4nktq13pslkq4dt1.jpg" alt="bamboo flooring" title="bamboo flooring" /></div>
-                        <div data-delay="3"><img src="/img/UploadFiles/null-p19309a3at1mv41p8op4onkkupe1.jpg" alt="bamboo flooring" title="bamboo flooring" /></div>
+        <h3>Bamboo Showcase</h3>
+        <div class="hero-slider sidebar-slider" id="sidebarSlider" aria-roledescription="carousel" aria-label="Bamboo Showcase">
+            <div class="hero-slides">
+                {sidebarSlides.map((slide, idx) => (
+                    <div class={`hero-slide${idx === 0 ? ' is-active' : ''}`}>
+                        <img
+                            src={slide.src}
+                            alt={slide.alt}
+                            loading="lazy"
+                            decoding="async"
+                        />
                     </div>
-                </div>
+                ))}
+            </div>
+            <button type="button" class="hero-nav hero-prev" id="sidebarPrev" aria-label="Previous image">&#8249;</button>
+            <button type="button" class="hero-nav hero-next" id="sidebarNext" aria-label="Next image">&#8250;</button>
+            <div class="hero-dots" id="sidebarDots">
+                {sidebarSlides.map((_, idx) => (
+                    <button
+                        type="button"
+                        class={`hero-dot${idx === 0 ? ' is-active' : ''}`}
+                        data-slide={idx}
+                        aria-label={`View image ${idx + 1}`}
+                    ></button>
+                ))}
             </div>
         </div>
     </div>
-</div>
+</aside>
+
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', function () {
+        // 1. 侧栏 Hot / Latest 原生 Tab 切换
+        var tabBar = document.getElementById('newsSidebarTabs');
+        if (tabBar) {
+            tabBar.addEventListener('click', function (e) {
+                var link = e.target.closest('a[data-tab-target]');
+                if (!link) return;
+                e.preventDefault();
+                var targetId = link.getAttribute('data-tab-target');
+                var items = tabBar.querySelectorAll('li');
+                for (var i = 0; i < items.length; i++) {
+                    var isCurrent = items[i].contains(link);
+                    items[i].classList.toggle('active', isCurrent);
+                    var a = items[i].querySelector('a');
+                    if (a) a.setAttribute('aria-selected', isCurrent ? 'true' : 'false');
+                }
+                var panes = document.querySelectorAll('.NewsSidebar .tab-pane');
+                for (var j = 0; j < panes.length; j++) {
+                    panes[j].classList.toggle('active', panes[j].id === targetId);
+                }
+            });
+        }
+
+        // 2. 侧栏零跳动轻量轮播
+        var slider = document.getElementById('sidebarSlider');
+        if (slider) {
+            var slides = slider.querySelectorAll('.hero-slide');
+            var dots = slider.querySelectorAll('.hero-dot');
+            var current = 0;
+            var timer = null;
+
+            var showSlide = function (index) {
+                current = (index + slides.length) % slides.length;
+                for (var i = 0; i < slides.length; i++) {
+                    slides[i].classList.toggle('is-active', i === current);
+                    if (dots[i]) dots[i].classList.toggle('is-active', i === current);
+                }
+            };
+            var startAuto = function () {
+                stopAuto();
+                timer = setInterval(function () { showSlide(current + 1); }, 4200);
+            };
+            var stopAuto = function () {
+                if (timer) { clearInterval(timer); timer = null; }
+            };
+
+            var prevBtn = document.getElementById('sidebarPrev');
+            var nextBtn = document.getElementById('sidebarNext');
+            if (prevBtn) prevBtn.addEventListener('click', function () { showSlide(current - 1); startAuto(); });
+            if (nextBtn) nextBtn.addEventListener('click', function () { showSlide(current + 1); startAuto(); });
+            for (var d = 0; d < dots.length; d++) {
+                dots[d].addEventListener('click', function () {
+                    showSlide(parseInt(this.getAttribute('data-slide'), 10) || 0);
+                    startAuto();
+                });
+            }
+            slider.addEventListener('mouseenter', stopAuto);
+            slider.addEventListener('mouseleave', startAuto);
+            startAuto();
+        }
+    });
+</script>

@@ -1,0 +1,2824 @@
+﻿
+body {
+    background: #fcfcfc;
+    font-family: helvetica, arial, verdana, sans-serif;
+    color: #888;
+    font-size: 12px;
+    word-wrap: break-word;
+    word-break: normal;
+}
+
+h1 {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #2f2f2f;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+h2 {
+    font-size: 22px;
+    color: #5f5f5f;
+    line-height: 28px;
+    font-family: Georgia, Constantia, Lucida, serif;
+    font-weight: normal;
+}
+
+h3 {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #2f2f2f;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+
+p {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #919191;
+}
+
+footer p {
+    color: #777;
+}
+
+a {
+    color: #547834;
+    text-decoration: none;
+    -webkit-transition: color 0.2s linear;
+    -moz-transition: color 0.2s linear;
+    -ms-transition: color 0.2s linear;
+    -o-transition: color 0.2s linear;
+    transition: color 0.2s linear;
+    -webkit-transition: background-color 0.2s linear;
+    -moz-transition: background-color 0.2s linear;
+    -ms-transition: background-color 0.2s linear;
+    -o-transition: background-color 0.2s linear;
+    transition: background-color 0.2s linear;
+    -webkit-transition: opacity 0.2s linear;
+    -moz-transition: opacity 0.2s linear;
+    -ms-transition: opacity 0.2s linear;
+    -o-transition: opacity 0.2s linear;
+    transition: opacity 0.2s linear;
+}
+
+    a:hover {
+        text-decoration: none;
+        color: #b24a19;
+    }
+
+.nav a {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+:-moz-placeholder {
+    color: #bbb;
+    font-size: 12px;
+}
+
+::-webkit-input-placeholder {
+    color: #bbb;
+    font-size: 12px;
+}
+
+.label {
+    background-color: #c1c1bf;
+    font-size: 9px;
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: none;
+}
+
+.mainContent a.label:hover,
+.mainContent a:hover > span.label {
+    background-color: #547834;
+}
+
+.label-important {
+    background-color: #b94a48;
+}
+
+    .label-important:hover {
+        background-color: #953b39;
+    }
+
+.label-warning {
+    background-color: #f89406;
+}
+
+    .label-warning:hover {
+        background-color: #c67605;
+    }
+
+.label-success {
+    background-color: #468847;
+}
+
+    .label-success:hover {
+        background-color: #356635;
+    }
+
+.label-info {
+    background-color: #3a87ad;
+}
+
+    .label-info:hover {
+        background-color: #2d6987;
+    }
+
+.label-inverse {
+    background-color: #333333;
+}
+
+    .label-inverse:hover {
+        background-color: #1a1a1a;
+    }
+
+.badge-important {
+    background-color: #B94A48;
+}
+
+    .badge-important:hover {
+        background-color: #953b39;
+    }
+
+.divider span {
+    border-top: 1px solid #eee;
+}
+
+.divider.dotted span {
+    border-top: 1px dotted #eee;
+}
+
+.hero-unit {
+    background-color: #f2c6a5;
+}
+
+    .hero-unit h1 {
+        color: #fff;
+        font-size: 40px;
+        letter-spacing: -1px;
+        line-height: 1;
+    }
+
+    .hero-unit p {
+        color: #2f2f2f;
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 25px;
+    }
+
+    .hero-unit.price h1 span {
+        font-size: 18px;
+    }
+
+    .hero-unit.price p.type {
+        color: #fff;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .hero-unit.price li {
+        font-size: 12px;
+        font-weight: bold;
+        color: #fff;
+        border-bottom: 1px dotted #ddd;
+    }
+
+.close {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.alert p {
+    color: #666;
+}
+
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0 0 4px 4px;
+}
+
+.accordion-heading a {
+    background-color: #E5E5E5;
+    color: #666;
+}
+
+    .accordion-heading a:hover {
+        background-color: #547834;
+        color: #fff;
+    }
+
+.nav-list > .active > a,
+.nav-list > .active > a:hover {
+    background-color: #547834;
+}
+
+.nav-list i {
+    opacity: 0.6;
+}
+
+.nav-list > .active i {
+    opacity: 1;
+}
+
+.nav-list a {
+    color: #2f2f2f;
+}
+
+blockquote {
+    border: none;
+}
+
+    blockquote p {
+        font-size: 22px;
+        color: #5F5F5F;
+        line-height: 28px;
+        font-family: Georgia, Constantia, Lucida, serif;
+    }
+
+/*back to top button*/
+
+.btt {
+    opacity: 0.4;
+    background-color: #547834;
+}
+
+    .btt:hover {
+        opacity: 0.8;
+    }
+
+/* END GENERAL */
+
+
+/*MENU SKIN*/
+
+/*menu header underline*/
+.navbar {
+    background: transparent url(../img/skin_orange/head_line_btm.jpg) repeat-x 0 100%;
+}
+
+    .navbar .brand {
+        border: none;
+    }
+
+    .navbar .nav > li > a {
+        color: #979795;
+        font-weight: bold;
+        font-size: 14px;
+        text-shadow: none;
+    }
+
+        .navbar .nav > li > a:hover {
+            background-color: #9aae4c;
+            border-radius: 3px 3px 0 0;
+            color: #fff;
+            text-decoration: none;
+        }
+
+    .navbar .nav .active > a, .navbar .nav .active > a:hover {
+        background-color: #547834;
+        color: #fff;
+        border-bottom: 2px solid #547834;
+        -moz-background-clip: padding;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+    }
+
+
+
+    .navbar .nav .dropdown-toggle .caret,
+    .navbar .nav .open.dropdown .caret {
+        border-bottom-color: #000;
+        border-top-color: #000;
+    }
+
+    .navbar .dropdown-menu:after,
+    .navbar .dropdown-menu:before {
+        content: none;
+        border: none;
+    }
+
+    .navbar .dropdown-menu {
+        border-radius: 0;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-color: #e5e5e5;
+        border: none;
+        border-top: 2px solid #547834;
+        box-shadow: 0 3px 5px rgba(0,0,0,0.5);
+        -webkit-box-shadow: 0 3px 5px rgba(0,0,0,0.5);
+        background: #c9da86;
+    }
+
+        .navbar .dropdown-menu a {
+            color: #fff;
+        }
+
+.dropdown-menu li > a:hover,
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #547834;
+}
+
+.dropdown-menu .divider {
+    background-color: #000;
+    border-bottom: 1px solid #555;
+}
+
+.navbar .nav .open > .dropdown-toggle,
+.navbar .nav .active > .dropdown-toggle,
+.navbar .nav .open.active > .dropdown-toggle {
+    background-color: #547834;
+    color: #fff;
+}
+
+    .navbar .nav .open > .dropdown-toggle .caret,
+    .navbar .nav .active > .dropdown-toggle .caret,
+    .navbar .nav .open.active > .dropdown-toggle .caret {
+        border-bottom-color: #fff;
+        border-top-color: #fff;
+    }
+
+
+/*3rd level menu*/
+
+.navbar .nav .nav-header {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+    color: #fff;
+    text-shadow: none;
+    text-transform: uppercase;
+}
+
+
+
+/*styles for all sizes*/
+
+/*header*/
+header .smedia span {
+    color: #aaa;
+    font-size: 12px;
+}
+
+.navbar-fixed-top {
+    border-bottom: 2px solid #547834;
+}
+
+#edit-message {
+    width: 98.6%;
+}
+
+.sliderWrap .span12 {
+    box-shadow: 0 1px 2px #888;
+    border: 1px solid #aaa;
+}
+
+.taglineWrap {
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+}
+
+.tagline .action span {
+    background: url(../img/skin/or_line.png) no-repeat 5px 2px;
+    line-height: 36px;
+    font-style: italic;
+    font-family: Georgia, Constantia, Lucida, serif;
+}
+
+.btn-success {
+    background-color: #9fb44f;
+    background-repeat: repeat-x;
+    background-image: linear-gradient(top, #a5bb52, #8da046);
+    border-left-color: #829341;
+    border-right-color: #829341;
+    border-top-color: #829341;
+    border-bottom-color: #6f7d37;
+}
+
+    .btn-success:hover,
+    .btn-success:active,
+    .btn-success.active,
+    .btn-success.disabled,
+    .btn-success[disabled] {
+        background-color: #7f903f;
+    }
+
+    .btn-success:active,
+    .btn-success.active {
+        background-color: #7f903f \9;
+    }
+
+.btn:hover {
+    background-position: 0 -26px;
+}
+
+
+/*main content*/
+
+.mainContent {
+    border-top: 2px solid #ffffff;
+}
+
+/*blog*/
+
+.post .post-date {
+    color: #547834 !important;
+}
+
+/*.post-date a{
+        font-size:10px;
+        font-weight:bold;
+    }
+    
+    .post-date a:hover{
+        background-color:#547834;
+    }*/
+
+.post .post-title h3 {
+    font-size: 24px;
+}
+
+.post.full .post-title .post-meta a {
+    color: #666;
+}
+
+    .post.full .post-title .post-meta a:hover {
+        border-bottom: 1px solid #666;
+        color: #444;
+    }
+
+.post .post-title a {
+    color: #2f2f2f;
+}
+
+.post .post-image {
+    margin-bottom: 20px;
+}
+
+.post .post-meta p {
+    font-size: 14px;
+}
+
+    .post .post-meta p a {
+        color: #aaa;
+    }
+
+        .post .post-meta p a:hover {
+            color: #666;
+        }
+
+.post .post-meta .comments-num span {
+    opacity: 0.2;
+}
+
+.post .post-content {
+    border-bottom: 1px solid #efefef;
+    color: #666;
+}
+
+    .post .post-content p {
+        color: #666;
+    }
+
+.post .contentWrap {
+    border-bottom: 1px solid #eeeeee;
+}
+
+.post ul li span {
+    opacity: 0.5;
+}
+
+.post blockquote {
+    background: #e5e5e5;
+}
+
+    .post blockquote small {
+        color: #666;
+    }
+
+    .post blockquote p a {
+        color: #0088cc;
+    }
+
+        .post blockquote p a:hover {
+            color: #005580;
+        }
+
+
+/*blog comments*/
+
+#comments-title span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #666;
+    line-height: 10px;
+}
+
+.commentlist {
+    border-bottom: 1px solid #efefef;
+}
+
+.comment-author img {
+    border: 1px solid #fff;
+}
+
+.bypostauthor > .comment-body > .comment-author img {
+    border: 2px solid #547834;
+}
+
+#comments .fn a {
+    font-weight: bold;
+    font-size: 14px;
+    color: #666;
+}
+
+.bypostauthor #comments .fn a {
+    color: #547834;
+}
+
+#comments .fn a:hover {
+    color: #2f2f2f;
+}
+
+#comments .comment-meta a {
+    font-size: 11px;
+    color: #aaa;
+}
+
+    #comments .comment-meta a:hover {
+        color: #666;
+    }
+
+#comments .reply .label:hover {
+    background-color: #547834;
+}
+
+
+/*blog comments form*/
+
+#commentform .comment-notes {
+    color: #aaa;
+    font-size: 11px;
+}
+
+#commentform label {
+    color: #666;
+}
+
+
+/*pagination*/
+
+.pagination a {
+    color: #666;
+    font-weight: bold;
+}
+
+    .pagination a:hover {
+        color: #2f2f2f;
+    }
+
+.pagination .active a {
+    background-color: #547834;
+    color: #fff;
+    border-color: #547834;
+}
+
+
+/*pager*/
+
+
+.pager a {
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px 4px 4px 4px;
+    color: #666;
+}
+
+    .pager a span {
+        font-weight: bold;
+    }
+
+    .pager a:hover {
+        color: #fff;
+        background-color: #547834;
+    }
+
+
+/*search results*/
+
+.result {
+    border-bottom: 1px solid #eee;
+}
+
+    .result .result-title h3 a {
+        color: #2f2f2f;
+    }
+
+
+/*contact form*/
+.contact form label {
+    color: #666666;
+}
+
+/*faq*/
+
+.faq-heading {
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    background: #547834;
+    color: #fff;
+}
+
+    .faq-heading > div {
+        font-weight: bold;
+    }
+
+    .faq-heading:hover {
+        background-color: #E5E5E5;
+    }
+
+        .faq-heading:hover > div {
+            color: #666;
+        }
+
+    .faq-heading > a {
+        color: #2F2F2F;
+    }
+
+.faq-body .faq-inner {
+    border: 1px solid #DDDDDD;
+    border-radius: 0 0 4px 4px;
+    background-color: #fff;
+}
+
+/*portfolio*/
+
+.pageTitle.portfolio {
+    border-bottom: 1px solid #eeeeee;
+}
+
+.portfolio .filter span {
+    color: #eee;
+}
+
+.portfolio .filter a:hover {
+    background-color: #aaa;
+}
+
+.portfolio .filter a.active,
+.portfolio .filter a.active:hover {
+    background-color: #547834;
+}
+
+
+/*sidebars*/
+
+/*search widget*/
+
+.widget_search button[type=submit] {
+    background-color: transparent;
+    border: 0 none;
+    opacity: 0.4;
+}
+
+    .widget_search button[type=submit]:hover {
+        opacity: 0.7;
+    }
+
+input:focus,
+textarea:focus {
+    border-color: rgba(242, 101, 34, 0.8);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(242, 101, 34, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(242, 101, 34, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(242, 101, 34, 0.6);
+    outline: 0;
+    outline: thin dotted \9;
+}
+
+/*text widget*/
+
+.widget_text a:hover .lable {
+    background-color: #9fb44f;
+}
+
+
+/*portfolio widget*/
+
+.widget_portfolio > div {
+    background-color: #fff;
+    border: 1px solid #cfcfcf;
+    box-shadow: 0px 1px 2px #cfcfcf;
+    -mox-box-shadow: 0px 2px 1px #ccc;
+}
+
+    .widget_portfolio > div > a span {
+        background: url(../img/skin/project_triangle.png) no-repeat 0 0;
+    }
+
+.widget_portfolio .title span {
+    opacity: 0.3;
+}
+
+.widget_portfolio .title a {
+    border-left: 1px solid #efefef;
+    font-weight: bold;
+    color: #666;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+    .widget_portfolio .title a:hover {
+        color: #2f2f2f;
+    }
+
+
+/*contact details widget*/
+
+.widget_contact span {
+    opacity: 0.7;
+}
+
+/*categories widget*/
+
+.widget_categories li {
+    color: #aaa;
+    font-style: italic;
+    font-size: 11px;
+    line-height: 20px;
+}
+
+.widget_categories a {
+    color: #666;
+    font-style: normal;
+    font-size: 12px;
+}
+
+    .widget_categories a:hover {
+        color: #005580;
+    }
+
+
+
+/*tabs widget*/
+
+.widget_tabs .tab-content > .tab-pane,
+.widget_tabs .pill-content > .pill-pane {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0 0 4px 4px;
+}
+
+.nav-tabs > li > a {
+    background-color: #e5e5e5;
+    border-color: transparent;
+    color: #666;
+}
+
+    .nav-tabs > li > a:hover {
+        border-color: transparent;
+        background-color: #547834;
+        color: #fff;
+    }
+
+.nav-tabs > .active > a {
+    color: #2f2f2f;
+}
+
+
+/*portfolio items*/
+
+.portfolioItem {
+    background-color: #fff;
+    border: 1px solid #cfcfcf;
+    box-shadow: 0px 1px 2px #cfcfcf;
+    -mox-box-shadow: 0px 2px 1px #ccc;
+}
+
+.post-thumbs > div > a img {
+    background-color: #fff;
+    border: 1px solid #cfcfcf;
+    box-shadow: 0px 1px 2px #cfcfcf;
+    -mox-box-shadow: 0px 2px 1px #ccc;
+}
+
+.portfolioItem .peOver span.over {
+    background: black;
+}
+
+.portfolioItem a span {
+    background: url(../img/skin/project_triangle.png) no-repeat 0 0;
+}
+
+.portfolioItem .title span {
+    opacity: 0.3;
+}
+
+.portfolioItem .title a {
+    font-weight: bold;
+    color: #666;
+    font-size: 12px;
+    line-height: 20px;
+    height: 22px;
+    overflow: hidden;
+}
+
+    .portfolioItem .title a:hover {
+        color: #2f2f2f;
+    }
+
+.item-description li i {
+    opacity: 0.6;
+}
+
+.item-description .subtitle span {
+    opacity: 0.3;
+}
+
+.item-description .subtitle a {
+    border-left: 1px solid #efefef;
+    color: #999;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.item-description h3 a {
+    color: #2f2f2f;
+}
+
+.share {
+    border-top: 1px solid #eee;
+}
+
+.project-nav > div > a:hover {
+    background-color: #547834;
+}
+
+.project-nav > div > a i {
+    line-height: 12px;
+}
+
+.carousel-nav div a:hover {
+    background-color: #547834;
+}
+
+.carousel-nav div a i {
+    line-height: 12px;
+}
+
+.related-work .section-title {
+    border-bottom: 1px solid #EEEEEE;
+}
+
+
+/*gallery cover*/
+
+.galleryCover .title a {
+    font-size: 14px;
+    color: #666;
+}
+
+.galleryCover .title span {
+    font-weight: bold;
+    font-size: 14px;
+    color: #444;
+    background: url(../img/skin/photo_num_bg.png) no-repeat 0 0;
+}
+
+/*footer*/
+footer {
+    border-top: 1px solid #e3e3e3;
+    background: #ffffff;
+}
+
+
+    /*footer testimonail*/
+
+    footer .postscript {
+        background: #efefef;
+    }
+
+        footer .postscript .span9 {
+            background: url(../img/skin/speech_line.png) no-repeat 100% 15px;
+        }
+
+    footer blockquote {
+        border: none;
+    }
+
+        footer blockquote p {
+            font-size: 21px;
+            color: #888;
+            line-height: 28px;
+            font-family: Georgia, Constantia, Lucida, serif;
+        }
+
+            footer blockquote p .tel {
+                color: #5f5f5f;
+            }
+
+    /*footer main section*/
+
+    footer .footerMain {
+        border-top: none;
+    }
+
+        footer .footerMain .block {
+            background: #f5f7f9;
+        }
+
+            footer .footerMain .block p, footer .footerMain .block a, footer .footerMain .block h3 {
+                padding: 10px;
+            }
+
+    footer .postscript {
+        border-bottom: 2px solid #547834;
+    }
+
+/*recent posts widget*/
+
+.recent-posts h3 a .label {
+    background-color: #547834;
+}
+
+.recent-posts h3 a:hover .label {
+    background-color: #C1C1BF;
+}
+
+.recent-posts li .thumb img {
+    background-color: #fff;
+    border: 1px solid #cfcfcf;
+    box-shadow: 0px 1px 2px #cfcfcf;
+    -mox-box-shadow: 0px 2px 1px #ccc;
+}
+
+.recent-posts li .thumb:hover img {
+    border-color: #547834;
+}
+
+.recent-posts li .title {
+    color: #666;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+    .recent-posts li .title:hover {
+        text-decoration: none;
+        color: #2f2f2f;
+    }
+
+.recent-posts p {
+    border-bottom: 1px dotted #eee;
+    font-size: 12px;
+}
+
+    .recent-posts p a:hover {
+        text-decoration: none;
+    }
+
+        .recent-posts p a:hover .label {
+            text-decoration: none;
+            background-color: #547834;
+        }
+
+
+
+
+/*twitter widget*/
+.widget_twitter p {
+    color: #666;
+}
+
+    .widget_twitter p span {
+        color: #aaa;
+        font-size: 11px;
+        background: url(../img/skin/tweet_icon.png) no-repeat 0 0;
+    }
+
+.widget_twitter .followBtn:hover span {
+    background-color: #547834;
+}
+
+/*newsletter widget*/
+
+.block-simplenews .outro {
+    font-size: 11px;
+    color: #666;
+}
+
+/*links widget*/
+
+.widget_links li a {
+    color: #888;
+}
+
+.widget_links li span {
+    color: #0088cc;
+}
+
+.widget_links li a:hover {
+    color: #0088cc;
+}
+
+/*stats widget*/
+
+.widget_stats a {
+    font-size: 18px;
+    color: #547834;
+    font-weight: bold;
+    border-left: 1px solid #efefef;
+}
+
+    .widget_stats a span {
+        color: #aaa;
+        font-size: 12px;
+        font-weight: normal;
+    }
+
+    .widget_stats a:hover span {
+        color: #666;
+    }
+
+    .widget_stats a.last {
+        margin-right: 0;
+    }
+
+/*footer lower section*/
+#bamboo .featuredContent .span3 img {
+    width: 100%;
+    height: 200px;
+    border: 1px solid #eee;
+}
+
+.featuredContent .span3 h4 {
+    height: 18px;
+    overflow: hidden;
+}
+
+footer .footerLower {
+    border-top: 1px solid #efefef;
+    background: url(../img/skin/bg_footer.png) repeat left top;
+}
+
+.footerLower h3 {
+    color: #444;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.footerLower .f_menu a {
+    color: #444;
+}
+
+    .footerLower .f_menu a:hover {
+        color: #547834;
+    }
+
+.footerLower ul {
+    list-style: none;
+    margin-left: 0px;
+}
+
+    .footerLower ul li {
+        padding-bottom: 5px;
+    }
+
+.footerLower .f_contact {
+    color: #444;
+}
+
+    .footerLower .f_contact img {
+        margin-right: 10px;
+    }
+
+footer .copyright {
+    height: 50px;
+    text-align: left;
+    padding-top: 25px;
+}
+
+    footer .copyright .sns {
+        width: 90px;
+        height: 40px;
+        margin: 0 auto;
+    }
+/*social media icons sprite*/
+.sm-icon {
+    opacity: 0.2;
+}
+
+    .sm-icon:hover {
+        opacity: 0.6;
+    }
+
+/* thumbnail hover effect*/
+
+a.peOver:hover img {
+    opacity: 0.8;
+}
+
+a.peOver span.lightboxIcon {
+    background: url("../img/skin/view.png") no-repeat center center;
+}
+
+a.peOver span.linkIcon {
+    background: url("../img/skin/link.png") no-repeat center center;
+}
+
+
+/*video inline*/
+
+.videoWrapper a.peVideo {
+    background-color: #fefefe;
+}
+
+    .videoWrapper a.peVideo span.largePlay {
+        opacity: 0.7;
+        background: url("../img/skin/vid_start.png") no-repeat center center;
+    }
+
+    .videoWrapper a.peVideo:hover span.largePlay {
+        opacity: 1;
+    }
+
+    .videoWrapper a.peVideo > div {
+        background-color: black;
+    }
+
+/*x-large desktop*/
+/*----------------------------------------------------------------------*/
+
+@media (min-width: 1200px) {
+}
+
+
+
+/*normal desktop*/
+/*----------------------------------------------------------------------*/
+
+@media (min-width: 980px) {
+    .nav-products li {
+        width: 470px;
+    }
+
+    .nav-products .nav-img a img {
+        width: 113px;
+        height: 100px;
+    }
+}
+
+
+
+/*tablet landscape*/
+/*----------------------------------------------------------------------*/
+@media (max-width: 979px) {
+    .nav-products li {
+        width: 408px;
+    }
+
+    .nav-products .nav-img a img {
+        width: 98px;
+        height: 85px;
+    }
+}
+
+
+/*iPad portrait*/
+/*----------------------------------------------------------------------*/
+@media (min-width: 768px) and (max-width: 979px) {
+
+    /*stats*/
+    .widget_stats a {
+        font-size: 18px;
+    }
+
+        .widget_stats a span {
+            font-size: 11px;
+        }
+
+    /*menu*/
+
+    .navbar .dropdown-menu a:hover {
+        background-color: #547834;
+    }
+}
+
+
+/*iphone landscape*/
+/*----------------------------------------------------------------------*/
+@media (max-width: 767px) {
+    .btn.btn-inverse.postTypeIcon {
+        display: none;
+    }
+    /*footer*/
+    #bamboo .featuredContent .span3 {
+        margin-bottom: 10px !important;
+        min-height: 150px;
+    }
+
+        #bamboo .featuredContent .span3 img {
+            height: 320px;
+        }
+
+    .nav-products .nav-img a img {
+        width: 97px;
+    }
+
+    footer .postscript .span9 {
+        background: transparent;
+    }
+
+
+    /*footer widgets*/
+
+    footer .footerMain .widget {
+        border-bottom: 1px solid #eee;
+    }
+
+
+
+    /*menu*/
+
+    /*navbar text items*/
+    .navbar .nav > li > a, .navbar .dropdown-menu a {
+        color: #666;
+    }
+
+    /*navbar dropdown btn*/
+    .btn-navbar {
+        background: #c1c1bf;
+    }
+
+        .btn-navbar:hover {
+            background: #547834;
+        }
+
+        .btn-navbar .btnTitle {
+            font-size: 14px;
+            color: #fff;
+            font-weight: bold;
+            text-shadow: none;
+        }
+
+    /*logo for drop menu arrangement*/
+    .navbar .brand {
+        background: url(../img/skin/logo_sml.png) no-repeat;
+        background-size: 130px;
+    }
+
+    .navbar .nav > li > a, .navbar .dropdown-menu a {
+        border-radius: 0;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+    }
+
+    .navbar .nav > li > a {
+        border-left: 2px solid #f2c6a5;
+        border-bottom: none;
+        background-color: #eee;
+    }
+
+    .navbar .nav .active > a, .navbar .nav .active > a:hover {
+        border-left: none;
+        border-bottom: none;
+    }
+
+    .navbar .nav .active > a {
+        background-color: #547834;
+    }
+
+    .navbar .nav > li > a:hover {
+        background-color: #c1c1bf;
+        color: #fff;
+        text-decoration: none;
+        border-left: 2px solid #547834;
+        border-bottom: none;
+    }
+
+    .navbar .dropdown-menu {
+        background: #444;
+    }
+
+        .navbar .dropdown-menu li a {
+            color: #fff;
+            border-bottom: 1px solid #666;
+        }
+
+    /*3rd level menu*/
+
+    .navbar .nav .nav-header {
+        border-bottom: 1px solid #aaa;
+    }
+
+
+    .navbar .dropdown-menu {
+        box-shadow: none;
+    }
+}
+
+
+/*iPhone portrait width*/
+/*----------------------------------------------------------------------*/
+@media (max-width: 480px) {
+    .nav-products .nav-img a img {
+        width: 62px;
+        height: 60px;
+    }
+
+    .nav-products .nav-Categories a {
+        padding-left: 4px !important;
+    }
+
+    #bamboo .featuredContent .span3 img {
+        height: 250px;
+    }
+
+    .portfolioItem .title a {
+        line-height: 52px;
+        height: 52px;
+    }
+
+    .portfolioItem p {
+        height: 55px;
+    }
+}
+
+
+
+/*IE8 conditional styles*/
+
+.ie8 .label {
+    font-weight: normal;
+}
+
+form.letter_form {
+    clear: both;
+    min-height: 25px;
+    padding: 10px;
+    padding-bottom: 0;
+}
+
+.letter_form .l_form {
+    float: left;
+    width: 168px;
+    height: 33px;
+    padding: 0 5px 0 8px;
+    border: 1px solid #ccc;
+    border-right: 0 none;
+    color: #777;
+    background: #fff;
+    border-radius: 2px 0 0 2px;
+    -moz-border-radius: 2px 0 0 2px;
+    -khtml-border-radius: 2px 0 0 2px;
+    behavior: url(PIE.htc);
+}
+
+.letter_form #ok {
+    float: left;
+    width: 25px;
+    height: 35px;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-left: 0 none;
+    color: #777;
+    background: url(../img/skin/bg_newsletter.png) no-repeat center center #fff;
+    border-radius: 0 2px 2px 0;
+    -moz-border-radius: 0 2px 2px 0;
+    -khtml-border-radius: 0 2px 2px 0;
+    behavior: url(PIE.htc);
+    cursor: pointer;
+}
+
+footer .outro img {
+    display: inline;
+    float: left;
+    margin-right: 10px;
+}
+
+footer .outro span {
+    display: inline;
+}
+
+.widget_contact h3 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.widget_contact img {
+    float: left;
+    margin-top: 6px;
+    margin-right: 5px;
+}
+
+.widget_contact .address, .widget_contact .phone, .widget_contact .email {
+    margin-bottom: 20px;
+    padding-top: 0;
+}
+
+.mainContent .innerSpacer .title {
+    margin-bottom: 10px;
+}
+
+.mainContent .innerSpacer .AboutUs {
+    margin-bottom: 40px;
+}
+
+.form-item {
+    float: left;
+}
+
+.nav-products li {
+    padding: 0 5px;
+}
+
+.nav-products .nav-title {
+    border-bottom: 1px solid #666;
+    padding: 0 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ccc;
+}
+
+.nav-products .nav-Categories a {
+    display: inline-block;
+}
+
+.nav-products .nav-img a {
+    display: inline-block;
+    padding: 0px !important;
+}
+
+    .nav-products .nav-img a:hover {
+        background: none;
+    }
+
+    .nav-products .nav-img a img {
+        padding: 2px;
+    }
+
+        .nav-products .nav-img a img:hover {
+            background: #547834;
+        }
+
+    .nav-products .nav-img a p {
+        text-align: center;
+    }
+
+        .nav-products .nav-img a p:hover {
+            color: #547834;
+        }
+
+.row-fluid > [class*="span"]:nth-child(4n-3) {
+    margin-left: 0;
+}
+
+.pagination .pager-index a {
+    border-left-width: 1px;
+}
+
+.clearance-list {
+    overflow: auto;
+}
+
+.table-clearance img {
+    width: 200px;
+}
+
+@media (max-width:980px) {
+    .pagination .num {
+        display: none;
+    }
+}
+
+@media (max-width:480px) {
+    .nav-products .nav-img a p {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-products li {
+        width: auto;
+    }
+}
+
+.AttributeList {
+    margin-top: 20px;
+}
+
+.MapPanel {
+    margin-right: 0 !important;
+}
+
+.AboutSlider {
+    margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+    .navbar .dropdown-menu {
+        margin-left: -240px !important;
+    }
+}
+
+@media (min-width: 980px) {
+    .navbar .dropdown-menu {
+        margin-left: -200px;
+    }
+
+    .footer.row-fluid .span4 {
+        height: 330px;
+    }
+}
+
+.header form #type {
+    width: auto;
+    margin-left: 10px;
+    display: inline;
+}
+
+.header form #SearchKeywords {
+    width: 166px;
+}
+
+.NewsTitle {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.NewsSidebar ul {
+    margin: 0px 0px 9px 5px;
+}
+
+.nav-products a {
+    background: none !important;
+    border-bottom: none !important;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.form-item.form-type-textfield {
+    width: 98.6%;
+}
+
+    .form-item.form-type-textfield input {
+        width: 100%;
+    }
+
+.view-dom-id-8c278bd04ca1d050fd8f7387a7419a7f .view-content {
+    padding-top: 10px;
+}
+
+.btn.btn-success.btn-large {
+    display: block;
+}
+
+.MobileSearch {
+    width: 280px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+@media (min-width: 767px) {
+    .MobileSearch {
+        display: none;
+    }
+}
+
+/* =====================================================================
+   2026 Performance, Layout Symmetry & Zero-CLS Homepage Enhancements
+   ===================================================================== */
+
+/* 1. 导航条微调与轻量移动端折叠 */
+@media (min-width: 980px) {
+    .navbar .nav > li > a {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
+@media (max-width: 979px) {
+    .navbar .nav-collapse.is-open {
+        height: auto !important;
+        overflow: visible !important;
+        display: block !important;
+    }
+}
+
+/* 2. Hero 零跳动轮播 */
+.hero-slider {
+    position: relative;
+    overflow: hidden;
+    background: #e9ece6;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 2px #888;
+}
+
+.hero-slides {
+    position: relative;
+    width: 100%;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+}
+
+.hero-slide:first-child {
+    position: relative;
+}
+
+.hero-slide.is-active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1;
+}
+
+.hero-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.hero-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    font-size: 24px;
+    line-height: 30px;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.2s ease;
+}
+
+.hero-nav:hover {
+    background: #547834;
+}
+
+.hero-prev { left: 10px; }
+.hero-next { right: 10px; }
+
+.hero-dots {
+    position: absolute;
+    left: 12px;
+    bottom: 10px;
+    z-index: 3;
+    display: flex;
+    gap: 6px;
+}
+
+.hero-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    background: rgba(0, 0, 0, 0.35);
+    padding: 0;
+    cursor: pointer;
+}
+
+.hero-dot.is-active {
+    background: #547834;
+    border-color: #fff;
+}
+
+/* 3. 首页唯一 H1 与统一版块 H2 样式 */
+.home-h1-wrap {
+    margin: 4px 0 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #ddd;
+}
+
+.home-h1-wrap h1 {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.35;
+    color: #2f2f2f;
+    font-weight: bold;
+}
+
+.section-heading {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #2f2f2f;
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: bold;
+    margin: 0 0 14px;
+}
+
+/* 4. Hottest Bamboo 现代 2 列网格卡片 */
+.hottest-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 24px;
+}
+
+.hottest-card {
+    display: grid;
+    grid-template-columns: 44% 1fr;
+    gap: 14px;
+    align-items: start;
+    background: #fff;
+    border: 1px solid #ececec;
+    padding: 10px;
+    border-radius: 3px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hottest-card:hover {
+    border-color: #9aae4c;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.hottest-thumb {
+    display: block;
+    overflow: hidden;
+    border: 1px solid #eee;
+    aspect-ratio: 4 / 3;
+    background: #f4f4f4;
+}
+
+.hottest-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.25s ease;
+}
+
+.hottest-card:hover .hottest-thumb img {
+    transform: scale(1.03);
+}
+
+.hottest-body h3 {
+    margin: 0 0 6px;
+    font-size: 15px;
+    line-height: 1.35;
+    font-weight: bold;
+}
+
+.hottest-body h3 a {
+    color: #2f2f2f;
+}
+
+.hottest-body h3 a:hover {
+    color: #547834;
+}
+
+.hottest-body p {
+    margin: 0;
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: #777;
+}
+
+.hottest-more {
+    display: inline-block;
+    margin-left: 4px;
+}
+
+@media (max-width: 979px) {
+    .hottest-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .hottest-card {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 5. Newest Bamboo 零跳动横向滚动轨道（彻底解决加载时竖向拉长） */
+.newest-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.newest-header .section-heading {
+    margin-bottom: 0;
+}
+
+.newest-controls {
+    display: flex;
+    gap: 6px;
+}
+
+.newest-controls button {
+    border: none;
+    cursor: pointer;
+    padding: 5px 8px;
+    margin: 0;
+    line-height: 1;
+    transition: background-color 0.2s ease;
+}
+
+.newest-controls button:hover {
+    background-color: #547834;
+}
+
+.newest-viewport {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 6px;
+}
+
+.newest-viewport::-webkit-scrollbar {
+    display: none;
+}
+
+.newest-track {
+    display: flex;
+    gap: 16px;
+}
+
+.newest-card {
+    flex: 0 0 calc((100% - 48px) / 4);
+    box-sizing: border-box;
+    scroll-snap-align: start;
+    background: #fff;
+    border: 1px solid #d8d8d8;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+    padding: 6px;
+    transition: border-color 0.2s ease;
+}
+
+.newest-card:hover {
+    border-color: #547834;
+}
+
+.newest-thumb {
+    display: block;
+    width: 100%;
+    aspect-ratio: 480 / 396;
+    overflow: hidden;
+    background: #f2f2f2;
+}
+
+.newest-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.newest-card:hover .newest-thumb img {
+    transform: scale(1.03);
+    opacity: 0.92;
+}
+
+.newest-title {
+    margin: 8px 4px 4px !important;
+    min-height: 36px;
+    font-size: 12.5px;
+    line-height: 1.45;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.newest-title a {
+    color: #444;
+    font-weight: bold;
+}
+
+.newest-title a:hover {
+    color: #547834;
+}
+
+@media (max-width: 979px) {
+    .newest-card {
+        flex: 0 0 calc((100% - 16px) / 2);
+    }
+}
+
+@media (max-width: 480px) {
+    .newest-card {
+        flex: 0 0 80%;
+    }
+}
+
+/* 6. 页脚 SVG 图标与高度自适应 */
+@media (min-width: 980px) {
+    .footer.row-fluid .span4 {
+        height: auto;
+        min-height: 310px;
+    }
+}
+
+.footer-inline-link {
+    padding: 0 !important;
+    font-weight: bold;
+    color: #547834;
+}
+
+.footerLower .f_contact li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footerLower .f_contact a {
+    color: #444;
+}
+
+.footerLower .f_contact a:hover {
+    color: #547834;
+}
+
+.footer-svg-icon {
+    flex-shrink: 0;
+    vertical-align: middle;
+}
+
+footer .outro {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+footer .outro .footer-lock-icon {
+    margin-top: 2px;
+}
+
+
+/* 7. Gallery / Products 原生筛选栏与 4 列网格 */
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0 22px;
+}
+
+.filter-btn {
+    border: 1px solid #d5d5d5;
+    background: #f4f4f4;
+    color: #555;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 6px 14px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.is-active {
+    background: #547834;
+    border-color: #547834;
+    color: #fff;
+}
+
+.modern-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.gallery-card {
+    padding: 6px;
+    background: #fff;
+    border: 1px solid #d8d8d8;
+    transition: border-color 0.2s ease;
+}
+
+.gallery-card:hover {
+    border-color: #547834;
+}
+
+.gallery-thumb {
+    display: block;
+    width: 100%;
+    aspect-ratio: 480 / 396;
+    overflow: hidden;
+    background: #f2f2f2;
+}
+
+.gallery-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.gallery-card:hover .gallery-thumb img {
+    transform: scale(1.04);
+    opacity: 0.92;
+}
+
+@media (max-width: 979px) {
+    .modern-gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .modern-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 8. About 页侧栏图标与 News 列表 H2 对齐 */
+.widget_contact h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.post .post-title h2 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.35;
+    margin: 0 0 8px;
+}
+
+.post .post-title h2 a {
+    color: #2f2f2f;
+}
+
+.post .post-title h2 a:hover {
+    color: #547834;
+}
+
+/* 9. Products 总列表页现代 3 列产品网格 */
+.filter-count {
+    font-weight: normal;
+    opacity: 0.8;
+    font-size: 11px;
+}
+
+.modern-product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    background: #fff;
+    border: 1px solid #d8d8d8;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    border-color: #547834;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.product-thumb {
+    display: block;
+    width: 100%;
+    aspect-ratio: 480 / 396;
+    overflow: hidden;
+    background: #f2f2f2;
+}
+
+.product-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.product-card:hover .product-thumb img {
+    transform: scale(1.03);
+    opacity: 0.92;
+}
+
+.product-card-body {
+    padding: 10px 4px 4px;
+    flex: 1;
+}
+
+.product-card-body h2 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.4;
+    margin: 0 0 6px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-card-body h2 a {
+    color: #2f2f2f;
+}
+
+.product-card-body h2 a:hover {
+    color: #547834;
+}
+
+.product-card-body p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #777;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@media (max-width: 979px) {
+    .modern-product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .modern-product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 10. 老分类页 .peIsotopeContainer 零 Isotope 自适应网格 */
+.peIsotopeContainer.row {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-left: 0 !important;
+}
+
+.peIsotopeContainer.row:before,
+.peIsotopeContainer.row:after {
+    display: none;
+    content: none;
+}
+
+.peIsotopeContainer .peIsotopeItem {
+    float: none !important;
+    width: auto !important;
+    margin-left: 0 !important;
+}
+
+.peIsotopeContainer .portfolioItem img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 480 / 396;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 979px) {
+    .peIsotopeContainer.row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .peIsotopeContainer.row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 11. 产品详情页信息区与 RelatedProducts .carouselBox 防拉长兜底 */
+.item-description h2 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2f2f2f;
+    line-height: 24px;
+    margin: 0 0 8px;
+}
+
+.product-meta-date {
+    color: #999;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.carouselBox:not(.peVolo) {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: 6px;
+}
+
+.carouselBox:not(.peVolo)::-webkit-scrollbar {
+    display: none;
+}
+
+.carouselBox:not(.peVolo) > div {
+    flex: 0 0 calc((100% - 48px) / 4);
+    box-sizing: border-box;
+    scroll-snap-align: start;
+}
+
+.carouselBox:not(.peVolo) .portfolioItem img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 480 / 396;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 979px) {
+    .carouselBox:not(.peVolo) > div {
+        flex: 0 0 calc((100% - 16px) / 2);
+    }
+}
+
+@media (max-width: 480px) {
+    .carouselBox:not(.peVolo) > div {
+        flex: 0 0 80%;
+    }
+}
+
+/* 12. 清仓页表格视觉优化 */
+.table-clearance td {
+    vertical-align: middle !important;
+}
+
+.table-clearance img {
+    width: 180px;
+    height: auto;
+    display: block;
+    border: 1px solid #e2e2e2;
+    border-radius: 2px;
+}
+
+.clearance-price {
+    font-weight: bold;
+    color: #547834;
+    white-space: nowrap;
+}
+
+.clearance-cta {
+    white-space: nowrap;
+}
+
+/* 13. NewsSidebar 原生选项卡与侧栏轮播 */
+.NewsSidebar .tab-pane {
+    display: none;
+}
+
+.NewsSidebar .tab-pane.active {
+    display: block;
+}
+
+.NewsSidebar ul li {
+    padding: 4px 0;
+    border-bottom: 1px dotted #ececec;
+}
+
+.NewsSidebar ul li a {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #555;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.NewsSidebar ul li a:hover {
+    color: #547834;
+}
+
+.sidebar-slider .hero-nav {
+    width: 26px;
+    height: 26px;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.sidebar-slider .hero-dot {
+    width: 8px;
+    height: 8px;
+}
+
+/* 14. RelatedProducts 卡片简介截断 */
+.related-products-section {
+    margin-top: 26px;
+    padding-top: 18px;
+    border-top: 1px dotted #ddd;
+}
+
+.related-summary {
+    margin: 0 4px 6px !important;
+    font-size: 11.5px;
+    line-height: 1.45;
+    color: #888;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* 15. Gallery 详情页零 jQuery 原生相册与灯箱 */
+.gallery-detail-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.gallery-detail-header .title {
+    margin: 0;
+}
+
+.gallery-back-link {
+    font-size: 13px;
+    font-weight: bold;
+    color: #547834;
+}
+
+.native-gallery {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 14px;
+}
+
+.ng-stage {
+    position: relative;
+    background: #1a1a1a;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 360px;
+    max-height: 600px;
+    overflow: hidden;
+}
+
+.ng-stage img {
+    display: block;
+    max-width: 100%;
+    max-height: 580px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    cursor: zoom-in;
+}
+
+.ng-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 44px;
+    border: none;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 28px;
+    line-height: 40px;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.2s ease;
+}
+
+.ng-nav:hover {
+    background: #547834;
+}
+
+.ng-prev { left: 12px; }
+.ng-next { right: 12px; }
+
+.ng-counter {
+    position: absolute;
+    right: 12px;
+    bottom: 10px;
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    font-size: 12px;
+    padding: 3px 9px;
+    border-radius: 3px;
+}
+
+.ng-caption {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #fff;
+    border-left: 3px solid #547834;
+    font-size: 13px;
+    color: #555;
+}
+
+.ng-thumbs {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    margin-top: 12px;
+    padding-bottom: 4px;
+}
+
+.ng-thumb {
+    flex: 0 0 88px;
+    height: 68px;
+    padding: 2px;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    background: #fff;
+    cursor: pointer;
+    overflow: hidden;
+    opacity: 0.65;
+    transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.ng-thumb:hover,
+.ng-thumb.is-active {
+    opacity: 1;
+    border-color: #547834;
+}
+
+.ng-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-cta-bar {
+    margin-top: 20px;
+    padding: 14px 18px;
+    background: #f5f7f2;
+    border: 1px solid #dce4d2;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 14px;
+    color: #333;
+}
+
+.ng-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.88);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.ng-lightbox[hidden] {
+    display: none;
+}
+
+.ng-lightbox img {
+    max-width: 94vw;
+    max-height: 90vh;
+    object-fit: contain;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+.ng-lb-close {
+    position: absolute;
+    top: 16px;
+    right: 22px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 28px;
+    line-height: 36px;
+    cursor: pointer;
+}
+
+.ng-lb-close:hover {
+    background: #547834;
+}
+
+
+
+/* =====================================================================
+   2026 UI Polish Fixes: SR-Only H1, Sidebar Lock, Equal Footer & Gallery
+   ===================================================================== */
+
+/* 1. 首页无障碍语义 H1（搜索引擎正常抓取，页面视觉不占高度） */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* 2. News 右侧栏严格锁死宽度，彻底杜绝文字撑爆边框 */
+.sidebar-second .tab-content.NewsSidebar {
+    display: block !important;
+    float: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    padding: 10px 12px !important;
+}
+
+.sidebar-second .NewsSidebar .tab-pane {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+.sidebar-second .NewsSidebar ul {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    width: 100% !important;
+}
+
+.sidebar-second .NewsSidebar ul li {
+    position: relative;
+    padding: 5px 0 5px 12px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    border-bottom: 1px dotted #e8e8e8;
+}
+
+.sidebar-second .NewsSidebar ul li:last-child {
+    border-bottom: none;
+}
+
+.sidebar-second .NewsSidebar ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    color: #547834;
+    font-weight: bold;
+}
+
+.sidebar-second .NewsSidebar ul li a {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    color: #555;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.sidebar-second .NewsSidebar ul li a:hover {
+    color: #547834;
+}
+
+/* 3. 首页底部 About Us / News / Newsletter 三列严格等高对齐 */
+@media (min-width: 980px) {
+    footer .footerMain .footer.footer-equal-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+        align-items: stretch;
+    }
+
+    footer .footerMain .footer.footer-equal-grid::before,
+    footer .footerMain .footer.footer-equal-grid::after {
+        display: none !important;
+        content: none !important;
+    }
+
+    footer .footerMain .footer.footer-equal-grid > .span4 {
+        float: none !important;
+        width: auto !important;
+        margin: 0 !important;
+        height: auto !important;
+        min-height: 0 !important;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+footer .footerMain .footer-equal-grid .block {
+    padding: 18px 20px !important;
+    box-sizing: border-box;
+}
+
+footer .footerMain .footer-equal-grid .block h3 {
+    padding: 0 !important;
+    margin: 0 0 12px 0 !important;
+}
+
+footer .footerMain .footer-equal-grid .block p {
+    padding: 0 !important;
+    margin: 0 0 12px 0 !important;
+    line-height: 1.65;
+}
+
+footer .footerMain .footer-equal-grid .block a {
+    padding: 0 !important;
+}
+
+/* 4. 首页底部 News 栏标题与摘要整洁 2 行对齐，无缩进错位 */
+footer .footerMain .recent-posts .view-content {
+    padding-top: 0 !important;
+}
+
+footer .footerMain .recent-posts ul {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+footer .footerMain .recent-posts li {
+    margin: 0 0 12px 0 !important;
+    padding: 0 0 10px 0 !important;
+    border-bottom: 1px dotted #dcdcdc;
+}
+
+footer .footerMain .recent-posts li:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    border-bottom: none;
+}
+
+footer .footerMain .recent-posts li .title {
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    padding: 0 !important;
+    margin: 0 0 4px 0 !important;
+    font-size: 13px;
+    line-height: 1.4;
+    font-weight: bold;
+    color: #444;
+}
+
+footer .footerMain .recent-posts li .title:hover {
+    color: #547834;
+}
+
+footer .footerMain .recent-posts li p {
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    border-bottom: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #777;
+}
+
+/* 5. 首页底部 Newsletter 订阅表单与隐私提示清浮动修复 */
+footer .footerMain form.letter_form {
+    display: flex !important;
+    align-items: stretch;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 8px 0 14px 0 !important;
+    clear: both !important;
+    min-height: 0 !important;
+}
+
+footer .footerMain .letter_form .l_form {
+    float: none !important;
+    flex: 1 1 auto;
+    width: auto !important;
+    min-width: 0;
+    height: 35px !important;
+    box-sizing: border-box;
+    margin: 0 !important;
+}
+
+footer .footerMain .letter_form #ok {
+    float: none !important;
+    flex: 0 0 34px;
+    width: 34px !important;
+    height: 35px !important;
+    box-sizing: border-box;
+    margin: 0 !important;
+}
+
+footer .footerMain .outro {
+    clear: both !important;
+    display: flex !important;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+footer .footerMain .outro span {
+    flex: 1;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #777;
+}
+
+/* 6. Gallery 详情页简介正文样式 */
+.gallery-detail-desc {
+    margin: 0 0 16px 0;
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: #666;
+}
+
+/* =====================================================================
+   2026 Footer Breathing Space & News Sidebar Alignment/Width Fix
+   ===================================================================== */
+
+/* 1. 首页底部 About Us / News / Newsletter 三列卡片下方留白 */
+footer .footerMain {
+    padding-bottom: 32px !important;
+}
+
+/* 2. 桌面端适度加宽 News 等内页右侧栏（从 23% 提至 29%），多显示近一倍单词 */
+@media (min-width: 980px) {
+    body.sidebar-second .mainContent .row-fluid > .content.span9 {
+        width: 68.5% !important;
+        box-sizing: border-box;
+    }
+
+    body.sidebar-second .mainContent .row-fluid > .sidebar-second.span3 {
+        width: 29% !important;
+        margin-left: 2.5% !important;
+        box-sizing: border-box;
+    }
+}
+
+/* 3. 修复 News 右侧 Latest / Hot 框体与标签错位，清空外层多余内边距 */
+.sidebar-second #block-block-4 .nav-tabs {
+    margin-bottom: 0 !important;
+}
+
+.sidebar-second .tab-content.NewsSidebar {
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    overflow: visible !important;
+}
+
+.sidebar-second .NewsSidebar .tab-pane {
+    padding: 8px 10px !important;
+    margin: 0 !important;
+    background: #ffffff;
+    border-left: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    border-radius: 0 0 4px 4px;
+    box-sizing: border-box !important;
+}
+
+/* 4. 侧栏新闻标题微调为 11.5px，紧凑且清晰 */
+.sidebar-second .NewsSidebar ul li {
+    padding: 5px 0 5px 10px !important;
+}
+
+.sidebar-second .NewsSidebar ul li a {
+    font-size: 11.5px !important;
+    line-height: 1.55 !important;
+}

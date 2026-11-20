@@ -9,6 +9,8 @@ export interface Props {
   extraCss?: string[];
   extraJs?: string[];
   headHtml?: string;
+  loadLegacyJs?: boolean;
+  preloadImage?: string;
 }
 
 const {
@@ -20,8 +22,21 @@ const {
   rssUrl = "/rss/products.xml",
   extraCss = [],
   extraJs = [],
-  headHtml = ""
+  headHtml = "",
+  loadLegacyJs = true,
+  preloadImage = ""
 } = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const canonicalUrl = new URL(currentPath, Astro.site || 'https://www.bambooflooringchina.com').href;
+
+const navItems = [
+  { label: 'Flooring', href: '/products/product-type-BambooFlooring.html' },
+  { label: 'Decking', href: '/products/product-type-BambooDecking.html' },
+  { label: 'Panels', href: '/products/product-type-BambooPanels.html' },
+  { label: 'More', href: '/products/product-type-BambooCollection.html' },
+  { label: 'Clearance', href: '/clearance/clearance_1.html', matchPrefix: '/clearance/' },
+];
 
 // 自动获取最新 3 篇新闻用于首页底部展示
 const newsFiles = import.meta.glob('../data/news/*.md', { eager: true });
@@ -30,28 +45,40 @@ const latestThreeNews = Object.values(newsFiles)
   .slice(0, 3);
 ---
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>{title}</title>
-    <meta name="Keywords" content={keywords} />
-    <meta name="description" content={description} />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="keywords" content={keywords} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <script is:inline type="text/javascript" src="/js/jquery.js"></script>
-    <script is:inline type="text/javascript" src="/js/OncePlugin.js"></script>
-    {extraJs.map((jsPath) => (
-        <script is:inline type="text/javascript" src={jsPath}></script>
-    ))}
-    <script is:inline type="text/javascript" src="/js/parentWindow.js"></script>
-    <!-- 先加载内页附加的相册插件样式与脚本 -->
+    {preloadImage && (
+        <link rel="preload" as="image" href={preloadImage} fetchpriority="high" />
+    )}
+
+    {loadLegacyJs && (
+        <>
+            <script is:inline src="/js/jquery.js"></script>
+            {extraJs.map((jsPath) => (
+                <script is:inline src={jsPath}></script>
+            ))}
+            <script is:inline src="/js/parentWindow.js"></script>
+        </>
+    )}
+
     {headHtml && <Fragment set:html={headHtml} />}
-    <!-- 后加载全站主样式表，确保主样式不被插件覆盖 -->
-    <link type="text/css" rel="stylesheet" href="/css/peVolo.css" media="all" />
+
+    <link rel="stylesheet" href="/css/peVolo.css" media="all" />
     {extraCss.map((cssPath) => (
-        <link type="text/css" rel="stylesheet" href={cssPath} />
+        <link rel="stylesheet" href={cssPath} />
     ))}
-    <link href="/css/skin_orange.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/skin_orange.css" />
     <style is:inline>
         /* 锁定页脚与引言区原版字号、粗细与配色，防止被内页插件污染 */
         footer .footerLower { font-size: 12px; line-height: 20px; }
@@ -61,46 +88,67 @@ const latestThreeNews = Object.values(newsFiles)
         footer .footerLower p { font-size: 12px; }
         footer .postscript blockquote p a { color: #517329 !important; }
     </style>
-    <!--[if lt IE 9]>
-        <script src="/js/html5shim.js"></script>
-    <![endif]-->
-    <script is:inline type="text/javascript">
-        window.onerror = function () { return true; }
-    </script>
 </head>
 <body class={bodyClass}>
     <header class="navbar navbar-fixed-top" id="top">
         <div class="navbar-inner">
             <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <a
+                    class="btn btn-navbar"
+                    href="javascript:void(0)"
+                    data-toggle="collapse"
+                    data-target=".nav-collapse"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                >
                     <span class="btnTitle">Menu</span>
                     <span class="icon-chevron-down icon-white"></span>
                 </a>
-                <a class="brand" href="/" title="Home">
-                    <img src="/img/skin/logo.png" alt="Home" />
+                <a class="brand" href="/" title="Bothbest Bamboo Flooring">
+                    <img src="/img/skin/logo.png" alt="Bothbest China Bamboo Flooring Factory" decoding="async" />
                 </a>
                 <div class="nav-collapse">
-                    <div class="header ">
+                    <div class="header">
                         <div id="block-block-9" class="block block-block smedia">
                             <div>
-                                <a rel="external nofollow" href="mailto:info@bambooflooringchina.com" data-rel="tooltip" data-position="bottom" class="sm-icon sm-icon-Email" data-original-title="Email" target="_blank"></a>
-                                <form action="/search.html" method="get">
-                                    <select name="type" id="type">
+                                <a
+                                    rel="external nofollow"
+                                    href="mailto:info@bambooflooringchina.com"
+                                    data-rel="tooltip"
+                                    data-position="bottom"
+                                    class="sm-icon sm-icon-Email"
+                                    title="Email Bothbest"
+                                    data-original-title="Email"
+                                    aria-label="Email info@bambooflooringchina.com"
+                                ></a>
+                                <form action="/search.html" method="get" role="search">
+                                    <select name="type" id="type" aria-label="Search category">
                                         <option value="products">Products</option>
                                         <option value="news">News</option>
                                     </select>
-                                    <input type="text" name="SearchKeywords" id="SearchKeywords" />
+                                    <input
+                                        type="text"
+                                        name="SearchKeywords"
+                                        id="SearchKeywords"
+                                        placeholder="Search bamboo..."
+                                        aria-label="Search keywords"
+                                    />
                                     <input type="submit" id="search" name="search" value="Search" class="form-submit" />
                                 </form>
                             </div>
                         </div>
                     </div>
                     <ul class="nav">
-                        <li class="leaf"><a href="/products/product-type-BambooFlooring.html">Flooring</a></li>
-                        <li class="leaf"><a href="/products/product-type-BambooDecking.html">Decking</a></li>
-                        <li class="leaf"><a href="/products/product-type-BambooPanels.html">Panels</a></li>  
-                        <li class="leaf"><a href="/products/product-type-BambooCollection.html">More</a></li>
-                        <li class="leaf"><a href="/clearance/clearance_1.html">Clearance</a></li>
+                        {navItems.map((item) => {
+                            const isActive =
+                                currentPath === item.href ||
+                                (item.matchPrefix && currentPath.startsWith(item.matchPrefix));
+                            return (
+                                <li class={`leaf${isActive ? ' active' : ''}`}>
+                                    <a href={item.href}>{item.label}</a>
+                                </li>
+                            );
+                        })}
                     </ul>
                 </div>
             </div>
@@ -114,10 +162,11 @@ const latestThreeNews = Object.values(newsFiles)
         {footerType === 'home' && (
             <section class="footerMain">
                 <div class="container">
-                    <div class="footer row-fluid">
+                    <div class="footer row-fluid footer-equal-grid">
                         <div class="block span4">
                             <h3>About Us</h3>
-                            <p>Bothbest is a proud China-based company focusing on bamboo only because it is an amazing rapidly renewable resource, we manufacture largest variety and best quality of bamboo, such as bamboo flooring, bamboo decking, bamboo panels and more creative bamboo products.<br /><br />We are equipped with high-tech computerized machines and have been recognized as a professional supplier and exporter in bamboo market world widely.<br /><br />BothBest products hav...</p>
+                            <p>Bothbest is a China-based manufacturer focusing exclusively on rapidly renewable bamboo. We produce a comprehensive range of bamboo flooring, outdoor bamboo decking, bamboo panels, and custom architectural bamboo products.</p>
+                            <p>Equipped with automated precision machinery and strict quality control, Bothbest serves importers, distributors, contractors, and builders worldwide. <a href="/about.html" class="footer-inline-link">Read More &rarr;</a></p>
                         </div>
                         <div class="block span4">
                             <h3>News</h3>
@@ -129,8 +178,8 @@ const latestThreeNews = Object.values(newsFiles)
                                             const s = n.frontmatter.summary || '';
                                             return (
                                                 <li>
-                                                    <a class="title" href={`/news/${n.frontmatter.slug}.html`}>{t.length > 40 ? t.slice(0, 40) + '...' : t}</a>
-                                                    <p>{s.length > 74 ? s.slice(0, 74) + '...' : s}</p>
+                                                    <a class="title" href={`/news/${n.frontmatter.slug}.html`} title={t}>{t}</a>
+                                                    <p>{s}</p>
                                                 </li>
                                             );
                                         })}
@@ -140,18 +189,20 @@ const latestThreeNews = Object.values(newsFiles)
                         </div>
                         <div class="block span4 last">
                             <h3>Newsletter</h3>
-                            <p>To stay in touch with us for receiving the latest bamboo products, bamboo news and special promotion pricing, please sign up to our newsletter freely and securely.</p>
+                            <p>Subscribe to receive the latest bamboo product launches, technical guides, and wholesale factory promotions.</p>
                             <form class="letter_form" id="newsletter-form" action="https://api.web3forms.com/submit" method="POST">
                                 <input type="hidden" name="access_key" value="81ff5088-e596-4b27-851b-cbaf5ab4a4f9" />
                                 <input type="hidden" name="subject" value="New Newsletter Subscription - Bothbest" />
                                 <input type="hidden" name="from_name" value="Bothbest Website Newsletter" />
-                                <input type="email" name="email" id="newsletter" class="l_form" value="" placeholder="Enter your email address..." required />
-                                <input type="submit" id="ok" value="" />
+                                <input type="email" name="email" id="newsletter" class="l_form" value="" placeholder="Enter your email address..." aria-label="Email address" required />
+                                <input type="submit" id="ok" value="" aria-label="Subscribe" />
                             </form>
                             <p id="newsletter-msg" style="display:none; color:#468847; font-weight:bold; margin-top:5px;"></p>
                             <p class="outro">
-                                <img src="/img/skin/let_d.png" alt="" />
-                                <span>Your email address will be totally secure and will only be used when we send you our newsletter. We promise that your email address will never be used for any other purpose and will never be shared.</span>
+                                <svg class="footer-svg-icon footer-lock-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                                    <path fill="#547834" d="M18 8h-1V6a5 5 0 0 0-10 0v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zm-8-2a2 2 0 1 1 4 0v2h-4V6zm2 11a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
+                                </svg>
+                                <span>Your email address is kept strictly confidential and used solely for our newsletter. We never share your information with third parties.</span>
                             </p>
                         </div>
                     </div>
@@ -160,7 +211,7 @@ const latestThreeNews = Object.values(newsFiles)
         )}
 
         {footerType === 'postscript' && (
-            <section class="postscript ">
+            <section class="postscript">
                 <div class="container">
                     <div id="block-block-2" class="block block-block">
                         <div class="row-fluid">
@@ -170,7 +221,7 @@ const latestThreeNews = Object.values(newsFiles)
                                 </blockquote>
                             </div>
                             <div class="span3 mugshot">
-                                <img src="/img/skin/client_mug2.png" alt="client" />
+                                <img src="/img/skin/client_mug2.png" alt="Bothbest customer support" loading="lazy" decoding="async" />
                             </div>
                         </div>
                     </div>
@@ -184,10 +235,22 @@ const latestThreeNews = Object.values(newsFiles)
                     <div class="span3">
                         <h3>Contact Us</h3>
                         <ul class="f_contact">
-                            <li><img src="/img/skin/li_phone.png" alt="" />+86 150 0582 0528</li>
-                            <li><img src="/img/skin/li_skype.png" alt="" />bambooflooring</li>
-                            <li><img src="/img/skin/li_adr.png" alt="" />Tangpu Industrial Zone, Anji</li>
-                            <li><img src="/img/skin/li_let.png" alt="" />info@bambooflooringchina.com</li>
+                            <li>
+                                <svg class="footer-svg-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#547834" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.36 11.36 0 0 0 3.58.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z"/></svg>
+                                <a href="tel:+8615005820528">+86 150 0582 0528</a>
+                            </li>
+                            <li>
+                                <svg class="footer-svg-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#547834" d="M12.04 2A9.94 9.94 0 0 0 3.3 16.8L2 22l5.33-1.39A9.95 9.95 0 1 0 12.04 2zm5.8 14.08c-.24.68-1.42 1.3-1.97 1.38-.52.08-1.18.11-1.9-.12-.44-.14-1-.33-1.72-.64-3.03-1.31-5-4.38-5.15-4.58-.15-.2-1.23-1.64-1.23-3.13 0-1.49.78-2.22 1.06-2.52.28-.3.6-.38.8-.38h.58c.19 0 .44-.07.69.53.25.6.85 2.08.93 2.23.08.15.13.33.03.53-.1.2-.15.33-.3.5-.15.18-.32.4-.45.53-.15.15-.3.31-.13.61.17.3.77 1.27 1.65 2.06 1.13 1.01 2.09 1.32 2.39 1.47.3.15.48.13.65-.08.18-.2.75-.88.95-1.18.2-.3.4-.25.68-.15.28.1 1.77.83 2.07.98.3.15.5.23.58.35.07.13.07.73-.17 1.41z"/></svg>
+                                <a href="https://wa.me/8615005820528" target="_blank" rel="nofollow noopener noreferrer">WhatsApp: +86 150 0582 0528</a>
+                            </li>
+                            <li>
+                                <svg class="footer-svg-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#547834" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+                                <span>Tangpu Industrial Zone, Anji, China</span>
+                            </li>
+                            <li>
+                                <svg class="footer-svg-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#547834" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                                <a href="mailto:info@bambooflooringchina.com">info@bambooflooringchina.com</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="span3">
@@ -207,18 +270,18 @@ const latestThreeNews = Object.values(newsFiles)
                         <h3>Products</h3>
                         <nav class="f_menu">
                             <ul>
-                                <li><a href="/products/product-type-BambooCollection.html">Bamboo Collection</a></li>
+                                <li><a href="/products/product-type-BambooFlooring.html">Bamboo Flooring</a></li>
                                 <li><a href="/products/product-type-BambooDecking.html">Bamboo Decking</a></li>
                                 <li><a href="/products/product-type-BambooPanels.html">Bamboo Panels</a></li>
-                                <li><a href="/products/product-type-BambooFlooring.html">Bamboo Flooring</a></li>
+                                <li><a href="/products/product-type-BambooCollection.html">Bamboo Collection</a></li>
                             </ul>
                         </nav>
                     </div>
                     <div class="span3">
-                        <img src="/img/skin/logo_sml.png" alt="Bothbest" />
-                        <p class="copyright">Copyright @2026 Bothbest</p>
+                        <img src="/img/skin/logo_sml.png" alt="Bothbest Bamboo" loading="lazy" decoding="async" />
+                        <p class="copyright">Copyright &copy; 2026 Bothbest. All Rights Reserved.</p>
                         <p class="sns">
-                            <a rel="external nofollow" href={rssUrl} data-rel="tooltip" data-position="bottom" class="sm-icon sm-icon-rss" data-original-title="RSS" target="_blank"></a>
+                            <a rel="external nofollow" href={rssUrl} data-rel="tooltip" data-position="bottom" class="sm-icon sm-icon-rss" title="RSS Feed" data-original-title="RSS" target="_blank" aria-label="RSS Feed"></a>
                         </p>
                     </div>
                     <div class="clearfix"></div>
@@ -227,13 +290,34 @@ const latestThreeNews = Object.values(newsFiles)
         </section>
     </footer>
     <!-- /#footer -->
-    <a href="#top" id="peBackToTop" class="label btt disabled"><span class="icon-chevron-up icon-white"></span></a>
+    <a href="#top" id="peBackToTop" class="label btt disabled" aria-label="Back to top"><span class="icon-chevron-up icon-white"></span></a>
 
-    <script is:inline type="text/javascript">
+    <script is:inline define:vars={{ loadLegacyJs }}>
         document.addEventListener('DOMContentLoaded', function () {
-            var searchForms = document.querySelectorAll('form[action*="search.aspx"]');
-            for (var i = 0; i < searchForms.length; i++) {
-                searchForms[i].setAttribute('action', '/search.html');
+            if (!loadLegacyJs) {
+                var navBtn = document.querySelector('.btn-navbar');
+                var navCollapse = document.querySelector('.nav-collapse');
+                if (navBtn && navCollapse) {
+                    navBtn.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        var opened = navCollapse.classList.toggle('is-open');
+                        navCollapse.classList.toggle('in', opened);
+                        navBtn.setAttribute('aria-expanded', opened ? 'true' : 'false');
+                    });
+                }
+
+                var btt = document.getElementById('peBackToTop');
+                if (btt) {
+                    var toggleBtt = function () {
+                        btt.classList.toggle('disabled', window.scrollY <= 120);
+                    };
+                    window.addEventListener('scroll', toggleBtt, { passive: true });
+                    toggleBtt();
+                    btt.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                }
             }
 
             var newsletterForm = document.getElementById('newsletter-form');
@@ -241,6 +325,8 @@ const latestThreeNews = Object.values(newsFiles)
             if (newsletterForm) {
                 newsletterForm.addEventListener('submit', function (e) {
                     e.preventDefault();
+                    var submitBtn = newsletterForm.querySelector('input[type="submit"]');
+                    if (submitBtn) submitBtn.disabled = true;
                     var formData = new FormData(newsletterForm);
                     fetch('https://api.web3forms.com/submit', {
                         method: 'POST',
@@ -259,6 +345,9 @@ const latestThreeNews = Object.values(newsFiles)
                     })
                     .catch(function () {
                         alert('Network error, please try again later.');
+                    })
+                    .finally(function () {
+                        if (submitBtn) submitBtn.disabled = false;
                     });
                 });
             }

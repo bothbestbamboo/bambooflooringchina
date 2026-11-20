@@ -36,10 +36,27 @@ export async function getStaticPaths() {
 }
 
 const { post, isCategory, newCategoryProducts = [] } = Astro.props;
-const { frontmatter, Content } = post;
+const { frontmatter } = post;
 
-// 如果是分类页且有新增产品，自动将新产品卡片插入到分类列表最前面
+// 为 HTML 中的图片批量补充懒加载与异步解码（可跳过前 skipCount 张首屏图）
+const enhanceImages = (html: string, skipCount = 0) => {
+  let idx = 0;
+  return html.replace(/<img\b([^>]*)>/gi, (match, attrs) => {
+    idx++;
+    let nextAttrs = attrs;
+    if (!/\bdecoding=/i.test(nextAttrs)) {
+      nextAttrs += ' decoding="async"';
+    }
+    if (idx > skipCount && !/\bloading=/i.test(nextAttrs)) {
+      nextAttrs += ' loading="lazy"';
+    }
+    return `<img${nextAttrs}>`;
+  });
+};
+
 let categoryHtml = '';
+let productBodyHtml = '';
+
 if (isCategory) {
   categoryHtml = post.compiledContent ? await post.compiledContent() : '';
 
@@ -47,32 +64,94 @@ if (isCategory) {
     if (categoryHtml.includes('peIsotopeContainer')) {
       const cardsHtml = newCategoryProducts.map((p: any) => {
         const img = p.frontmatter.images?.[0]?.src || '/img/skin/logo_sml.png';
-        const title = p.frontmatter.pageTitle || p.frontmatter.title || '';
+        const title = String(p.frontmatter.pageTitle || p.frontmatter.title || '').replace(/Carbonzied/gi, 'Carbonized');
         const summary = p.frontmatter.summary || '';
         const url = `/products/${p.frontmatter.slug}.html`;
-        return `<div class='span3 peIsotopeItem isotope-element isotope-element-0'><div class='portfolioItem'><a href='${url}' class='peOver'><img typeof='foaf:Image' src='${img}' width='480' height='396' alt='${title}' title='${title}'/><span></span></a><div class='title'><a href='${url}'>${title}</a></div><p>${summary}</p></div></div>`;
+        return `<div class='span3 peIsotopeItem isotope-element isotope-element-0'><div class='portfolioItem'><a href='${url}' class='peOver'><img src='${img}' width='480' height='396' alt='${title}' loading='lazy' decoding='async' /><span></span></a><div class='title'><a href='${url}'>${title}</a></div><p>${summary}</p></div></div>`;
       }).join('');
       categoryHtml = categoryHtml.replace(/(<div[^>]*id=['"]isotope-container['"][^>]*>)/i, `$1${cardsHtml}`);
     } else if (categoryHtml.includes('featuredContent')) {
       const itemsHtml = newCategoryProducts.map((p: any) => {
         const img = p.frontmatter.images?.[0]?.src || '/img/skin/logo_sml.png';
-        const title = p.frontmatter.pageTitle || p.frontmatter.title || '';
+        const title = String(p.frontmatter.pageTitle || p.frontmatter.title || '').replace(/Carbonzied/gi, 'Carbonized');
         const summary = p.frontmatter.summary || '';
         const url = `/products/${p.frontmatter.slug}.html`;
-        return `<div class='span3'><img src='${img}' alt='${title}' title='${title}'/></div><div class='span3'><h4>${title}</h4><p>${summary}<a href='${url}'><span class='label'>More</span></a></p></div>`;
+        return `<div class='span3'><a href='${url}'><img src='${img}' alt='${title}' loading='lazy' decoding='async' /></a></div><div class='span3'><h4><a href='${url}'>${title}</a></h4><p>${summary}<a href='${url}'><span class='label'>More</span></a></p></div>`;
       }).join('');
       categoryHtml = categoryHtml.replace(/(<div[^>]*class=['"][^'"]*featuredContent[^'"]*['"][^>]*>)/i, `$1${itemsHtml}`);
     }
   }
+
+  // 自动修复旧分类页 HTML 里的 .aspx 搜索、/index.html 链接、# 标题死链与图片懒加载
+  categoryHtml = categoryHtml
+    .replace(/action=['"]\/search\.aspx['"]/gi, 'action="/search.html"')
+    .replace(/name=['"]MobileSearchKeywords['"]/gi, 'name="SearchKeywords"')
+    .replace(/href=['"]\/index\.html['"]/gi, 'href="/"')
+    .replace(
+      /(<div[^>]*class=['"][^'"]*portfolioItem[^'"]*['"][^>]*>\s*<a[^>]*href=['"]([^'"]+)['"][^>]*>[\s\S]*?<div[^>]*class=['"]title['"][^>]*>\s*<a[^>]*href=)['"]#['"]/gi,
+      '$1"$2"'
+    );
+  categoryHtml = enhanceImages(categoryHtml, 4);
+} else {
+  const rawBodyHtml = post.compiledContent ? await post.compiledContent() : '';
+  productBodyHtml = enhanceImages(rawBodyHtml, 0);
 }
+
+const cleanPageTitle = String(frontmatter.pageTitle || frontmatter.title || '').replace(/Carbonzied/gi, 'Carbonized');
+const cleanTitle = String(frontmatter.title || cleanPageTitle).replace(/Carbonzied/gi, 'Carbonized');
+const images = Array.isArray(frontmatter.images) && frontmatter.images.length > 0
+  ? frontmatter.images
+  : [];
+const firstImageSrc = !isCategory && images[0]?.src ? images[0].src : '';
+const quoteUrl = `/about.html?product=${encodeURIComponent(cleanPageTitle)}#RequestAQuote`;
+
+// 仅当旧分类页内部确实嵌了 peVolo 轮播时才回退旧版 JS，其余全部零 jQuery 运行
+const needsLegacyJs = isCategory && categoryHtml.includes('peVolo');
+
+const siteOrigin = 'https://www.bambooflooringchina.com';
+const productSchema = !isCategory
+  ? JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Product",
+          "name": cleanPageTitle,
+          "description": frontmatter.description || frontmatter.summary || '',
+          "image": images.map((img: any) =>
+            img.src?.startsWith('http') ? img.src : `${siteOrigin}${img.src}`
+          ),
+          "brand": { "@type": "Brand", "name": "Bothbest" },
+          "manufacturer": { "@type": "Organization", "name": "Bothbest" },
+          "category": frontmatter.categoryName || "Bamboo Flooring"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": `${siteOrigin}/` },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": frontmatter.categoryName || "Bamboo Flooring",
+              "item": `${siteOrigin}${frontmatter.categoryUrl || "/products/product-type-BambooFlooring.html"}`
+            },
+            { "@type": "ListItem", "position": 3, "name": cleanPageTitle }
+          ]
+        }
+      ]
+    })
+  : '';
 ---
 <BaseLayout
-  title={frontmatter.title}
+  title={cleanTitle}
   keywords={frontmatter.keywords}
   description={frontmatter.description}
-  bodyClass={frontmatter.bodyClass || "html front not-logged-in no-sidebars page-node"}
+  bodyClass={frontmatter.bodyClass || "html not-front not-logged-in no-sidebars page-node"}
   footerType={frontmatter.footerType || "simple"}
+  loadLegacyJs={needsLegacyJs}
+  preloadImage={firstImageSrc}
 >
+  {productSchema && <script is:inline type="application/ld+json" set:html={productSchema} />}
+
   <style is:global>
     /* 产品详情 Description 区域 (#home) Markdown 与 HTML 统一美化样式 */
     #home.tab-pane {
@@ -83,7 +162,6 @@ if (isCategory) {
       padding-top: 10px;
     }
 
-    /* 段落间距与行高 */
     #home.tab-pane p {
       font-family: Verdana, Arial, Helvetica, sans-serif;
       font-size: 14px;
@@ -93,7 +171,6 @@ if (isCategory) {
       padding: 0;
     }
 
-    /* 兼容老产品数据：自动隐藏旧编辑器留下的 <p><br /></p> 空白占位段，防止双倍空行 */
     #home.tab-pane p:empty,
     #home.tab-pane p:has(> br:only-child) {
       display: none;
@@ -102,8 +179,6 @@ if (isCategory) {
       display: none;
     }
 
-    /* Markdown 小标题 (## H2, ### H3, #### H4) 样式 */
-    #home.tab-pane h1,
     #home.tab-pane h2,
     #home.tab-pane h3,
     #home.tab-pane h4 {
@@ -126,7 +201,6 @@ if (isCategory) {
       margin: 18px 0 8px 0 !important;
     }
 
-    /* Markdown 列表 (- 无序列表 / 1. 有序列表) 样式 */
     #home.tab-pane ul,
     #home.tab-pane ol {
       margin: 0 0 16px 24px !important;
@@ -135,18 +209,13 @@ if (isCategory) {
       line-height: 1.8;
       color: #333333;
     }
-    #home.tab-pane ul {
-      list-style-type: disc;
-    }
-    #home.tab-pane ol {
-      list-style-type: decimal;
-    }
+    #home.tab-pane ul { list-style-type: disc; }
+    #home.tab-pane ol { list-style-type: decimal; }
     #home.tab-pane li {
       margin-bottom: 6px;
       line-height: 1.8;
     }
 
-    /* 详情区内链、加粗与图片间距 */
     #home.tab-pane strong,
     #home.tab-pane b {
       color: #111111;
@@ -162,10 +231,10 @@ if (isCategory) {
     #home.tab-pane img {
       max-width: 100%;
       height: auto;
-      margin: 8px 0;
+      margin: 8px 6px;
+      border-radius: 2px;
     }
 
-    /* 表格样式：既兼容老产品居中图片表格，也美化新产品的 Markdown 规格表 */
     #home.tab-pane table {
       border-collapse: collapse;
       margin: 18px auto;
@@ -195,67 +264,179 @@ if (isCategory) {
     <Fragment set:html={categoryHtml} />
   ) : (
     <section class="container mainContent">
-        <form action="/search.html" method="get" class="MobileSearch">
-            <input type="text" name="MobileSearchKeywords" id="MobileSearchKeywords" />
-            <input type="submit" id="MobileSearch" name="MobileSearch" value="Search" class="form-submit" />
+        <form action="/search.html" method="get" class="MobileSearch" role="search">
+            <input type="text" name="SearchKeywords" id="MobileSearchKeywords" placeholder="Search products..." aria-label="Search keywords" />
+            <input type="submit" id="MobileSearch" name="search" value="Search" class="form-submit" />
         </form>
         <div class="row-fluid">
             <div class="tabs">
                 <ul class="breadcrumb">
-                    <li><a href="/index.html">Home</a> <span class="divider">/</span></li>
+                    <li><a href="/">Home</a> <span class="divider">/</span></li>
                     <li><a href={frontmatter.categoryUrl || "/products/product-type-BambooFlooring.html"}>{frontmatter.categoryName || "Bamboo Flooring"}</a> <span class="divider">/</span></li>
-                    <li class="active">{frontmatter.pageTitle}</li>
+                    <li class="active">{cleanPageTitle}</li>
                 </ul>
             </div>
         </div>
         <div class="row-fluid">
-            <div class="content span12 ">
+            <div class="content span12">
                 <a id="main-content"></a>
-                <h1 class="title" id="page-title">{frontmatter.pageTitle}</h1>
+                <h1 class="title" id="page-title">{cleanPageTitle}</h1>
                 <div id="block-system-main" class="block block-system">
-                    <div id="node-6" class="node node-portfolio clearfix" about="#" typeof="sioc:Item foaf:Document">
+                    <div id="node-6" class="node node-portfolio clearfix">
                         <div class="row-fluid project">
                             <div class="span9">
                                 <div class="innerSpacer">
-                                    <div class="peVolo slideWrap" data-autopause="enabled">
-                                        {frontmatter.images?.map((img: any) => (
-                                            <div data-delay="3" class="visible">
-                                                <img src={img.src} alt={img.alt || frontmatter.pageTitle} title={img.title || frontmatter.pageTitle} />
+                                    {images.length > 0 && (
+                                        <div class="hero-slider product-slider" id="productSlider" aria-roledescription="carousel" aria-label={cleanPageTitle}>
+                                            <div class="hero-slides">
+                                                {images.map((img: any, idx: number) => (
+                                                    <div class={`hero-slide${idx === 0 ? ' is-active' : ''}`}>
+                                                        <img
+                                                            src={img.src}
+                                                            alt={img.alt || cleanPageTitle}
+                                                            fetchpriority={idx === 0 ? 'high' : undefined}
+                                                            loading={idx === 0 ? 'eager' : 'lazy'}
+                                                            decoding="async"
+                                                        />
+                                                    </div>
+                                                ))}
                                             </div>
-                                        ))}
-                                    </div>
+                                            {images.length > 1 && (
+                                                <>
+                                                    <button type="button" class="hero-nav hero-prev" id="prodPrev" aria-label="Previous image">&#8249;</button>
+                                                    <button type="button" class="hero-nav hero-next" id="prodNext" aria-label="Next image">&#8250;</button>
+                                                    <div class="hero-dots" id="prodDots">
+                                                        {images.map((_: any, idx: number) => (
+                                                            <button
+                                                                type="button"
+                                                                class={`hero-dot${idx === 0 ? ' is-active' : ''}`}
+                                                                data-slide={idx}
+                                                                aria-label={`View image ${idx + 1}`}
+                                                            ></button>
+                                                        ))}
+                                                    </div>
+                                                </>
+                                            )}
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                             <div class="span3">
                                 <div class="item-description">
-                                    <h3>Product Information</h3>
-                                    <div class="subtitle"><a href="#">{frontmatter.date}</a></div>
+                                    <h2>Product Information</h2>
+                                    {frontmatter.date && (
+                                        <div class="subtitle product-meta-date">{frontmatter.date}</div>
+                                    )}
                                     <p>{frontmatter.summary}</p>
                                     <ul class="unstyled AttributeList">
                                         {frontmatter.attributes?.map((attr: string) => (
-                                            <li><i class="icon-ok"></i>{attr}</li>
+                                            <li><i class="icon-ok"></i> {attr}</li>
                                         ))}
                                     </ul>
                                     <br />
-                                    <a href="/about.html#RequestAQuote" class="btn btn-success btn-large">Request A Quote</a>
+                                    <a href={quoteUrl} class="btn btn-success btn-large">Request A Quote</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="block">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#home" data-toggle="tab"><h3>Description</h3></a></li>
+                        <li class="active"><a href="#home"><h3>Description</h3></a></li>
                     </ul>
                     <div class="tab-content">
-                        <div class="tab-pane active" id="home">
-                            <Content />
-                        </div>
+                        <div class="tab-pane active" id="home" set:html={productBodyHtml} />
                     </div>
                 </div>
-                <RelatedProducts />
+
+                <RelatedProducts currentSlug={frontmatter.slug} categoryUrl={frontmatter.categoryUrl} />
             </div>
         </div>
     </section>
   )}
+
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 1. 产品详情主图轮播（多图时自动启用，零跳动）
+      var slider = document.getElementById('productSlider');
+      if (slider) {
+        var slides = slider.querySelectorAll('.hero-slide');
+        var dots = slider.querySelectorAll('.hero-dot');
+        if (slides.length > 1) {
+          var current = 0;
+          var timer = null;
+          var showSlide = function (index) {
+            current = (index + slides.length) % slides.length;
+            for (var i = 0; i < slides.length; i++) {
+              slides[i].classList.toggle('is-active', i === current);
+              if (dots[i]) dots[i].classList.toggle('is-active', i === current);
+            }
+          };
+          var startAuto = function () {
+            stopAuto();
+            timer = setInterval(function () { showSlide(current + 1); }, 4500);
+          };
+          var stopAuto = function () {
+            if (timer) { clearInterval(timer); timer = null; }
+          };
+          var prevBtn = document.getElementById('prodPrev');
+          var nextBtn = document.getElementById('prodNext');
+          if (prevBtn) prevBtn.addEventListener('click', function () { showSlide(current - 1); startAuto(); });
+          if (nextBtn) nextBtn.addEventListener('click', function () { showSlide(current + 1); startAuto(); });
+          for (var d = 0; d < dots.length; d++) {
+            dots[d].addEventListener('click', function () {
+              showSlide(parseInt(this.getAttribute('data-slide'), 10) || 0);
+              startAuto();
+            });
+          }
+          slider.addEventListener('mouseenter', stopAuto);
+          slider.addEventListener('mouseleave', startAuto);
+          startAuto();
+        }
+      }
+
+      // 2. 兼容老分类页的 Isotope 筛选按钮（无 jQuery 驱动）
+      var filters = document.getElementById('filters');
+      var isoContainer = document.getElementById('isotope-container');
+      if (filters && isoContainer) {
+        var isoItems = isoContainer.querySelectorAll('.peIsotopeItem');
+        filters.addEventListener('click', function (e) {
+          var link = e.target.closest('a[data-option-value]');
+          if (!link) return;
+          e.preventDefault();
+          var val = link.getAttribute('data-option-value');
+          var lis = filters.querySelectorAll('li');
+          for (var i = 0; i < lis.length; i++) {
+            lis[i].classList.toggle('active', lis[i].contains(link));
+          }
+          var cls = val && val.charAt(0) === '.' ? val.slice(1) : '';
+          for (var j = 0; j < isoItems.length; j++) {
+            var show = !val || val === '*' || (cls && isoItems[j].classList.contains(cls));
+            isoItems[j].style.display = show ? '' : 'none';
+          }
+        });
+      }
+
+      // 3. 兼容 RelatedProducts 中的 .carouselBox 横向切换，防止未加载 jQuery 时按钮失效
+      var carouselBox = document.querySelector('.carouselBox');
+      var cPrev = document.getElementById('carouselPrev');
+      var cNext = document.getElementById('carouselNext');
+      if (carouselBox && cPrev && cNext) {
+        var stepScroll = function (dir) {
+          var firstCard = carouselBox.firstElementChild;
+          var step = firstCard ? (firstCard.offsetWidth + 16) : 260;
+          if (dir > 0 && carouselBox.scrollLeft + carouselBox.clientWidth >= carouselBox.scrollWidth - 8) {
+            carouselBox.scrollTo({ left: 0, behavior: 'smooth' });
+          } else if (dir < 0 && carouselBox.scrollLeft <= 8) {
+            carouselBox.scrollTo({ left: carouselBox.scrollWidth, behavior: 'smooth' });
+          } else {
+            carouselBox.scrollBy({ left: dir * step, behavior: 'smooth' });
+          }
+        };
+        cPrev.addEventListener('click', function (e) { e.preventDefault(); stepScroll(-1); });
+        cNext.addEventListener('click', function (e) { e.preventDefault(); stepScroll(1); });
+      }
+    });
+  </script>
 </BaseLayout>
