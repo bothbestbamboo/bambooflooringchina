@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
+const clearanceBannerImage = '/img/hero/clearance-banner.jpg';
+
 const clearanceItems = [
   { code: 'BB-KC-1409', img: '/img/UploadFiles/null-p1b11sp0ke9ckeju1lhb2dj1bgr1.jpg', desc: 'Horizontal solid bamboo flooring, caramel color', price: 'US$13.00 / m²', size: '980 × 98 × 12mm', qty: '450 m²' },
   { code: 'BB-KC-1401', img: '/img/UploadFiles/null-p198ri6o141uve18md1tu9a1pq31.jpg', desc: 'Strand woven bamboo flooring, natural color', price: 'US$13.90 / m²', size: '1200 × 89 × 10mm', qty: '450 m²' },
@@ -21,8 +23,19 @@ const clearanceItems = [
   footerType="postscript"
   loadLegacyJs={false}
   isModern={true}
+  preloadImage={clearanceBannerImage}
 >
-    <section class="bb-page-hero bb-page-hero--dark">
+    <section class="bb-page-hero bb-page-hero--banner">
+        <img
+            src={clearanceBannerImage}
+            alt="Bothbest Factory Clearance & Export Overstock Warehouse"
+            class="bb-page-hero-bg"
+            fetchpriority="high"
+            loading="eager"
+            decoding="async"
+            onerror="this.style.display='none'"
+        />
+        <div class="bb-page-hero-overlay" aria-hidden="true"></div>
         <div class="bb-container">
             <ol class="bb-breadcrumb">
                 <li><a href="/">Home</a><span class="bb-breadcrumb-sep">/</span></li>

@@ -4187,3 +4187,258 @@ footer.bb-footer {
     padding: 44px 0 40px;
   }
 }
+
+/* =====================================================================
+   15. Static 760x410 Factory Cards & Editorial Architectural Gallery Detail
+   ===================================================================== */
+
+/* About 工厂展示卡片：去掉点击放大与图片缩放动效，保持干净稳重的展示感 */
+.bb-tour-card--static {
+  transform: none !important;
+}
+
+.bb-tour-card--static:hover {
+  transform: none !important;
+  box-shadow: 0 8px 22px rgba(15, 36, 25, 0.06);
+  border-color: #c6d4cb;
+}
+
+.bb-tour-card--static .bb-tour-thumb {
+  cursor: default;
+}
+
+.bb-tour-card--static:hover .bb-tour-thumb img {
+  transform: none !important;
+}
+
+/* Gallery Detail: Editorial Architectural Lookbook */
+.bb-gd-hero {
+  background: var(--bb-surface);
+  border-bottom: 1px solid var(--bb-border);
+  padding: 36px 0 34px;
+}
+
+.bb-gd-hero-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.bb-gd-hero-main {
+  max-width: 760px;
+}
+
+.bb-gd-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.bb-gd-count-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--bb-green-100);
+  color: var(--bb-green-900);
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.bb-gd-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.bb-lookbook-section {
+  padding: 44px 0 76px;
+}
+
+.bb-lookbook-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.bb-lookbook-grid.is-single {
+  grid-template-columns: minmax(0, 920px);
+  justify-content: center;
+}
+
+.bb-lookbook-grid.is-pair {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.bb-lookbook-tile {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 1px solid var(--bb-border);
+  border-radius: 10px;
+  background: var(--bb-surface-2);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  cursor: zoom-in;
+  text-align: left;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+/* 当图片数量 >= 3 时，第 1 张占左侧 2x2 大画幅，与右侧 2 张拼成建筑画册首屏 */
+.bb-lookbook-grid.has-mosaic .bb-lookbook-tile:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+  aspect-ratio: auto;
+  height: 100%;
+}
+
+.bb-lookbook-tile:hover {
+  border-color: #aebfb5;
+  box-shadow: 0 14px 30px rgba(15, 36, 25, 0.1);
+}
+
+.bb-lookbook-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.bb-lookbook-tile:hover img {
+  transform: scale(1.03);
+}
+
+.bb-lookbook-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 14px;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 36, 25, 0.06) 0%,
+    rgba(15, 36, 25, 0) 55%,
+    rgba(15, 36, 25, 0.56) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.bb-lookbook-tile:hover .bb-lookbook-overlay,
+.bb-lookbook-tile:focus-visible .bb-lookbook-overlay {
+  opacity: 1;
+}
+
+.bb-lookbook-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bb-lookbook-num {
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(15, 36, 25, 0.78);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  font-family: var(--bb-font-sans);
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+.bb-lookbook-expand {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--bb-green-950);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bb-lookbook-cap {
+  color: #ffffff;
+  font-family: var(--bb-font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+}
+
+.bb-gd-inquiry-band {
+  margin-top: 40px;
+  padding: 28px 32px;
+  border-radius: 12px;
+  background: var(--bb-green-900);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.bb-gd-inquiry-band h2 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.bb-gd-inquiry-band p {
+  margin: 0;
+  font-size: 14px;
+  color: #cfe0d6;
+}
+
+.bb-gd-inquiry-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@media (max-width: 960px) {
+  .bb-gd-hero-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bb-lookbook-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bb-lookbook-grid.has-mosaic .bb-lookbook-tile:first-child {
+    grid-column: span 2;
+    grid-row: span 1;
+    aspect-ratio: 16 / 10;
+    height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .bb-lookbook-grid,
+  .bb-lookbook-grid.is-pair {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .bb-lookbook-grid.has-mosaic .bb-lookbook-tile:first-child {
+    grid-column: span 1;
+    aspect-ratio: 4 / 3;
+  }
+
+  .bb-gd-inquiry-band {
+    padding: 22px 20px;
+  }
+}

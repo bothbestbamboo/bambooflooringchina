@@ -1,72 +1,56 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const aboutBannerImage = '/img/factory/about-factory-banner.jpg';
+const aboutBannerImage = '/img/hero/about-factory-banner.jpg';
 
 const factoryShowcase = [
   {
     step: '01',
-    stage: 'Automated Hall',
-    title: 'Dust-Controlled Production Workshop',
-    desc: 'Centralized dust-extraction and automated feeding lines maintain clean, uniform batch quality for export orders.',
-    src: '/img/factory/anji-bamboo-factory-line.jpg',
-    alt: 'Bothbest automated bamboo manufacturing hall in Anji',
+    stage: 'Headquarters',
+    title: 'Anji Manufacturing Base & Office Building',
+    desc: 'Our dedicated office and production complex in Tangpu Industrial Zone, Anji—integrating R&D, manufacturing, and export logistics.',
+    src: '/img/UploadFiles/null-p192tir36vdbs11u31jl01r0l1d101.jpg',
+    alt: 'Bothbest Bamboo headquarters and factory building in Anji, China',
   },
   {
     step: '02',
-    stage: 'Hot Pressing',
-    title: 'Multi-Layer Hydraulic Hot Presses',
-    desc: 'High-tonnage hydraulic presses compact bamboo strands and low-VOC resin into ultra-dense billets exceeding 1,050 kg/m³.',
-    src: '/img/factory/hydraulic-hot-press.jpg',
-    alt: 'Multi-layer hydraulic hot press for high-density strand woven bamboo',
+    stage: 'Calibration',
+    title: 'Four-Side Planing & Dimensional Calibration',
+    desc: 'Heavy-duty four-side moulders plane and calibrate every laminated bamboo plank to exact width, thickness, and flatness.',
+    src: '/img/UploadFiles/null-p192tipk50m2pkskdm0m41kkd1.jpg',
+    alt: 'Four-side moulder calibrating solid bamboo flooring planks',
   },
   {
     step: '03',
-    stage: 'Precision CNC',
-    title: 'Automated Profiling & Sanding Line',
-    desc: 'High-precision tongue-and-groove and click-lock milling ensures tight plank seams and smooth job-site installation.',
-    src: '/img/factory/automated-profiling-line.jpg',
-    alt: 'Automated CNC tongue-and-groove profiling and sanding line',
+    stage: 'Profiling',
+    title: 'Precision Tongue & Groove Milling',
+    desc: 'Automated double-end tenoning lines mill tongue-and-groove and click-lock joints to tight tolerances for gap-free installation.',
+    src: '/img/UploadFiles/null-p192tipa6imh112681v7rh4t11qm1.jpg',
+    alt: 'Double-end tongue-and-groove profiling machine milling bamboo planks',
   },
   {
     step: '04',
-    stage: 'Plank Line',
-    title: 'Flooring & Decking Processing Line',
-    desc: 'Dedicated lines process solid horizontal, vertical, strand woven flooring, and thermo-treated outdoor decking.',
-    src: '/img/UploadFiles/null-p192tir36vdbs11u31jl01r0l1d101.jpg',
-    alt: 'Bothbest bamboo flooring production line',
+    stage: 'Sanding',
+    title: 'Wide-Belt Sanding & Surface Preparation',
+    desc: 'Multi-head sanding units with centralized dust extraction deliver smooth, uniform plank surfaces prior to coating.',
+    src: '/img/UploadFiles/null-p192tiq0goh2sgu01tnmqfbncp1.jpg',
+    alt: 'Wide-belt sanding and dust extraction line for carbonized bamboo flooring',
   },
   {
     step: '05',
-    stage: 'Lamination',
-    title: 'Strip Pressing & Cross-Lamination',
-    desc: 'Kiln-dried Moso bamboo strips are calibrated for moisture stability and laminated into multi-layer panels and wide planks.',
+    stage: 'UV Coating',
+    title: 'Multi-Coat UV Finishing & Online Inspection',
+    desc: 'Automated UV topcoat lines cure scratch-resistant matte or satin finishes while skilled operators inspect every board on the line.',
     src: '/img/UploadFiles/null-p192tiqdfpf798vp1nf6f761vfq1.jpg',
-    alt: 'Bamboo strip pressing and lamination workshop',
+    alt: 'Operator inspecting finished bamboo flooring planks on UV topcoat line',
   },
   {
     step: '06',
-    stage: 'UV Finishing',
-    title: 'Automated UV Coating Line',
-    desc: 'Multi-coat aluminum-oxide UV lacquer delivers durable scratch resistance in matte, satin, or custom gloss levels.',
-    src: '/img/UploadFiles/null-p192tipk50m2pkskdm0m41kkd1.jpg',
-    alt: 'Automated bamboo flooring UV coating line',
-  },
-  {
-    step: '07',
-    stage: 'Quality Control',
-    title: 'Piece-by-Piece Color & Grade Sorting',
-    desc: 'Trained inspectors verify moisture content, dimensional tolerances, and color consistency before carton sealing.',
-    src: '/img/UploadFiles/null-p192tipa6imh112681v7rh4t11qm1.jpg',
-    alt: 'Bamboo flooring quality inspection and sorting',
-  },
-  {
-    step: '08',
-    stage: 'Global Export',
-    title: 'Export-Ready Pallet Warehouse',
-    desc: 'Moisture-protected export cartons and fumigation-free pallets are staged for fast 20ft and 40ft container loading.',
+    stage: 'Warehouse',
+    title: 'Bulk Pallet Storage & Export Staging',
+    desc: 'Our spacious steel-frame warehouse maintains moisture-wrapped pallets of bamboo boards ready for fast container loading.',
     src: '/img/UploadFiles/null-p192tiokaie4b1umk1oif136v11sj1.jpg',
-    alt: 'Export-ready wholesale bamboo flooring warehouse',
+    alt: 'Large-scale bamboo flooring and panel pallet warehouse in Anji',
   },
 ];
 
@@ -115,6 +99,7 @@ const exportRegions = [
             fetchpriority="high"
             loading="eager"
             decoding="async"
+            onerror="this.style.display='none'"
         />
         <div class="bb-page-hero-overlay" aria-hidden="true"></div>
         <div class="bb-container">
@@ -171,28 +156,21 @@ const exportRegions = [
         </div>
     </section>
 
-    <!-- 3. High-End 2-Column Manufacturing Showcase (Exact 760x410 Ratio) -->
+    <!-- 3. 2-Column Manufacturing Showcase (Exact 760x410 Ratio, Static Clean Presentation) -->
     <section class="bb-section bb-section-warm">
         <div class="bb-container">
             <div class="bb-section-head">
                 <div>
                     <span class="bb-eyebrow">Inside Our Facility</span>
                     <h2 class="bb-section-title">Factory Tour &amp; Production Lines</h2>
-                    <p class="bb-section-sub">From high-tonnage pressing to CNC profiling, UV finishing, and export container staging. Click any photo to enlarge.</p>
+                    <p class="bb-section-sub">A step-by-step look inside our Anji plant—from precision planing and profiling to UV finishing and bulk warehousing.</p>
                 </div>
             </div>
 
-            <div class="bb-tour-grid" id="factoryTourGrid">
+            <div class="bb-tour-grid">
                 {factoryShowcase.map((item, idx) => (
-                    <article class="bb-tour-card">
-                        <button
-                            type="button"
-                            class="bb-tour-thumb"
-                            data-tour-idx={idx}
-                            data-tour-src={item.src}
-                            data-tour-caption={`${item.step} · ${item.title} — ${item.desc}`}
-                            aria-label={`Enlarge ${item.title}`}
-                        >
+                    <article class="bb-tour-card bb-tour-card--static">
+                        <div class="bb-tour-thumb">
                             <img
                                 src={item.src}
                                 alt={item.alt}
@@ -205,13 +183,7 @@ const exportRegions = [
                                 <span class="bb-tour-step-num">{item.step}</span>
                                 <span>{item.stage}</span>
                             </span>
-                            <span class="bb-tour-zoom" aria-hidden="true">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                                    <circle cx="11" cy="11" r="7"></circle>
-                                    <path d="m21 21-4.3-4.3M11 8v6M8 11h6"></path>
-                                </svg>
-                            </span>
-                        </button>
+                        </div>
                         <div class="bb-tour-body">
                             <h3>{item.title}</h3>
                             <p>{item.desc}</p>
@@ -219,20 +191,6 @@ const exportRegions = [
                     </article>
                 ))}
             </div>
-        </div>
-
-        <div class="bb-lightbox" id="factoryLightbox" hidden aria-modal="true" role="dialog" aria-label="Factory photo preview">
-            <button type="button" class="bb-lightbox-close" id="factoryLbClose" aria-label="Close preview">&times;</button>
-            <button type="button" class="bb-lightbox-nav bb-lightbox-prev" id="factoryLbPrev" aria-label="Previous photo">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m15 18-6-6 6-6"/></svg>
-            </button>
-            <div class="bb-lightbox-inner">
-                <img id="factoryLbImg" src="" alt="" />
-                <div class="bb-lightbox-caption" id="factoryLbCaption"></div>
-            </div>
-            <button type="button" class="bb-lightbox-nav bb-lightbox-next" id="factoryLbNext" aria-label="Next photo">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m9 18 6-6-6-6"/></svg>
-            </button>
         </div>
     </section>
 
@@ -348,7 +306,6 @@ const exportRegions = [
 
     <script is:inline>
         document.addEventListener('DOMContentLoaded', function () {
-            // 1. 自动填充来源产品名称
             var productInput = document.getElementById('edit-product');
             var urlProduct = new URLSearchParams(window.location.search).get('product');
             if (productInput) {
@@ -359,7 +316,6 @@ const exportRegions = [
                 }
             }
 
-            // 2. 询盘表单提交
             var quoteForm = document.getElementById('contact-site-form');
             var quoteMsg = document.getElementById('quote-form-msg');
             if (quoteForm) {
@@ -393,53 +349,6 @@ const exportRegions = [
                             submitBtn.disabled = false;
                         }
                     });
-                });
-            }
-
-            // 3. 工厂展示区点击放大灯箱
-            var triggers = document.querySelectorAll('#factoryTourGrid .bb-tour-thumb');
-            var lightbox = document.getElementById('factoryLightbox');
-            var lbImg = document.getElementById('factoryLbImg');
-            var lbCaption = document.getElementById('factoryLbCaption');
-            var lbClose = document.getElementById('factoryLbClose');
-            var lbPrev = document.getElementById('factoryLbPrev');
-            var lbNext = document.getElementById('factoryLbNext');
-
-            if (triggers.length && lightbox && lbImg) {
-                var currentIdx = 0;
-
-                var openPhoto = function (idx) {
-                    currentIdx = (idx + triggers.length) % triggers.length;
-                    var btn = triggers[currentIdx];
-                    lbImg.src = btn.getAttribute('data-tour-src') || '';
-                    lbImg.alt = btn.getAttribute('data-tour-caption') || '';
-                    if (lbCaption) lbCaption.textContent = btn.getAttribute('data-tour-caption') || '';
-                    lightbox.hidden = false;
-                };
-
-                var closeLb = function () {
-                    lightbox.hidden = true;
-                };
-
-                for (var i = 0; i < triggers.length; i++) {
-                    triggers[i].addEventListener('click', function () {
-                        openPhoto(parseInt(this.getAttribute('data-tour-idx'), 10) || 0);
-                    });
-                }
-
-                if (lbClose) lbClose.addEventListener('click', closeLb);
-                if (lbPrev) lbPrev.addEventListener('click', function () { openPhoto(currentIdx - 1); });
-                if (lbNext) lbNext.addEventListener('click', function () { openPhoto(currentIdx + 1); });
-
-                lightbox.addEventListener('click', function (e) {
-                    if (e.target === lightbox) closeLb();
-                });
-
-                document.addEventListener('keydown', function (e) {
-                    if (lightbox.hidden) return;
-                    if (e.key === 'Escape') closeLb();
-                    if (e.key === 'ArrowLeft') openPhoto(currentIdx - 1);
-                    if (e.key === 'ArrowRight') openPhoto(currentIdx + 1);
                 });
             }
         });

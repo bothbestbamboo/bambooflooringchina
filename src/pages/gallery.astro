@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+const galleryBannerImage = '/img/hero/gallery-banner.jpg';
+
 const galleryItems = [
   { href: '/gallery/gallery-detail-41.html', category: 'BambooDecking', catLabel: 'Bamboo Decking', label: 'Outdoor Bamboo Decking Project #41', src: '/img/UploadFiles/null-p1f0iiv5k5c3n1csj1gi71mti65t1.jpg' },
   { href: '/gallery/gallery-detail-40.html', category: 'BambooFlooring', catLabel: 'Bamboo Flooring', label: 'Indoor Bamboo Flooring Project #40', src: '/img/UploadFiles/null-p1f0g34em7tk622d1glkf2uqru1.jpg' },
@@ -36,8 +38,19 @@ const categories = [
   footerType="postscript"
   loadLegacyJs={false}
   isModern={true}
+  preloadImage={galleryBannerImage}
 >
-    <section class="bb-page-hero">
+    <section class="bb-page-hero bb-page-hero--banner">
+        <img
+            src={galleryBannerImage}
+            alt="Bothbest Bamboo Flooring, Decking & Architectural Panel Projects"
+            class="bb-page-hero-bg"
+            fetchpriority="high"
+            loading="eager"
+            decoding="async"
+            onerror="this.style.display='none'"
+        />
+        <div class="bb-page-hero-overlay" aria-hidden="true"></div>
         <div class="bb-container">
             <ol class="bb-breadcrumb">
                 <li><a href="/">Home</a><span class="bb-breadcrumb-sep">/</span></li>
