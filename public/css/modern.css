@@ -3866,3 +3866,324 @@ footer.bb-footer {
     min-height: 260px;
   }
 }
+
+/* =====================================================================
+   14. Logo Refinements, About Banner, 760x410 Factory Grid & News Sidebar
+   ===================================================================== */
+
+/* 解锁 556x100 宽幅 Logo 的横向宽度（桌面渲染约 267x48px） */
+.bb-brand img {
+  height: 48px !important;
+  width: auto !important;
+  max-height: 48px !important;
+  max-width: 300px !important;
+  object-fit: contain;
+}
+
+@media (max-width: 1100px) {
+  .bb-brand img {
+    height: 42px !important;
+    max-height: 42px !important;
+    max-width: 245px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .bb-brand img {
+    height: 34px !important;
+    max-height: 34px !important;
+    max-width: 200px !important;
+  }
+}
+
+/* About Page Banner Hero (Image + Deep Forest Green Overlay) */
+.bb-page-hero--banner {
+  position: relative;
+  overflow: hidden;
+  background: var(--bb-green-950);
+  color: #ffffff;
+  border-bottom: none;
+  padding: 64px 0 58px;
+}
+
+.bb-page-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.bb-page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    98deg,
+    rgba(11, 29, 20, 0.94) 0%,
+    rgba(15, 36, 25, 0.82) 52%,
+    rgba(15, 36, 25, 0.48) 100%
+  );
+}
+
+.bb-page-hero--banner .bb-container {
+  position: relative;
+  z-index: 2;
+}
+
+.bb-page-hero--banner .bb-breadcrumb,
+.bb-page-hero--banner .bb-breadcrumb a {
+  color: #c2d8cb;
+}
+
+.bb-page-hero--banner .bb-breadcrumb a:hover {
+  color: #ffffff;
+}
+
+.bb-page-hero--banner .bb-page-title {
+  color: #ffffff;
+}
+
+.bb-page-hero--banner .bb-page-lead {
+  color: rgba(235, 243, 238, 0.9);
+}
+
+/* High-End 2-Column Factory Showcase Grid (Exact 760x410 Aspect Ratio) */
+.bb-tour-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+}
+
+.bb-tour-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid var(--bb-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(15, 36, 25, 0.04);
+  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+}
+
+.bb-tour-card:hover {
+  transform: translateY(-4px);
+  border-color: #b8cbbf;
+  box-shadow: 0 16px 32px rgba(15, 36, 25, 0.1);
+}
+
+.bb-tour-thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 760 / 410;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: var(--bb-surface-2);
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.bb-tour-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.bb-tour-card:hover .bb-tour-thumb img {
+  transform: scale(1.04);
+}
+
+.bb-tour-step {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(15, 36, 25, 0.84);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  font-family: var(--bb-font-sans);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.bb-tour-step-num {
+  color: #f4b77d;
+}
+
+.bb-tour-zoom {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(15, 36, 25, 0.72);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.82;
+  transition: opacity 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.bb-tour-card:hover .bb-tour-zoom {
+  opacity: 1;
+  background: var(--bb-amber-600);
+  transform: scale(1.06);
+}
+
+.bb-tour-body {
+  padding: 18px 22px 20px;
+}
+
+.bb-tour-body h3 {
+  margin: 0 0 6px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.32;
+  color: var(--bb-ink);
+}
+
+.bb-tour-body p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--bb-muted);
+}
+
+/* Lightbox Caption & Prev/Next Enhancements */
+.bb-lightbox-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 92vw;
+}
+
+.bb-lightbox-caption {
+  margin-top: 14px;
+  color: #e4efe8;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.bb-lightbox-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.bb-lightbox-nav:hover {
+  background: var(--bb-amber-600);
+}
+
+.bb-lightbox-prev { left: 20px; }
+.bb-lightbox-next { right: 20px; }
+
+/* Practical Sidebar: Core Product Lines Directory */
+.bb-sidebar-cats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.bb-sidebar-cat-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 13px;
+  border-radius: var(--bb-radius-sm);
+  border: 1px solid #eceae2;
+  background: #faf9f6;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
+}
+
+.bb-sidebar-cat-link:hover {
+  border-color: var(--bb-green-800);
+  background: var(--bb-green-100);
+}
+
+.bb-sidebar-cat-info strong {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--bb-ink);
+  margin-bottom: 2px;
+}
+
+.bb-sidebar-cat-info span {
+  display: block;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--bb-muted);
+}
+
+.bb-sidebar-cat-arrow {
+  flex-shrink: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--bb-green-800);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.bb-sidebar-cat-link:hover .bb-sidebar-cat-arrow {
+  color: var(--bb-amber-600);
+  transform: translateX(3px);
+}
+
+.bb-sidebar-cat-tag {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: var(--bb-amber-100);
+  color: var(--bb-amber-600);
+  font-size: 10px;
+  font-weight: 700;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+
+.bb-sidebar-cta-stack {
+  display: grid;
+  gap: 10px;
+}
+
+@media (max-width: 820px) {
+  .bb-tour-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .bb-page-hero--banner {
+    padding: 44px 0 40px;
+  }
+}

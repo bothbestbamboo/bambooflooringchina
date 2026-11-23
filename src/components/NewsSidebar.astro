@@ -7,11 +7,33 @@ const sortedNews = Object.values(newsFiles).sort(
 const latestList = sortedNews.slice(0, 10);
 const hotList = sortedNews.slice(10, 20);
 
-const sidebarSlides = [
-  { src: '/img/UploadFiles/null-p193mhvg7f22014iq19v2ms0q721.jpg', alt: 'Bothbest solid bamboo flooring showcase' },
-  { src: '/img/UploadFiles/null-p19309fvqg34qar51bf011p91oem1.jpg', alt: 'Strand woven bamboo flooring planks' },
-  { src: '/img/UploadFiles/null-p19309fhc31k4nktq13pslkq4dt1.jpg', alt: 'Carbonized bamboo flooring interior' },
-  { src: '/img/UploadFiles/null-p19309a3at1mv41p8op4onkkupe1.jpg', alt: 'Wholesale China bamboo flooring factory' },
+const coreProductLines = [
+  {
+    title: 'Bamboo Flooring',
+    desc: 'Solid, strand woven, engineered & click-lock',
+    href: '/products/product-type-BambooFlooring.html',
+  },
+  {
+    title: 'Outdoor Bamboo Decking',
+    desc: 'Thermo-treated Class 1 exterior boards & cladding',
+    href: '/products/product-type-BambooDecking.html',
+  },
+  {
+    title: 'Bamboo Panels & Plywood',
+    desc: '3mm – 80mm multi-layer architectural sheets',
+    href: '/products/product-type-BambooPanels.html',
+  },
+  {
+    title: 'Veneer, Moldings & Mats',
+    desc: 'Stair nosing, skirting, trims & woven mats',
+    href: '/products/product-type-BambooCollection.html',
+  },
+  {
+    title: 'Factory Clearance Stock',
+    desc: 'Ready-to-ship Grade-A export overstock',
+    href: '/clearance/clearance_1.html',
+    tag: 'Deals',
+  },
 ];
 ---
 <aside class="bb-sidebar" aria-label="News sidebar">
@@ -53,102 +75,53 @@ const sidebarSlides = [
     </div>
 
     <div class="bb-sidebar-card">
-        <h3 class="bb-sidebar-title">Bamboo Showcase</h3>
-        <div class="bb-slider" id="sidebarSlider" aria-roledescription="carousel" aria-label="Bamboo Showcase">
-            <div class="bb-slides">
-                {sidebarSlides.map((slide, idx) => (
-                    <div class={`bb-slide${idx === 0 ? ' is-active' : ''}`}>
-                        <img
-                            src={slide.src}
-                            alt={slide.alt}
-                            loading="lazy"
-                            decoding="async"
-                        />
-                    </div>
-                ))}
-            </div>
-            <button type="button" class="bb-slider-btn bb-slider-prev" id="sidebarPrev" aria-label="Previous image" style="width: 30px; height: 30px;">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m15 18-6-6 6-6"/></svg>
-            </button>
-            <button type="button" class="bb-slider-btn bb-slider-next" id="sidebarNext" aria-label="Next image" style="width: 30px; height: 30px;">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m9 18 6-6-6-6"/></svg>
-            </button>
-            <div class="bb-slider-dots" id="sidebarDots">
-                {sidebarSlides.map((_, idx) => (
-                    <button
-                        type="button"
-                        class={`bb-slider-dot${idx === 0 ? ' is-active' : ''}`}
-                        data-slide={idx}
-                        aria-label={`View image ${idx + 1}`}
-                    ></button>
-                ))}
-            </div>
-        </div>
+        <h3 class="bb-sidebar-title">Core Product Lines</h3>
+        <ul class="bb-sidebar-cats">
+            {coreProductLines.map((cat) => (
+                <li>
+                    <a href={cat.href} class="bb-sidebar-cat-link">
+                        <div class="bb-sidebar-cat-info">
+                            <strong>
+                                {cat.title}
+                                {cat.tag && <span class="bb-sidebar-cat-tag">{cat.tag}</span>}
+                            </strong>
+                            <span>{cat.desc}</span>
+                        </div>
+                        <span class="bb-sidebar-cat-arrow" aria-hidden="true">&rarr;</span>
+                    </a>
+                </li>
+            ))}
+        </ul>
     </div>
 
     <div class="bb-sidebar-cta">
         <h3>Need Wholesale Samples?</h3>
-        <p>Request free bamboo flooring, decking, or panel samples directly from our Anji factory.</p>
-        <a href="/about.html#RequestAQuote" class="bb-btn bb-btn-primary" style="width: 100%;">Request a Quote</a>
+        <p>Request free bamboo flooring, decking, or panel samples and FOB pricing directly from our Anji factory.</p>
+        <div class="bb-sidebar-cta-stack">
+            <a href="/about.html#RequestAQuote" class="bb-btn bb-btn-primary" style="width: 100%;">Request a Quote</a>
+            <a href="https://wa.me/8615005820528" target="_blank" rel="nofollow noopener noreferrer" class="bb-btn bb-btn-outline-light" style="width: 100%;">WhatsApp Factory</a>
+        </div>
     </div>
 </aside>
 
 <script is:inline>
     document.addEventListener('DOMContentLoaded', function () {
         var tabBar = document.getElementById('newsSidebarTabs');
-        if (tabBar) {
-            tabBar.addEventListener('click', function (e) {
-                var btn = e.target.closest('button[data-tab-target]');
-                if (!btn) return;
-                var targetId = btn.getAttribute('data-tab-target');
-                var btns = tabBar.querySelectorAll('.bb-tab-btn');
-                for (var i = 0; i < btns.length; i++) {
-                    var active = btns[i] === btn;
-                    btns[i].classList.toggle('is-active', active);
-                    btns[i].setAttribute('aria-selected', active ? 'true' : 'false');
-                }
-                var panels = tabBar.parentElement.querySelectorAll('.bb-tab-panel');
-                for (var j = 0; j < panels.length; j++) {
-                    panels[j].classList.toggle('is-active', panels[j].id === targetId);
-                }
-            });
-        }
-
-        var slider = document.getElementById('sidebarSlider');
-        if (slider) {
-            var slides = slider.querySelectorAll('.bb-slide');
-            var dots = slider.querySelectorAll('.bb-slider-dot');
-            var current = 0;
-            var timer = null;
-
-            var showSlide = function (index) {
-                current = (index + slides.length) % slides.length;
-                for (var i = 0; i < slides.length; i++) {
-                    slides[i].classList.toggle('is-active', i === current);
-                    if (dots[i]) dots[i].classList.toggle('is-active', i === current);
-                }
-            };
-            var startAuto = function () {
-                stopAuto();
-                timer = setInterval(function () { showSlide(current + 1); }, 4200);
-            };
-            var stopAuto = function () {
-                if (timer) { clearInterval(timer); timer = null; }
-            };
-
-            var prevBtn = document.getElementById('sidebarPrev');
-            var nextBtn = document.getElementById('sidebarNext');
-            if (prevBtn) prevBtn.addEventListener('click', function () { showSlide(current - 1); startAuto(); });
-            if (nextBtn) nextBtn.addEventListener('click', function () { showSlide(current + 1); startAuto(); });
-            for (var d = 0; d < dots.length; d++) {
-                dots[d].addEventListener('click', function () {
-                    showSlide(parseInt(this.getAttribute('data-slide'), 10) || 0);
-                    startAuto();
-                });
+        if (!tabBar) return;
+        tabBar.addEventListener('click', function (e) {
+            var btn = e.target.closest('button[data-tab-target]');
+            if (!btn) return;
+            var targetId = btn.getAttribute('data-tab-target');
+            var btns = tabBar.querySelectorAll('.bb-tab-btn');
+            for (var i = 0; i < btns.length; i++) {
+                var active = btns[i] === btn;
+                btns[i].classList.toggle('is-active', active);
+                btns[i].setAttribute('aria-selected', active ? 'true' : 'false');
             }
-            slider.addEventListener('mouseenter', stopAuto);
-            slider.addEventListener('mouseleave', startAuto);
-            startAuto();
-        }
+            var panels = tabBar.parentElement.querySelectorAll('.bb-tab-panel');
+            for (var j = 0; j < panels.length; j++) {
+                panels[j].classList.toggle('is-active', panels[j].id === targetId);
+            }
+        });
     });
 </script>
