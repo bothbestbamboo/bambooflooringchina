@@ -41,7 +41,7 @@ Market Share and Worldwide Presence</span></span></div>
 China leads the world‘s bamboo flooring market in terms of market share. North America, Europe, and Australia are just a few of the areas that China supplies flooring to as the world‘s top supplier of bamboo products. The nation can satisfy the demands of major merchants and distributors because to its vast supply network and capacity for large-scale production.</span><br>
 <br>
 <span style="font-size: 11pt;">
-Despite its tiny size, Vietnam has been gaining market share over the past few years. <a href="https://www.bambooindustry.com/blog/vietnam-bamboo-flooring-supplier.html">Vietnamese bamboo flooring</a> has been known for its superior quality and eco-friendliness, appealing to niche markets and people that care about the environment. The nation has a competitive advantage in several markets thanks to advantageous trade agreements with areas like the European Union.</span><br>
+Despite its tiny size, Vietnam has been gaining market share over the past few years. Vietnamese bamboo flooring has been known for its superior quality and eco-friendliness, appealing to niche markets and people that care about the environment. The nation has a competitive advantage in several markets thanks to advantageous trade agreements with areas like the European Union.</span><br>
 <br>
 <span style="font-size: 11pt;">
 Vietnam‘s capacity to adjust to shifting consumer tastes is one of its advantages. For instance, strand-woven bamboo flooring, which is denser and more resilient than conventional bamboo flooring, is frequently the focus of Vietnamese manufacturers. This kind of product is very well-liked in high-end markets where appearance and longevity are crucial considerations.</span><br>

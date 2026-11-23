@@ -17,7 +17,7 @@ The Rigid Core‘s Strength</span></span>
 The hard core of SPC flooring is one of its most notable characteristics, differentiating it from conventional vinyl and laminate flooring. Polyvinyl chloride (PVC) and limestone are combined to create the core, which is a material that is both remarkably stable and robust. Because of its firmness, the flooring won‘t bend or warp under the weight of bathroom fixtures or heavy foot activity.</span><br>
 <br>
 <span style="font-size: 11pt;">
-The stiff core of <a href="https://www.bambooindustry.com/blog/spc-flooring-perfect-choice-for-bathroom.html">SPC flooring for bathroom</a> offers comfort in a bathroom setting where moisture levels can change. SPC is resistant to buckling when subjected to pressure or moisture, unlike softer flooring choices. Because of its durability, it is a wise investment for homeowners looking for a dependable flooring option.</span><br>
+The stiff core of SPC flooring for bathroom offers comfort in a bathroom setting where moisture levels can change. SPC is resistant to buckling when subjected to pressure or moisture, unlike softer flooring choices. Because of its durability, it is a wise investment for homeowners looking for a dependable flooring option.</span><br>
 <br>
 <span style="font-size: 11pt;">
 Outstanding Structural Soundness</span></span></div>

@@ -5,37 +5,87 @@ const productFiles = import.meta.glob('../data/products/*.md', { eager: true });
 const nonEnglishPrefix = /^(fr|de|jp|es|it|ru|nl|pt|ko|ar)-/i;
 const nonLatinChars = /[\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]/;
 
-const getCategoryKey = (fm: any): string => {
+const cleanDisplayTitle = (raw: string) =>
+  raw
+    .replace(/Carbonzied/gi, 'Carbonized')
+    .split('|')[0]
+    .replace(/\s*:\s*$/g, '')
+    .replace(/\s*:\s*/g, ' · ')
+    .trim();
+
+const cleanSummary = (raw: string) => {
+  const s = raw
+    .replace(/Carbonzied/gi, 'Carbonized')
+    .replace(/,([^\s])/g, ', $1')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return s ? s.charAt(0).toUpperCase() + s.slice(1) : '';
+};
+
+const parseCardSpecs = (attrs: unknown): { itemCode: string; chips: string[] } => {
+  const list = Array.isArray(attrs) ? attrs.map((a) => String(a || '').trim()).filter(Boolean) : [];
+  let itemCode = '';
+  const chips: string[] = [];
+
+  for (const entry of list) {
+    const idx = entry.indexOf(':');
+    const key = idx > 0 ? entry.slice(0, idx).trim().toLowerCase() : '';
+    const val = idx > 0 ? entry.slice(idx + 1).trim() : entry;
+    if (!val) continue;
+
+    if (key.includes('item') || key.includes('model') || key.includes('code')) {
+      if (!itemCode) itemCode = val;
+    } else if (chips.length < 2 && val.length <= 28) {
+      chips.push(val);
+    }
+  }
+  return { itemCode, chips };
+};
+
+const getCategoryMeta = (fm: any): { key: string; label: string } => {
   const url = String(fm.categoryUrl || '');
   const match = url.match(/product-type-([A-Za-z]+)/i);
-  if (match) return match[1];
+  const keyFromUrl = match ? match[1] : '';
   const name = String(fm.categoryName || '').toLowerCase();
-  if (name.includes('decking')) return 'BambooDecking';
-  if (name.includes('panel') || name.includes('plywood') || name.includes('veneer')) return 'BambooPanels';
-  if (name.includes('collection') || name.includes('mat') || name.includes('molding')) return 'BambooCollection';
-  return 'BambooFlooring';
+
+  if (keyFromUrl === 'BambooDecking' || name.includes('decking')) {
+    return { key: 'BambooDecking', label: 'Bamboo Decking' };
+  }
+  if (keyFromUrl === 'BambooPanels' || name.includes('panel') || name.includes('plywood') || name.includes('veneer')) {
+    return { key: 'BambooPanels', label: 'Bamboo Panels' };
+  }
+  if (keyFromUrl === 'BambooCollection' || name.includes('collection') || name.includes('mat') || name.includes('molding')) {
+    return { key: 'BambooCollection', label: 'Bamboo Collection' };
+  }
+  return { key: 'BambooFlooring', label: 'Bamboo Flooring' };
 };
 
 const products = Object.values(productFiles)
   .map((p: any) => {
     const fm = p.frontmatter || {};
     const slug = String(fm.slug || '');
-    const rawTitle = String(fm.pageTitle || fm.title || '').replace(/Carbonzied/gi, 'Carbonized');
-    const summary = String(fm.summary || fm.description || '').replace(/Carbonzied/gi, 'Carbonized');
+    const rawTitle = String(fm.pageTitle || fm.title || '');
+    const title = cleanDisplayTitle(rawTitle);
+    const summary = cleanSummary(String(fm.summary || fm.description || ''));
     const img = fm.thumb || fm.images?.[0]?.src || '/img/skin/logo_sml.png';
-    const imgAlt = fm.images?.[0]?.alt || rawTitle;
-    const category = getCategoryKey(fm);
+    const imgAlt = fm.images?.[0]?.alt || title;
+    const cat = getCategoryMeta(fm);
+    const { itemCode, chips } = parseCardSpecs(fm.attributes);
     const dateVal = fm.date ? new Date(fm.date).getTime() : 0;
     const idVal = Number(fm.id) || 0;
 
     return {
       slug,
-      title: rawTitle,
+      title,
       summary,
       url: `/products/${slug}.html`,
+      quoteUrl: `/about.html?product=${encodeURIComponent(title)}#RequestAQuote`,
       img,
       imgAlt,
-      category,
+      category: cat.key,
+      categoryLabel: cat.label,
+      itemCode,
+      chips,
       dateVal: Number.isNaN(dateVal) ? 0 : dateVal,
       idVal,
     };
@@ -53,7 +103,7 @@ const countByCat = (key: string) =>
   key === 'all' ? products.length : products.filter((p) => p.category === key).length;
 
 const categories = [
-  { key: 'all', label: 'All' },
+  { key: 'all', label: 'All Products' },
   { key: 'BambooFlooring', label: 'Bamboo Flooring' },
   { key: 'BambooDecking', label: 'Bamboo Decking' },
   { key: 'BambooPanels', label: 'Bamboo Panels' },
@@ -64,53 +114,73 @@ const categories = [
   title="All Bamboo Products | China Factory Wholesale - Bothbest"
   keywords="bamboo flooring, bamboo decking, bamboo panels, bamboo plywood, bamboo mats, china factory wholesale"
   description="Browse Bothbest complete wholesale catalog of solid bamboo flooring, strand woven bamboo flooring, outdoor bamboo decking, bamboo plywood panels, and bamboo veneer."
-  bodyClass="html not-front not-logged-in no-sidebars"
-  footerType="simple"
+  footerType="postscript"
   loadLegacyJs={false}
+  isModern={true}
 >
-    <section class="container mainContent">
-        <form action="/search.html" method="get" class="MobileSearch" role="search">
-            <input type="text" name="SearchKeywords" id="MobileSearchKeywords" placeholder="Search products..." aria-label="Search keywords" />
-            <input type="submit" id="MobileSearch" name="search" value="Search" class="form-submit" />
-        </form>
-        <div class="row-fluid">
-            <div class="content span12">
-                <a id="main-content"></a>
-                <h1 class="title" id="page-title">Product List</h1>
+    <section class="bb-page-hero">
+        <div class="bb-container">
+            <ol class="bb-breadcrumb">
+                <li><a href="/">Home</a><span class="bb-breadcrumb-sep">/</span></li>
+                <li aria-current="page">Products</li>
+            </ol>
+            <h1 class="bb-page-title">Wholesale Bamboo Catalog</h1>
+            <p class="bb-page-lead">
+                Direct from our Anji factory—solid and strand woven bamboo flooring, thermo-treated outdoor decking, multi-layer plywood panels, veneer, and accessories.
+            </p>
+        </div>
+    </section>
 
-                <div class="filter-bar" id="productFilters" role="tablist" aria-label="Filter products by category">
-                    {categories.map((cat, idx) => (
-                        <button
-                            type="button"
-                            class={`filter-btn${idx === 0 ? ' is-active' : ''}`}
-                            data-filter={cat.key}
-                            aria-pressed={idx === 0 ? 'true' : 'false'}
-                        >
-                            {cat.label} <span class="filter-count">({countByCat(cat.key)})</span>
-                        </button>
-                    ))}
-                </div>
+    <section class="bb-catalog-section">
+        <div class="bb-container">
+            <div class="bb-filter-bar" id="productFilters" role="tablist" aria-label="Filter products by category">
+                {categories.map((cat, idx) => (
+                    <button
+                        type="button"
+                        class={`bb-filter-btn${idx === 0 ? ' is-active' : ''}`}
+                        data-filter={cat.key}
+                        aria-pressed={idx === 0 ? 'true' : 'false'}
+                    >
+                        <span>{cat.label}</span>
+                        <span class="bb-filter-count">({countByCat(cat.key)})</span>
+                    </button>
+                ))}
+            </div>
 
-                <div class="modern-product-grid" id="productGrid">
-                    {products.map((item, idx) => (
-                        <article class="portfolioItem product-card" data-category={item.category}>
-                            <a href={item.url} class="product-thumb">
-                                <img
-                                    src={item.img}
-                                    width="480"
-                                    height="396"
-                                    alt={item.imgAlt}
-                                    loading={idx < 6 ? 'eager' : 'lazy'}
-                                    decoding="async"
-                                />
+            <div class="bb-catalog-grid" id="productGrid">
+                {products.map((item, idx) => (
+                    <article class="bb-catalog-card" data-category={item.category}>
+                        <a href={item.url} class="bb-catalog-thumb">
+                            <img
+                                src={item.img}
+                                width="480"
+                                height="396"
+                                alt={item.imgAlt}
+                                loading={idx < 8 ? 'eager' : 'lazy'}
+                                decoding="async"
+                            />
+                            <span class="bb-catalog-badge">{item.categoryLabel}</span>
+                            {item.itemCode && <span class="bb-catalog-code">{item.itemCode}</span>}
+                        </a>
+                        <div class="bb-catalog-body">
+                            <h2><a href={item.url}>{item.title}</a></h2>
+                            {item.summary && <p>{item.summary}</p>}
+                            {item.chips.length > 0 && (
+                                <div class="bb-spec-chips">
+                                    {item.chips.map((chip) => (
+                                        <span class="bb-spec-chip">{chip}</span>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                        <div class="bb-catalog-foot">
+                            <a href={item.url} class="bb-catalog-more">
+                                View Details <span aria-hidden="true">&rarr;</span>
                             </a>
-                            <div class="product-card-body">
-                                <h2><a href={item.url}>{item.title}</a></h2>
-                                <p>{item.summary}</p>
-                            </div>
-                        </article>
-                    ))}
-                </div>
+                            <a href={item.quoteUrl} class="bb-catalog-quote">Quote</a>
+                        </div>
+                    </article>
+                ))}
             </div>
         </div>
     </section>
@@ -118,11 +188,11 @@ const categories = [
     <script is:inline>
         document.addEventListener('DOMContentLoaded', function () {
             var filterBar = document.getElementById('productFilters');
-            var cards = document.querySelectorAll('#productGrid .product-card');
+            var cards = document.querySelectorAll('#productGrid .bb-catalog-card');
             if (!filterBar) return;
 
             var applyFilter = function (target) {
-                var allBtns = filterBar.querySelectorAll('.filter-btn');
+                var allBtns = filterBar.querySelectorAll('.bb-filter-btn');
                 for (var i = 0; i < allBtns.length; i++) {
                     var active = allBtns[i].getAttribute('data-filter') === target;
                     allBtns[i].classList.toggle('is-active', active);
@@ -135,7 +205,7 @@ const categories = [
             };
 
             filterBar.addEventListener('click', function (e) {
-                var btn = e.target.closest('.filter-btn');
+                var btn = e.target.closest('.bb-filter-btn');
                 if (!btn) return;
                 applyFilter(btn.getAttribute('data-filter'));
             });

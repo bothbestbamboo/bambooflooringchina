@@ -6,6 +6,23 @@ export interface Props {
 
 const { currentSlug = '', categoryUrl = '' } = Astro.props;
 
+const cleanDisplayTitle = (raw: string) =>
+  raw
+    .replace(/Carbonzied/gi, 'Carbonized')
+    .split('|')[0]
+    .replace(/\s*:\s*$/g, '')
+    .replace(/\s*:\s*/g, ' · ')
+    .trim();
+
+const cleanSummary = (raw: string) => {
+  const s = raw
+    .replace(/Carbonzied/gi, 'Carbonized')
+    .replace(/,([^\s])/g, ', $1')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return s ? s.charAt(0).toUpperCase() + s.slice(1) : '';
+};
+
 const productFiles = import.meta.glob('../data/products/*.md', { eager: true });
 const nonEnglishPrefix = /^(fr|de|jp|es|it|ru|nl|pt|ko|ar)-/i;
 const nonLatinChars = /[\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]/;
@@ -14,8 +31,8 @@ const candidates = Object.values(productFiles)
   .map((p: any) => {
     const fm = p.frontmatter || {};
     const slug = String(fm.slug || '');
-    const title = String(fm.pageTitle || fm.title || '').replace(/Carbonzied/gi, 'Carbonized');
-    const summary = String(fm.summary || fm.description || '').replace(/Carbonzied/gi, 'Carbonized');
+    const title = cleanDisplayTitle(String(fm.pageTitle || fm.title || ''));
+    const summary = cleanSummary(String(fm.summary || fm.description || ''));
     const img = fm.thumb || fm.images?.[0]?.src || '';
     const dateVal = fm.date ? new Date(fm.date).getTime() : 0;
     const idVal = Number(fm.id) || 0;
@@ -40,7 +57,6 @@ const candidates = Object.values(productFiles)
     !nonLatinChars.test(item.title)
   );
 
-// 优先展示同分类产品，不足 8 个则用其他最新英文产品补齐
 const sameCat = candidates
   .filter((item) => categoryUrl && item.categoryUrl === categoryUrl)
   .sort((a, b) => (b.dateVal - a.dateVal) || (b.idVal - a.idVal));
@@ -52,23 +68,27 @@ const otherCat = candidates
 const relatedItems = [...sameCat, ...otherCat].slice(0, 8);
 ---
 {relatedItems.length > 0 && (
-    <section id="block-views-related-products" class="block block-views related-products-section">
-        <div class="newest-header">
-            <h2 class="section-heading">Related Products</h2>
-            <div class="newest-controls">
-                <button type="button" id="relatedPrev" class="prev-btn label" aria-label="Previous related products">
-                    <i class="icon-chevron-left icon-white"></i>
+    <section aria-label="Related products">
+        <div class="bb-section-head" style="margin-bottom: 24px;">
+            <div>
+                <span class="bb-eyebrow">You May Also Like</span>
+                <h2 class="bb-section-title" style="font-size: 24px;">Related Products</h2>
+            </div>
+            <div class="bb-carousel-controls">
+                <button type="button" id="relatedPrev" class="bb-carousel-btn" aria-label="Previous related products">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
                 </button>
-                <button type="button" id="relatedNext" class="next-btn label" aria-label="Next related products">
-                    <i class="icon-chevron-right icon-white"></i>
+                <button type="button" id="relatedNext" class="bb-carousel-btn" aria-label="Next related products">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
                 </button>
             </div>
         </div>
-        <div class="newest-viewport" id="relatedViewport">
-            <div class="newest-track">
+
+        <div class="bb-carousel-viewport" id="relatedViewport">
+            <div class="bb-carousel-track">
                 {relatedItems.map((item) => (
-                    <article class="portfolioItem newest-card">
-                        <a href={item.href} class="newest-thumb">
+                    <article class="bb-arrival-card">
+                        <a href={item.href} class="bb-arrival-thumb">
                             <img
                                 src={item.img}
                                 width="480"
@@ -78,12 +98,14 @@ const relatedItems = [...sameCat, ...otherCat].slice(0, 8);
                                 decoding="async"
                             />
                         </a>
-                        <p class="newest-title">
-                            <a href={item.href}>{item.title}</a>
-                        </p>
-                        {item.summary && (
-                            <p class="related-summary">{item.summary}</p>
-                        )}
+                        <div class="bb-arrival-body">
+                            <h3 class="bb-arrival-title">
+                                <a href={item.href}>{item.title}</a>
+                            </h3>
+                            {item.summary && (
+                                <p class="bb-arrival-summary">{item.summary}</p>
+                            )}
+                        </div>
                     </article>
                 ))}
             </div>
@@ -99,8 +121,8 @@ const relatedItems = [...sameCat, ...otherCat].slice(0, 8);
         if (!viewport || !prevBtn || !nextBtn) return;
 
         var scrollStep = function (dir) {
-            var card = viewport.querySelector('.newest-card');
-            var step = card ? (card.offsetWidth + 16) : 260;
+            var card = viewport.querySelector('.bb-arrival-card');
+            var step = card ? (card.offsetWidth + 22) : 280;
             if (dir > 0 && viewport.scrollLeft + viewport.clientWidth >= viewport.scrollWidth - 8) {
                 viewport.scrollTo({ left: 0, behavior: 'smooth' });
             } else if (dir < 0 && viewport.scrollLeft <= 8) {

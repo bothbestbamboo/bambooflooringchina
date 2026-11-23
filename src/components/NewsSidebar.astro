@@ -4,7 +4,6 @@ const sortedNews = Object.values(newsFiles).sort(
   (a: any, b: any) => (b.frontmatter.id || 0) - (a.frontmatter.id || 0)
 );
 
-// 最新 10 篇放 Latest，第 11~20 篇放 Hot / More
 const latestList = sortedNews.slice(0, 10);
 const hotList = sortedNews.slice(10, 20);
 
@@ -15,50 +14,50 @@ const sidebarSlides = [
   { src: '/img/UploadFiles/null-p19309a3at1mv41p8op4onkkupe1.jpg', alt: 'Wholesale China bamboo flooring factory' },
 ];
 ---
-<aside class="sidebar-second span3" aria-label="News sidebar">
-    <div id="block-block-4" class="block block-block">
-        <ul class="nav nav-tabs" id="newsSidebarTabs" role="tablist">
-            <li class="active">
-                <a href="#tab-latest" data-tab-target="tab-latest" role="tab" aria-selected="true">Latest</a>
-            </li>
-            <li>
-                <a href="#tab-hot" data-tab-target="tab-hot" role="tab" aria-selected="false">Hot</a>
-            </li>
-        </ul>
-        <div class="tab-content NewsSidebar">
-            <div class="tab-pane active" id="tab-latest" role="tabpanel">
-                <ul>
-                    {latestList.map((n: any) => {
-                        const title = n.frontmatter.title || '';
-                        return (
-                            <li>
-                                <a href={`/news/${n.frontmatter.slug}.html`} title={title}>{title}</a>
-                            </li>
-                        );
-                    })}
-                </ul>
-            </div>
-            <div class="tab-pane" id="tab-hot" role="tabpanel">
-                <ul>
-                    {hotList.map((n: any) => {
-                        const title = n.frontmatter.title || '';
-                        return (
-                            <li>
-                                <a href={`/news/${n.frontmatter.slug}.html`} title={title}>{title}</a>
-                            </li>
-                        );
-                    })}
-                </ul>
-            </div>
+<aside class="bb-sidebar" aria-label="News sidebar">
+    <div class="bb-sidebar-card">
+        <div class="bb-tab-bar" id="newsSidebarTabs" role="tablist">
+            <button type="button" class="bb-tab-btn is-active" data-tab-target="tab-latest" role="tab" aria-selected="true">Latest Guides</button>
+            <button type="button" class="bb-tab-btn" data-tab-target="tab-hot" role="tab" aria-selected="false">Popular</button>
+        </div>
+        <div class="bb-tab-panel is-active" id="tab-latest" role="tabpanel">
+            <ul class="bb-sidebar-list">
+                {latestList.map((n: any, idx: number) => {
+                    const title = n.frontmatter.title || '';
+                    return (
+                        <li>
+                            <a href={`/news/${n.frontmatter.slug}.html`} title={title}>
+                                <span class="bb-sidebar-num">{String(idx + 1).padStart(2, '0')}</span>
+                                <span>{title}</span>
+                            </a>
+                        </li>
+                    );
+                })}
+            </ul>
+        </div>
+        <div class="bb-tab-panel" id="tab-hot" role="tabpanel">
+            <ul class="bb-sidebar-list">
+                {hotList.map((n: any, idx: number) => {
+                    const title = n.frontmatter.title || '';
+                    return (
+                        <li>
+                            <a href={`/news/${n.frontmatter.slug}.html`} title={title}>
+                                <span class="bb-sidebar-num">{String(idx + 1).padStart(2, '0')}</span>
+                                <span>{title}</span>
+                            </a>
+                        </li>
+                    );
+                })}
+            </ul>
         </div>
     </div>
 
-    <div id="block-views-mentor-slider-block-1" class="block block-views">
-        <h3>Bamboo Showcase</h3>
-        <div class="hero-slider sidebar-slider" id="sidebarSlider" aria-roledescription="carousel" aria-label="Bamboo Showcase">
-            <div class="hero-slides">
+    <div class="bb-sidebar-card">
+        <h3 class="bb-sidebar-title">Bamboo Showcase</h3>
+        <div class="bb-slider" id="sidebarSlider" aria-roledescription="carousel" aria-label="Bamboo Showcase">
+            <div class="bb-slides">
                 {sidebarSlides.map((slide, idx) => (
-                    <div class={`hero-slide${idx === 0 ? ' is-active' : ''}`}>
+                    <div class={`bb-slide${idx === 0 ? ' is-active' : ''}`}>
                         <img
                             src={slide.src}
                             alt={slide.alt}
@@ -68,13 +67,17 @@ const sidebarSlides = [
                     </div>
                 ))}
             </div>
-            <button type="button" class="hero-nav hero-prev" id="sidebarPrev" aria-label="Previous image">&#8249;</button>
-            <button type="button" class="hero-nav hero-next" id="sidebarNext" aria-label="Next image">&#8250;</button>
-            <div class="hero-dots" id="sidebarDots">
+            <button type="button" class="bb-slider-btn bb-slider-prev" id="sidebarPrev" aria-label="Previous image" style="width: 30px; height: 30px;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <button type="button" class="bb-slider-btn bb-slider-next" id="sidebarNext" aria-label="Next image" style="width: 30px; height: 30px;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+            <div class="bb-slider-dots" id="sidebarDots">
                 {sidebarSlides.map((_, idx) => (
                     <button
                         type="button"
-                        class={`hero-dot${idx === 0 ? ' is-active' : ''}`}
+                        class={`bb-slider-dot${idx === 0 ? ' is-active' : ''}`}
                         data-slide={idx}
                         aria-label={`View image ${idx + 1}`}
                     ></button>
@@ -82,37 +85,39 @@ const sidebarSlides = [
             </div>
         </div>
     </div>
+
+    <div class="bb-sidebar-cta">
+        <h3>Need Wholesale Samples?</h3>
+        <p>Request free bamboo flooring, decking, or panel samples directly from our Anji factory.</p>
+        <a href="/about.html#RequestAQuote" class="bb-btn bb-btn-primary" style="width: 100%;">Request a Quote</a>
+    </div>
 </aside>
 
 <script is:inline>
     document.addEventListener('DOMContentLoaded', function () {
-        // 1. 侧栏 Hot / Latest 原生 Tab 切换
         var tabBar = document.getElementById('newsSidebarTabs');
         if (tabBar) {
             tabBar.addEventListener('click', function (e) {
-                var link = e.target.closest('a[data-tab-target]');
-                if (!link) return;
-                e.preventDefault();
-                var targetId = link.getAttribute('data-tab-target');
-                var items = tabBar.querySelectorAll('li');
-                for (var i = 0; i < items.length; i++) {
-                    var isCurrent = items[i].contains(link);
-                    items[i].classList.toggle('active', isCurrent);
-                    var a = items[i].querySelector('a');
-                    if (a) a.setAttribute('aria-selected', isCurrent ? 'true' : 'false');
+                var btn = e.target.closest('button[data-tab-target]');
+                if (!btn) return;
+                var targetId = btn.getAttribute('data-tab-target');
+                var btns = tabBar.querySelectorAll('.bb-tab-btn');
+                for (var i = 0; i < btns.length; i++) {
+                    var active = btns[i] === btn;
+                    btns[i].classList.toggle('is-active', active);
+                    btns[i].setAttribute('aria-selected', active ? 'true' : 'false');
                 }
-                var panes = document.querySelectorAll('.NewsSidebar .tab-pane');
-                for (var j = 0; j < panes.length; j++) {
-                    panes[j].classList.toggle('active', panes[j].id === targetId);
+                var panels = tabBar.parentElement.querySelectorAll('.bb-tab-panel');
+                for (var j = 0; j < panels.length; j++) {
+                    panels[j].classList.toggle('is-active', panels[j].id === targetId);
                 }
             });
         }
 
-        // 2. 侧栏零跳动轻量轮播
         var slider = document.getElementById('sidebarSlider');
         if (slider) {
-            var slides = slider.querySelectorAll('.hero-slide');
-            var dots = slider.querySelectorAll('.hero-dot');
+            var slides = slider.querySelectorAll('.bb-slide');
+            var dots = slider.querySelectorAll('.bb-slider-dot');
             var current = 0;
             var timer = null;
 

@@ -80,5 +80,4 @@ While composite decking is known for its low maintenance, some homeowners prefer
 <br>
 Final Thoughts</span></div>
 <div><span style="font-family: Verdana;"><br>
-<a href="https://www.bambooindustry.com/bamboo-decking/">
-Bamboo decking</a> brings together strength, beauty, sustainability, and practicality in a way few other decking materials can match. Its durability makes it a dependable choice for busy outdoor areas, while its natural appeal enhances the atmosphere of patios, gardens, and pool spaces. Add its rapid renewability, comfortable underfoot feel, and resistance to pests and weather, and it’s clear why many homeowners and designers see it as a standout option for long?lasting outdoor projects.</span></div></p>
+Bamboo decking brings together strength, beauty, sustainability, and practicality in a way few other decking materials can match. Its durability makes it a dependable choice for busy outdoor areas, while its natural appeal enhances the atmosphere of patios, gardens, and pool spaces. Add its rapid renewability, comfortable underfoot feel, and resistance to pests and weather, and it’s clear why many homeowners and designers see it as a standout option for long?lasting outdoor projects.</span></div></p>

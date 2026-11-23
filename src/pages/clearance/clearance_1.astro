@@ -18,68 +18,84 @@ const clearanceItems = [
   title="Bamboo Flooring Clearance & Factory Overstock Deals | Bothbest"
   keywords="bamboo flooring clearance, wholesale bamboo discount, overstock bamboo flooring, china factory special price"
   description="Factory-direct clearance pricing on A-grade overstock solid bamboo flooring, strand woven bamboo flooring, and bamboo plywood panels ready for shipment."
-  bodyClass="html not-front not-logged-in no-sidebars"
   footerType="postscript"
   loadLegacyJs={false}
+  isModern={true}
 >
-    <section class="container mainContent">
-        <form action="/search.html" method="get" class="MobileSearch" role="search">
-            <input type="text" name="SearchKeywords" id="MobileSearchKeywords" placeholder="Search clearance..." aria-label="Search keywords" />
-            <input type="submit" id="MobileSearch" name="search" value="Search" class="form-submit" />
-        </form>
-        <div class="row-fluid">
-            <div class="content span12">
-                <a id="main-content"></a>
-                <h1 class="title" id="page-title">Factory Clearance &amp; Overstock List</h1>
-                <p>For every export production run, Bothbest manufactures approximately 5% extra A-grade volume to guarantee strict color sorting and board selection for our clients.</p>
-                <p>When buyers shift to different dimensions or specifications on future orders, these Grade-A overstock lots remain in our warehouse. We offer them at discounted factory-direct prices to clear warehouse space—never because of compromised quality.</p>
+    <section class="bb-page-hero bb-page-hero--dark">
+        <div class="bb-container">
+            <ol class="bb-breadcrumb">
+                <li><a href="/">Home</a><span class="bb-breadcrumb-sep">/</span></li>
+                <li aria-current="page">Clearance Stock</li>
+            </ol>
+            <h1 class="bb-page-title">Factory Clearance &amp; Overstock</h1>
+            <p class="bb-page-lead">
+                First-grade export overstock available at discounted FOB pricing to free warehouse capacity—never due to compromised quality.
+            </p>
+        </div>
+    </section>
 
-                <div class="row-fluid" style="margin-top: 18px;">
-                    <div class="span12 clearance-list">
-                        <table class="table table-bordered table-striped table-clearance">
-                            <thead>
-                                <tr>
-                                    <th>Item No.</th>
-                                    <th style="width: 190px;">Photo</th>
-                                    <th>Description</th>
-                                    <th>Price (FOB)</th>
-                                    <th>Dimensions</th>
-                                    <th>Stock Qty</th>
-                                    <th style="width: 100px;">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {clearanceItems.map((item, idx) => (
-                                    <tr>
-                                        <td><strong>{item.code}</strong></td>
-                                        <td class="muted">
-                                            <img
-                                                src={item.img}
-                                                alt={`${item.code} - ${item.desc} (${item.size})`}
-                                                loading={idx < 2 ? 'eager' : 'lazy'}
-                                                decoding="async"
-                                                width="180"
-                                                height="135"
-                                            />
-                                        </td>
-                                        <td>{item.desc}</td>
-                                        <td class="clearance-price">{item.price}</td>
-                                        <td>{item.size}</td>
-                                        <td>{item.qty}</td>
-                                        <td>
-                                            <a
-                                                href={`/about.html?product=${encodeURIComponent(`Clearance ${item.code} (${item.size})`)}#RequestAQuote`}
-                                                class="btn btn-success btn-small clearance-cta"
-                                            >
-                                                Inquire
-                                            </a>
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
+    <section class="bb-main-section">
+        <div class="bb-container">
+            <div class="bb-clearance-note">
+                <div class="bb-clearance-pill">
+                    <strong>100% Grade-A Export Stock</strong>
+                    <span>Produced as 5% extra sorting buffer during regular export runs to guarantee strict color matching.</span>
                 </div>
+                <div class="bb-clearance-pill">
+                    <strong>Ready for Immediate Dispatch</strong>
+                    <span>All listed lots are packed in export cartons and ready for LCL or mixed-container loading in Anji.</span>
+                </div>
+                <div class="bb-clearance-pill">
+                    <strong>Transparent FOB Factory Pricing</strong>
+                    <span>Clearance lots are offered on a first-come, first-served basis with direct wholesale support.</span>
+                </div>
+            </div>
+
+            <div class="bb-table-wrap">
+                <table class="bb-data-table">
+                    <thead>
+                        <tr>
+                            <th>Item No.</th>
+                            <th style="width: 175px;">Photo</th>
+                            <th>Product Description</th>
+                            <th>Dimensions</th>
+                            <th>Price (FOB)</th>
+                            <th>Available Qty</th>
+                            <th style="width: 120px;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {clearanceItems.map((item, idx) => (
+                            <tr>
+                                <td><span class="bb-code-tag">{item.code}</span></td>
+                                <td>
+                                    <img
+                                        src={item.img}
+                                        alt={`${item.code} - ${item.desc} (${item.size})`}
+                                        class="bb-clearance-img"
+                                        loading={idx < 3 ? 'eager' : 'lazy'}
+                                        decoding="async"
+                                        width="150"
+                                        height="108"
+                                    />
+                                </td>
+                                <td>{item.desc}</td>
+                                <td style="white-space: nowrap;">{item.size}</td>
+                                <td class="bb-price-cell">{item.price}</td>
+                                <td class="bb-stock-cell">{item.qty}</td>
+                                <td>
+                                    <a
+                                        href={`/about.html?product=${encodeURIComponent(`Clearance ${item.code} (${item.size})`)}#RequestAQuote`}
+                                        class="bb-btn bb-btn-primary bb-btn-sm"
+                                    >
+                                        Inquire
+                                    </a>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>

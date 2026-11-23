@@ -14,7 +14,7 @@ summary: "As architects, builders, and product specifiers refine their approach 
 Bamboo plywood is more than a niche product. It has secured a place across residential, commercial, educational, and hospitality construction because it matches the durability expectations of conventional hardwood plywood while offering a more environmentally responsible profile. This combination proves especially valuable for teams pursuing third-party certifications such as LEED, WELL, Green Globes, Living Building Challenge, and regional sustainability programs.</span><br>
 <br>
 <span style="font-size: 12pt;">
-Understanding why <a href="https://www.bambooindustry.com/bamboo-plywood/">bamboo plywood</a> has become such a trusted choice starts with looking at what it is, how it’s produced, and how it performs throughout its lifecycle.</span><br>
+Understanding why bamboo plywood has become such a trusted choice starts with looking at what it is, how it’s produced, and how it performs throughout its lifecycle.</span><br>
 <br>
 <span style="font-size: 12pt;">
 Rapid Renewability and Resource Efficiency</span><br>

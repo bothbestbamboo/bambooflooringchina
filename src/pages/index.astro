@@ -1,63 +1,91 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const heroSlides = [
-  {
-    src: '/img/UploadFiles/null-p1epfv1i6adqjbc6pksmgappl1.jpg',
-    alt: 'Bothbest China Bamboo Flooring Factory Wholesale',
-  },
-  {
-    src: '/img/UploadFiles/null-p1epfv114317ktc78jf9ikei2i1.jpg',
-    alt: 'Bothbest Solid & Strand Woven Bamboo Flooring Collection',
-  },
-];
+const heroImage = '/img/hero/bamboo-flooring-hero.jpg';
 
 const hottestProducts = [
   {
+    tag: 'Classic Indoor',
     title: 'Solid Bamboo Flooring',
     href: '/products/solid-bamboo-flooring.html',
     img: '/img/ThumbPic/2014103119144871334.jpg',
     alt: 'Solid bamboo flooring planks',
-    desc: 'Made from 100% rapidly renewable Moso bamboo in horizontal and vertical grains with tongue-and-groove milling. Available in natural, carbonized, and custom stained finishes.',
+    desc: '100% rapidly renewable Moso bamboo in horizontal and vertical grains with tongue-and-groove milling, natural, carbonized, or custom stained finishes.',
   },
   {
+    tag: 'Engineered 3-Layer',
     title: 'Wide Plank Bamboo Flooring',
     href: '/products/wide-plank-bamboo-flooring.html',
     img: '/img/ThumbPic/2014103119152256770.jpg',
     alt: 'Wide plank 3-layer bamboo flooring',
-    desc: 'Long and wide 3-layer cross-laminated bamboo planks engineered for superior dimensional stability, requiring fewer joints and enabling faster installation.',
+    desc: 'Cross-laminated wide planks engineered for superior dimensional stability, delivering clean architectural lines with fewer joints and faster installation.',
   },
   {
+    tag: 'High Density 1,050+ kg/m³',
     title: 'Strand Woven Bamboo Flooring',
     href: '/products/strand-woven-bamboo-flooring.html',
     img: '/img/ThumbPic/2014103119155711237.jpg',
     alt: 'High density strand woven bamboo flooring',
-    desc: 'High-density (1,050 kg/m³) compressed bamboo flooring offering exceptional indentation resistance and durability for both residential and commercial spaces.',
+    desc: 'Compressed high-density bamboo planks delivering exceptional indentation resistance and durability for residential and heavy commercial traffic.',
   },
   {
-    title: 'Click Strand Woven Bamboo Flooring',
+    tag: 'Fast Floating Install',
+    title: 'Click Strand Woven Flooring',
     href: '/products/click-strand-woven-bamboo-flooring.html',
     img: '/img/ThumbPic/2014103119163454583.jpg',
     alt: 'Click lock strand woven bamboo flooring',
-    desc: 'Precision-profiled glue-less click-lock strand woven bamboo combining hardwood-like grain aesthetics with fast, floating DIY or contractor installation.',
+    desc: 'Precision-profiled glue-less click-lock strand woven planks combining hardwood grain aesthetics with rapid floating installation.',
   },
   {
+    tag: 'Surface Finishing',
     title: 'Bamboo Veneer',
     href: '/products/bamboo-veneer.html',
     img: '/img/ThumbPic/2014103119190363525.jpg',
     alt: 'Thin sliced bamboo veneer sheets',
-    desc: 'Rotary or flat sliced from laminated bamboo blocks. An eco-friendly alternative to wood veneer featuring consistent grain, wide sheets, and clean machinability.',
+    desc: 'Rotary or flat sliced from laminated bamboo blocks. An eco-friendly wood veneer alternative with consistent grain, wide sheets, and clean machinability.',
   },
   {
+    tag: '3mm – 80mm Thickness',
     title: 'Bamboo Plywood',
     href: '/products/bamboo-plywood.html',
     img: '/img/ThumbPic/2014103119183766759.jpg',
     alt: 'Multi-layer bamboo plywood panels',
-    desc: 'Cross-laminated bamboo panels bonded with low-VOC eco-friendly adhesives in thicknesses from 3mm to 80mm for furniture, cabinetry, and interior architecture.',
+    desc: 'Cross-laminated bamboo panels bonded with low-VOC adhesives for furniture, cabinetry, countertops, and interior architectural millwork.',
   },
 ];
 
-// 自动读取最新 8 款纯英文产品（过滤 fr-/de-/jp- 等非英文及分类页），并修正历史拼写
+const facilityEquipment = [
+  {
+    badge: 'Automated Workshop',
+    title: 'Clean, High-Capacity Production Hall',
+    img: '/img/factory/anji-bamboo-factory-line.jpg',
+    alt: 'Bothbest automated bamboo flooring manufacturing workshop in Anji',
+    desc: 'Centralized dust-extraction systems and automated material handling keep every batch clean, uniform, and ready for container export.',
+  },
+  {
+    badge: 'Hot Pressing',
+    title: 'Multi-Layer Hydraulic Hot Presses',
+    img: '/img/factory/hydraulic-hot-press.jpg',
+    alt: 'Multi-layer high-tonnage hydraulic hot press for strand woven bamboo',
+    desc: 'High-tonnage hydraulic pressing fuses bamboo fibers and low-VOC resin into ultra-dense billets exceeding 1,050 kg/m³.',
+  },
+  {
+    badge: 'Precision Milling',
+    title: 'Automated CNC & Profiling Lines',
+    img: '/img/factory/automated-profiling-line.jpg',
+    alt: 'Automated CNC profiling and sanding line for bamboo planks',
+    desc: 'Precision tongue-and-groove and click-lock milling ensures tight seams, accurate tolerances, and smooth job-site installation.',
+  },
+];
+
+const cleanDisplayTitle = (raw: string) =>
+  raw
+    .replace(/Carbonzied/gi, 'Carbonized')
+    .split('|')[0]
+    .replace(/\s*:\s*$/g, '')
+    .replace(/\s*:\s*/g, ' — ')
+    .trim();
+
 const productFiles = import.meta.glob('../data/products/*.md', { eager: true });
 const nonEnglishPrefix = /^(fr|de|jp|es|it|ru|nl|pt|ko|ar)-/i;
 const nonLatinChars = /[\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]/;
@@ -66,13 +94,13 @@ const autoNewestProducts = Object.values(productFiles)
   .map((p: any) => {
     const fm = p.frontmatter || {};
     const slug = String(fm.slug || '');
-    const rawTitle = String(fm.title || fm.pageTitle || '').replace(/Carbonzied/gi, 'Carbonized');
+    const rawTitle = String(fm.title || fm.pageTitle || '');
     const img = fm.thumb || fm.images?.[0]?.src || '';
     const dateVal = fm.date ? new Date(fm.date).getTime() : 0;
     const idVal = Number(fm.id) || 0;
     return {
       slug,
-      title: rawTitle,
+      title: cleanDisplayTitle(rawTitle),
       href: `/products/${slug}.html`,
       img,
       dateVal: Number.isNaN(dateVal) ? 0 : dateVal,
@@ -111,21 +139,30 @@ const fallbackNewestProducts = [
     href: '/products/bamboo-plywood-20mm-vertical-caramel.html',
     img: '/img/ThumbPic/2021012215461392501.jpg',
   },
-  {
-    title: 'Bamboo Plywood 20mm Vertical Natural',
-    href: '/products/bamboo-plywood-20mm-vertical-natural.html',
-    img: '/img/ThumbPic/2021012215434773189.jpg',
-  },
 ];
 
 const newestProducts = autoNewestProducts.length >= 4 ? autoNewestProducts : fallbackNewestProducts;
+
+const newsFiles = import.meta.glob('../data/news/*.md', { eager: true });
+const latestNews = Object.values(newsFiles)
+  .sort((a: any, b: any) => (b.frontmatter.id || 0) - (a.frontmatter.id || 0))
+  .slice(0, 3)
+  .map((n: any) => {
+    const rawDate = String(n.frontmatter.date || '').split(' ')[0];
+    return {
+      title: n.frontmatter.title || '',
+      summary: n.frontmatter.summary || '',
+      href: `/news/${n.frontmatter.slug}.html`,
+      date: rawDate,
+    };
+  });
 
 const orgSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Bothbest",
   "url": "https://www.bambooflooringchina.com/",
-  "logo": "https://www.bambooflooringchina.com/img/skin/logo.png",
+  "logo": "https://www.bambooflooringchina.com/img/skin/newlogo2.png",
   "description": "China FSC-certified factory manufacturing wholesale bamboo flooring, outdoor bamboo decking, bamboo plywood, and bamboo veneer since 2001.",
   "telephone": "+86-150-0582-0528",
   "email": "info@bambooflooringchina.com",
@@ -142,215 +179,306 @@ const orgSchema = JSON.stringify({
   title="Bamboo Flooring: China Factory Wholesale | Bothbest"
   keywords="bamboo flooring, china bamboo factory, wholesale bamboo flooring, bamboo decking, bamboo plywood"
   description="Bothbest is an FSC-certified China factory manufacturing bamboo flooring, outdoor bamboo decking, and bamboo plywood at wholesale prices with worldwide shipping."
-  bodyClass="html front not-logged-in no-sidebars page-node"
   footerType="home"
-  rssUrl="/rss/products.xml"
   loadLegacyJs={false}
-  preloadImage={heroSlides[0].src}
+  isModern={true}
+  preloadImage={heroImage}
 >
     <script is:inline type="application/ld+json" set:html={orgSchema} />
 
-    <section class="prescript taglineWrap">
-        <form action="/search.html" method="get" class="MobileSearch" role="search">
-            <input type="text" name="SearchKeywords" id="MobileSearchKeywords" placeholder="Search bamboo..." aria-label="Search keywords" />
-            <input type="submit" id="MobileSearch" name="search" value="Search" class="form-submit" />
-        </form>
-        <div class="container">
-            <div class="sliderWrap">
-                <div class="hero-slider" id="heroSlider" aria-roledescription="carousel" aria-label="Featured Bamboo Flooring">
-                    <div class="hero-slides">
-                        {heroSlides.map((slide, idx) => (
-                            <div class={`hero-slide${idx === 0 ? ' is-active' : ''}`}>
-                                <img
-                                    src={slide.src}
-                                    alt={slide.alt}
-                                    fetchpriority={idx === 0 ? 'high' : undefined}
-                                    loading={idx === 0 ? 'eager' : 'lazy'}
-                                    decoding="async"
-                                />
-                            </div>
-                        ))}
-                    </div>
-                    {heroSlides.length > 1 && (
-                        <>
-                            <button type="button" class="hero-nav hero-prev" id="heroPrev" aria-label="Previous slide">&#8249;</button>
-                            <button type="button" class="hero-nav hero-next" id="heroNext" aria-label="Next slide">&#8250;</button>
-                            <div class="hero-dots" id="heroDots">
-                                {heroSlides.map((_, idx) => (
-                                    <button
-                                        type="button"
-                                        class={`hero-dot${idx === 0 ? ' is-active' : ''}`}
-                                        data-slide={idx}
-                                        aria-label={`Go to slide ${idx + 1}`}
-                                    ></button>
-                                ))}
-                            </div>
-                        </>
-                    )}
+    <!-- 1. Hero Banner -->
+    <section class="bb-hero">
+        <img
+            src={heroImage}
+            alt="Bothbest China Bamboo Flooring & Outdoor Decking Factory"
+            class="bb-hero-bg"
+            fetchpriority="high"
+            loading="eager"
+            decoding="async"
+        />
+        <div class="bb-hero-overlay" aria-hidden="true"></div>
+        <div class="bb-container">
+            <div class="bb-hero-content">
+                <div class="bb-hero-badge">FSC &amp; CE Certified Manufacturer &middot; Since 2001</div>
+                <h1 class="bb-hero-title">Factory-Direct Bamboo Flooring, Decking &amp; Panels</h1>
+                <p class="bb-hero-desc">
+                    Anji’s specialist bamboo factory supplying importers, distributors, architects, and builders worldwide with consistent quality and wholesale pricing.
+                </p>
+                <div class="bb-hero-actions">
+                    <a href="/about.html#RequestAQuote" class="bb-btn bb-btn-primary">Request Wholesale Quote</a>
+                    <a href="/products.html" class="bb-btn bb-btn-outline-light">Explore Products</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="container mainContent">
-        <div class="row-fluid">
-            <div class="content span12">
-                <a id="main-content"></a>
+    <!-- 2. Trust Credentials Strip -->
+    <section class="bb-trust-wrap" aria-label="Factory credentials">
+        <div class="bb-container">
+            <div class="bb-trust-grid">
+                <div class="bb-trust-item">
+                    <div class="bb-trust-value">25+ Years</div>
+                    <div class="bb-trust-label">Bamboo manufacturing experience since 2001</div>
+                </div>
+                <div class="bb-trust-item">
+                    <div class="bb-trust-value">FSC &amp; CE</div>
+                    <div class="bb-trust-label">Certified sustainable forestry &amp; EU safety</div>
+                </div>
+                <div class="bb-trust-item">
+                    <div class="bb-trust-value">3mm – 80mm</div>
+                    <div class="bb-trust-label">Full range of flooring, decking &amp; panels</div>
+                </div>
+                <div class="bb-trust-item">
+                    <div class="bb-trust-value">Worldwide</div>
+                    <div class="bb-trust-label">Direct container export to 40+ countries</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <h1 class="sr-only">China Bamboo Flooring, Decking &amp; Plywood Factory — Wholesale Direct</h1>
+    <!-- 3. Featured Bamboo Collections -->
+    <section class="bb-section">
+        <div class="bb-container">
+            <div class="bb-section-head">
+                <div>
+                    <span class="bb-eyebrow">Core Product Range</span>
+                    <h2 class="bb-section-title">Featured Bamboo Collections</h2>
+                    <p class="bb-section-sub">One-stop bamboo sourcing from indoor flooring to panels and exterior decking.</p>
+                </div>
+                <a href="/products.html" class="bb-link-arrow">
+                    <span>View All Products</span>
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+            </div>
 
-                <div id="block-block-6" class="block block-block">
-                    <div class="row-fluid featuredContent">
-                        <div class="span4">
-                            <h2 class="section-heading"><span class="btn btn-inverse">01</span> Who we are</h2>
-                            <p>Bothbest is an FSC-certified bamboo factory based in China, manufacturing bamboo flooring, decking, and plywood since 2001. Exporting worldwide with a proven reputation, we provide one-stop bamboo sourcing from indoor to outdoor, from floor to ceiling.<br /><br />Recognized as a reliable and trustworthy bamboo supplier, Bothbest partners directly with importers, distributors, architects, designers, contractors, and builders across the globe.</p>
+            <div class="bb-product-grid">
+                {hottestProducts.map((item) => (
+                    <article class="bb-product-card">
+                        <a href={item.href} class="bb-product-thumb">
+                            <img src={item.img} alt={item.alt} loading="lazy" decoding="async" width="680" height="420" />
+                            <span class="bb-product-tag">{item.tag}</span>
+                        </a>
+                        <div class="bb-product-body">
+                            <h3><a href={item.href}>{item.title}</a></h3>
+                            <p>{item.desc}</p>
+                            <a href={item.href} class="bb-card-cta">
+                                <span>Explore Specifications</span>
+                                <span aria-hidden="true">&rarr;</span>
+                            </a>
                         </div>
-                        <div class="span4">
-                            <h2 class="section-heading"><span class="btn btn-inverse">02</span> What we have</h2>
-                            <p>Bothbest offers a complete product line with consistent quality and factory-direct pricing, including flooring, decking, panels, plywood, veneer, lumber, mats, countertops, and custom architectural bamboo. All products are CE certified for environmental safety.<br /><br />Flooring covers solid, strand woven, click-lock, and engineered constructions. Outdoor decking includes standard, xtra, and carbonized options. Panels are available from 3mm to 80mm thick.</p>
+                    </article>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Factory Strength & B2B Value -->
+    <section class="bb-section bb-section-warm">
+        <div class="bb-container bb-factory-grid">
+            <div>
+                <span class="bb-eyebrow">Why Partner With Bothbest</span>
+                <h2 class="bb-section-title">Built for Importers, Distributors &amp; Projects</h2>
+                <p class="bb-section-sub">
+                    Located in Anji—China’s Moso bamboo heartland—we control every step from raw stalk selection and kiln drying to CNC profiling and strict VOC inspection.
+                </p>
+
+                <div class="bb-pillar-list">
+                    <div class="bb-pillar">
+                        <div class="bb-pillar-icon" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/>
+                            </svg>
                         </div>
-                        <div class="span4">
-                            <h2 class="section-heading"><span class="btn btn-inverse">03</span> Why choose us</h2>
-                            <p>Bamboo is one of the world's most sustainable renewable resources due to its rapid growth cycle. As a giant grass, bamboo matures for harvest in 4–6 years compared to 25+ years for traditional hardwoods, growing up to 24 inches in 24 hours.<br /><br />With over two decades of manufacturing expertise, Bothbest delivers guaranteed quality and responsive B2B service—helping you save by buying direct from the factory.</p>
+                        <div>
+                            <h3>Complete Indoor-to-Outdoor Supply</h3>
+                            <p>Solid, strand woven, engineered click flooring, thermo-treated outdoor decking, veneer, countertops, and custom architectural panels.</p>
                         </div>
                     </div>
-                    <div class="row-fluid">
-                        <div class="divider dotted clearfix"><span></span></div>
+
+                    <div class="bb-pillar">
+                        <div class="bb-pillar-icon" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="m9 12 2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Rapidly Renewable &amp; Low-VOC Certified</h3>
+                            <p>Moso bamboo matures in 4–6 years versus 25+ years for hardwood. All collections meet strict European CE and environmental safety benchmarks.</p>
+                        </div>
+                    </div>
+
+                    <div class="bb-pillar">
+                        <div class="bb-pillar-icon" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Factory-Direct Pricing &amp; OEM Flexibility</h3>
+                            <p>Cut out middlemen with transparent wholesale quotes, custom colors, private-label packaging, and reliable global shipping schedules.</p>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div id="bamboo" class="block block-block">
-                    <h2 class="section-heading">Hottest Bamboo</h2>
-                    <div class="hottest-grid">
-                        {hottestProducts.map((item) => (
-                            <article class="hottest-card">
-                                <a href={item.href} class="hottest-thumb">
-                                    <img
-                                        src={item.img}
-                                        alt={item.alt}
-                                        loading="lazy"
-                                        decoding="async"
-                                        width="300"
-                                        height="225"
-                                    />
-                                </a>
-                                <div class="hottest-body">
-                                    <h3><a href={item.href}>{item.title}</a></h3>
-                                    <p>
-                                        {item.desc}
-                                        <a href={item.href} class="hottest-more"><span class="label">More</span></a>
-                                    </p>
-                                </div>
-                            </article>
-                        ))}
-                    </div>
-                    <div class="row-fluid">
-                        <div class="divider dotted clearfix"><span></span></div>
-                    </div>
+            <aside class="bb-spec-panel">
+                <h3>Manufacturing Snapshot</h3>
+                <p>Precision profiling lines, high-tonnage hydraulic hot presses, and in-house quality testing labs ensure repeatable container-to-container consistency.</p>
+                <ul class="bb-spec-list">
+                    <li>
+                        <span class="bb-spec-key">Factory Location</span>
+                        <span class="bb-spec-val">Anji, Zhejiang, China</span>
+                    </li>
+                    <li>
+                        <span class="bb-spec-key">Established</span>
+                        <span class="bb-spec-val">2001 (25+ Years Export)</span>
+                    </li>
+                    <li>
+                        <span class="bb-spec-key">Strand Woven Density</span>
+                        <span class="bb-spec-val">1,050 – 1,200 kg/m³</span>
+                    </li>
+                    <li>
+                        <span class="bb-spec-key">Panel Thickness Range</span>
+                        <span class="bb-spec-val">3mm to 80mm Custom</span>
+                    </li>
+                    <li>
+                        <span class="bb-spec-key">Core B2B Clients</span>
+                        <span class="bb-spec-val">Importers, Wholesalers, Contractors</span>
+                    </li>
+                </ul>
+                <div class="bb-cert-badges">
+                    <span class="bb-cert-badge">FSC Certified</span>
+                    <span class="bb-cert-badge">CE Compliant</span>
+                    <span class="bb-cert-badge">Low-VOC E1/E0</span>
                 </div>
+                <a href="/about.html" class="bb-btn bb-btn-primary" style="width: 100%;">Explore Our Factory &rarr;</a>
+            </aside>
+        </div>
+    </section>
 
-                <div id="block-views-mentor-portfolio-home" class="block block-views">
-                    <div class="newest-header">
-                        <h2 class="section-heading">Newest Bamboo</h2>
-                        <div class="newest-controls">
-                            <button type="button" id="newestPrev" class="prev-btn label" aria-label="Previous products">
-                                <i class="icon-chevron-left icon-white"></i>
-                            </button>
-                            <button type="button" id="newestNext" class="next-btn label" aria-label="Next products">
-                                <i class="icon-chevron-right icon-white"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="newest-viewport" id="newestViewport">
-                        <div class="newest-track" id="newestTrack">
-                            {newestProducts.map((item) => (
-                                <article class="portfolioItem newest-card">
-                                    <a href={item.href} class="newest-thumb">
-                                        <img
-                                            src={item.img}
-                                            width="480"
-                                            height="396"
-                                            alt={item.title}
-                                            loading="lazy"
-                                            decoding="async"
-                                        />
-                                    </a>
-                                    <p class="newest-title">
-                                        <a href={item.href}>{item.title}</a>
-                                    </p>
-                                </article>
-                            ))}
-                        </div>
-                    </div>
+    <!-- 5. Production Facility & Equipment Showcase -->
+    <section class="bb-section">
+        <div class="bb-container">
+            <div class="bb-section-head">
+                <div>
+                    <span class="bb-eyebrow">Inside Our Anji Plant</span>
+                    <h2 class="bb-section-title">Production Facility &amp; Equipment</h2>
+                    <p class="bb-section-sub">Automated pressing, precision CNC profiling, and in-house quality inspection.</p>
                 </div>
+                <a href="/about.html" class="bb-link-arrow">
+                    <span>Full Factory Tour</span>
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+            </div>
+
+            <div class="bb-facility-grid">
+                {facilityEquipment.map((item) => (
+                    <article class="bb-facility-card">
+                        <div class="bb-facility-thumb">
+                            <img src={item.img} alt={item.alt} loading="lazy" decoding="async" width="1200" height="800" />
+                            <span class="bb-facility-badge">{item.badge}</span>
+                        </div>
+                        <div class="bb-facility-body">
+                            <h3>{item.title}</h3>
+                            <p>{item.desc}</p>
+                        </div>
+                    </article>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Newest Bamboo Arrivals -->
+    <section class="bb-section bb-section-warm">
+        <div class="bb-container">
+            <div class="bb-section-head">
+                <div>
+                    <span class="bb-eyebrow">Recently Added</span>
+                    <h2 class="bb-section-title">Latest Bamboo Arrivals</h2>
+                </div>
+                <div class="bb-carousel-controls">
+                    <button type="button" id="newestPrev" class="bb-carousel-btn" aria-label="Previous products">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+                    </button>
+                    <button type="button" id="newestNext" class="bb-carousel-btn" aria-label="Next products">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="bb-carousel-viewport" id="newestViewport">
+                <div class="bb-carousel-track">
+                    {newestProducts.map((item) => (
+                        <article class="bb-arrival-card">
+                            <a href={item.href} class="bb-arrival-thumb">
+                                <img src={item.img} width="480" height="396" alt={item.title} loading="lazy" decoding="async" />
+                            </a>
+                            <div class="bb-arrival-body">
+                                <h3 class="bb-arrival-title">
+                                    <a href={item.href}>{item.title}</a>
+                                </h3>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Latest Technical Guides & Industry News -->
+    <section class="bb-section">
+        <div class="bb-container">
+            <div class="bb-section-head">
+                <div>
+                    <span class="bb-eyebrow">Knowledge Base</span>
+                    <h2 class="bb-section-title">Technical Guides &amp; Insights</h2>
+                    <p class="bb-section-sub">Installation specs, durability testing, and buying guidance from our production specialists.</p>
+                </div>
+                <a href="/news/news_1.html" class="bb-link-arrow">
+                    <span>All Articles</span>
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+            </div>
+
+            <div class="bb-news-grid">
+                {latestNews.map((post) => (
+                    <article class="bb-news-card">
+                        {post.date && <div class="bb-news-date">{post.date}</div>}
+                        <h3><a href={post.href}>{post.title}</a></h3>
+                        <p>{post.summary}</p>
+                        <a href={post.href} class="bb-card-cta">
+                            <span>Read Guide</span>
+                            <span aria-hidden="true">&rarr;</span>
+                        </a>
+                    </article>
+                ))}
             </div>
         </div>
     </section>
 
     <script is:inline>
         document.addEventListener('DOMContentLoaded', function () {
-            // 1. Hero Banner 轻量轮播（无布局抖动）
-            var slider = document.getElementById('heroSlider');
-            if (slider) {
-                var slides = slider.querySelectorAll('.hero-slide');
-                var dots = slider.querySelectorAll('.hero-dot');
-                var current = 0;
-                var timer = null;
-
-                var showSlide = function (index) {
-                    current = (index + slides.length) % slides.length;
-                    for (var i = 0; i < slides.length; i++) {
-                        slides[i].classList.toggle('is-active', i === current);
-                        if (dots[i]) dots[i].classList.toggle('is-active', i === current);
-                    }
-                };
-
-                var startAuto = function () {
-                    if (slides.length <= 1) return;
-                    stopAuto();
-                    timer = setInterval(function () { showSlide(current + 1); }, 4500);
-                };
-
-                var stopAuto = function () {
-                    if (timer) { clearInterval(timer); timer = null; }
-                };
-
-                var prevBtn = document.getElementById('heroPrev');
-                var nextBtn = document.getElementById('heroNext');
-                if (prevBtn) prevBtn.addEventListener('click', function () { showSlide(current - 1); startAuto(); });
-                if (nextBtn) nextBtn.addEventListener('click', function () { showSlide(current + 1); startAuto(); });
-
-                for (var d = 0; d < dots.length; d++) {
-                    dots[d].addEventListener('click', function () {
-                        showSlide(parseInt(this.getAttribute('data-slide'), 10) || 0);
-                        startAuto();
-                    });
-                }
-
-                slider.addEventListener('mouseenter', stopAuto);
-                slider.addEventListener('mouseleave', startAuto);
-                startAuto();
-            }
-
-            // 2. Newest Bamboo 横向平滑切换
             var viewport = document.getElementById('newestViewport');
-            var newestPrev = document.getElementById('newestPrev');
-            var newestNext = document.getElementById('newestNext');
-            if (viewport && newestPrev && newestNext) {
-                var scrollStep = function (dir) {
-                    var card = viewport.querySelector('.newest-card');
-                    var step = card ? (card.offsetWidth + 16) : 260;
-                    if (dir > 0 && viewport.scrollLeft + viewport.clientWidth >= viewport.scrollWidth - 8) {
-                        viewport.scrollTo({ left: 0, behavior: 'smooth' });
-                    } else if (dir < 0 && viewport.scrollLeft <= 8) {
-                        viewport.scrollTo({ left: viewport.scrollWidth, behavior: 'smooth' });
-                    } else {
-                        viewport.scrollBy({ left: dir * step, behavior: 'smooth' });
-                    }
-                };
-                newestPrev.addEventListener('click', function () { scrollStep(-1); });
-                newestNext.addEventListener('click', function () { scrollStep(1); });
-            }
+            var prevBtn = document.getElementById('newestPrev');
+            var nextBtn = document.getElementById('newestNext');
+            if (!viewport || !prevBtn || !nextBtn) return;
+
+            var scrollStep = function (dir) {
+                var card = viewport.querySelector('.bb-arrival-card');
+                var step = card ? (card.offsetWidth + 22) : 300;
+                if (dir > 0 && viewport.scrollLeft + viewport.clientWidth >= viewport.scrollWidth - 8) {
+                    viewport.scrollTo({ left: 0, behavior: 'smooth' });
+                } else if (dir < 0 && viewport.scrollLeft <= 8) {
+                    viewport.scrollTo({ left: viewport.scrollWidth, behavior: 'smooth' });
+                } else {
+                    viewport.scrollBy({ left: dir * step, behavior: 'smooth' });
+                }
+            };
+
+            prevBtn.addEventListener('click', function () { scrollStep(-1); });
+            nextBtn.addEventListener('click', function () { scrollStep(1); });
         });
     </script>
 </BaseLayout>

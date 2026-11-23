@@ -2,18 +2,17 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import NewsSidebar from '../components/NewsSidebar.astro';
 
-// 在构建时自动读取全部产品与新闻数据，生成轻量级搜索索引
 const productFiles = import.meta.glob('../data/products/*.md', { eager: true });
 const newsFiles = import.meta.glob('../data/news/*.md', { eager: true });
 
 const searchIndex = [
   ...Object.values(productFiles).map((p: any) => ({
     type: 'products',
-    title: p.frontmatter.pageTitle || p.frontmatter.title || '',
+    title: String(p.frontmatter.pageTitle || p.frontmatter.title || '').replace(/Carbonzied/gi, 'Carbonized'),
     url: `/products/${p.frontmatter.slug}.html`,
-    summary: p.frontmatter.summary || p.frontmatter.description || '',
+    summary: String(p.frontmatter.summary || p.frontmatter.description || '').replace(/Carbonzied/gi, 'Carbonized'),
     date: p.frontmatter.date || '',
-    image: p.frontmatter.images?.[0]?.src || '/img/skin/logo_sml.png',
+    image: p.frontmatter.thumb || p.frontmatter.images?.[0]?.src || '/img/skin/logo_sml.png',
     keywords: `${p.frontmatter.keywords || ''} ${(p.frontmatter.attributes || []).join(' ')}`
   })),
   ...Object.values(newsFiles).map((n: any) => ({
@@ -28,53 +27,43 @@ const searchIndex = [
 ];
 ---
 <BaseLayout
-  title="Search Results | Bamboo Flooring: China Factory Wholesale"
+  title="Search Results | Bothbest Bamboo Flooring Factory"
   keywords="bamboo flooring, search, products, news"
-  description="Search Bothbest bamboo flooring, bamboo decking, bamboo panels products and industry news."
-  bodyClass="html not-front not-logged-in one-sidebar sidebar-second page-contact"
+  description="Search Bothbest bamboo flooring, bamboo decking, bamboo panels products and technical guides."
   footerType="postscript"
   loadLegacyJs={false}
+  isModern={true}
 >
-    <section class="container mainContent">
-        <form action="/search.html" method="get" class="MobileSearch" role="search">
-            <input type="text" name="SearchKeywords" id="MobileSearchKeywords" placeholder="Search..." aria-label="Search keywords" />
-            <input type="submit" id="MobileSearch" name="search" value="Search" class="form-submit" />
-        </form>
-        <div class="row-fluid">
-            <div class="tabs">
-                <ul class="breadcrumb">
-                    <li><a href="/">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Search Results</li>
-                </ul>
-            </div>
+    <section class="bb-page-hero">
+        <div class="bb-container">
+            <ol class="bb-breadcrumb">
+                <li><a href="/">Home</a><span class="bb-breadcrumb-sep">/</span></li>
+                <li aria-current="page">Search</li>
+            </ol>
+            <h1 class="bb-page-title">Search Catalog &amp; Guides</h1>
+            <p class="bb-page-lead">Find specific bamboo flooring specifications, decking profiles, panel thicknesses, or technical articles.</p>
         </div>
-        <div class="row-fluid">
-            <div class="content span9">
-                <div class="innerSpacer">
-                    <a id="main-content"></a>
-                    <h1 class="title" id="page-title">Search Results</h1>
+    </section>
 
-                    <div style="margin: 15px 0 25px 0; padding: 15px; background: #f9f9f9; border: 1px solid #eee;">
-                        <form action="/search.html" method="get" style="margin: 0; display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
-                            <select name="type" id="page-search-type" style="margin: 0; width: 130px;">
-                                <option value="all">All</option>
-                                <option value="products">Products</option>
-                                <option value="news">News</option>
-                            </select>
-                            <input type="text" name="SearchKeywords" id="page-search-input" placeholder="Enter keywords..." style="margin: 0; flex: 1; min-width: 180px;" />
-                            <input type="submit" value="Search" class="btn btn-success" style="margin: 0;" />
-                        </form>
-                    </div>
-
-                    <p id="search-status" style="font-weight: bold; margin-bottom: 20px; color: #555;"></p>
-
-                    <div id="block-system-main" class="block block-system">
-                        <div class="view view-blog view-id-blog view-display-id-page innerSpacer">
-                            <div class="view-content" id="search-results-container"></div>
-                        </div>
-                    </div>
+    <section class="bb-main-section">
+        <div class="bb-container bb-two-col">
+            <div>
+                <div class="bb-search-panel">
+                    <form action="/search.html" method="get" class="bb-search-form" style="max-width: 100%;" role="search">
+                        <select name="type" id="page-search-type" aria-label="Search category">
+                            <option value="all">All</option>
+                            <option value="products">Products</option>
+                            <option value="news">News</option>
+                        </select>
+                        <input type="text" name="SearchKeywords" id="page-search-input" placeholder="Enter keywords (e.g. strand woven, decking, 30mm)..." aria-label="Search keywords" />
+                        <button type="submit" class="bb-btn bb-btn-green">Search</button>
+                    </form>
                 </div>
+
+                <p id="search-status" class="bb-search-status"></p>
+                <div id="search-results-container" class="bb-search-list"></div>
             </div>
+
             <NewsSidebar />
         </div>
     </section>
@@ -94,24 +83,20 @@ const searchIndex = [
             var searchType = (params.get('type') || 'all').toLowerCase();
 
             var pageInput = document.getElementById('page-search-input');
-            var topInput = document.getElementById('SearchKeywords');
+            var topInput = document.getElementById('bbSearchInput');
             var pageTypeSelect = document.getElementById('page-search-type');
-            var topTypeSelect = document.getElementById('type');
 
             if (pageInput) pageInput.value = rawQuery;
             if (topInput) topInput.value = rawQuery;
             if (pageTypeSelect && (searchType === 'products' || searchType === 'news' || searchType === 'all')) {
                 pageTypeSelect.value = searchType;
             }
-            if (topTypeSelect && (searchType === 'products' || searchType === 'news')) {
-                topTypeSelect.value = searchType;
-            }
 
             var statusEl = document.getElementById('search-status');
             var containerEl = document.getElementById('search-results-container');
 
             if (!rawQuery) {
-                statusEl.textContent = 'Please enter a keyword to search our products and news.';
+                statusEl.textContent = 'Enter a keyword above to search our bamboo products and technical guides.';
                 return;
             }
 
@@ -128,30 +113,29 @@ const searchIndex = [
             statusEl.textContent = 'Found ' + results.length + ' result(s) for "' + rawQuery + '"';
 
             if (results.length === 0) {
-                containerEl.innerHTML = '<p style="padding: 20px 0;">No matching results found. Please try a broader keyword (e.g., "strand", "decking", "plywood", "caramel").</p>';
+                containerEl.innerHTML = '<div class="bb-sidebar-card"><p style="margin:0;">No matching results found. Try a broader term such as "strand", "decking", "plywood", or "caramel".</p></div>';
                 return;
             }
 
             containerEl.innerHTML = results.map(function (item) {
-                var badge = item.type === 'products' ? 'Product' : 'News';
+                var isProd = item.type === 'products';
+                var badgeClass = isProd ? 'is-product' : 'is-news';
+                var badgeText = isProd ? 'Product' : 'Technical Guide';
                 var safeTitle = escapeHtml(item.title);
                 var safeSummary = escapeHtml(item.summary);
-                var thumbHtml = item.image
-                    ? '<div class="span2"><a href="' + item.url + '"><img src="' + item.image + '" alt="' + safeTitle + '" loading="lazy" decoding="async" style="max-width:100%; height:auto; border:1px solid #ddd; padding:2px;" /></a></div>'
-                    : '<div class="span2"><span class="btn btn-inverse postTypeIcon"><i class="icon-pencil icon-white"></i></span></div>';
+                var thumbHtml = isProd && item.image
+                    ? '<a href="' + item.url + '" class="bb-search-thumb"><img src="' + item.image + '" alt="' + safeTitle + '" loading="lazy" decoding="async" /></a>'
+                    : '';
 
                 return (
-                    '<div class="row-fluid post" style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dotted #ccc;">' +
-                        '<div class="row-fluid post-content">' +
-                            '<div class="row-fluid">' +
-                                thumbHtml +
-                                '<div class="span10 post-title">' +
-                                    '<h3 style="margin-top:0;"><a href="' + item.url + '">' + safeTitle + '</a> <span class="label" style="font-size:11px; vertical-align:middle;">' + badge + '</span></h3>' +
-                                    '<p>' + safeSummary + '</p>' +
-                                '</div>' +
-                            '</div>' +
+                    '<article class="bb-search-item' + (isProd ? '' : ' is-news') + '">' +
+                        thumbHtml +
+                        '<div>' +
+                            '<span class="bb-search-badge ' + badgeClass + '">' + badgeText + '</span>' +
+                            '<h3><a href="' + item.url + '">' + safeTitle + '</a></h3>' +
+                            '<p>' + safeSummary + '</p>' +
                         '</div>' +
-                    '</div>'
+                    '</article>'
                 );
             }).join('');
         })();

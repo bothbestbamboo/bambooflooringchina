@@ -7,38 +7,230 @@ export async function getStaticPaths() {
   const categoryFiles = import.meta.glob('../../data/categories/*.md', { eager: true });
 
   const allProducts = Object.values(productFiles) as any[];
+  const allCategories = Object.values(categoryFiles) as any[];
+
+  const nonEnglishPrefix = /^(fr|de|jp|es|it|ru|nl|pt|ko|ar)-/i;
+  const nonLatinChars = /[\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]/;
+
+  const cleanDisplayTitle = (raw: string) =>
+    String(raw || '')
+      .replace(/Carbonzied/gi, 'Carbonized')
+      .replace(/\bNatual\b/gi, 'Natural')
+      .split('|')[0]
+      .replace(/\s*:\s*$/g, '')
+      .replace(/\s*:\s*/g, ' · ')
+      .trim();
+
+  const cleanSummary = (raw: string) => {
+    const s = String(raw || '')
+      .replace(/Carbonzied/gi, 'Carbonized')
+      .replace(/\bNatual\b/gi, 'Natural')
+      .replace(/,([^\s])/g, ', $1')
+      .replace(/\s+/g, ' ')
+      .trim();
+    return s ? s.charAt(0).toUpperCase() + s.slice(1) : '';
+  };
+
+  const parseCardSpecs = (attrs: unknown): { itemCode: string; chips: string[] } => {
+    const list = Array.isArray(attrs) ? attrs.map((a) => String(a || '').trim()).filter(Boolean) : [];
+    let itemCode = '';
+    const chips: string[] = [];
+
+    for (const entry of list) {
+      const idx = entry.indexOf(':');
+      const key = idx > 0 ? entry.slice(0, idx).trim().toLowerCase() : '';
+      const val = idx > 0 ? entry.slice(idx + 1).trim() : entry;
+      if (!val) continue;
+
+      if (key.includes('item') || key.includes('model') || key.includes('code')) {
+        if (!itemCode) itemCode = val;
+      } else if (chips.length < 2 && val.length <= 28) {
+        chips.push(val);
+      }
+    }
+    return { itemCode, chips };
+  };
+
+  const stripTags = (str: string) => str.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+
+  const productBySlug = new Map<string, any>();
+  for (const p of allProducts) {
+    const slug = String(p.frontmatter?.slug || '').trim();
+    if (slug) productBySlug.set(slug.toLowerCase(), p);
+  }
+
+  const formatCardFromProduct = (p: any, fallbackCategoryLabel: string) => {
+    const fm = p.frontmatter || {};
+    const slug = String(fm.slug || '');
+    const title = cleanDisplayTitle(fm.pageTitle || fm.title || '');
+    const summary = cleanSummary(fm.summary || fm.description || '');
+    const img = fm.thumb || fm.images?.[0]?.src || '/img/skin/logo_sml.png';
+    const imgAlt = fm.images?.[0]?.alt || title;
+    const { itemCode, chips } = parseCardSpecs(fm.attributes);
+    return {
+      slug,
+      title,
+      summary,
+      url: `/products/${slug}.html`,
+      quoteUrl: `/about.html?product=${encodeURIComponent(title)}#RequestAQuote`,
+      img,
+      imgAlt,
+      categoryLabel: fm.categoryName || fallbackCategoryLabel,
+      itemCode,
+      chips,
+    };
+  };
+
+  const extractCategoryData = (catPost: any) => {
+    const fm = catPost.frontmatter || {};
+    const catSlug = String(fm.slug || '');
+    const targetUrl = `/products/${catSlug}.html`;
+    const rawCatHtml = catPost.rawContent ? catPost.rawContent() : '';
+
+    const h1Match = rawCatHtml.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+    const heading = h1Match
+      ? stripTags(h1Match[1])
+      : String(fm.title || '').split(/[:|]/)[0].trim() || 'Bamboo Products';
+
+    // 1. 提取旧分类页 HTML 中已列出的产品（保持原有排序并反查完整产品数据）
+    const legacyCards: any[] = [];
+    const seenSlugs = new Set<string>();
+    const cardRegex = /<div[^>]*class=['"][^'"]*portfolioItem[^'"]*['"][^>]*>([\s\S]*?)<\/div>\s*<\/div>/gi;
+    let m: RegExpExecArray | null;
+
+    while ((m = cardRegex.exec(rawCatHtml)) !== null) {
+      const block = m[1];
+      const hrefMatch = block.match(/href=['"]\/products\/([^/'"]+)\.html['"]/i);
+      if (!hrefMatch) continue;
+      const slug = hrefMatch[1].trim();
+      const slugKey = slug.toLowerCase();
+      if (!slug || slug.startsWith('product-type-') || seenSlugs.has(slugKey)) continue;
+      seenSlugs.add(slugKey);
+
+      const matchedProduct = productBySlug.get(slugKey);
+      if (matchedProduct) {
+        const card = formatCardFromProduct(matchedProduct, heading);
+        if (!nonEnglishPrefix.test(card.slug) && !nonLatinChars.test(card.title)) {
+          legacyCards.push(card);
+        }
+      } else {
+        // 兜底：若个别旧链接未找到对应 md，则保留 HTML 里的基础信息
+        const imgMatch = block.match(/src=['"]([^'"]+)['"]/i);
+        const titleMatch = block.match(/<div[^>]*class=['"]title['"][^>]*>([\s\S]*?)<\/div>/i);
+        const pMatch = block.match(/<p[^>]*>([\s\S]*?)<\/p>/i);
+        const title = cleanDisplayTitle(titleMatch ? stripTags(titleMatch[1]) : slug);
+        const summary = cleanSummary(pMatch ? stripTags(pMatch[1]) : '');
+        if (!nonEnglishPrefix.test(slug) && !nonLatinChars.test(title)) {
+          legacyCards.push({
+            slug,
+            title,
+            summary,
+            url: `/products/${slug}.html`,
+            quoteUrl: `/about.html?product=${encodeURIComponent(title)}#RequestAQuote`,
+            img: imgMatch ? imgMatch[1] : '/img/skin/logo_sml.png',
+            imgAlt: title,
+            categoryLabel: heading,
+            itemCode: '',
+            chips: [],
+          });
+        }
+      }
+    }
+
+    // 2. 合并属于该分类但未写入旧 HTML 的新增英文产品（按时间倒序排在最前）
+    const newCards = allProducts
+      .filter((p: any) => {
+        const pfm = p.frontmatter || {};
+        const slug = String(pfm.slug || '');
+        const title = String(pfm.pageTitle || pfm.title || '');
+        return (
+          pfm.categoryUrl === targetUrl &&
+          slug &&
+          !slug.startsWith('product-type-') &&
+          !seenSlugs.has(slug.toLowerCase()) &&
+          !nonEnglishPrefix.test(slug) &&
+          !nonLatinChars.test(title)
+        );
+      })
+      .sort((a: any, b: any) => new Date(b.frontmatter.date || 0).getTime() - new Date(a.frontmatter.date || 0).getTime())
+      .map((p: any) => formatCardFromProduct(p, heading));
+
+    return {
+      slug: catSlug,
+      href: targetUrl,
+      heading,
+      products: [...newCards, ...legacyCards],
+      post: catPost,
+    };
+  };
+
+  // 按主导航顺序生成分类切换条
+  const tabOrder = [
+    'product-type-BambooFlooring',
+    'product-type-BambooDecking',
+    'product-type-BambooPanels',
+    'product-type-BambooCollection',
+    'product-type-BambooMats',
+  ];
+
+  const parsedCategories = allCategories.map(extractCategoryData);
+  const englishTotalCount = allProducts.filter((p: any) => {
+    const slug = String(p.frontmatter?.slug || '');
+    const title = String(p.frontmatter?.pageTitle || p.frontmatter?.title || '');
+    return slug && title && !slug.startsWith('product-type-') && !nonEnglishPrefix.test(slug) && !nonLatinChars.test(title);
+  }).length;
+
+  const sortedTabs = [
+    { slug: 'all', label: 'All Products', href: '/products.html', count: englishTotalCount },
+    ...parsedCategories
+      .slice()
+      .sort((a, b) => {
+        const ia = tabOrder.indexOf(a.slug);
+        const ib = tabOrder.indexOf(b.slug);
+        return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+      })
+      .map((c) => ({
+        slug: c.slug,
+        label: c.heading,
+        href: c.href,
+        count: c.products.length,
+      })),
+  ];
 
   const productPaths = allProducts.map((post: any) => ({
     params: { slug: post.frontmatter.slug },
-    props: { post, isCategory: false, newCategoryProducts: [] }
+    props: {
+      post,
+      isCategory: false,
+      categoryHeading: '',
+      categoryProducts: [],
+      categoryTabs: [],
+    },
   }));
 
-  const categoryPaths = Object.values(categoryFiles).map((catPost: any) => {
-    const targetUrl = `/products/${catPost.frontmatter.slug}.html`;
-    const rawCatHtml = catPost.rawContent ? catPost.rawContent() : '';
-
-    // 找出属于当前分类、且尚未包含在旧静态 HTML 中的新增产品
-    const newCategoryProducts = allProducts
-      .filter((p: any) => {
-        const matchCat = p.frontmatter.categoryUrl === targetUrl;
-        const alreadyInHtml = rawCatHtml.includes(`/products/${p.frontmatter.slug}.html`);
-        return matchCat && !alreadyInHtml;
-      })
-      .sort((a: any, b: any) => new Date(b.frontmatter.date || 0).getTime() - new Date(a.frontmatter.date || 0).getTime());
-
-    return {
-      params: { slug: catPost.frontmatter.slug },
-      props: { post: catPost, isCategory: true, newCategoryProducts }
-    };
-  });
+  const categoryPaths = parsedCategories.map((cat) => ({
+    params: { slug: cat.slug },
+    props: {
+      post: cat.post,
+      isCategory: true,
+      categoryHeading: cat.heading,
+      categoryProducts: cat.products,
+      categoryTabs: sortedTabs,
+    },
+  }));
 
   return [...productPaths, ...categoryPaths];
 }
 
-const { post, isCategory, newCategoryProducts = [] } = Astro.props;
+const {
+  post,
+  isCategory,
+  categoryHeading = '',
+  categoryProducts = [],
+  categoryTabs = [],
+} = Astro.props;
 const { frontmatter } = post;
 
-// 为 HTML 中的图片批量补充懒加载与异步解码（可跳过前 skipCount 张首屏图）
 const enhanceImages = (html: string, skipCount = 0) => {
   let idx = 0;
   return html.replace(/<img\b([^>]*)>/gi, (match, attrs) => {
@@ -54,63 +246,45 @@ const enhanceImages = (html: string, skipCount = 0) => {
   });
 };
 
-let categoryHtml = '';
 let productBodyHtml = '';
-
-if (isCategory) {
-  categoryHtml = post.compiledContent ? await post.compiledContent() : '';
-
-  if (newCategoryProducts.length > 0) {
-    if (categoryHtml.includes('peIsotopeContainer')) {
-      const cardsHtml = newCategoryProducts.map((p: any) => {
-        const img = p.frontmatter.images?.[0]?.src || '/img/skin/logo_sml.png';
-        const title = String(p.frontmatter.pageTitle || p.frontmatter.title || '').replace(/Carbonzied/gi, 'Carbonized');
-        const summary = p.frontmatter.summary || '';
-        const url = `/products/${p.frontmatter.slug}.html`;
-        return `<div class='span3 peIsotopeItem isotope-element isotope-element-0'><div class='portfolioItem'><a href='${url}' class='peOver'><img src='${img}' width='480' height='396' alt='${title}' loading='lazy' decoding='async' /><span></span></a><div class='title'><a href='${url}'>${title}</a></div><p>${summary}</p></div></div>`;
-      }).join('');
-      categoryHtml = categoryHtml.replace(/(<div[^>]*id=['"]isotope-container['"][^>]*>)/i, `$1${cardsHtml}`);
-    } else if (categoryHtml.includes('featuredContent')) {
-      const itemsHtml = newCategoryProducts.map((p: any) => {
-        const img = p.frontmatter.images?.[0]?.src || '/img/skin/logo_sml.png';
-        const title = String(p.frontmatter.pageTitle || p.frontmatter.title || '').replace(/Carbonzied/gi, 'Carbonized');
-        const summary = p.frontmatter.summary || '';
-        const url = `/products/${p.frontmatter.slug}.html`;
-        return `<div class='span3'><a href='${url}'><img src='${img}' alt='${title}' loading='lazy' decoding='async' /></a></div><div class='span3'><h4><a href='${url}'>${title}</a></h4><p>${summary}<a href='${url}'><span class='label'>More</span></a></p></div>`;
-      }).join('');
-      categoryHtml = categoryHtml.replace(/(<div[^>]*class=['"][^'"]*featuredContent[^'"]*['"][^>]*>)/i, `$1${itemsHtml}`);
-    }
-  }
-
-  // 自动修复旧分类页 HTML 里的 .aspx 搜索、/index.html 链接、# 标题死链与图片懒加载
-  categoryHtml = categoryHtml
-    .replace(/action=['"]\/search\.aspx['"]/gi, 'action="/search.html"')
-    .replace(/name=['"]MobileSearchKeywords['"]/gi, 'name="SearchKeywords"')
-    .replace(/href=['"]\/index\.html['"]/gi, 'href="/"')
-    .replace(
-      /(<div[^>]*class=['"][^'"]*portfolioItem[^'"]*['"][^>]*>\s*<a[^>]*href=['"]([^'"]+)['"][^>]*>[\s\S]*?<div[^>]*class=['"]title['"][^>]*>\s*<a[^>]*href=)['"]#['"]/gi,
-      '$1"$2"'
-    );
-  categoryHtml = enhanceImages(categoryHtml, 4);
-} else {
+if (!isCategory) {
   const rawBodyHtml = post.compiledContent ? await post.compiledContent() : '';
   productBodyHtml = enhanceImages(rawBodyHtml, 0);
 }
 
-const cleanPageTitle = String(frontmatter.pageTitle || frontmatter.title || '').replace(/Carbonzied/gi, 'Carbonized');
-const cleanTitle = String(frontmatter.title || cleanPageTitle).replace(/Carbonzied/gi, 'Carbonized');
-const images = Array.isArray(frontmatter.images) && frontmatter.images.length > 0
-  ? frontmatter.images
-  : [];
+const cleanPageTitle = String(frontmatter.pageTitle || frontmatter.title || '')
+  .replace(/Carbonzied/gi, 'Carbonized')
+  .replace(/\bNatual\b/gi, 'Natural');
+const cleanTitle = String(frontmatter.title || cleanPageTitle)
+  .replace(/Carbonzied/gi, 'Carbonized')
+  .replace(/\bNatual\b/gi, 'Natural');
+
+const images = Array.isArray(frontmatter.images) && frontmatter.images.length > 0 ? frontmatter.images : [];
 const firstImageSrc = !isCategory && images[0]?.src ? images[0].src : '';
 const quoteUrl = `/about.html?product=${encodeURIComponent(cleanPageTitle)}#RequestAQuote`;
+const waUrl = `https://wa.me/8615005820528?text=${encodeURIComponent(`Hi Bothbest, I am interested in ${cleanPageTitle}. Could you send wholesale pricing and specs?`)}`;
 
-// 仅当旧分类页内部确实嵌了 peVolo 轮播时才回退旧版 JS，其余全部零 jQuery 运行
-const needsLegacyJs = isCategory && categoryHtml.includes('peVolo');
+const parsedAttributes = (Array.isArray(frontmatter.attributes) ? frontmatter.attributes : []).map((attr: string) => {
+  const str = String(attr || '').trim();
+  const idx = str.indexOf(':');
+  if (idx > 0 && idx < 32) {
+    return { key: str.slice(0, idx).trim(), val: str.slice(idx + 1).trim() };
+  }
+  return { key: '', val: str };
+});
 
 const siteOrigin = 'https://www.bambooflooringchina.com';
-const productSchema = !isCategory
+const structuredSchema = isCategory
   ? JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": `${siteOrigin}/` },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": `${siteOrigin}/products.html` },
+        { "@type": "ListItem", "position": 3, "name": categoryHeading }
+      ]
+    })
+  : JSON.stringify({
       "@context": "https://schema.org",
       "@graph": [
         {
@@ -138,305 +312,279 @@ const productSchema = !isCategory
           ]
         }
       ]
-    })
-  : '';
+    });
 ---
 <BaseLayout
   title={cleanTitle}
   keywords={frontmatter.keywords}
   description={frontmatter.description}
-  bodyClass={frontmatter.bodyClass || "html not-front not-logged-in no-sidebars page-node"}
-  footerType={frontmatter.footerType || "simple"}
-  loadLegacyJs={needsLegacyJs}
+  footerType="postscript"
+  loadLegacyJs={false}
+  isModern={true}
   preloadImage={firstImageSrc}
 >
-  {productSchema && <script is:inline type="application/ld+json" set:html={productSchema} />}
-
-  <style is:global>
-    /* 产品详情 Description 区域 (#home) Markdown 与 HTML 统一美化样式 */
-    #home.tab-pane {
-      font-family: Verdana, Arial, Helvetica, sans-serif;
-      font-size: 14px;
-      line-height: 1.8;
-      color: #333333;
-      padding-top: 10px;
-    }
-
-    #home.tab-pane p {
-      font-family: Verdana, Arial, Helvetica, sans-serif;
-      font-size: 14px;
-      line-height: 1.8;
-      color: #333333;
-      margin: 0 0 16px 0 !important;
-      padding: 0;
-    }
-
-    #home.tab-pane p:empty,
-    #home.tab-pane p:has(> br:only-child) {
-      display: none;
-    }
-    #home.tab-pane p > br:first-child {
-      display: none;
-    }
-
-    #home.tab-pane h2,
-    #home.tab-pane h3,
-    #home.tab-pane h4 {
-      font-family: Verdana, Arial, Helvetica, sans-serif !important;
-      font-weight: bold !important;
-      color: #222222 !important;
-      line-height: 1.4 !important;
-      text-transform: none;
-    }
-    #home.tab-pane h2 {
-      font-size: 18px !important;
-      margin: 26px 0 12px 0 !important;
-    }
-    #home.tab-pane h3 {
-      font-size: 16px !important;
-      margin: 22px 0 10px 0 !important;
-    }
-    #home.tab-pane h4 {
-      font-size: 14.5px !important;
-      margin: 18px 0 8px 0 !important;
-    }
-
-    #home.tab-pane ul,
-    #home.tab-pane ol {
-      margin: 0 0 16px 24px !important;
-      padding: 0;
-      font-size: 14px;
-      line-height: 1.8;
-      color: #333333;
-    }
-    #home.tab-pane ul { list-style-type: disc; }
-    #home.tab-pane ol { list-style-type: decimal; }
-    #home.tab-pane li {
-      margin-bottom: 6px;
-      line-height: 1.8;
-    }
-
-    #home.tab-pane strong,
-    #home.tab-pane b {
-      color: #111111;
-      font-weight: bold;
-    }
-    #home.tab-pane a {
-      color: #517329;
-      text-decoration: underline;
-    }
-    #home.tab-pane a:hover {
-      color: #f89406;
-    }
-    #home.tab-pane img {
-      max-width: 100%;
-      height: auto;
-      margin: 8px 6px;
-      border-radius: 2px;
-    }
-
-    #home.tab-pane table {
-      border-collapse: collapse;
-      margin: 18px auto;
-      font-size: 14px;
-    }
-    #home.tab-pane table:not([align="center"]) {
-      width: 100%;
-    }
-    #home.tab-pane table th,
-    #home.tab-pane table td {
-      border: 1px solid #dddddd;
-      padding: 8px 12px;
-      line-height: 1.6;
-    }
-    #home.tab-pane table th {
-      background-color: #f7f7f7;
-      font-weight: bold;
-      color: #222222;
-      text-align: left;
-    }
-    #home.tab-pane table td p {
-      margin: 0 !important;
-    }
-  </style>
+  <script is:inline type="application/ld+json" set:html={structuredSchema} />
 
   {isCategory ? (
-    <Fragment set:html={categoryHtml} />
+    <>
+      <section class="bb-page-hero">
+        <div class="bb-container">
+          <ol class="bb-breadcrumb">
+            <li><a href="/">Home</a><span class="bb-breadcrumb-sep">/</span></li>
+            <li><a href="/products.html">Products</a><span class="bb-breadcrumb-sep">/</span></li>
+            <li aria-current="page">{categoryHeading}</li>
+          </ol>
+          <h1 class="bb-page-title">{categoryHeading}</h1>
+          {frontmatter.description && (
+            <p class="bb-page-lead">{frontmatter.description}</p>
+          )}
+        </div>
+      </section>
+
+      <section class="bb-catalog-section">
+        <div class="bb-container">
+          <nav class="bb-filter-bar" aria-label="Product categories">
+            {categoryTabs.map((tab: any) => {
+              const isCurrent = tab.slug === frontmatter.slug;
+              return (
+                <a
+                  href={tab.href}
+                  class={`bb-filter-btn${isCurrent ? ' is-active' : ''}`}
+                  aria-current={isCurrent ? 'page' : undefined}
+                >
+                  <span>{tab.label}</span>
+                  <span class="bb-filter-count">({tab.count})</span>
+                </a>
+              );
+            })}
+          </nav>
+
+          <div class="bb-catalog-grid">
+            {categoryProducts.map((item: any, idx: number) => (
+              <article class="bb-catalog-card">
+                <a href={item.url} class="bb-catalog-thumb">
+                  <img
+                    src={item.img}
+                    width="480"
+                    height="396"
+                    alt={item.imgAlt}
+                    loading={idx < 8 ? 'eager' : 'lazy'}
+                    decoding="async"
+                  />
+                  <span class="bb-catalog-badge">{item.categoryLabel}</span>
+                  {item.itemCode && <span class="bb-catalog-code">{item.itemCode}</span>}
+                </a>
+                <div class="bb-catalog-body">
+                  <h2><a href={item.url}>{item.title}</a></h2>
+                  {item.summary && <p>{item.summary}</p>}
+                  {item.chips.length > 0 && (
+                    <div class="bb-spec-chips">
+                      {item.chips.map((chip: string) => (
+                        <span class="bb-spec-chip">{chip}</span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <div class="bb-catalog-foot">
+                  <a href={item.url} class="bb-catalog-more">
+                    View Details <span aria-hidden="true">&rarr;</span>
+                  </a>
+                  <a href={item.quoteUrl} class="bb-catalog-quote">Quote</a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   ) : (
-    <section class="container mainContent">
-        <form action="/search.html" method="get" class="MobileSearch" role="search">
-            <input type="text" name="SearchKeywords" id="MobileSearchKeywords" placeholder="Search products..." aria-label="Search keywords" />
-            <input type="submit" id="MobileSearch" name="search" value="Search" class="form-submit" />
-        </form>
-        <div class="row-fluid">
-            <div class="tabs">
-                <ul class="breadcrumb">
-                    <li><a href="/">Home</a> <span class="divider">/</span></li>
-                    <li><a href={frontmatter.categoryUrl || "/products/product-type-BambooFlooring.html"}>{frontmatter.categoryName || "Bamboo Flooring"}</a> <span class="divider">/</span></li>
-                    <li class="active">{cleanPageTitle}</li>
-                </ul>
-            </div>
+    <>
+      <div class="bb-pd-crumb-bar">
+        <div class="bb-container">
+          <ol class="bb-breadcrumb">
+            <li><a href="/">Home</a><span class="bb-breadcrumb-sep">/</span></li>
+            <li>
+              <a href={frontmatter.categoryUrl || "/products/product-type-BambooFlooring.html"}>
+                {frontmatter.categoryName || "Bamboo Flooring"}
+              </a>
+              <span class="bb-breadcrumb-sep">/</span>
+            </li>
+            <li aria-current="page">{cleanPageTitle}</li>
+          </ol>
         </div>
-        <div class="row-fluid">
-            <div class="content span12">
-                <a id="main-content"></a>
-                <h1 class="title" id="page-title">{cleanPageTitle}</h1>
-                <div id="block-system-main" class="block block-system">
-                    <div id="node-6" class="node node-portfolio clearfix">
-                        <div class="row-fluid project">
-                            <div class="span9">
-                                <div class="innerSpacer">
-                                    {images.length > 0 && (
-                                        <div class="hero-slider product-slider" id="productSlider" aria-roledescription="carousel" aria-label={cleanPageTitle}>
-                                            <div class="hero-slides">
-                                                {images.map((img: any, idx: number) => (
-                                                    <div class={`hero-slide${idx === 0 ? ' is-active' : ''}`}>
-                                                        <img
-                                                            src={img.src}
-                                                            alt={img.alt || cleanPageTitle}
-                                                            fetchpriority={idx === 0 ? 'high' : undefined}
-                                                            loading={idx === 0 ? 'eager' : 'lazy'}
-                                                            decoding="async"
-                                                        />
-                                                    </div>
-                                                ))}
-                                            </div>
-                                            {images.length > 1 && (
-                                                <>
-                                                    <button type="button" class="hero-nav hero-prev" id="prodPrev" aria-label="Previous image">&#8249;</button>
-                                                    <button type="button" class="hero-nav hero-next" id="prodNext" aria-label="Next image">&#8250;</button>
-                                                    <div class="hero-dots" id="prodDots">
-                                                        {images.map((_: any, idx: number) => (
-                                                            <button
-                                                                type="button"
-                                                                class={`hero-dot${idx === 0 ? ' is-active' : ''}`}
-                                                                data-slide={idx}
-                                                                aria-label={`View image ${idx + 1}`}
-                                                            ></button>
-                                                        ))}
-                                                    </div>
-                                                </>
-                                            )}
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
-                            <div class="span3">
-                                <div class="item-description">
-                                    <h2>Product Information</h2>
-                                    {frontmatter.date && (
-                                        <div class="subtitle product-meta-date">{frontmatter.date}</div>
-                                    )}
-                                    <p>{frontmatter.summary}</p>
-                                    <ul class="unstyled AttributeList">
-                                        {frontmatter.attributes?.map((attr: string) => (
-                                            <li><i class="icon-ok"></i> {attr}</li>
-                                        ))}
-                                    </ul>
-                                    <br />
-                                    <a href={quoteUrl} class="btn btn-success btn-large">Request A Quote</a>
-                                </div>
-                            </div>
+      </div>
+
+      <section class="bb-pd-section">
+        <div class="bb-container">
+          <div class="bb-pd-grid">
+            <div class="bb-pd-gallery">
+              {images.length > 0 && (
+                <>
+                  <div class="bb-slider" id="productSlider" aria-roledescription="carousel" aria-label={cleanPageTitle}>
+                    <div class="bb-slides">
+                      {images.map((img: any, idx: number) => (
+                        <div class={`bb-slide${idx === 0 ? ' is-active' : ''}`}>
+                          <img
+                            src={img.src}
+                            alt={img.alt || cleanPageTitle}
+                            fetchpriority={idx === 0 ? 'high' : undefined}
+                            loading={idx === 0 ? 'eager' : 'lazy'}
+                            decoding="async"
+                          />
                         </div>
+                      ))}
                     </div>
-                </div>
+                    {images.length > 1 && (
+                      <>
+                        <button type="button" class="bb-slider-btn bb-slider-prev" id="prodPrev" aria-label="Previous image">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m15 18-6-6 6-6"/></svg>
+                        </button>
+                        <button type="button" class="bb-slider-btn bb-slider-next" id="prodNext" aria-label="Next image">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m9 18 6-6-6-6"/></svg>
+                        </button>
+                        <div class="bb-slider-dots" id="prodDots">
+                          {images.map((_: any, idx: number) => (
+                            <button
+                              type="button"
+                              class={`bb-slider-dot${idx === 0 ? ' is-active' : ''}`}
+                              data-slide={idx}
+                              aria-label={`View image ${idx + 1}`}
+                            ></button>
+                          ))}
+                        </div>
+                      </>
+                    )}
+                  </div>
 
-                <div class="block">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a href="#home"><h3>Description</h3></a></li>
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="home" set:html={productBodyHtml} />
+                  {images.length > 1 && (
+                    <div class="bb-pd-thumbs" id="prodThumbs">
+                      {images.map((img: any, idx: number) => (
+                        <button
+                          type="button"
+                          class={`bb-pd-thumb-btn${idx === 0 ? ' is-active' : ''}`}
+                          data-slide={idx}
+                          aria-label={`Thumbnail ${idx + 1}`}
+                        >
+                          <img src={img.src} alt={img.alt || cleanPageTitle} loading="lazy" decoding="async" />
+                        </button>
+                      ))}
                     </div>
-                </div>
-
-                <RelatedProducts currentSlug={frontmatter.slug} categoryUrl={frontmatter.categoryUrl} />
+                  )}
+                </>
+              )}
             </div>
+
+            <div class="bb-pd-info">
+              <span class="bb-eyebrow">{frontmatter.categoryName || "Bamboo Flooring"}</span>
+              <h1 class="bb-pd-title">{cleanPageTitle}</h1>
+              {frontmatter.summary && <p class="bb-pd-summary">{frontmatter.summary}</p>}
+
+              {parsedAttributes.length > 0 && (
+                <ul class="bb-pd-specs">
+                  {parsedAttributes.map((item) => (
+                    <li>
+                      {item.key ? (
+                        <>
+                          <span class="bb-pd-spec-key">{item.key}</span>
+                          <span class="bb-pd-spec-val">{item.val}</span>
+                        </>
+                      ) : (
+                        <span class="bb-pd-spec-plain">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg>
+                          <span>{item.val}</span>
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              <div class="bb-pd-actions">
+                <a href={quoteUrl} class="bb-btn bb-btn-primary">Request A Quote</a>
+                <a href={waUrl} target="_blank" rel="nofollow noopener noreferrer" class="bb-btn bb-btn-whatsapp">WhatsApp Inquiry</a>
+              </div>
+
+              <div class="bb-pd-trust-note">
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg>
+                  Factory Direct Wholesale
+                </span>
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg>
+                  FSC &amp; CE Certified
+                </span>
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg>
+                  Worldwide Container Shipping
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {productBodyHtml && (
+            <div class="bb-pd-desc-card">
+              <div class="bb-pd-desc-head">
+                <h2>Product Details &amp; Gallery</h2>
+              </div>
+              <div class="bb-pd-prose" id="home" set:html={productBodyHtml} />
+            </div>
+          )}
+
+          <div class="bb-related-wrap">
+            <RelatedProducts currentSlug={frontmatter.slug} categoryUrl={frontmatter.categoryUrl} />
+          </div>
         </div>
-    </section>
+      </section>
+    </>
   )}
 
-  <script is:inline>
-    document.addEventListener('DOMContentLoaded', function () {
-      // 1. 产品详情主图轮播（多图时自动启用，零跳动）
-      var slider = document.getElementById('productSlider');
-      if (slider) {
-        var slides = slider.querySelectorAll('.hero-slide');
-        var dots = slider.querySelectorAll('.hero-dot');
-        if (slides.length > 1) {
-          var current = 0;
-          var timer = null;
-          var showSlide = function (index) {
-            current = (index + slides.length) % slides.length;
-            for (var i = 0; i < slides.length; i++) {
-              slides[i].classList.toggle('is-active', i === current);
-              if (dots[i]) dots[i].classList.toggle('is-active', i === current);
-            }
-          };
-          var startAuto = function () {
-            stopAuto();
-            timer = setInterval(function () { showSlide(current + 1); }, 4500);
-          };
-          var stopAuto = function () {
-            if (timer) { clearInterval(timer); timer = null; }
-          };
-          var prevBtn = document.getElementById('prodPrev');
-          var nextBtn = document.getElementById('prodNext');
-          if (prevBtn) prevBtn.addEventListener('click', function () { showSlide(current - 1); startAuto(); });
-          if (nextBtn) nextBtn.addEventListener('click', function () { showSlide(current + 1); startAuto(); });
-          for (var d = 0; d < dots.length; d++) {
-            dots[d].addEventListener('click', function () {
-              showSlide(parseInt(this.getAttribute('data-slide'), 10) || 0);
-              startAuto();
-            });
-          }
-          slider.addEventListener('mouseenter', stopAuto);
-          slider.addEventListener('mouseleave', startAuto);
-          startAuto();
-        }
-      }
+  {!isCategory && (
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', function () {
+        var slider = document.getElementById('productSlider');
+        if (!slider) return;
+        var slides = slider.querySelectorAll('.bb-slide');
+        var dots = slider.querySelectorAll('.bb-slider-dot');
+        var thumbs = document.querySelectorAll('#prodThumbs .bb-pd-thumb-btn');
+        if (slides.length <= 1) return;
 
-      // 2. 兼容老分类页的 Isotope 筛选按钮（无 jQuery 驱动）
-      var filters = document.getElementById('filters');
-      var isoContainer = document.getElementById('isotope-container');
-      if (filters && isoContainer) {
-        var isoItems = isoContainer.querySelectorAll('.peIsotopeItem');
-        filters.addEventListener('click', function (e) {
-          var link = e.target.closest('a[data-option-value]');
-          if (!link) return;
-          e.preventDefault();
-          var val = link.getAttribute('data-option-value');
-          var lis = filters.querySelectorAll('li');
-          for (var i = 0; i < lis.length; i++) {
-            lis[i].classList.toggle('active', lis[i].contains(link));
-          }
-          var cls = val && val.charAt(0) === '.' ? val.slice(1) : '';
-          for (var j = 0; j < isoItems.length; j++) {
-            var show = !val || val === '*' || (cls && isoItems[j].classList.contains(cls));
-            isoItems[j].style.display = show ? '' : 'none';
-          }
-        });
-      }
-
-      // 3. 兼容 RelatedProducts 中的 .carouselBox 横向切换，防止未加载 jQuery 时按钮失效
-      var carouselBox = document.querySelector('.carouselBox');
-      var cPrev = document.getElementById('carouselPrev');
-      var cNext = document.getElementById('carouselNext');
-      if (carouselBox && cPrev && cNext) {
-        var stepScroll = function (dir) {
-          var firstCard = carouselBox.firstElementChild;
-          var step = firstCard ? (firstCard.offsetWidth + 16) : 260;
-          if (dir > 0 && carouselBox.scrollLeft + carouselBox.clientWidth >= carouselBox.scrollWidth - 8) {
-            carouselBox.scrollTo({ left: 0, behavior: 'smooth' });
-          } else if (dir < 0 && carouselBox.scrollLeft <= 8) {
-            carouselBox.scrollTo({ left: carouselBox.scrollWidth, behavior: 'smooth' });
-          } else {
-            carouselBox.scrollBy({ left: dir * step, behavior: 'smooth' });
+        var current = 0;
+        var timer = null;
+        var showSlide = function (index) {
+          current = (index + slides.length) % slides.length;
+          for (var i = 0; i < slides.length; i++) {
+            slides[i].classList.toggle('is-active', i === current);
+            if (dots[i]) dots[i].classList.toggle('is-active', i === current);
+            if (thumbs[i]) thumbs[i].classList.toggle('is-active', i === current);
           }
         };
-        cPrev.addEventListener('click', function (e) { e.preventDefault(); stepScroll(-1); });
-        cNext.addEventListener('click', function (e) { e.preventDefault(); stepScroll(1); });
-      }
-    });
-  </script>
+        var startAuto = function () {
+          stopAuto();
+          timer = setInterval(function () { showSlide(current + 1); }, 5000);
+        };
+        var stopAuto = function () {
+          if (timer) { clearInterval(timer); timer = null; }
+        };
+        var prevBtn = document.getElementById('prodPrev');
+        var nextBtn = document.getElementById('prodNext');
+        if (prevBtn) prevBtn.addEventListener('click', function () { showSlide(current - 1); startAuto(); });
+        if (nextBtn) nextBtn.addEventListener('click', function () { showSlide(current + 1); startAuto(); });
+        for (var d = 0; d < dots.length; d++) {
+          dots[d].addEventListener('click', function () {
+            showSlide(parseInt(this.getAttribute('data-slide'), 10) || 0);
+            startAuto();
+          });
+        }
+        for (var t = 0; t < thumbs.length; t++) {
+          thumbs[t].addEventListener('click', function () {
+            showSlide(parseInt(this.getAttribute('data-slide'), 10) || 0);
+            startAuto();
+          });
+        }
+        slider.addEventListener('mouseenter', stopAuto);
+        slider.addEventListener('mouseleave', startAuto);
+        startAuto();
+      });
+    </script>
+  )}
 </BaseLayout>

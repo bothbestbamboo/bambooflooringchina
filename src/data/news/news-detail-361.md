@@ -11,7 +11,7 @@ summary: "The usage of structural bamboo beams, which are engineered components 
 <p><span style="font-family: Verdana;"><span style="font-size: 11pt;">Known as "nature‘s wonder material," bamboo has long been praised for its strength, sustainability, and adaptability. Although it has long been utilised for flooring, furnishings, and ornamental purposes, its use as a structural component in building is drawing a lot of interest. The usage of structural bamboo beams, which are engineered components intended to supplement or replace conventional materials like steel, concrete, and timber, is one of the most promising uses.</span><br>
 <br>
 <span style="font-size: 11pt;">
-A paradigm shift in our approach to sustainable building is represented by <a href="https://www.bambooindustry.com/bamboo-plywood/strand-woven-lumber.html">structural bamboo beams</a>, which are more than just a fad. These beams are demonstrating their value in both residential and commercial construction projects by combining strength, flexibility, and environmental advantages. Let‘s examine their special qualities, production methods, and ability to revolutionise the building sector.</span><br>
+A paradigm shift in our approach to sustainable building is represented by structural bamboo beams, which are more than just a fad. These beams are demonstrating their value in both residential and commercial construction projects by combining strength, flexibility, and environmental advantages. Let‘s examine their special qualities, production methods, and ability to revolutionise the building sector.</span><br>
 <br>
 <span style="font-size: 11pt;">
 The Power of Bamboo: An Unnatural Wonder</span></span>

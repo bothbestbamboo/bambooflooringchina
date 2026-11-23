@@ -24,6 +24,7 @@ export async function getStaticPaths() {
 
 const { post, prevUrl, nextUrl } = Astro.props;
 const { frontmatter, Content } = post;
+const dateStr = String(frontmatter.date || '').split(' ')[0];
 
 const articleSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -40,7 +41,7 @@ const articleSchema = JSON.stringify({
     "name": "Bothbest",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.bambooflooringchina.com/img/skin/logo.png"
+      "url": "https://www.bambooflooringchina.com/img/skin/newlogo2.png"
     }
   }
 });
@@ -49,191 +50,52 @@ const articleSchema = JSON.stringify({
   title={frontmatter.title}
   keywords={frontmatter.keywords}
   description={frontmatter.description}
-  bodyClass="html not-front not-logged-in one-sidebar sidebar-second page-contact"
   footerType="postscript"
-  rssUrl="/rss/news.xml"
   loadLegacyJs={false}
+  isModern={true}
 >
     <script is:inline type="application/ld+json" set:html={articleSchema} />
 
-    <style is:global>
-        /* 新闻详情页主标题 H1 与发布日期间距优化 */
-        .post-title h1.NewsTitle {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: 24px;
-            font-weight: bold;
-            line-height: 1.35;
-            margin: 10px 0 12px;
-            color: #222222;
-            text-align: left;
-        }
-        .post-meta > p.text-right {
-            margin-bottom: 22px;
-            padding-bottom: 10px;
-            border-bottom: 1px dotted #dcdcdc;
-            color: #888888;
-        }
-
-        /* Markdown 正文区域统一排版样式 */
-        .contentWrap {
-            font-family: Verdana, Arial, Helvetica, sans-serif;
-            font-size: 14.5px;
-            line-height: 1.8;
-            color: #333333;
-        }
-        .contentWrap p {
-            font-family: Verdana, Arial, Helvetica, sans-serif;
-            font-size: 14.5px !important;
-            line-height: 1.8 !important;
-            color: #333333;
-            margin: 0 0 18px 0 !important;
-            padding: 0;
-        }
-        .contentWrap p:empty {
-            display: none;
-        }
-        .contentWrap p > br:first-child,
-        .contentWrap p > span > br:first-child {
-            display: none;
-        }
-
-        .contentWrap h2,
-        .contentWrap h3,
-        .contentWrap h4 {
-            font-family: Verdana, Arial, Helvetica, sans-serif !important;
-            font-weight: bold !important;
-            color: #222222 !important;
-            line-height: 1.4 !important;
-            text-transform: none;
-        }
-        .contentWrap h2 {
-            font-size: 19px !important;
-            margin: 30px 0 14px 0 !important;
-        }
-        .contentWrap h3 {
-            font-size: 16.5px !important;
-            margin: 24px 0 12px 0 !important;
-        }
-        .contentWrap h4 {
-            font-size: 15px !important;
-            margin: 20px 0 10px 0 !important;
-        }
-
-        .contentWrap ul,
-        .contentWrap ol {
-            margin: 0 0 18px 24px !important;
-            padding: 0;
-            font-size: 14.5px;
-            line-height: 1.8;
-            color: #333333;
-        }
-        .contentWrap ul { list-style-type: disc; }
-        .contentWrap ol { list-style-type: decimal; }
-        .contentWrap li {
-            margin-bottom: 8px;
-            line-height: 1.8;
-        }
-
-        .contentWrap strong,
-        .contentWrap b {
-            color: #111111;
-            font-weight: bold;
-        }
-        .contentWrap a {
-            color: #517329;
-            text-decoration: underline;
-        }
-        .contentWrap a:hover {
-            color: #f89406;
-        }
-        .contentWrap img {
-            max-width: 100%;
-            height: auto;
-            margin: 12px 0;
-        }
-        .contentWrap table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 14px;
-        }
-        .contentWrap table th,
-        .contentWrap table td {
-            border: 1px solid #dddddd;
-            padding: 10px 12px;
-            text-align: left;
-            line-height: 1.6;
-        }
-        .contentWrap table th {
-            background-color: #f7f7f7;
-            font-weight: bold;
-            color: #222222;
-        }
-    </style>
-
-    <section class="container mainContent">
-        <form action="/search.html" method="get" class="MobileSearch" role="search">
-            <input type="text" name="SearchKeywords" id="MobileSearchKeywords" placeholder="Search news..." aria-label="Search keywords" />
-            <input type="submit" id="MobileSearch" name="search" value="Search" class="form-submit" />
-        </form>
-        <div class="row-fluid">
-            <div class="tabs">
-                <ul class="breadcrumb">
-                    <li><a href="/">Home</a> <span class="divider">/</span></li>
-                    <li><a href="/news/news_1.html">News</a> <span class="divider">/</span></li>
-                    <li class="active">{frontmatter.title}</li>
-                </ul>
-            </div>
+    <div class="bb-pd-crumb-bar">
+        <div class="bb-container">
+            <ol class="bb-breadcrumb">
+                <li><a href="/">Home</a><span class="bb-breadcrumb-sep">/</span></li>
+                <li><a href="/news/news_1.html">News</a><span class="bb-breadcrumb-sep">/</span></li>
+                <li aria-current="page">{frontmatter.title}</li>
+            </ol>
         </div>
-        <div class="row-fluid">
-            <div class="content span9">
-                <div class="innerSpacer">
-                    <a id="main-content"></a>
-                    <div id="block-system-main" class="block block-system" style="border:none">
-                        <article id="node-3" class="node node-blog-post node-promoted row-fluid clearfix">
-                            <div class="span12 post full">
-                                <div class="row-fluid">
-                                    <div class="span12 post-title">
-                                        <h1 class="NewsTitle">{frontmatter.title}</h1>
-                                        <div class="post-meta">
-                                            <p class="text-right">Posted on {frontmatter.date}</p>
-                                            <div class="field field-name-body field-type-text-with-summary field-label-hidden">
-                                                <div class="field-items">
-                                                    <div class="field-item even">
-                                                        <div class="row-fluid">
-                                                            <div class="span12 post full">
-                                                                <div class="contentWrap">
-                                                                    <div class="row-fluid">
-                                                                        <div class="span12">
-                                                                            <Content />
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <nav class="row-fluid post-pager" aria-label="Adjacent posts">
-                                                <div class="span12">
-                                                    <ul class="pager">
-                                                        {prevUrl && (
-                                                            <li class="prev"><a href={prevUrl}>&larr; <span>Previous Post</span></a></li>
-                                                        )}
-                                                        {nextUrl && (
-                                                            <li class="next"><a href={nextUrl}><span>Next Post</span> &rarr;</a></li>
-                                                        )}
-                                                    </ul>
-                                                </div>
-                                            </nav>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
+    </div>
+
+    <section class="bb-main-section">
+        <div class="bb-container bb-two-col">
+            <article class="bb-article-card">
+                <header class="bb-article-header">
+                    <span class="bb-eyebrow">Technical Knowledge</span>
+                    <h1 class="bb-article-title">{frontmatter.title}</h1>
+                    <div class="bb-article-meta">
+                        {dateStr && <span>Published: {dateStr}</span>}
+                        <span>By Bothbest Technical Team</span>
                     </div>
+                </header>
+
+                <div class="bb-article-prose">
+                    <Content />
                 </div>
-            </div>
+
+                <nav class="bb-article-nav" aria-label="Adjacent posts">
+                    <div>
+                        {prevUrl && (
+                            <a href={prevUrl} class="bb-btn bb-btn-outline-dark bb-btn-sm">&larr; Previous Guide</a>
+                        )}
+                    </div>
+                    <div>
+                        {nextUrl && (
+                            <a href={nextUrl} class="bb-btn bb-btn-outline-dark bb-btn-sm">Next Guide &rarr;</a>
+                        )}
+                    </div>
+                </nav>
+            </article>
+
             <NewsSidebar />
         </div>
     </section>

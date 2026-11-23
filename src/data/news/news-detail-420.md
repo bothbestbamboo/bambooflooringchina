@@ -164,8 +164,7 @@ Combined with plywood’s efficient use of wood fibers, these panels offer stren
 <br>
 Bringing It All Together</span></div>
 <div><span style="font-family: Verdana;"><br>
-<a href="https://www.bambooindustry.com/blog/finger-joint-pine-plywood-a-thorough-guide.html">
-Finger joint pine plywood</a> succeeds in furniture building because of its engineered reliability. The finger-jointed segments create a uniform, stable base. The cross-laminated core strengthens the panel from multiple directions. Surfaces stay flat, joints remain tight, and the material responds predictably during construction and throughout years of use.<br>
+Finger joint pine plywood succeeds in furniture building because of its engineered reliability. The finger-jointed segments create a uniform, stable base. The cross-laminated core strengthens the panel from multiple directions. Surfaces stay flat, joints remain tight, and the material responds predictably during construction and throughout years of use.<br>
 <br>
 Whether used for shelving, cabinetry, tables, or structural components, it offers a combination of strength, stability, and workability that suits a wide range of furniture styles. Thoughtful finishing and proper design reinforce these advantages, allowing the material to support pieces that remain solid, functional, and attractive long after they’re built.</span></div>
 </div></p>

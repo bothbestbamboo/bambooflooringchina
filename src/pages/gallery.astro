@@ -2,25 +2,28 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const galleryItems = [
-  { href: '/gallery/gallery-detail-41.html', category: 'BambooDecking', label: 'Bamboo Decking Project #41', src: '/img/UploadFiles/null-p1f0iiv5k5c3n1csj1gi71mti65t1.jpg' },
-  { href: '/gallery/gallery-detail-40.html', category: 'BambooFlooring', label: 'Bamboo Flooring Project #40', src: '/img/UploadFiles/null-p1f0g34em7tk622d1glkf2uqru1.jpg' },
-  { href: '/gallery/gallery-detail-39.html', category: 'BambooPanel', label: 'Bamboo Panel Project #39', src: '/img/UploadFiles/null-p1f0a69u201e2g1p7015mb98j1isk1.jpg' },
-  { href: '/gallery/gallery-detail-38.html', category: 'BambooDecking', label: 'Bamboo Decking Project #38', src: '/img/UploadFiles/null-p1eqjc7uv53h41m2jf01fpssl41.jpg' },
-  { href: '/gallery/gallery-detail-37.html', category: 'BambooDecking', label: 'Bamboo Decking Project #37', src: '/img/UploadFiles/null-p1eq6hm0881g1is52sgvk0abfi1.JPG' },
-  { href: '/gallery/gallery-detail-36.html', category: 'BambooDecking', label: 'Bamboo Decking Project #36', src: '/img/UploadFiles/null-p1eq6h8suk161vc2hlp9ehb4f1.jpg' },
-  { href: '/gallery/gallery-detail-33.html', category: 'BambooFlooring', label: 'Bamboo Flooring Project #33', src: '/img/UploadFiles/null-p1eq4mstu0fkfq02suo16ufg241.jpg' },
-  { href: '/gallery/gallery-detail-32.html', category: 'BambooPanel', label: 'Bamboo Panel Project #32', src: '/img/UploadFiles/null-p1eq4gv2841cp615ae1l0k1tg1121u1.jpg' },
-  { href: '/gallery/gallery-detail-31.html', category: 'BambooFlooring', label: 'Bamboo Flooring Project #31', src: '/img/UploadFiles/null-p1eq410sqh1hg21i55171id6ubnl1.jpg' },
-  { href: '/gallery/gallery-detail-29.html', category: 'BambooFlooring', label: 'Bamboo Flooring Project #29', src: '/img/UploadFiles/null-p1eq23j3751mtlsv9hha1kp4ocf1.jpg' },
-  { href: '/gallery/gallery-detail-28.html', category: 'BambooPanel', label: 'Bamboo Panel Project #28', src: '/img/UploadFiles/null-p1eq22tebp1dpv1n5c1jmr1qmt4u61.jpg' },
-  { href: '/gallery/gallery-detail-27.html', category: 'BambooFlooring', label: 'Bamboo Flooring Project #27', src: '/img/UploadFiles/null-p1eq22hljo1t7i3cv8cr1tej1a0v1.jpg' },
-  { href: '/gallery/gallery-detail-26.html', category: 'BambooPanel', label: 'Bamboo Panel Project #26', src: '/img/UploadFiles/null-p1eq22h6e51fk31gdfbpupg114hf1.jpg' },
-  { href: '/gallery/gallery-detail-25.html', category: 'BambooDecking', label: 'Bamboo Decking Project #25', src: '/img/UploadFiles/null-p1eq6gmv9b1tqr1vok1ejo1r8t1tvr1.jpg' },
-  { href: '/gallery/gallery-detail-24.html', category: 'BambooPanel', label: 'Bamboo Panel Project #24', src: '/img/UploadFiles/null-p1eq22g6lgrepbs31mmh1e8qq971.jpg' },
+  { href: '/gallery/gallery-detail-41.html', category: 'BambooDecking', catLabel: 'Bamboo Decking', label: 'Outdoor Bamboo Decking Project #41', src: '/img/UploadFiles/null-p1f0iiv5k5c3n1csj1gi71mti65t1.jpg' },
+  { href: '/gallery/gallery-detail-40.html', category: 'BambooFlooring', catLabel: 'Bamboo Flooring', label: 'Indoor Bamboo Flooring Project #40', src: '/img/UploadFiles/null-p1f0g34em7tk622d1glkf2uqru1.jpg' },
+  { href: '/gallery/gallery-detail-39.html', category: 'BambooPanel', catLabel: 'Bamboo Panels', label: 'Architectural Bamboo Panel Project #39', src: '/img/UploadFiles/null-p1f0a69u201e2g1p7015mb98j1isk1.jpg' },
+  { href: '/gallery/gallery-detail-38.html', category: 'BambooDecking', catLabel: 'Bamboo Decking', label: 'Outdoor Bamboo Decking Project #38', src: '/img/UploadFiles/null-p1eqjc7uv53h41m2jf01fpssl41.jpg' },
+  { href: '/gallery/gallery-detail-37.html', category: 'BambooDecking', catLabel: 'Bamboo Decking', label: 'Outdoor Bamboo Decking Project #37', src: '/img/UploadFiles/null-p1eq6hm0881g1is52sgvk0abfi1.JPG' },
+  { href: '/gallery/gallery-detail-36.html', category: 'BambooDecking', catLabel: 'Bamboo Decking', label: 'Outdoor Bamboo Decking Project #36', src: '/img/UploadFiles/null-p1eq6h8suk161vc2hlp9ehb4f1.jpg' },
+  { href: '/gallery/gallery-detail-33.html', category: 'BambooFlooring', catLabel: 'Bamboo Flooring', label: 'Indoor Bamboo Flooring Project #33', src: '/img/UploadFiles/null-p1eq4mstu0fkfq02suo16ufg241.jpg' },
+  { href: '/gallery/gallery-detail-32.html', category: 'BambooPanel', catLabel: 'Bamboo Panels', label: 'Architectural Bamboo Panel Project #32', src: '/img/UploadFiles/null-p1eq4gv2841cp615ae1l0k1tg1121u1.jpg' },
+  { href: '/gallery/gallery-detail-31.html', category: 'BambooFlooring', catLabel: 'Bamboo Flooring', label: 'Indoor Bamboo Flooring Project #31', src: '/img/UploadFiles/null-p1eq410sqh1hg21i55171id6ubnl1.jpg' },
+  { href: '/gallery/gallery-detail-29.html', category: 'BambooFlooring', catLabel: 'Bamboo Flooring', label: 'Indoor Bamboo Flooring Project #29', src: '/img/UploadFiles/null-p1eq23j3751mtlsv9hha1kp4ocf1.jpg' },
+  { href: '/gallery/gallery-detail-28.html', category: 'BambooPanel', catLabel: 'Bamboo Panels', label: 'Architectural Bamboo Panel Project #28', src: '/img/UploadFiles/null-p1eq22tebp1dpv1n5c1jmr1qmt4u61.jpg' },
+  { href: '/gallery/gallery-detail-27.html', category: 'BambooFlooring', catLabel: 'Bamboo Flooring', label: 'Indoor Bamboo Flooring Project #27', src: '/img/UploadFiles/null-p1eq22hljo1t7i3cv8cr1tej1a0v1.jpg' },
+  { href: '/gallery/gallery-detail-26.html', category: 'BambooPanel', catLabel: 'Bamboo Panels', label: 'Architectural Bamboo Panel Project #26', src: '/img/UploadFiles/null-p1eq22h6e51fk31gdfbpupg114hf1.jpg' },
+  { href: '/gallery/gallery-detail-25.html', category: 'BambooDecking', catLabel: 'Bamboo Decking', label: 'Outdoor Bamboo Decking Project #25', src: '/img/UploadFiles/null-p1eq6gmv9b1tqr1vok1ejo1r8t1tvr1.jpg' },
+  { href: '/gallery/gallery-detail-24.html', category: 'BambooPanel', catLabel: 'Bamboo Panels', label: 'Architectural Bamboo Panel Project #24', src: '/img/UploadFiles/null-p1eq22g6lgrepbs31mmh1e8qq971.jpg' },
 ];
 
+const countByCat = (key: string) =>
+  key === 'all' ? galleryItems.length : galleryItems.filter((g) => g.category === key).length;
+
 const categories = [
-  { key: 'all', label: 'All' },
+  { key: 'all', label: 'All Projects' },
   { key: 'BambooFlooring', label: 'Bamboo Flooring' },
   { key: 'BambooDecking', label: 'Bamboo Decking' },
   { key: 'BambooPanel', label: 'Bamboo Panels' },
@@ -30,49 +33,59 @@ const categories = [
   title="Project Gallery | Bothbest Bamboo Flooring, Decking & Panels"
   keywords="bamboo flooring gallery, bamboo decking projects, bamboo panel installations, Bothbest"
   description="Browse real-world residential and commercial installations featuring Bothbest bamboo flooring, outdoor bamboo decking, and bamboo plywood panels."
-  bodyClass="html not-front not-logged-in no-sidebars"
   footerType="postscript"
   loadLegacyJs={false}
+  isModern={true}
 >
-    <section class="container mainContent">
-        <form action="/search.html" method="get" class="MobileSearch" role="search">
-            <input type="text" name="SearchKeywords" id="MobileSearchKeywords" placeholder="Search bamboo..." aria-label="Search keywords" />
-            <input type="submit" id="MobileSearch" name="search" value="Search" class="form-submit" />
-        </form>
-        <div class="row-fluid">
-            <div class="content span12">
-                <a id="main-content"></a>
-                <h1 class="title" id="page-title">Project Gallery</h1>
+    <section class="bb-page-hero">
+        <div class="bb-container">
+            <ol class="bb-breadcrumb">
+                <li><a href="/">Home</a><span class="bb-breadcrumb-sep">/</span></li>
+                <li aria-current="page">Project Gallery</li>
+            </ol>
+            <h1 class="bb-page-title">Project Installation Gallery</h1>
+            <p class="bb-page-lead">
+                Real residential, commercial, and landscape applications showcasing Bothbest bamboo flooring, outdoor decking, and interior panels worldwide.
+            </p>
+        </div>
+    </section>
 
-                <div class="filter-bar" id="galleryFilters" role="tablist" aria-label="Filter gallery by category">
-                    {categories.map((cat, idx) => (
-                        <button
-                            type="button"
-                            class={`filter-btn${idx === 0 ? ' is-active' : ''}`}
-                            data-filter={cat.key}
-                            aria-pressed={idx === 0 ? 'true' : 'false'}
-                        >
-                            {cat.label}
-                        </button>
-                    ))}
-                </div>
+    <section class="bb-catalog-section">
+        <div class="bb-container">
+            <div class="bb-filter-bar" id="galleryFilters" role="tablist" aria-label="Filter gallery by category">
+                {categories.map((cat, idx) => (
+                    <button
+                        type="button"
+                        class={`bb-filter-btn${idx === 0 ? ' is-active' : ''}`}
+                        data-filter={cat.key}
+                        aria-pressed={idx === 0 ? 'true' : 'false'}
+                    >
+                        <span>{cat.label}</span>
+                        <span class="bb-filter-count">({countByCat(cat.key)})</span>
+                    </button>
+                ))}
+            </div>
 
-                <div class="modern-gallery-grid" id="galleryGrid">
-                    {galleryItems.map((item, idx) => (
-                        <article class="portfolioItem gallery-card" data-category={item.category}>
-                            <a href={item.href} class="gallery-thumb">
-                                <img
-                                    src={item.src}
-                                    width="480"
-                                    height="396"
-                                    alt={item.label}
-                                    loading={idx < 4 ? 'eager' : 'lazy'}
-                                    decoding="async"
-                                />
-                            </a>
-                        </article>
-                    ))}
-                </div>
+            <div class="bb-gallery-grid" id="galleryGrid">
+                {galleryItems.map((item, idx) => (
+                    <article class="bb-gallery-card" data-category={item.category}>
+                        <a href={item.href} class="bb-gallery-thumb">
+                            <img
+                                src={item.src}
+                                width="480"
+                                height="396"
+                                alt={item.label}
+                                loading={idx < 6 ? 'eager' : 'lazy'}
+                                decoding="async"
+                            />
+                            <span class="bb-catalog-badge">{item.catLabel}</span>
+                        </a>
+                        <a href={item.href} class="bb-gallery-foot">
+                            <h2>{item.label}</h2>
+                            <span>View Photos &rarr;</span>
+                        </a>
+                    </article>
+                ))}
             </div>
         </div>
     </section>
@@ -80,15 +93,15 @@ const categories = [
     <script is:inline>
         document.addEventListener('DOMContentLoaded', function () {
             var filterBar = document.getElementById('galleryFilters');
-            var cards = document.querySelectorAll('#galleryGrid .gallery-card');
+            var cards = document.querySelectorAll('#galleryGrid .bb-gallery-card');
             if (!filterBar) return;
 
             filterBar.addEventListener('click', function (e) {
-                var btn = e.target.closest('.filter-btn');
+                var btn = e.target.closest('.bb-filter-btn');
                 if (!btn) return;
                 var target = btn.getAttribute('data-filter');
 
-                var allBtns = filterBar.querySelectorAll('.filter-btn');
+                var allBtns = filterBar.querySelectorAll('.bb-filter-btn');
                 for (var i = 0; i < allBtns.length; i++) {
                     var active = allBtns[i] === btn;
                     allBtns[i].classList.toggle('is-active', active);
