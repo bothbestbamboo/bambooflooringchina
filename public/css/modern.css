@@ -4486,3 +4486,24 @@ footer.bb-footer {
 .bb-btn-outline-light {
   background: rgba(15, 36, 25, 0.32);
 }
+
+/* =====================================================================
+   17. Gallery Detail Banner Override
+   ===================================================================== */
+.bb-gd-hero.bb-page-hero--banner {
+  background: var(--bb-green-950);
+  border-bottom: none;
+  padding: 54px 0 48px;
+}
+
+.bb-gd-hero.bb-page-hero--banner .bb-gd-count-pill {
+  background: rgba(15, 36, 25, 0.52);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #f3dfc8;
+}
+
+.bb-gd-hint {
+  font-size: 13px;
+  color: rgba(235, 243, 238, 0.88);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+}

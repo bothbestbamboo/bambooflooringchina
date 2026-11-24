@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsSidebar from '../../components/NewsSidebar.astro';
 
+const newsBannerImage = '/img/hero/news-banner.jpg';
+
 export async function getStaticPaths({ paginate }: any) {
   const newsFiles = import.meta.glob('../../data/news/*.md', { eager: true });
   const sortedNews = Object.values(newsFiles).sort(
@@ -32,8 +34,19 @@ const pageDesc = currentPage > 1
   footerType="postscript"
   loadLegacyJs={false}
   isModern={true}
+  preloadImage={newsBannerImage}
 >
-    <section class="bb-page-hero">
+    <section class="bb-page-hero bb-page-hero--banner">
+        <img
+            src={newsBannerImage}
+            alt="Bothbest Bamboo Flooring Technical Guides & News"
+            class="bb-page-hero-bg"
+            fetchpriority="high"
+            loading="eager"
+            decoding="async"
+            onerror="this.style.display='none'"
+        />
+        <div class="bb-page-hero-overlay" aria-hidden="true"></div>
         <div class="bb-container">
             <ol class="bb-breadcrumb">
                 <li><a href="/">Home</a><span class="bb-breadcrumb-sep">/</span></li>

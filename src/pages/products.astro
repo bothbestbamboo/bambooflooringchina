@@ -109,6 +109,8 @@ const categories = [
   { key: 'BambooPanels', label: 'Bamboo Panels' },
   { key: 'BambooCollection', label: 'Bamboo Collection' },
 ];
+
+const productsBannerImage = '/img/hero/products-banner.jpg';
 ---
 <BaseLayout
   title="All Bamboo Products | China Factory Wholesale - Bothbest"
@@ -117,8 +119,19 @@ const categories = [
   footerType="postscript"
   loadLegacyJs={false}
   isModern={true}
+  preloadImage={productsBannerImage}
 >
-    <section class="bb-page-hero">
+    <section class="bb-page-hero bb-page-hero--banner">
+        <img
+            src={productsBannerImage}
+            alt="Bothbest Wholesale Bamboo Flooring, Decking & Panels Catalog"
+            class="bb-page-hero-bg"
+            fetchpriority="high"
+            loading="eager"
+            decoding="async"
+            onerror="this.style.display='none'"
+        />
+        <div class="bb-page-hero-overlay" aria-hidden="true"></div>
         <div class="bb-container">
             <ol class="bb-breadcrumb">
                 <li><a href="/">Home</a><span class="bb-breadcrumb-sep">/</span></li>

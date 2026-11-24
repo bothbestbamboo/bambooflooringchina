@@ -114,6 +114,7 @@ if (!useNativeGallery && frontmatter.mainHtml) {
 }
 
 const firstImage = useNativeGallery ? extractedImages[0].large : '';
+const galleryDetailBanner = '/img/hero/gallery-banner.jpg';
 const quoteUrl = `/about.html?product=${encodeURIComponent(`Gallery: ${cleanTitle}`)}#RequestAQuote`;
 const waUrl = `https://wa.me/8615005820528?text=${encodeURIComponent(`Hi Bothbest, I saw your project gallery "${cleanTitle}" and would like matching bamboo specifications and wholesale pricing.`)}`;
 ---
@@ -126,11 +127,21 @@ const waUrl = `https://wa.me/8615005820528?text=${encodeURIComponent(`Hi Bothbes
   headHtml={useNativeGallery ? "" : rawHeadHtml}
   loadLegacyJs={useNativeGallery ? false : needsLegacyJs}
   isModern={useNativeGallery}
-  preloadImage={firstImage}
+  preloadImage={useNativeGallery ? galleryDetailBanner : firstImage}
 >
   {useNativeGallery ? (
     <>
-      <section class="bb-gd-hero">
+      <section class="bb-page-hero bb-page-hero--banner bb-gd-hero">
+        <img
+          src={galleryDetailBanner}
+          alt={`${cleanTitle} — Bothbest Bamboo Project Gallery`}
+          class="bb-page-hero-bg"
+          fetchpriority="high"
+          loading="eager"
+          decoding="async"
+          onerror="this.style.display='none'"
+        />
+        <div class="bb-page-hero-overlay" aria-hidden="true"></div>
         <div class="bb-container">
           <ol class="bb-breadcrumb">
             <li><a href="/">Home</a><span class="bb-breadcrumb-sep">/</span></li>
@@ -144,12 +155,12 @@ const waUrl = `https://wa.me/8615005820528?text=${encodeURIComponent(`Hi Bothbes
               {galleryDesc && <p class="bb-page-lead">{galleryDesc}</p>}
               <div class="bb-gd-meta-row">
                 <span class="bb-gd-count-pill">{photoCount} Project {photoCount === 1 ? 'Photo' : 'Photos'}</span>
-                <span style="font-size: 13px; color: var(--bb-muted);">Click any photo to view full resolution</span>
+                <span class="bb-gd-hint">Click any photo to view full resolution</span>
               </div>
             </div>
 
             <div class="bb-gd-hero-actions">
-              <a href="/gallery.html" class="bb-btn bb-btn-outline-dark bb-btn-sm">&larr; All Projects</a>
+              <a href="/gallery.html" class="bb-btn bb-btn-outline-light bb-btn-sm">&larr; All Projects</a>
               <a href={quoteUrl} class="bb-btn bb-btn-primary bb-btn-sm">Request Similar Quote</a>
             </div>
           </div>

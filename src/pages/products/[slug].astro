@@ -261,6 +261,18 @@ const cleanTitle = String(frontmatter.title || cleanPageTitle)
 
 const images = Array.isArray(frontmatter.images) && frontmatter.images.length > 0 ? frontmatter.images : [];
 const firstImageSrc = !isCategory && images[0]?.src ? images[0].src : '';
+const firstImageSrc = !isCategory && images[0]?.src ? images[0].src : '';
+
+const categoryBannerMap: Record<string, string> = {
+  'product-type-BambooFlooring': '/img/hero/banner-flooring.jpg',
+  'product-type-BambooDecking': '/img/hero/banner-decking.jpg',
+  'product-type-BambooPanels': '/img/hero/banner-panels.jpg',
+  'product-type-BambooCollection': '/img/hero/banner-collection.jpg',
+  'product-type-BambooMats': '/img/hero/banner-mats.jpg',
+};
+const categoryBannerImage =
+  categoryBannerMap[String(frontmatter.slug || '')] || '/img/hero/products-banner.jpg';
+
 const quoteUrl = `/about.html?product=${encodeURIComponent(cleanPageTitle)}#RequestAQuote`;
 const waUrl = `https://wa.me/8615005820528?text=${encodeURIComponent(`Hi Bothbest, I am interested in ${cleanPageTitle}. Could you send wholesale pricing and specs?`)}`;
 
@@ -321,13 +333,23 @@ const structuredSchema = isCategory
   footerType="postscript"
   loadLegacyJs={false}
   isModern={true}
-  preloadImage={firstImageSrc}
+  preloadImage={isCategory ? categoryBannerImage : firstImageSrc}
 >
   <script is:inline type="application/ld+json" set:html={structuredSchema} />
 
   {isCategory ? (
     <>
-      <section class="bb-page-hero">
+      <section class="bb-page-hero bb-page-hero--banner">
+        <img
+          src={categoryBannerImage}
+          alt={`${categoryHeading} — Bothbest Bamboo Factory Wholesale`}
+          class="bb-page-hero-bg"
+          fetchpriority="high"
+          loading="eager"
+          decoding="async"
+          onerror="this.style.display='none'"
+        />
+        <div class="bb-page-hero-overlay" aria-hidden="true"></div>
         <div class="bb-container">
           <ol class="bb-breadcrumb">
             <li><a href="/">Home</a><span class="bb-breadcrumb-sep">/</span></li>
