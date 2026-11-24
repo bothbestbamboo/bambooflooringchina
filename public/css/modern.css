@@ -4442,3 +4442,47 @@ footer.bb-footer {
     padding: 22px 20px;
   }
 }
+
+/* =====================================================================
+   16. Lighter, Clearer Banner Overlays (Homepage & Inner Sub-Banners)
+   ===================================================================== */
+
+/* 首页 Hero 遮罩：左侧保留柔和深绿衬托文字，右侧几乎完全透出原图 */
+.bb-hero-overlay {
+  background: linear-gradient(
+    96deg,
+    rgba(13, 32, 22, 0.65) 0%,
+    rgba(15, 36, 25, 0.36) 46%,
+    rgba(15, 36, 25, 0.05) 100%
+  );
+}
+
+/* About / Clearance / Gallery 内页顶部 Banner 遮罩同步调亮 */
+.bb-page-hero-overlay {
+  background: linear-gradient(
+    98deg,
+    rgba(11, 29, 20, 0.72) 0%,
+    rgba(15, 36, 25, 0.42) 50%,
+    rgba(15, 36, 25, 0.1) 100%
+  );
+}
+
+/* 遮罩变浅后，给白字和次按钮增加轻量投影/半透明底，确保亮图上依然清晰 */
+.bb-hero-title,
+.bb-page-hero--banner .bb-page-title {
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+}
+
+.bb-hero-desc,
+.bb-page-hero--banner .bb-page-lead {
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+}
+
+.bb-hero-badge {
+  background: rgba(15, 36, 25, 0.48);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.bb-btn-outline-light {
+  background: rgba(15, 36, 25, 0.32);
+}
