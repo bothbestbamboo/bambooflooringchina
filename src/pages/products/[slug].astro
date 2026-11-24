@@ -261,7 +261,6 @@ const cleanTitle = String(frontmatter.title || cleanPageTitle)
 
 const images = Array.isArray(frontmatter.images) && frontmatter.images.length > 0 ? frontmatter.images : [];
 const firstImageSrc = !isCategory && images[0]?.src ? images[0].src : '';
-const firstImageSrc = !isCategory && images[0]?.src ? images[0].src : '';
 
 const categoryBannerMap: Record<string, string> = {
   'product-type-BambooFlooring': '/img/hero/banner-flooring.jpg',
