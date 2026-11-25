@@ -8,7 +8,7 @@ date: "2026-11-25 9:00:00"
 summary: "Properly constructed multi-ply bamboo cabinetry delivers strong screw holding capacity that matches or exceeds hardwood plywood and far outperforms particleboard. Learn how panel construction, fastener selection, pilot holes, and hinge sizing keep cabinet doors tight for decades."
 ---
 
-![Bamboo Cabinetry Screw Holding Capacity](bamboo-cabinetry-screw-holding)
+![Bamboo Cabinetry Screw Holding Capacity](/img/2026/bamboo-cabinetry-screw-holding)
 
 Quality bamboo cabinetry holds cabinet hinges securely, and hinges will not pull out on their own during normal daily use. When built from architectural-grade 3/4-inch (19mm) cross-laminated bamboo panels, the material matches or exceeds domestic birch and maple cabinet plywood in screw withdrawal resistance and outperforms industrial particleboard and MDF by a wide margin.
 
