@@ -63,20 +63,38 @@ const pageDesc = currentPage > 1
         <div class="bb-container bb-two-col">
             <div>
                 <div class="bb-news-list">
-                    {page.data.map((post: any) => {
-                        const dateStr = String(post.frontmatter.date || '').split(' ')[0];
+                    {page.data.map((post: any, idx: number) => {
+                        const fm = post.frontmatter || {};
+                        const dateStr = String(fm.date || '').split(' ')[0];
+                        const coverImg = fm.image || fm.cover || fm.thumb || '';
+                        const postHref = `/news/${fm.slug}.html`;
                         return (
-                            <article class="bb-news-row">
-                                <div class="bb-news-meta">
-                                    <span>Technical Guide</span>
-                                    {dateStr && <span>&middot; {dateStr}</span>}
+                            <article class={`bb-news-row${coverImg ? ' has-thumb' : ''}`}>
+                                {coverImg && (
+                                    <a href={postHref} class="bb-news-row-thumb">
+                                        <img
+                                            src={coverImg}
+                                            alt={fm.title || ''}
+                                            loading={idx < 4 ? 'eager' : 'lazy'}
+                                            decoding="async"
+                                            width="480"
+                                            height="300"
+                                            onerror="var r=this.closest('.has-thumb');if(r)r.classList.remove('has-thumb');this.parentElement.remove();"
+                                        />
+                                    </a>
+                                )}
+                                <div class={coverImg ? 'bb-news-row-body' : undefined}>
+                                    <div class="bb-news-meta">
+                                        <span>Technical Guide</span>
+                                        {dateStr && <span>&middot; {dateStr}</span>}
+                                    </div>
+                                    <h2><a href={postHref}>{fm.title}</a></h2>
+                                    {fm.summary && <p>{fm.summary}</p>}
+                                    <a href={postHref} class="bb-card-cta">
+                                        <span>Read Full Guide</span>
+                                        <span aria-hidden="true">&rarr;</span>
+                                    </a>
                                 </div>
-                                <h2><a href={`/news/${post.frontmatter.slug}.html`}>{post.frontmatter.title}</a></h2>
-                                {post.frontmatter.summary && <p>{post.frontmatter.summary}</p>}
-                                <a href={`/news/${post.frontmatter.slug}.html`} class="bb-card-cta">
-                                    <span>Read Full Guide</span>
-                                    <span aria-hidden="true">&rarr;</span>
-                                </a>
                             </article>
                         );
                     })}

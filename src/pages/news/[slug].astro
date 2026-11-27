@@ -25,12 +25,18 @@ export async function getStaticPaths() {
 const { post, prevUrl, nextUrl } = Astro.props;
 const { frontmatter, Content } = post;
 const dateStr = String(frontmatter.date || '').split(' ')[0];
+const coverImage = frontmatter.image || frontmatter.cover || frontmatter.thumb || '';
+
+const rawBody = typeof post.rawContent === 'function' ? post.rawContent() : '';
+const bodyAlreadyHasCover = Boolean(coverImage && rawBody.includes(coverImage));
+const showHeaderCover = Boolean(coverImage && !bodyAlreadyHasCover);
 
 const articleSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": frontmatter.title,
   "description": frontmatter.description || frontmatter.summary || '',
+  "image": coverImage ? new URL(coverImage, 'https://www.bambooflooringchina.com').href : undefined,
   "datePublished": frontmatter.date || undefined,
   "author": {
     "@type": "Organization",
@@ -53,6 +59,7 @@ const articleSchema = JSON.stringify({
   footerType="postscript"
   loadLegacyJs={false}
   isModern={true}
+  preloadImage={coverImage || undefined}
 >
     <script is:inline type="application/ld+json" set:html={articleSchema} />
 
@@ -77,6 +84,19 @@ const articleSchema = JSON.stringify({
                         <span>By Bothbest Technical Team</span>
                     </div>
                 </header>
+
+                {showHeaderCover && (
+                    <figure class="bb-article-cover">
+                        <img
+                            src={coverImage}
+                            alt={frontmatter.imageAlt || frontmatter.title}
+                            fetchpriority="high"
+                            loading="eager"
+                            decoding="async"
+                            onerror="this.parentElement.remove()"
+                        />
+                    </figure>
+                )}
 
                 <div class="bb-article-prose">
                     <Content />

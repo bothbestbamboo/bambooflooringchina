@@ -5,6 +5,7 @@ title: "Strand Bamboo Decking in Wet Climates: Preventing Rot and Mold"
 keywords: "strand bamboo decking, outdoor bamboo decking, rot resistant decking, mold resistant bamboo, wet climate decking"
 description: "Learn how thermo-treated strand bamboo decking resists rot, fungal decay, and surface mold in wet climates, plus the installation and drainage details that keep rainy-region decks solid for decades."
 date: "2026-11-25 22:13:00"
+image: "/img/2026/thermo-treated-strand-bamboo-decking.jpg"
 summary: "Thermo-treated strand bamboo decking achieves EN 350 Durability Class 1 by stripping out fungal nutrients and compressing fibers to over 1,150 kg/m³. Here is how it handles relentless rain, how surface mildew differs from structural rot, and what installation rules matter most."
 ---
 

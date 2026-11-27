@@ -148,12 +148,14 @@ const latestNews = Object.values(newsFiles)
   .sort((a: any, b: any) => (b.frontmatter.id || 0) - (a.frontmatter.id || 0))
   .slice(0, 3)
   .map((n: any) => {
-    const rawDate = String(n.frontmatter.date || '').split(' ')[0];
+    const fm = n.frontmatter || {};
+    const rawDate = String(fm.date || '').split(' ')[0];
     return {
-      title: n.frontmatter.title || '',
-      summary: n.frontmatter.summary || '',
-      href: `/news/${n.frontmatter.slug}.html`,
+      title: fm.title || '',
+      summary: fm.summary || '',
+      href: `/news/${fm.slug}.html`,
       date: rawDate,
+      image: fm.image || fm.cover || fm.thumb || '',
     };
   });
 
@@ -444,14 +446,29 @@ const orgSchema = JSON.stringify({
 
             <div class="bb-news-grid">
                 {latestNews.map((post) => (
-                    <article class="bb-news-card">
-                        {post.date && <div class="bb-news-date">{post.date}</div>}
-                        <h3><a href={post.href}>{post.title}</a></h3>
-                        <p>{post.summary}</p>
-                        <a href={post.href} class="bb-card-cta">
-                            <span>Read Guide</span>
-                            <span aria-hidden="true">&rarr;</span>
-                        </a>
+                    <article class={`bb-news-card${post.image ? ' has-thumb' : ''}`}>
+                        {post.image && (
+                            <a href={post.href} class="bb-news-thumb">
+                                <img
+                                    src={post.image}
+                                    alt={post.title}
+                                    loading="lazy"
+                                    decoding="async"
+                                    width="760"
+                                    height="428"
+                                    onerror="var c=this.closest('.has-thumb');if(c)c.classList.remove('has-thumb');this.parentElement.remove();"
+                                />
+                            </a>
+                        )}
+                        <div class={post.image ? 'bb-news-card-body' : undefined}>
+                            {post.date && <div class="bb-news-date">{post.date}</div>}
+                            <h3><a href={post.href}>{post.title}</a></h3>
+                            <p>{post.summary}</p>
+                            <a href={post.href} class="bb-card-cta">
+                                <span>Read Guide</span>
+                                <span aria-hidden="true">&rarr;</span>
+                            </a>
+                        </div>
                     </article>
                 ))}
             </div>
