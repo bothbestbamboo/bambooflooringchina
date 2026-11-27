@@ -25,10 +25,29 @@ export async function getStaticPaths() {
 const { post, prevUrl, nextUrl } = Astro.props;
 const { frontmatter, Content } = post;
 const dateStr = String(frontmatter.date || '').split(' ')[0];
-const coverImage = frontmatter.image || frontmatter.cover || frontmatter.thumb || '';
 
-const rawBody = typeof post.rawContent === 'function' ? post.rawContent() : '';
-const bodyAlreadyHasCover = Boolean(coverImage && rawBody.includes(coverImage));
+// 兼容 image / cover / thumb 三种 Frontmatter 封面字段并去除首尾空格
+const coverImage = String(
+  frontmatter.image || frontmatter.cover || frontmatter.thumb || ''
+).trim();
+
+// 自动去重检测：如果旧文章正文里已经包含同一张封面图，顶部不会重复渲染
+const rawBody =
+  typeof post.rawContent === 'function'
+    ? post.rawContent()
+    : typeof post.rawContent === 'string'
+      ? post.rawContent
+      : '';
+let decodedCover = coverImage;
+try {
+  decodedCover = decodeURI(coverImage);
+} catch {
+  decodedCover = coverImage;
+}
+const bodyAlreadyHasCover = Boolean(
+  coverImage &&
+    (rawBody.includes(coverImage) || (decodedCover && rawBody.includes(decodedCover)))
+);
 const showHeaderCover = Boolean(coverImage && !bodyAlreadyHasCover);
 
 const articleSchema = JSON.stringify({
@@ -120,3 +139,30 @@ const articleSchema = JSON.stringify({
         </div>
     </section>
 </BaseLayout>
+
+<style>
+  .bb-article-cover {
+    margin: 0 0 26px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f8fafc;
+  }
+
+  .bb-article-cover img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 520px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  @media (max-width: 767px) {
+    .bb-article-cover {
+      margin-bottom: 20px;
+    }
+    .bb-article-cover img {
+      max-height: 320px;
+    }
+  }
+</style>
